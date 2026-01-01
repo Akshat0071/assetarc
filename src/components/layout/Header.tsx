@@ -61,7 +61,7 @@ import Image from 'next/image';
 // );
 
 const StockstrailLogo = () => (
-  <div className="flex items-center -ml-2 sm:ml-0" suppressHydrationWarning>
+  <div className="flex items-center">
     <Image
       src="/Stockstrailchristmas.webp"
       alt="Stockstrail Christmas Logo"
