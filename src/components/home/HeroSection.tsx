@@ -21,7 +21,7 @@ const HeroSection = () => {
         <h1
           className="
             mt-8
-            text-3xl sm:text-4xl lg:text-6xl
+            text-4xl sm:text-5xl lg:text-6xl
             font-normal
             leading-tight
             text-white
@@ -67,6 +67,7 @@ const HeroSection = () => {
         <div className="lg:mb-20">
           <a
             href="/services"
+            aria-label="Learn more about our financial services"
             className="
               inline-flex
               items-center
@@ -84,7 +85,7 @@ const HeroSection = () => {
             "
           >
             <div className="w-2 h-2 sm:w-3 sm:h-3 bg-stockstrail-green-accent rounded-full" />
-            Learn More
+            Learn More About Our Services
           </a>
         </div>
       </div>

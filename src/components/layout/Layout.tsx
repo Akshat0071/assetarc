@@ -1,5 +1,10 @@
-﻿import Header from './Header';
-import Footer from './Footer';
+﻿import dynamic from 'next/dynamic';
+import Header from './Header';
+
+// Dynamically import Footer since it's below the fold
+const Footer = dynamic(() => import('./Footer'), {
+  loading: () => <div className="min-h-[300px] bg-stockstrail-bg" />
+});
 
 interface LayoutProps {
   children: React.ReactNode;

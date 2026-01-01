@@ -1,6 +1,11 @@
 ﻿import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { ArrowRight, Facebook, Linkedin, Instagram, Send } from 'lucide-react';
-import BackToTopButton from './BackToTopButton';
+
+// Dynamically import BackToTopButton to reduce initial bundle
+const BackToTopButton = dynamic(() => import('./BackToTopButton'), {
+  loading: () => null
+});
 
 const StockstrailLogo = () => (
   <div className="flex items-center gap-2.5">

@@ -40,6 +40,9 @@ const nextConfig: NextConfig = {
       "embla-carousel-react",
       "react-day-picker",
       "cmdk",
+      "@supabase/supabase-js",
+      "clsx",
+      "tailwind-merge",
     ],
     optimizeCss: true, // Inlines critical CSS to fix render blocking
     inlineCss: true, // Inline critical CSS directly into HTML
