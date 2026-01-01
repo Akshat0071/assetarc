@@ -51,15 +51,23 @@ const Snowfall: React.FC = () => {
   const overlayRef = useRef<HTMLDivElement>(null);
   const worldRef = useRef<HTMLDivElement>(null);
 
+  // Mobile detection with resize listener
   useEffect(() => {
-    // Check if mobile
-    const checkMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-    setIsMobile(checkMobile);
+    const checkMobile = () => {
+      const mobile = typeof window !== 'undefined' && window.innerWidth < 768;
+      setIsMobile(mobile);
+      return mobile;
+    };
     
-    // Don't create flakes on mobile
-    if (checkMobile) return;
+    const mobile = checkMobile();
     
-    setFlakes(createFlakes(220));
+    // Only create flakes if not mobile
+    if (!mobile) {
+      setFlakes(createFlakes(220));
+    }
+    
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   /* -------- PAGE HEIGHT (read-only, safe) -------- */

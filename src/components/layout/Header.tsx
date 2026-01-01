@@ -69,8 +69,7 @@ const StockstrailLogo = () => (
       height={84}
       priority
       unoptimized
-      style={{ width: 'auto', height: 'auto' }}
-      className="w-[120px] sm:w-[280px] object-contain"
+      className="w-[120px] h-[36px] sm:w-[280px] sm:h-[84px] object-contain"
     />
   </div>
 );

@@ -3,7 +3,7 @@ import React from 'react';
 
 const HeroSection = () => {
     return (
-        <section className="relative lg:min-h-screen flex items-start lg:items-center justify-center px-8 sm:px-12 lg:px-16 pt-8 sm:pt-8 lg:pt-0 pb-8 lg:pb-0 overflow-hidden">
+        <section className="relative min-h-screen flex items-start lg:items-center justify-center px-8 sm:px-12 lg:px-16 pt-24 sm:pt-20 lg:pt-0 pb-8 lg:pb-0 overflow-hidden">
             {/* Background layer - deferred rendering for LCP optimization */}
             <div className="absolute inset-0" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 100vh' }}>
                 {/* Main blur circle - uses CSS containment to avoid blocking LCP */}
