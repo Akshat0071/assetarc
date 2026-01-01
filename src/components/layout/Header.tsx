@@ -2,10 +2,8 @@
 
 import { useState, useRef } from 'react';
 import Link from 'next/link';
-import { ChevronDown, Menu, X } from 'lucide-react';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
-
+import { ChevronDown, Menu, X } from 'lucide-react';
 // const StockstrailLogo = () => (
 //   <div className="flex items-center gap-2.5">
 //     <svg
@@ -62,15 +60,14 @@ import Image from 'next/image';
 
 const StockstrailLogo = () => (
   <div className="flex items-center">
-    {/* eslint-disable-next-line @next/next/no-img-element */}
-    <img
+    <Image
       src="/Stockstrailchristmas.webp"
       alt="Stockstrail Christmas Logo"
       width={280}
       height={84}
-      className="w-[120px] h-[36px] sm:w-[280px] sm:h-[84px] object-contain"
-      loading="eager"
-      decoding="async"
+      priority
+      sizes="(max-width: 640px) 120px, 280px"
+      className="w-[120px] h-[63px] sm:w-[280px] sm:h-[84px] object-contain"
     />
   </div>
 );
@@ -99,7 +96,7 @@ const Header = () => {
     navCloseTimer.current = window.setTimeout(() => {
       setOpenDropdown(null);
       navCloseTimer.current = undefined;
-    }, delay) as unknown as number;
+    }, delay);
   };
 
   const navItems = [
@@ -114,7 +111,7 @@ const Header = () => {
         { name: 'Insurance', href: '/services#insurance' },
         { name: 'Loan', href: '/services#loan' },
         { name: 'Other Services', href: '/services#others' },
-      ]
+      ],
     },
     { name: 'Blog', href: '/blog' },
     {
@@ -128,40 +125,45 @@ const Header = () => {
         { name: 'RD Calculator', href: '/calculators?tab=RD' },
         { name: 'EMI Calculator', href: '/calculators?tab=EMI' },
         { name: 'Tax Calculator', href: '/calculators?tab=TAX' },
-      ]
+      ],
     },
     { name: 'About Us', href: '/about' },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-stockstrail-bg/80 backdrop-blur-[100px] border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-stockstrail-bg/80 backdrop-blur-none sm:backdrop-blur-[100px] border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="hover:opacity-80 hover:scale-105 transition-all duration-300 group">
+          <Link
+            href="/"
+            className="hover:opacity-80 hover:scale-105 transition-all duration-300"
+          >
             <StockstrailLogo />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <div className="flex items-center bg-white/5 backdrop-blur-[37.5px] px-14 py-4 rounded-[45px] space-x-16 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300">
+            <div className="flex items-center bg-white/5 backdrop-blur-[37.5px] px-14 py-4 rounded-[45px] space-x-16 hover:bg-white/10 transition-all duration-300">
               {navItems.map((item) => (
                 <div key={item.name} className="relative">
                   {item.hasDropdown ? (
                     <div
-                      className="relative"
                       onMouseEnter={() => openMenu(item.name)}
                       onMouseLeave={() => closeMenuWithDelay(250)}
                     >
-                      <button
-                        className="flex items-center gap-2 text-white hover:text-stockstrail-green-light hover:scale-105 transition-all duration-300 font-work-sans font-medium"
-                      >
+                      <button className="flex items-center gap-2 text-white hover:text-stockstrail-green-light transition-all duration-300 font-medium">
                         {item.name}
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${openDropdown === item.name ? 'rotate-180' : ''}`} />
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform duration-300 ${
+                            openDropdown === item.name ? 'rotate-180' : ''
+                          }`}
+                        />
                       </button>
+
                       {openDropdown === item.name && (
                         <div
-                          className="absolute top-full left-0 mt-2 w-56 bg-stockstrail-bg/95 backdrop-blur-lg border border-white/10 rounded-lg py-2 shadow-lg animate-in slide-in-from-top-2 duration-200"
+                          className="absolute top-full left-0 mt-2 w-56 bg-stockstrail-bg/95 backdrop-blur-lg border border-white/10 rounded-lg py-2 shadow-lg"
                           onMouseEnter={() => openMenu(item.name)}
                           onMouseLeave={() => closeMenuWithDelay(250)}
                         >
@@ -169,7 +171,7 @@ const Header = () => {
                             <Link
                               key={dropdownItem.name}
                               href={dropdownItem.href}
-                              className="block px-4 py-2 text-white hover:text-stockstrail-green-light hover:bg-white/5 hover:translate-x-1 transition-all duration-300"
+                              className="block px-4 py-2 text-white hover:text-stockstrail-green-light hover:bg-white/5 transition-all duration-300"
                             >
                               {dropdownItem.name}
                             </Link>
@@ -180,7 +182,7 @@ const Header = () => {
                   ) : (
                     <Link
                       href={item.href}
-                      className="font-work-sans font-medium transition-all duration-300 text-white hover:text-stockstrail-green-light hover:scale-105"
+                      className="font-medium transition-all duration-300 text-white hover:text-stockstrail-green-light"
                     >
                       {item.name}
                     </Link>
@@ -190,17 +192,20 @@ const Header = () => {
             </div>
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA */}
           <div className="hidden lg:flex">
-            <Link href="/lets-talk" className="inline-flex items-center gap-4 px-6 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,151,0.3)] transition-all duration-300 font-work-sans font-medium group">
-              <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full group-hover:scale-110 transition-transform duration-300"></div>
+            <Link
+              href="/lets-talk"
+              className="inline-flex items-center gap-4 px-6 py-4 border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light transition-all duration-300 font-medium"
+            >
+              <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full"></div>
               Let&apos;s Talk
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 text-white hover:text-stockstrail-green-light hover:scale-110 transition-all duration-300"
+            className="lg:hidden p-2 text-white hover:text-stockstrail-green-light transition-all duration-300"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -210,26 +215,35 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-white/10 animate-in slide-in-from-top-2 duration-200">
+          <div className="lg:hidden py-4 border-t border-white/10">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <div key={item.name}>
                   {item.hasDropdown ? (
-                    <div>
+                    <>
                       <button
-                        className="flex items-center justify-between w-full text-left py-2 text-white font-work-sans font-medium hover:text-stockstrail-green-light transition-colors duration-300"
-                        onClick={() => setOpenMobileDropdown(openMobileDropdown === item.name ? null : item.name)}
+                        className="flex items-center justify-between w-full py-2 text-white font-medium"
+                        onClick={() =>
+                          setOpenMobileDropdown(
+                            openMobileDropdown === item.name ? null : item.name
+                          )
+                        }
                       >
                         {item.name}
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${openMobileDropdown === item.name ? 'rotate-180' : ''}`} />
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform ${
+                            openMobileDropdown === item.name ? 'rotate-180' : ''
+                          }`}
+                        />
                       </button>
+
                       {openMobileDropdown === item.name && (
                         <div className="pl-4 space-y-2 mt-2">
                           {item.dropdownItems?.map((dropdownItem) => (
                             <Link
                               key={dropdownItem.name}
                               href={dropdownItem.href}
-                              className="block py-2 text-white/70 hover:text-stockstrail-green-light hover:translate-x-2 transition-all duration-300"
+                              className="block py-2 text-white/70 hover:text-stockstrail-green-light"
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
                               {dropdownItem.name}
@@ -237,11 +251,11 @@ const Header = () => {
                           ))}
                         </div>
                       )}
-                    </div>
+                    </>
                   ) : (
                     <Link
                       href={item.href}
-                      className="block py-2 font-work-sans font-medium transition-all duration-300 text-white hover:text-stockstrail-green-light hover:translate-x-2"
+                      className="block py-2 font-medium text-white hover:text-stockstrail-green-light"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.name}
@@ -249,8 +263,12 @@ const Header = () => {
                   )}
                 </div>
               ))}
-              <Link href="/lets-talk" className="inline-flex items-center gap-4 px-6 py-4 bg-transparent border-2 border-white/20 rounded-full text-white font-work-sans font-medium mt-4 w-fit hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,151,0.3)] transition-all duration-300 group">
-                <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full group-hover:scale-110 transition-transform duration-300"></div>
+
+              <Link
+                href="/lets-talk"
+                className="inline-flex items-center gap-4 px-6 py-4 border-2 border-white/20 rounded-full text-white font-medium mt-4 w-fit"
+              >
+                <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full"></div>
                 Let&apos;s Talk
               </Link>
             </div>
