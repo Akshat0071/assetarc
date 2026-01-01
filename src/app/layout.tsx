@@ -116,18 +116,46 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" />
 
-        {/* Microsoft Clarity - load after page is fully idle to minimize TBT */}
-        <Script id="clarity-init" strategy="lazyOnload">
+        {/* Microsoft Clarity - load only after first user interaction to avoid long tasks during initial render */}
+        <Script id="clarity-bootstrap" strategy="afterInteractive">
           {`(function(){
-            if (typeof window !== 'undefined') {
-              if (typeof window.clarity !== 'function') {
-                window.clarity = function(){ (window.clarity.q = window.clarity.q || []).push(arguments); };
+            try {
+              var id = ${JSON.stringify(clarityId)};
+              var loaded = false;
+              var opts = { passive: true };
+
+              function removeListeners() {
+                window.removeEventListener('pointerdown', load, opts);
+                window.removeEventListener('keydown', load, opts);
+                window.removeEventListener('scroll', load, opts);
+                window.removeEventListener('touchstart', load, opts);
               }
-            }
+
+              function load() {
+                if (loaded) return;
+                loaded = true;
+                removeListeners();
+
+                if (typeof window.clarity !== 'function') {
+                  window.clarity = function(){ (window.clarity.q = window.clarity.q || []).push(arguments); };
+                }
+
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = 'https://www.clarity.ms/tag/' + id;
+                document.head.appendChild(s);
+              }
+
+              window.addEventListener('pointerdown', load, opts);
+              window.addEventListener('keydown', load, opts);
+              window.addEventListener('scroll', load, opts);
+              window.addEventListener('touchstart', load, opts);
+
+              // Safety fallback: load after 15s in case user never interacts.
+              setTimeout(load, 15000);
+            } catch (_) {}
           })();`}
         </Script>
-        <Script id="clarity-src" src={`https://www.clarity.ms/tag/${clarityId}`} strategy="lazyOnload" />
-        <link rel="preconnect" href="https://q.clarity.ms" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://luwzjngwignnmpdakxkw.supabase.co" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
