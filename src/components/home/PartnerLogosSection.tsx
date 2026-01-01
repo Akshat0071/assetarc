@@ -35,7 +35,7 @@ const PartnerLogosSection = () => {
     ];
 
     return (
-        <section className="pb-8 sm:py-2 relative overflow-hidden pt-12 lg:pt-12">
+        <section className="pb-8 sm:py-2 relative overflow-hidden pt-16 lg:pt-12">
             {/* Enhanced background effects */}
             <div className="absolute inset-0">
                 <div className="absolute top-10 left-1/4 w-4 h-4 bg-stockstrail-green-light/20 rounded-full"></div>
