@@ -10,8 +10,8 @@ const HeroSection = () => {
         lg:items-center
         justify-center
         px-6 sm:px-12 lg:px-16
-        pt-24 sm:pt-20 lg:pt-12
-        pb-20 lg:pb-8
+        pt-24 sm:pt-20 lg:pt-20
+        pb-20 lg:pb-4
         overflow-hidden
       "
     >
