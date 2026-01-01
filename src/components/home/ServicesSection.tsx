@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 const ServicesSection = () => {
     const services = [
@@ -76,8 +77,7 @@ const ServicesSection = () => {
                                 {/* Icon / Image */}
                                 <div className="w-16 h-16 sm:w-24 sm:h-24 bg-white/10 rounded-full flex items-center justify-center mb-4 sm:mb-0 sm:mr-8 shrink-0 group-hover:scale-110 group-hover:bg-stockstrail-green-light/20 transition-all duration-300">
                                     {service.isImage ? (
-                                        /* eslint-disable-next-line @next/next/no-img-element */
-                                        <img
+                                        <Image
                                             src={service.icon}
                                             alt={service.title}
                                             className="w-8 h-8 sm:w-16 sm:h-16 object-contain group-hover:scale-110 transition-transform duration-300"
