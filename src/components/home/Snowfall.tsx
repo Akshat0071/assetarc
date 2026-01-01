@@ -46,41 +46,45 @@ const createFlakes = (total: number): Flake[] => {
 
 const Snowfall: React.FC = () => {
   const [flakes, setFlakes] = useState<Flake[]>([]);
+  const [isMobile, setIsMobile] = useState(true); // Default to true to prevent flash on mobile
 
   const overlayRef = useRef<HTMLDivElement>(null);
   const worldRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Reduce flakes on mobile for performance
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-    // User requested to "comment out" logic on mobile -> 0 flakes
-    const count = isMobile ? 0 : 220;
-    setFlakes(createFlakes(count));
+    // Check if mobile
+    const checkMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    setIsMobile(checkMobile);
+    
+    // Don't create flakes on mobile
+    if (checkMobile) return;
+    
+    setFlakes(createFlakes(220));
   }, []);
 
   /* -------- PAGE HEIGHT (read-only, safe) -------- */
 
   useEffect(() => {
-    // Skip height calculation on mobile if no flakes
-    if (typeof window !== 'undefined' && window.innerWidth < 768) return;
+    // Skip height calculation on mobile
+    if (isMobile) return;
 
     const updateHeight = () => {
       const h =
         document.documentElement.scrollHeight || document.body.scrollHeight;
       worldRef.current?.style.setProperty("--pageHeight", `${h}px`);
-      worldRef.current!.style.height = `${h}px`;
+      if (worldRef.current) worldRef.current.style.height = `${h}px`;
     };
 
     updateHeight();
     window.addEventListener("resize", updateHeight);
     return () => window.removeEventListener("resize", updateHeight);
-  }, []);
+  }, [isMobile]);
 
   /* -------- CAMERA (smooth, no stutter) -------- */
 
   useEffect(() => {
     // Skip animation loop on mobile
-    if (typeof window !== 'undefined' && window.innerWidth < 768) return;
+    if (isMobile) return;
 
     let rafId: number;
 
@@ -94,7 +98,10 @@ const Snowfall: React.FC = () => {
 
     rafId = requestAnimationFrame(updateCamera);
     return () => cancelAnimationFrame(rafId);
-  }, []);
+  }, [isMobile]);
+
+  // Don't render anything on mobile
+  if (isMobile) return null;
 
   return (
     <div

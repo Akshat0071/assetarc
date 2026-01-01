@@ -89,6 +89,7 @@ const CalculatorsSection = () => {
                                             className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
                                             width={80}
                                             height={80}
+                                            unoptimized
                                         />
                                     ) : (
                                         <div className="text-5xl">{calculator.icon}</div>

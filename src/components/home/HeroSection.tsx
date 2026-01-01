@@ -4,10 +4,10 @@ import React from 'react';
 const HeroSection = () => {
     return (
         <section className="relative lg:min-h-screen flex items-start lg:items-center justify-center px-8 sm:px-12 lg:px-16 pt-8 sm:pt-8 lg:pt-0 pb-8 lg:pb-0 overflow-hidden">
-            {/* Background layer */}
-            <div className="absolute inset-0">
-                {/* Main animated blur circle with glow - DISABLED for performance */}
-                <div className="hidden lg:block absolute w-[871px] h-[887px] bg-stockstrail-bg-light rounded-full blur-100 opacity-60 ios-blur-fallback left-1/2 top-20 -translate-x-1/2" />
+            {/* Background layer - deferred rendering for LCP optimization */}
+            <div className="absolute inset-0" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 100vh' }}>
+                {/* Main blur circle - uses CSS containment to avoid blocking LCP */}
+                <div className="hidden lg:block absolute w-[871px] h-[887px] bg-stockstrail-bg-light rounded-full blur-100 opacity-60 ios-blur-fallback left-1/2 top-20 -translate-x-1/2" style={{ contain: 'strict' }} />
 
                 {/* Floating particles - DISABLED for performance */}
                 <div className="hidden lg:block absolute top-20 left-10 w-2 h-2 bg-stockstrail-green-light/40 rounded-full" />
@@ -44,29 +44,23 @@ const HeroSection = () => {
                 {/* Heading - Removed animation for LCP optimization */}
                 <div className="mt-8">
                     <h1
-                        className="font-product-sans text-4xl sm:text-5xl lg:text-7xl font-normal leading-tight lg:leading-20 mb-8 group"
-                        style={{ contentVisibility: 'visible', opacity: 1, transform: 'none', transition: 'none', willChange: 'auto' }}
+                        className="font-product-sans text-4xl sm:text-5xl lg:text-7xl font-normal leading-tight lg:leading-20 mb-8"
+                        style={{ contentVisibility: 'visible', opacity: 1, transform: 'none', willChange: 'auto' }}
                     >
-                        <span
-                            className="text-white group-hover:text-stockstrail-green-light transition-colors duration-500"
-                            style={{ opacity: 1 }}
-                        >
+                        <span className="text-white">
                             Embark on Your
                         </span>
                         <br />
-                        <span
-                            className="text-white group-hover:text-stockstrail-green-light transition-colors duration-500"
-                            style={{ opacity: 1 }}
-                        >
+                        <span className="text-white">
                             Journey to Success
                         </span>
                     </h1>
                 </div>
 
-                {/* Sub text - Removed animation for LCP optimization (Element render delay fix) */}
+                {/* Sub text - LCP element - Zero animation/transition for fastest render */}
                 <p
-                    className="mt-4 text-[#809393] text-base sm:text-lg lg:text-xl font-work-sans leading-relaxed max-w-[881px] mx-auto mb-8 group-hover:text-white/70"
-                    style={{ contentVisibility: 'visible', opacity: 1, transform: 'none', transition: 'none', willChange: 'auto' }}
+                    className="mt-4 text-[#809393] text-base sm:text-lg lg:text-xl font-work-sans leading-relaxed max-w-[881px] mx-auto mb-8"
+                    style={{ contentVisibility: 'visible', opacity: 1, transform: 'none', willChange: 'auto' }}
                 >
                     Achieve financial independence with Stockstrail. Our expert guidance
                     and innovative tools help you navigate investing and reach your
@@ -74,10 +68,8 @@ const HeroSection = () => {
                     stay ahead and attain
                 </p>
 
-                {/* Subheading */}
-                <div
-                    className="animate-slide-in-from-top"
-                >
+                {/* Subheading - No animation for LCP optimization */}
+                <div>
                     <h2 className="font-product-sans text-4xl sm:text-5xl lg:text-6xl font-normal mb-8 group">
                         <span className="gradient-text group-hover:scale-105 transition-transform duration-500 inline-block">
                             Financial Freedom
@@ -85,10 +77,8 @@ const HeroSection = () => {
                     </h2>
                 </div>
 
-                {/* CTA button */}
-                <div
-                    className="animate-slide-in-from-top lg:mb-20"
-                >
+                {/* CTA button - No animation for LCP optimization */}
+                <div className="lg:mb-20">
                     <a
                         href="/services"
                         className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-110 hover:shadow-[0_0_30px_rgba(0,255,151,0.4)] transition-all duration-500 font-work-sans font-medium text-base sm:text-lg group"

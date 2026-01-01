@@ -15,7 +15,7 @@
   --font-montserrat: var(--font-montserrat), system-ui, sans-serif;
 }
 
-/* ================= BASE LAYER ================= */
+/* ================= CRITICAL BASE LAYER (Above-the-fold) ================= */
 @layer base {
 
   /**
@@ -372,6 +372,12 @@
     transform: none !important;
     transition: none !important;
     will-change: auto !important;
+  }
+
+  /* Defer rendering of below-the-fold content */
+  .defer-render {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
   }
 
   /* Desktop / Android real blur */

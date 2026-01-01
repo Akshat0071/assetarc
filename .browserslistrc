@@ -1,6 +1,8 @@
-chrome >= 110
-safari >= 16
-ios >= 16
-firefox >= 110
-edge >= 110
+chrome >= 115
+safari >= 17
+ios >= 17
+firefox >= 115
+edge >= 115
 not ie > 0
+not op_mini all
+not dead

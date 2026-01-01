@@ -37,12 +37,24 @@ export default function Home() {
     <Layout>
       <div className="flex flex-col w-full overflow-hidden">
         <HeroSection />
-        <PartnerLogosSection />
-        <ServicesSection />
-        <CalculatorsSection />
-        <WhyChooseSection />
-        <TestimonialsSection />
-        <AboutSection />
+        <div className="defer-render">
+          <PartnerLogosSection />
+        </div>
+        <div className="defer-render">
+          <ServicesSection />
+        </div>
+        <div className="defer-render">
+          <CalculatorsSection />
+        </div>
+        <div className="defer-render">
+          <WhyChooseSection />
+        </div>
+        <div className="defer-render">
+          <TestimonialsSection />
+        </div>
+        <div className="defer-render">
+          <AboutSection />
+        </div>
         <DisclaimerSection />
       </div>
     </Layout>

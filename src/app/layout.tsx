@@ -9,6 +9,8 @@ const inter = Inter({
   display: "swap",
   variable: "--font-inter",
   weight: ["400", "600", "700", "800"],
+  preload: true,
+  adjustFontFallback: true,
 });
 
 const workSans = Work_Sans({
@@ -16,6 +18,8 @@ const workSans = Work_Sans({
   display: "swap",
   variable: "--font-work-sans",
   weight: ["300", "400", "500", "600", "700"],
+  preload: true,
+  adjustFontFallback: true,
 });
 
 const montserrat = Montserrat({
@@ -23,6 +27,8 @@ const montserrat = Montserrat({
   display: "swap",
   variable: "--font-montserrat",
   weight: ["400", "600", "700"],
+  preload: true,
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
@@ -38,15 +44,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Stockstrail" }],
 
   // -----------------------------
-  // CLEAN & OPTIMIZED FAVICON SETUP
+  // FAVICON - Auto-detected from app/favicon.ico
+  // Google will crawl this for search results
   // -----------------------------
-  icons: {
-    icon: [
-      { url: "/favicon.ico" }, // classic browser + Google fallback
-      { url: "/favicon.svg", type: "image/svg+xml" }, // modern browsers
-    ],
-    shortcut: "/favicon.ico",
-  },
 
   // -----------------------------
   // SOCIAL SHARE META
@@ -94,7 +94,20 @@ export default function RootLayout({
         <meta name="theme-color" content="#00ff97" />
         <meta name="msapplication-TileColor" content="#012928" />
 
-        {/* All favicon links are now controlled by metadata.icons */}
+        {/* Critical CSS inline styles for above-the-fold content */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            body{background:#012928;color:#fff;margin:0;min-height:100vh}
+            .min-h-screen{min-height:100vh}
+            .bg-stockstrail-bg{background-color:#012928}
+          `
+        }} />
+
+        {/* Favicon - explicit link for Google and all browsers */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+
         {/* Microsoft Clarity - load after hydration to avoid early runtime issues */}
         <Script id="clarity-init" strategy="afterInteractive">
           {`(function(){
@@ -108,6 +121,8 @@ export default function RootLayout({
         <Script id="clarity-src" src={`https://www.clarity.ms/tag/${clarityId}`} strategy="afterInteractive" />
         <link rel="preconnect" href="https://q.clarity.ms" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://luwzjngwignnmpdakxkw.supabase.co" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
 
       <body className="antialiased">

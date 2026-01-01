@@ -56,9 +56,11 @@ const PartnerLogosSection = () => {
                                 <Image
                                     src={partner.logo}
                                     alt={`${partner.name} logo`}
-                                    className="h-20 sm:h-24 w-auto object-contain group-hover:scale-110 group-hover:brightness-110 transition-all duration-300"
-                                    width={256}
-                                    height={128}
+                                    className="h-16 sm:h-20 w-auto object-contain group-hover:scale-110 group-hover:brightness-110 transition-all duration-300"
+                                    width={160}
+                                    height={80}
+                                    sizes="(max-width: 640px) 120px, 160px"
+                                    quality={60}
                                     draggable={false}
                                     loading="lazy"
                                     decoding="async"

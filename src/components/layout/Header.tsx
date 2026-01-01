@@ -3,6 +3,7 @@
 import { useState, useRef } from 'react';
 import Link from 'next/link';
 import { ChevronDown, Menu, X } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
 // const StockstrailLogo = () => (
@@ -60,14 +61,14 @@ import Image from 'next/image';
 // );
 
 const StockstrailLogo = () => (
-  <div className="flex items-center">
+  <div className="flex items-center -ml-2 sm:ml-0" suppressHydrationWarning>
     <Image
       src="/Stockstrailchristmas.webp"
       alt="Stockstrail Christmas Logo"
-      width={200}
-      height={60}
+      width={280}
+      height={84}
       priority
-      className="h-auto w-auto"
+      className="w-[120px] h-[54px] sm:w-[280px] sm:h-[84px] object-contain"
     />
   </div>
 );
