@@ -2,7 +2,62 @@
 
 import { useState, useRef, memo } from 'react';
 import Link from 'next/link';
-import { ChevronDown, Menu, X } from 'lucide-react';
+
+type IconProps = { className?: string };
+
+const IconChevronDown = ({ className }: IconProps) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    aria-hidden="true"
+  >
+    <path
+      d="M6 9l6 6 6-6"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const IconMenu = ({ className }: IconProps) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    aria-hidden="true"
+  >
+    <path
+      d="M4 6h16M4 12h16M4 18h16"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const IconX = ({ className }: IconProps) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    aria-hidden="true"
+  >
+    <path
+      d="M18 6 6 18M6 6l12 12"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 const StockstrailLogo = () => (
   <div className="flex items-center gap-2.5">
     <svg
@@ -132,7 +187,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-stockstrail-bg/80 backdrop-blur-[100px] border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-stockstrail-bg/80 backdrop-blur-none sm:backdrop-blur-[100px] border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -156,7 +211,7 @@ const Header = () => {
                     >
                       <button className="flex items-center gap-2 text-white hover:text-stockstrail-green-light transition-all duration-300 font-work-sans font-medium">
                         {item.name}
-                        <ChevronDown
+                        <IconChevronDown
                           className={`w-4 h-4 transition-transform duration-300 ${
                             openDropdown === item.name ? 'rotate-180' : ''
                           }`}
@@ -211,7 +266,7 @@ const Header = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? <IconX className="w-6 h-6" /> : <IconMenu className="w-6 h-6" />}
           </button>
         </div>
 
@@ -232,7 +287,7 @@ const Header = () => {
                         }
                       >
                         {item.name}
-                        <ChevronDown
+                        <IconChevronDown
                           className={`w-4 h-4 transition-transform ${
                             openMobileDropdown === item.name ? 'rotate-180' : ''
                           }`}

@@ -97,10 +97,16 @@ export default function RootLayout({
         {/* Critical CSS inline styles for above-the-fold content */}
         <style dangerouslySetInnerHTML={{
           __html: `
-            body{background:#012928;color:#fff;margin:0;min-height:100vh}
+            body{background:#012928;color:#fff;margin:0;min-height:100vh;font-family:system-ui,-apple-system,sans-serif}
             .min-h-screen{min-height:100vh}
             .bg-stockstrail-bg{background-color:#012928}
             .text-\[\#809393\]{color:#809393}
+            .text-white{color:#fff}
+            .text-center{text-align:center}
+            .mx-auto{margin-left:auto;margin-right:auto}
+            .mt-4{margin-top:1rem}
+            .mb-8{margin-bottom:2rem}
+            .leading-relaxed{line-height:1.625}
             .gradient-text{background:linear-gradient(42deg,#00ff97 0%,#007d42 70.81%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           `
         }} />
@@ -129,8 +135,8 @@ export default function RootLayout({
 
       <body className="antialiased">
         <main className="relative min-h-screen">
-          <SnowfallWrapper />
           {children}
+          <SnowfallWrapper />
         </main>
       </body>
     </html>

@@ -9,6 +9,7 @@ const HeroSection = () => {
         items-start
         lg:items-center
         justify-center
+        min-h-screen lg:min-h-0
         px-6 sm:px-12 lg:px-16
         pt-24 sm:pt-20 lg:pt-20
         pb-28 lg:pb-8
