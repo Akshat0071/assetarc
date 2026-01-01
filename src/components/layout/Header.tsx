@@ -2,7 +2,6 @@
 
 import { useState, useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { ChevronDown, Menu, X } from 'lucide-react';
 // const StockstrailLogo = () => (
 //   <div className="flex items-center gap-2.5">
@@ -60,14 +59,16 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 
 const StockstrailLogo = () => (
   <div className="flex items-center">
-    <Image
+    {/* Using native img to avoid Next.js Image hydration mismatches */}
+    {/* eslint-disable-next-line @next/next/no-img-element */}
+    <img
       src="/Stockstrailchristmas.webp"
       alt="Stockstrail Christmas Logo"
       width={280}
       height={84}
-      priority
-      sizes="(max-width: 640px) 120px, 280px"
-      className="w-[120px] h-[63px] sm:w-[280px] sm:h-[84px] object-contain"
+      className="w-[140px] sm:w-[280px] h-auto object-contain"
+      loading="eager"
+      decoding="async"
     />
   </div>
 );
@@ -131,13 +132,13 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-stockstrail-bg/80 backdrop-blur-none sm:backdrop-blur-[100px] border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-stockstrail-bg/80 backdrop-blur-[100px] border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link
             href="/"
-            className="hover:opacity-80 hover:scale-105 transition-all duration-300"
+            className="hover:opacity-80 hover:scale-105 transition-all duration-300 group"
           >
             <StockstrailLogo />
           </Link>
@@ -149,10 +150,11 @@ const Header = () => {
                 <div key={item.name} className="relative">
                   {item.hasDropdown ? (
                     <div
+                      className="relative"
                       onMouseEnter={() => openMenu(item.name)}
                       onMouseLeave={() => closeMenuWithDelay(250)}
                     >
-                      <button className="flex items-center gap-2 text-white hover:text-stockstrail-green-light transition-all duration-300 font-medium">
+                      <button className="flex items-center gap-2 text-white hover:text-stockstrail-green-light transition-all duration-300 font-work-sans font-medium">
                         {item.name}
                         <ChevronDown
                           className={`w-4 h-4 transition-transform duration-300 ${
@@ -182,7 +184,7 @@ const Header = () => {
                   ) : (
                     <Link
                       href={item.href}
-                      className="font-medium transition-all duration-300 text-white hover:text-stockstrail-green-light"
+                      className="font-work-sans font-medium transition-all duration-300 text-white hover:text-stockstrail-green-light"
                     >
                       {item.name}
                     </Link>
@@ -196,16 +198,16 @@ const Header = () => {
           <div className="hidden lg:flex">
             <Link
               href="/lets-talk"
-              className="inline-flex items-center gap-4 px-6 py-4 border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light transition-all duration-300 font-medium"
+              className="inline-flex items-center gap-4 px-6 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light transition-all duration-300 font-medium group"
             >
-              <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full"></div>
+              <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full group-hover:animate-pulse"></div>
               Let&apos;s Talk
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 text-white hover:text-stockstrail-green-light transition-all duration-300"
+            className="lg:hidden p-2 text-white hover:text-stockstrail-green-light hover:bg-white/10 rounded-lg transition-all duration-300"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >

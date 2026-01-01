@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 
 const CalculatorsSection = () => {
     const calculators = [
@@ -83,13 +82,15 @@ const CalculatorsSection = () => {
                                 {/* Icon */}
                                 <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                                     {calculator.isImage ? (
-                                        <Image
+                                        /* eslint-disable-next-line @next/next/no-img-element */
+                                        <img
                                             src={calculator.icon}
                                             alt={`${calculator.title} icon`}
                                             className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
                                             width={80}
                                             height={80}
-                                            unoptimized
+                                            loading="lazy"
+                                            decoding="async"
                                         />
                                     ) : (
                                         <div className="text-5xl">{calculator.icon}</div>

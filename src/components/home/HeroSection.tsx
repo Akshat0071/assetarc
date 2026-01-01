@@ -48,10 +48,10 @@ const HeroSection = () => {
 
             {/* Background layer - Rendered AFTER LCP content for paint optimization */}
             <div className="absolute inset-0 -z-10 pointer-events-none" aria-hidden="true">
-                {/* Main blur circle - deferred with CSS containment */}
+                {/* Simplified radial gradient - no blur filter for faster LCP */}
                 <div 
-                    className="hidden lg:block absolute w-[871px] h-[887px] bg-stockstrail-bg-light rounded-full opacity-60 ios-blur-fallback left-1/2 top-20 -translate-x-1/2"
-                    style={{ filter: 'blur(120px)', contain: 'strict', contentVisibility: 'auto' }}
+                    className="hidden lg:block absolute w-[800px] h-[800px] rounded-full opacity-40 left-1/2 top-20 -translate-x-1/2"
+                    style={{ background: 'radial-gradient(circle, rgba(1,65,64,0.8) 0%, transparent 70%)' }}
                 />
             </div>
         </section>

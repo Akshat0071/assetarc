@@ -50,6 +50,8 @@ const nextConfig: NextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+  // Use modern JavaScript output to eliminate polyfills
+  transpilePackages: [],
   // Cache headers for static assets
   async headers() {
     return [
