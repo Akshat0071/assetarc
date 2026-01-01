@@ -62,14 +62,15 @@ import Image from 'next/image';
 
 const StockstrailLogo = () => (
   <div className="flex items-center">
-    <Image
+    {/* eslint-disable-next-line @next/next/no-img-element */}
+    <img
       src="/Stockstrailchristmas.webp"
       alt="Stockstrail Christmas Logo"
       width={280}
       height={84}
-      priority
-      unoptimized
       className="w-[120px] h-[36px] sm:w-[280px] sm:h-[84px] object-contain"
+      loading="eager"
+      decoding="async"
     />
   </div>
 );
