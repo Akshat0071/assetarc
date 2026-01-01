@@ -108,8 +108,8 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" />
 
-        {/* Microsoft Clarity - load after hydration to avoid early runtime issues */}
-        <Script id="clarity-init" strategy="afterInteractive">
+        {/* Microsoft Clarity - load after page is fully idle to minimize TBT */}
+        <Script id="clarity-init" strategy="lazyOnload">
           {`(function(){
             if (typeof window !== 'undefined') {
               if (typeof window.clarity !== 'function') {
@@ -118,7 +118,7 @@ export default function RootLayout({
             }
           })();`}
         </Script>
-        <Script id="clarity-src" src={`https://www.clarity.ms/tag/${clarityId}`} strategy="afterInteractive" />
+        <Script id="clarity-src" src={`https://www.clarity.ms/tag/${clarityId}`} strategy="lazyOnload" />
         <link rel="preconnect" href="https://q.clarity.ms" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://luwzjngwignnmpdakxkw.supabase.co" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

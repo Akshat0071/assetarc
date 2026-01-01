@@ -1,6 +1,6 @@
 ﻿'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, memo } from 'react';
 import Link from 'next/link';
 import { ChevronDown, Menu, X } from 'lucide-react';
 // const StockstrailLogo = () => (
@@ -281,4 +281,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default memo(Header);
