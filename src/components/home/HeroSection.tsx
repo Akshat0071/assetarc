@@ -10,7 +10,8 @@ const HeroSection = () => {
         lg:items-center
         justify-center
         px-6 sm:px-12 lg:px-16
-        pt-24 sm:pt-20 lg:pt-0
+        pt-24 sm:pt-20 lg:pt-12
+        pb-20 lg:pb-8
         overflow-hidden
       "
     >
@@ -19,7 +20,7 @@ const HeroSection = () => {
         {/* Heading */}
         <h1
           className="
-            mt-20
+            mt-8
             text-3xl sm:text-4xl lg:text-6xl
             font-normal
             leading-tight
