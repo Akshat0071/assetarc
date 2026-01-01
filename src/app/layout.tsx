@@ -8,7 +8,7 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
-  weight: ["400", "600", "700", "800"],
+  weight: ["400", "700"],
   preload: true,
   adjustFontFallback: true,
 });
@@ -17,7 +17,7 @@ const workSans = Work_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-work-sans",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
   preload: true,
   adjustFontFallback: true,
 });
@@ -26,7 +26,7 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-montserrat",
-  weight: ["400", "600", "700"],
+  weight: ["400", "700"],
   preload: true,
   adjustFontFallback: true,
 });
@@ -100,6 +100,8 @@ export default function RootLayout({
             body{background:#012928;color:#fff;margin:0;min-height:100vh}
             .min-h-screen{min-height:100vh}
             .bg-stockstrail-bg{background-color:#012928}
+            .text-\[\#809393\]{color:#809393}
+            .gradient-text{background:linear-gradient(42deg,#00ff97 0%,#007d42 70.81%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           `
         }} />
 
