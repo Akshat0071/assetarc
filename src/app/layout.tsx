@@ -112,8 +112,8 @@ export default function RootLayout({
         }} />
 
         {/* Favicon - explicit link for Google and all browsers */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.svg" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" />
 
         {/* Microsoft Clarity - load only after first user interaction to avoid long tasks during initial render */}
