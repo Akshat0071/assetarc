@@ -30,7 +30,7 @@ const ContactCard = () => {
       <div className="space-y-4 text-white/90">
         <div>
           <div className="text-white/60 text-sm mb-1">Email</div>
-          <a href="mailto:stockstrail@gmail.com" className="underline hover:text-stockstrail-green-light transition-colors">stockstrail@gmail.com</a>
+          <a href="mailto:connect@stockstrail.in" className="underline hover:text-stockstrail-green-light transition-colors">connect@stockstrail.in</a>
         </div>
         <div>
           <div className="text-white/60 text-sm mb-1">WhatsApp</div>

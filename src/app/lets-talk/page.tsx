@@ -228,11 +228,11 @@ export default function LetsTalk() {
                     Email
                   </p>
                   <a
-                    href="mailto:stockstrail@gmail.com"
+                    href="mailto:connect@stockstrail.in"
                     className="text-white text-sm font-medium flex items-center break-all"
                   >
                     <EmailIcon />
-                    stockstrail@gmail.com
+                    connect@stockstrail.in
                   </a>
                   <p className="text-white/50 text-xs mt-1">Usually replies within 12 hours</p>
                 </div>

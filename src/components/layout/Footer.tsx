@@ -98,8 +98,8 @@ const Footer = () => {
                 <a href="tel:+919736304663" className="text-white font-montserrat text-base hover:text-stockstrail-green-light transition-colors duration-300 underline">
                   +91 97363-04663
                 </a>
-                <a href="mailto:stockstrail@gmail.com" className="text-white font-montserrat text-base hover:text-stockstrail-green-light transition-colors duration-300 underline">
-                  stockstrail@gmail.com
+                <a href="mailto:connect@stockstrail.in" className="text-white font-montserrat text-base hover:text-stockstrail-green-light transition-colors duration-300 underline">
+                  connect@stockstrail.in
                 </a>
               </div>
               <Link href="/contact" className="flex items-center gap-4 cursor-pointer group hover:text-stockstrail-green-light transition-colors duration-300">

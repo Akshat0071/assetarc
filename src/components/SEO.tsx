@@ -45,7 +45,7 @@ const SEO = ({
       "@type": "ContactPoint",
       telephone: "+91-97363-04663",
       contactType: "customer service",
-      email: "stockstrail@gmail.com",
+      email: "connect@stockstrail.in",
       areaServed: "IN",
       availableLanguage: "English",
     },

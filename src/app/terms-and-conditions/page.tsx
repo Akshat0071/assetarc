@@ -204,8 +204,8 @@ const TermsAndConditions = () => {
               <div className="space-y-2 text-white/80">
                 <p>
                   <strong className="text-white">Email:</strong>{" "}
-                  <Link href="mailto:stockstrail@gmail.com" className="text-stockstrail-green-light hover:underline">
-                    stockstrail@gmail.com
+                  <Link href="mailto:connect@stockstrail.in" className="text-stockstrail-green-light hover:underline">
+                    connect@stockstrail.in
                   </Link>
                 </p>
                 <p>

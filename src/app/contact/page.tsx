@@ -138,10 +138,10 @@ const Contact = () => {
               <div className="group">
                 <h2 className="text-white text-sm uppercase tracking-widest mb-2">Email</h2>
                 <a
-                  href="mailto:stockstrail@gmail.com"
+                  href="mailto:connect@stockstrail.in"
                   className="underline block p-3 rounded-lg hover:text-stockstrail-green-light hover:bg-white/5 hover:shadow-[0_0_15px_rgba(0,255,151,0.2)] transition-all duration-300"
                 >
-                  <EmailIcon /> stockstrail@gmail.com
+                  <EmailIcon /> connect@stockstrail.in
                 </a>
               </div>
 
@@ -212,10 +212,10 @@ const Contact = () => {
               <div>
                 <h2 className="text-white text-sm uppercase tracking-widest mb-2">Email</h2>
                 <a
-                  href="mailto:stockstrail@gmail.com"
+                  href="mailto:connect@stockstrail.in"
                   className="underline block p-3 rounded-lg hover:bg-white/5 hover:text-stockstrail-green-light transition-all"
                 >
-                  <EmailIcon /> stockstrail@gmail.com
+                  <EmailIcon /> connect@stockstrail.in
                 </a>
               </div>
 
