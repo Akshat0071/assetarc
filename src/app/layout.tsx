@@ -2,7 +2,7 @@
 import "./globals.css";
 import { Inter, Work_Sans, Montserrat } from "next/font/google";
 import Script from "next/script";
-import SnowfallWrapper from "@/components/SnowfallWrapper";
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,14 +43,6 @@ export const metadata: Metadata = {
     "financial planning, investment, mutual funds, insurance, loan, fixed deposit, stockstrail",
   authors: [{ name: "Stockstrail" }],
 
-  // -----------------------------
-  // FAVICON - Auto-detected from app/favicon.ico
-  // Google will crawl this for search results
-  // -----------------------------
-
-  // -----------------------------
-  // SOCIAL SHARE META
-  // -----------------------------
   openGraph: {
     type: "website",
     locale: "en_IN",
@@ -164,7 +156,7 @@ export default function RootLayout({
       <body className="antialiased">
         <main className="relative min-h-screen">
           {children}
-          <SnowfallWrapper />
+
         </main>
       </body>
     </html>

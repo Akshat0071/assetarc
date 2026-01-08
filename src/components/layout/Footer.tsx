@@ -203,7 +203,7 @@ const Footer = () => {
             Terms and Conditions & Cancellation Policy
           </Link>
           <p className="text-white font-montserrat text-xs leading-relaxed">
-            © 2025 Stockstrail. All Rights Reserved.
+            © 2026 Stockstrail. All Rights Reserved.
           </p>
         </div>
 
