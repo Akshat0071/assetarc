@@ -194,6 +194,23 @@ const ServicesPage: React.FC = () => {
           />
 
           <SectionBlock
+            id="risk-profile"
+            title="Discover Your Investment Profile | RISK PROFILE"
+            description="Take our comprehensive 11-question risk assessment to understand your risk tolerance and investment preferences. Get personalized allocation recommendations based on your financial goals and risk appetite."
+            benefits={[
+              "Comprehensive 11-question risk profiling questionnaire",
+              "Instant risk category assessment (Conservative to Aggressive)",
+              "Personalized asset allocation recommendations",
+              "Investment horizon analysis",
+              "Track your risk profile changes over time",
+            ]}
+            cta="Check Your Risk Profile"
+            ctaLink="/check-risk-profile"
+            imageSrc="/services/others.webp"
+            imageAlt="Risk Profile Assessment"
+          />
+
+          <SectionBlock
             id="fd"
             title="Secure Savings, Guaranteed Growth | FD"
             description="Secure your savings with guaranteed returns through our fixed deposit schemes. Enjoy competitive interest rates with flexible tenure options ranging from 7 days to 10 years, backed by trusted financial institutions."

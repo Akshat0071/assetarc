@@ -2,8 +2,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ArrowRight, RefreshCw } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { ArrowRight, RefreshCw, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getCurrentUser } from "@/lib/supabase/client";
 import {
   Card,
   CardContent,
@@ -309,7 +311,11 @@ function formatScore(score?: number) {
 }
 
 export function RiskQuestionnaire() {
+  const router = useRouter();
   const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const totalScore = useMemo(() => {
     return riskQuestions.reduce((sum, q) => {
@@ -340,7 +346,71 @@ export function RiskQuestionnaire() {
     riskQuestions.filter((q) => answers[q.id]).length +
     (horizonAnswer ? 1 : 0);
 
-  const resetForm = () => setAnswers({});
+  const resetForm = () => {
+    setAnswers({});
+    setSubmitError(null);
+    setSubmitSuccess(false);
+  };
+
+  const handleSubmit = async () => {
+    // Check if all questions are answered
+    if (!riskToleranceAnswered || !horizonAnswer) {
+      setSubmitError("Please answer all questions before submitting.");
+      return;
+    }
+
+    // Check authentication
+    const user = await getCurrentUser();
+    if (!user) {
+      router.push("/sign-in?redirect=/risk-profile");
+      return;
+    }
+
+    setSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      // Format responses for the responses table (Q1, Q2, Q3... format)
+      const formattedResponses = Object.entries(answers).map(([questionId, optionId]) => ({
+        question_key: questionId.toUpperCase(), // q1 -> Q1
+        option_selected: optionId,
+      }));
+
+      const response = await fetch("/api/risk/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          responses: formattedResponses,
+          score: totalScore,
+          riskCategory: combinedAppetite || riskToleranceProfile,
+          investmentHorizon: horizonProfile,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to submit");
+      }
+
+      setSubmitSuccess(true);
+      
+      // Redirect to dashboard after 2 seconds
+      setTimeout(() => {
+        router.push("/dashboard");
+      }, 2000);
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error ? error.message : "Failed to submit. Please try again."
+      );
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const canSubmit = riskToleranceAnswered && horizonAnswer && !submitting && !submitSuccess;
 
   return (
     <section className="relative px-4 sm:px-6 lg:px-8 py-16">
@@ -543,118 +613,52 @@ export function RiskQuestionnaire() {
           </Card>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
+
+        {combinedAppetite && (
           <Card className="bg-white/5 border-white/10">
             <CardHeader>
-              <CardTitle className="text-white text-xl">
-                Risk tolerance score
-              </CardTitle>
+              <CardTitle className="text-white text-xl">Ready to Submit?</CardTitle>
               <CardDescription className="text-white/70">
-                Sum of questions 1-10
+                Save your risk profile and view it in your dashboard
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="flex items-baseline gap-3">
-                <span className="text-4xl font-semibold text-stockstrail-green-light">
-                  {riskToleranceAnswered ? totalScore : "—"}
-                </span>
-                <span className="text-white/60">/ 100</span>
-              </div>
-              <Progress value={(totalScore / 100) * 100} />
-              <div className="text-white/70 text-sm">
-                {riskToleranceAnswered
-                  ? `Mapped to ${riskToleranceProfile} profile`
-                  : "Answer all 10 scoring questions to view your profile."}
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white/5 border-white/10">
-            <CardHeader>
-              <CardTitle className="text-white text-xl">
-                Investment horizon
-              </CardTitle>
-              <CardDescription className="text-white/70">
-                Based on question 11
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="text-2xl font-semibold text-stockstrail-green-light">
-                {horizonProfile ?? "Pending"}
-              </div>
-              <p className="text-white/70 text-sm">
-                Shorter horizons temper risk appetite; longer horizons can
-                accommodate higher equity exposure.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-stockstrail-green-light/10 border border-stockstrail-green-light/40">
-            <CardHeader>
-              <CardTitle className="text-white text-xl">
-                Recommended profile
-              </CardTitle>
-              <CardDescription className="text-white/80">
-                Combining risk tolerance and horizon
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="text-2xl font-semibold text-stockstrail-green-light">
-                {combinedAppetite ?? "Pending"}
-              </div>
-              <p className="text-white/80 text-sm">
-                {combinedAppetite
-                  ? `Aligned to your risk score (${riskToleranceProfile}) and horizon (${horizonProfile}).`
-                  : "Complete all questions to see your recommended profile."}
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-
-        {combinedAppetite ? (
-          <Card className="bg-white/5 border-white/10">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-white text-xl">
-                Allocation guidance
-              </CardTitle>
-              <CardDescription className="text-white/70">
-                Indicative mix based on the recommended profile
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="grid gap-6 lg:grid-cols-2">
-              <div className="space-y-2">
-                <p className="text-sm uppercase tracking-wide text-white/60">
-                  Risk profile
-                </p>
-                <p className="text-3xl text-stockstrail-green-light font-semibold">
-                  {combinedAppetite}
-                </p>
-                <p className="text-white/80 text-sm leading-relaxed">
-                  {riskProfiles[combinedAppetite].description}
-                </p>
-              </div>
-              <div className="space-y-3 rounded-xl bg-white/5 border border-white/10 p-4">
-                <p className="text-sm uppercase tracking-wide text-white/60">
-                  Indicative allocation
-                </p>
-                <p className="text-xl text-white font-semibold">
-                  {riskProfiles[combinedAppetite].allocation}
-                </p>
-                <div className="flex flex-wrap gap-2 text-xs text-white/70">
-                  <span className="px-2 py-1 rounded-full bg-stockstrail-green-light/15 border border-stockstrail-green-light/40">
-                    Equity volatility accepted
-                  </span>
-                  <span className="px-2 py-1 rounded-full bg-white/10 border border-white/15">
-                    Diversify across caps & debt
-                  </span>
-                  <span className="px-2 py-1 rounded-full bg-white/10 border border-white/15">
-                    Review annually or on life events
-                  </span>
+              {submitError && (
+                <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                  {submitError}
                 </div>
-              </div>
+              )}
+
+              {submitSuccess && (
+                <div className="p-3 rounded-lg bg-stockstrail-green-light/10 border border-stockstrail-green-light/20 text-stockstrail-green-light text-sm">
+                  Success! Your risk profile has been saved. Redirecting to dashboard...
+                </div>
+              )}
+
+              <Button
+                onClick={handleSubmit}
+                disabled={!canSubmit}
+                className="w-full bg-stockstrail-green-light text-stockstrail-bg hover:bg-stockstrail-green-light/90 font-medium"
+              >
+                {submitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    Submitting...
+                  </>
+                ) : submitSuccess ? (
+                  <>
+                    ✓ Submitted
+                  </>
+                ) : (
+                  <>
+                    Submit Risk Profile
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </>
+                )}
+              </Button>
             </CardContent>
           </Card>
-        ) : null}
+        )}
 
         <Card className="bg-white/5 border-white/10">
           <CardHeader>

@@ -163,12 +163,14 @@ const Header = () => {
       hasDropdown: true,
       dropdownItems: [
         { name: 'Mutual Funds', href: '/services#mutual-funds' },
+        { name: 'Risk Profile', href: '/check-risk-profile' },
         { name: 'Fixed Deposit', href: '/services#fd' },
         { name: 'Insurance', href: '/services#insurance' },
         { name: 'Loan', href: '/services#loan' },
         { name: 'Other Services', href: '/services#others' },
       ],
     },
+    { name: 'About Us', href: '/about' },
     { name: 'Blog', href: '/blog' },
     {
       name: 'Calculators',
@@ -183,7 +185,6 @@ const Header = () => {
         { name: 'Tax Calculator', href: '/calculators?tab=TAX' },
       ],
     },
-    { name: 'About Us', href: '/about' },
   ];
 
   return (
@@ -323,9 +324,10 @@ const Header = () => {
 
               <Link
                 href="/lets-talk"
-                className="inline-flex items-center gap-4 px-6 py-4 border-2 border-white/20 rounded-full text-white font-medium mt-4 w-fit"
+                className="inline-flex items-center gap-4 px-6 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light transition-all duration-300 font-medium group w-fit"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
-                <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full"></div>
+                <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full group-hover:animate-pulse"></div>
                 Let&apos;s Talk
               </Link>
             </div>

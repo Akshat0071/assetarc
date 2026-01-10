@@ -117,6 +117,9 @@ const Footer = () => {
               <Link href="/services" className="block text-white font-work-sans text-base hover:text-stockstrail-green-light hover:translate-x-2 transition-all duration-300">
                 Services
               </Link>
+              <Link href="/about" className="block text-white font-work-sans text-base hover:text-stockstrail-green-light hover:translate-x-2 transition-all duration-300">
+                About Us
+              </Link>
               <Link href="/blog" className="block text-white font-work-sans text-base hover:text-stockstrail-green-light hover:translate-x-2 transition-all duration-300">
                 Blog
               </Link>

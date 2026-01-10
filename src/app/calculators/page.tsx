@@ -961,20 +961,6 @@ function CalculatorsPageContent() {
                       <li><span className="font-semibold italic">Gives clarity</span> on how compounding benefits your investments.</li>
                     </ul>
                   </div>
-                  <div className="space-y-3">
-                    <h3 className="text-white font-semibold underline">Formula Used</h3>
-                    <p className="bg-black/30 rounded-md p-3"><span className="font-semibold">M</span> = <span className="font-semibold">P</span> × {`{[(1 + i)^n – 1] / i}`} × (1 + i)</p>
-                    <ul className="list-disc pl-5 space-y-1 text-white/90">
-                      <li><span className="font-semibold">M</span> = Maturity amount</li>
-                      <li><span className="font-semibold">P</span> = Amount invested per interval</li>
-                      <li><span className="font-semibold">n</span> = Total number of intervals</li>
-                      <li><span className="font-semibold">i</span> = Periodic rate of return; effective monthly i = (1 + r)<sup>1/12</sup> − 1</li>
-                    </ul>
-                  </div>
-                  <div className="space-y-3">
-                    <h3 className="text-white font-semibold underline">Example</h3>
-                    <p>If you invest ₹1,000 every month for 12 months at 12% annual return, your total investment will be ₹12,000. The maturity amount will be approximately ₹12,766.</p>
-                  </div>
                   <h4 className="text-white/90 italic">👉 Use the SIP calculator below to estimate your investment growth.</h4>
                   <p className="text-white/60 text-xs">Note: Estimates exclude expense ratio/exit load and do not guarantee returns.</p>
                 </div>
@@ -995,21 +981,6 @@ function CalculatorsPageContent() {
                       <li><span className="font-semibold italic">Useful</span> for bonuses, inheritances, or surplus funds.</li>
                     </ul>
                   </div>
-                  <div className="space-y-3">
-                    <h3 className="text-white font-semibold underline">Formula Used</h3>
-                    <p className="bg-black/30 rounded-md p-3"><span className="font-semibold">A</span> = <span className="font-semibold">P</span> × (1 + r/n)<sup>n×t</sup></p>
-                    <ul className="list-disc pl-5 space-y-1 text-white/90">
-                      <li><span className="font-semibold">A</span> = Maturity amount</li>
-                      <li><span className="font-semibold">P</span> = Initial investment</li>
-                      <li><span className="font-semibold">r</span> = Annual return rate</li>
-                      <li><span className="font-semibold">n</span> = Compounding frequency</li>
-                      <li><span className="font-semibold">t</span> = Tenure in years</li>
-                    </ul>
-                  </div>
-                  <div className="space-y-3">
-                    <h3 className="text-white font-semibold underline">Example</h3>
-                    <p>Investing ₹1,00,000 for 10 years at 12% annual return will give a maturity value of around ₹3,10,585.</p>
-                  </div>
                   <h4 className="text-white/90 italic">👉 Use the lumpsum calculator to instantly project your potential returns.</h4>
                 </div>
               )}
@@ -1028,21 +999,6 @@ function CalculatorsPageContent() {
                       <li><span className="font-semibold italic">Helps compare</span> FD tenures and rates across banks and NBFCs.</li>
                       <li><span className="font-semibold italic">Useful</span> for planning risk-free financial goals.</li>
                     </ul>
-                  </div>
-                  <div className="space-y-3">
-                    <h3 className="text-white font-semibold underline">Formula Used</h3>
-                    <p className="bg-black/30 rounded-md p-3"><span className="font-semibold">A</span> = <span className="font-semibold">P</span> × (1 + r/n)<sup>n×t</sup> <span className="text-white/70">(Quarterly compounding: n = 4)</span></p>
-                    <ul className="list-disc pl-5 space-y-1 text-white/90">
-                      <li><span className="font-semibold">A</span> = Maturity amount</li>
-                      <li><span className="font-semibold">P</span> = Principal deposit</li>
-                      <li><span className="font-semibold">r</span> = Rate of interest</li>
-                      <li><span className="font-semibold">n</span> = Compounding frequency</li>
-                      <li><span className="font-semibold">t</span> = Tenure in years</li>
-                    </ul>
-                  </div>
-                  <div className="space-y-3">
-                    <h3 className="text-white font-semibold underline">Example</h3>
-                    <p>If you deposit ₹50,000 in an FD for 5 years at 6.5% annual interest, the maturity amount will be around ₹68,685.</p>
                   </div>
                   <h4 className="text-white/90 italic">👉 Try the FD calculator to plan safe and secure savings.</h4>
                   <p className="text-white/60 text-xs">Note: Bank policies, compounding conventions, and premature withdrawal charges may vary.</p>
@@ -1064,21 +1020,6 @@ function CalculatorsPageContent() {
                       <li><span className="font-semibold italic">Useful</span> for short- and medium-term goals like education or travel.</li>
                     </ul>
                   </div>
-                  <div className="space-y-3">
-                    <h3 className="text-white font-semibold underline">Formula Used</h3>
-                    <p className="bg-black/30 rounded-md p-3">M = P × [(1 + r/n)<sup>n×t</sup> – 1] / (1 – (1 + r/n)<sup>-1/3</sup>) <span className="text-white/70">(For monthly deposits with quarterly compounding)</span></p>
-                    <ul className="list-disc pl-5 space-y-1 text-white/90">
-                      <li><span className="font-semibold">M</span> = Maturity amount</li>
-                      <li><span className="font-semibold">P</span> = Monthly deposit</li>
-                      <li><span className="font-semibold">r</span> = Annual interest rate</li>
-                      <li><span className="font-semibold">n</span> = Compounding frequency</li>
-                      <li><span className="font-semibold">t</span> = Tenure in years</li>
-                    </ul>
-                  </div>
-                  <div className="space-y-3">
-                    <h3 className="text-white font-semibold underline">Example</h3>
-                    <p>If you deposit ₹5,000 every month for 3 years at 6% annual interest, your maturity value will be around ₹1,95,370.</p>
-                  </div>
                   <h4 className="text-white/90 italic">👉 Use the RD calculator to see how your disciplined savings can grow over time.</h4>
                 </div>
               )}
@@ -1098,19 +1039,6 @@ function CalculatorsPageContent() {
                       <li><span className="font-semibold italic">Helps compare</span> loan offers and repayment options</li>
                       <li><span className="font-semibold italic">Assists</span> in maintaining a healthy debt-to-income ratio</li>
                     </ul>
-                  </div>
-                  <div className="space-y-3">
-                    <h3 className="text-white font-semibold underline">Formula Used</h3>
-                    <p className="bg-black/30 rounded-md p-3">EMI = [P × R × (1+R)<sup>N</sup>] / [(1+R)<sup>N</sup> – 1]</p>
-                    <ul className="list-disc pl-5 space-y-1 text-white/90">
-                      <li><span className="font-semibold">P</span> = Principal loan amount</li>
-                      <li><span className="font-semibold">R</span> = Monthly interest rate</li>
-                      <li><span className="font-semibold">N</span> = Number of instalments</li>
-                    </ul>
-                  </div>
-                  <div className="space-y-3">
-                    <h3 className="text-white font-semibold underline">Example</h3>
-                    <p>For a loan of ₹10,00,000 at 6.5% annual interest for 5 years: EMI ≈ ₹19,566 per month. Total interest ≈ ₹1,73,969. Total payment ≈ ₹11,73,969.</p>
                   </div>
                   <h4 className="text-white/90 italic">👉 Enter your loan amount, interest rate, and tenure to instantly calculate your monthly EMIs and repayment schedule.</h4>
                 </div>
@@ -1152,10 +1080,6 @@ function CalculatorsPageContent() {
                       <li>₹20 Lakhs – ₹24 Lakhs → 25%</li>
                       <li>Above ₹24 Lakhs → 30%</li>
                     </ul>
-                  </div>
-                  <div className="space-y-3">
-                    <h3 className="text-white font-semibold underline">Example</h3>
-                    <p>If your annual income is ₹18,00,000: Taxable Income = ₹17,60,000; Tax as per slabs ≈ ₹1,52,000; 4% Cess ≈ ₹6,080; Total Tax ≈ ₹1,58,080.</p>
                   </div>
                   <h4 className="text-white/90 italic">👉 Use the income tax calculator below to instantly estimate your liability and plan smarter.</h4>
                 </div>

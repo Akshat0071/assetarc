@@ -65,7 +65,7 @@ const HeroSection = () => {
         </h2>
 
         {/* CTA */}
-        <div className="lg:mb-20">
+        <div className="lg:mb-20 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="/services"
             aria-label="Learn more about our financial services"
@@ -87,6 +87,31 @@ const HeroSection = () => {
           >
             <div className="w-2 h-2 sm:w-3 sm:h-3 bg-stockstrail-green-accent rounded-full" />
             Learn More About Our Services
+          </a>
+          <a
+            href="/check-risk-profile"
+            aria-label="Check your risk profile"
+            className="
+              inline-flex
+              items-center
+              gap-3 sm:gap-4
+              px-4 sm:px-6
+              py-3 sm:py-4
+              bg-transparent
+              border-2
+              border-white/20
+              rounded-full
+              text-white
+              hover:border-stockstrail-green-light
+              hover:text-stockstrail-green-light
+              transition-all
+              duration-300
+              font-medium
+              text-sm sm:text-base
+            "
+          >
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-stockstrail-green-accent rounded-full" />
+            Check Your Risk Profile
           </a>
         </div>
       </div>
