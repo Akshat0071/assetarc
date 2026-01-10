@@ -79,10 +79,19 @@ export async function signUpWithEmail(
  */
 export async function signInWithGoogle() {
   const supabase = createClient()
+  
+  // Use the current origin (works for both localhost and production)
+  const origin = typeof window !== 'undefined' ? window.location.origin : ''
+  const redirectTo = `${origin}/auth/callback`
+  
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: `${window.location.origin}/auth/callback`,
+      redirectTo,
+      queryParams: {
+        access_type: 'offline',
+        prompt: 'consent',
+      },
     },
   })
 

@@ -35,12 +35,18 @@ export function WelcomeModal() {
           sessionStorage.setItem("hasSeenWelcomeModal", "true");
         }
       }
-    } catch (error) {
-      // If there's an error, assume not authenticated and show modal
-      const hasSeenModal = sessionStorage.getItem("hasSeenWelcomeModal");
-      if (!hasSeenModal) {
-        setOpen(true);
-        sessionStorage.setItem("hasSeenWelcomeModal", "true");
+    } catch {
+      // Silently handle auth errors (e.g., session missing during OAuth flow)
+      // Only show modal if no code is in URL (meaning not in OAuth flow)
+      const urlParams = new URLSearchParams(window.location.search);
+      const hasCode = urlParams.has("code");
+      
+      if (!hasCode) {
+        const hasSeenModal = sessionStorage.getItem("hasSeenWelcomeModal");
+        if (!hasSeenModal) {
+          setOpen(true);
+          sessionStorage.setItem("hasSeenWelcomeModal", "true");
+        }
       }
     } finally {
       setLoading(false);
