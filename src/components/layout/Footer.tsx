@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { ArrowRight, Facebook, Linkedin, Instagram, Send } from 'lucide-react';
 

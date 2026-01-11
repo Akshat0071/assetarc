@@ -19,7 +19,13 @@ export function WelcomeModal() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    checkAuthAndShowModal();
+    // Delay showing modal by 6-8 seconds
+    const delay = Math.random() * 2000 + 6000; // Random delay between 6-8 seconds
+    const timer = setTimeout(() => {
+      checkAuthAndShowModal();
+    }, delay);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const checkAuthAndShowModal = async () => {
@@ -102,13 +108,13 @@ export function WelcomeModal() {
   
         {/* CTA Buttons */}
         <div className="flex flex-col gap-3 pt-6">
-          <Button
+          <button
             onClick={handleGetStarted}
-            className="w-full bg-stockstrail-green-light text-stockstrail-bg hover:bg-stockstrail-green-light/90 font-medium h-11 rounded-lg"
+            className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light transition-all duration-300 font-medium text-sm sm:text-base"
           >
-            Check My Risk Profile
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </Button>
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-stockstrail-green-accent rounded-full" />
+            Check Your Risk Profile
+          </button>
         </div>
       </DialogContent>
     </Dialog>

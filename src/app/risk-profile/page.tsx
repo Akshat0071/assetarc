@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
-import Layout from "@/components/layout/Layout";
+import SimpleLayout from "@/components/layout/SimpleLayout";
 import RiskQuestionnaire from "@/components/risk/RiskQuestionnaire";
 import SEO from "@/components/SEO";
 import { getServerUser, getServerProfile } from "@/lib/supabase/server";
@@ -25,14 +25,14 @@ export default async function RiskProfilePage() {
   }
 
   return (
-    <Layout>
+    <SimpleLayout>
       <SEO
         title="Risk Profiling Questionnaire | Stockstrail"
         description="Gauge your risk tolerance and investment horizon with Stockstrail's 11-question assessment. View your risk profile and indicative allocation instantly."
         url="/risk-profile"
       />
       <RiskQuestionnaire />
-    </Layout>
+    </SimpleLayout>
   );
 }
 

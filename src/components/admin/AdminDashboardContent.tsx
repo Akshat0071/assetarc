@@ -147,7 +147,7 @@ export function AdminDashboardContent({
       }
 
       router.refresh();
-    } catch (err: any) {
+    } catch (err) {
       console.error("Error deleting attempt:", err);
       alert("Failed to delete attempt. Please try again.");
     } finally {

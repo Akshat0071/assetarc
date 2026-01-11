@@ -78,7 +78,7 @@ export function DashboardContent({
 
       // Refresh the page to update the list
       router.refresh();
-    } catch (err: any) {
+    } catch (err) {
       console.error("Error deleting attempt:", err);
       alert("Failed to delete attempt. Please try again.");
     } finally {
@@ -167,13 +167,14 @@ export function DashboardContent({
                 </div>
 
                 <div className="pt-4 border-t border-white/10">
-                  <Link
-                    href="/risk-profile"
-                    className="inline-flex items-center gap-2 text-stockstrail-green-light hover:text-stockstrail-green-accent transition-colors text-sm font-medium"
+                  <Button
+                    onClick={() => latestAttempt && handleViewResponses(latestAttempt)}
+                    variant="outline"
+                    className="w-full border-white/20 text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light"
                   >
-                    View Full Questionnaire
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
+                    View Response
+                    <Eye className="w-4 h-4 ml-2" />
+                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -210,16 +211,16 @@ export function DashboardContent({
                   </div>
                 )}
                 <div className={`pt-4 ${allAttempts.length > 0 ? 'border-t border-white/10' : ''}`}>
-                  <Button
+                  <button
                     onClick={() => router.push("/risk-profile")}
                     disabled={!canTakeAssessment}
-                    className="w-full bg-stockstrail-green-light text-stockstrail-bg hover:bg-stockstrail-green-light/90 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light transition-all duration-300 font-medium text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed w-full justify-center"
                   >
+                    <div className="w-2 h-2 sm:w-3 sm:h-3 bg-stockstrail-green-accent rounded-full" />
                     {canTakeAssessment
                       ? "Take Assessment"
                       : "Maximum Attempts Reached (5/5)"}
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
+                  </button>
                 </div>
               </CardContent>
             </Card>

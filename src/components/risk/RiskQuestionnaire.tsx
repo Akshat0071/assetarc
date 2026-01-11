@@ -508,9 +508,6 @@ export function RiskQuestionnaire() {
                         <span className="text-white font-medium">
                           {option.label}
                         </span>
-                        <span className="text-xs text-white/60">
-                          Score: {option.score}
-                        </span>
                       </div>
                     </label>
                   ))}
@@ -551,9 +548,6 @@ export function RiskQuestionnaire() {
                       <span className="text-white font-medium">
                         {option.label}
                       </span>
-                      <span className="text-xs text-white/60">
-                        Horizon profile: {horizonProfiles[option.id]}
-                      </span>
                     </div>
                   </label>
                 ))}
@@ -562,6 +556,16 @@ export function RiskQuestionnaire() {
           </Card>
         </div>
 
+        {/* Reset Form Button */}
+        <div className="flex items-center justify-center flex-wrap gap-3">
+          <button
+            onClick={resetForm}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-white/20 text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light transition-all duration-300 font-medium text-sm sm:text-base"
+          >
+            <RefreshCw className="w-4 h-4" />
+            Reset Form
+          </button>
+        </div>
 
         {combinedAppetite && (
           <Card className="bg-white/5 border-white/10">
