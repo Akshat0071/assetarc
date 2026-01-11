@@ -588,14 +588,14 @@ export function RiskQuestionnaire() {
                 </div>
               )}
 
-              <Button
+              <button
                 onClick={handleSubmit}
                 disabled={!canSubmit}
-                className="w-full bg-stockstrail-green-light text-stockstrail-bg hover:bg-stockstrail-green-light/90 font-medium"
+                className="w-full inline-flex items-center justify-center gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light transition-all duration-300 font-medium text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {submitting ? (
                   <>
-                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    <Loader2 className="w-4 h-4 animate-spin" />
                     Submitting...
                   </>
                 ) : submitSuccess ? (
@@ -604,11 +604,11 @@ export function RiskQuestionnaire() {
                   </>
                 ) : (
                   <>
+                    <div className="w-2 h-2 sm:w-3 sm:h-3 bg-stockstrail-green-accent rounded-full" />
                     Submit Risk Profile
-                    <ArrowRight className="w-4 h-4 ml-2" />
                   </>
                 )}
-              </Button>
+              </button>
             </CardContent>
           </Card>
         )}
