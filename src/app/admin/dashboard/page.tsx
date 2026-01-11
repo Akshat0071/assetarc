@@ -133,16 +133,39 @@ export default async function AdminDashboardPage({
   const totalPages = Math.ceil((count || 0) / pageSize);
 
   // Fetch reviews
-  const { data: reviews = [] } = await supabase
-    .from('reviews')
-    .select('*')
-    .order('created_at', { ascending: false });
+  let reviews: Review[] = [];
+  let queriesData: QueryRecord[] = [];
+
+  try {
+    const { data: reviewsData, error: reviewsError } = await supabase
+      .from('reviews')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (reviewsError) {
+      console.error("Error fetching reviews:", reviewsError);
+    } else {
+      reviews = (reviewsData as Review[]) || [];
+    }
+  } catch (err) {
+    console.error("Exception fetching reviews:", err);
+  }
 
   // Fetch queries
-  const { data: queries = [] } = await supabase
-    .from('queries')
-    .select('*')
-    .order('created_at', { ascending: false });
+  try {
+    const { data: queriesDataResponse, error: queriesError } = await supabase
+      .from('queries')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (queriesError) {
+      console.error("Error fetching queries:", queriesError);
+    } else {
+      queriesData = (queriesDataResponse as QueryRecord[]) || [];
+    }
+  } catch (err) {
+    console.error("Exception fetching queries:", err);
+  }
 
   return (
     <SimpleLayout>
@@ -160,8 +183,8 @@ export default async function AdminDashboardPage({
           category: params.category || "",
           sort: params.sort || "highest",
         }}
-        reviews={(reviews as Review[]) || []}
-        queries={(queries as QueryRecord[]) || []}
+        reviews={reviews}
+        queries={queriesData}
       />
 
     </SimpleLayout>
