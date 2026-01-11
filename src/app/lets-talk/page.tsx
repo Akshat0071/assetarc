@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Layout from '@/components/layout/Layout';
-import { addQuery } from '@/lib/queries';
+import { addQuery } from '@/lib/database/queries';
 import { Facebook, Linkedin, Instagram, Send } from 'lucide-react';
 
 /* ---------------- ICON COMPONENTS ---------------- */

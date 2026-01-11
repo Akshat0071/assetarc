@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { fetchBlogPosts } from '@/lib/blog'
+import { fetchBlogPosts } from '@/lib/database/blog'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://stockstrail.in'

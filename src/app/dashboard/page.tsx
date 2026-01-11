@@ -1,8 +1,8 @@
 import { redirect } from "next/navigation";
 import { createClient, getServerUser, getServerProfile } from "@/lib/supabase/server";
 import SimpleLayout from "@/components/layout/SimpleLayout";
-import SEO from "@/components/SEO";
-import { DashboardContent } from "@/components/dashboard/DashboardContent";
+import SEO from "@/components/common/SEO";
+import { DashboardContent } from "@/components/features/risk-assessment/dashboard/DashboardContent";
 import type { RiskAttempt } from "@/lib/supabase/types";
 
 export const metadata = {

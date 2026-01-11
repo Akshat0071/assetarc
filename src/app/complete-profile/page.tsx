@@ -13,7 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import SimpleLayout from "@/components/layout/SimpleLayout";
-import SEO from "@/components/SEO";
+import SEO from "@/components/common/SEO";
 import { Loader2 } from "lucide-react";
 
 export default function CompleteProfilePage() {

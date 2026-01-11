@@ -15,8 +15,8 @@ import {
 import type { User } from "@supabase/supabase-js";
 import type { Profile, RiskAttempt } from "@/lib/supabase/types";
 import { formatDate } from "@/lib/utils";
-import { RiskAnalysisModal } from "./RiskAnalysisModal";
-import { ResponsesModal } from "./ResponsesModal";
+import { RiskAnalysisModal } from "../modals/RiskAnalysisModal";
+import { ResponsesModal } from "../modals/ResponsesModal";
 import { createClient } from "@/lib/supabase/client";
 
 interface DashboardContentProps {

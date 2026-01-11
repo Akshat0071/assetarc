@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import SimpleLayout from "@/components/layout/SimpleLayout";
 import RiskQuestionnaire from "@/components/risk/RiskQuestionnaire";
-import SEO from "@/components/SEO";
+import SEO from "@/components/common/SEO";
 import { getServerUser, getServerProfile } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {

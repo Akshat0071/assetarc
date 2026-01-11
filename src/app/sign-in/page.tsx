@@ -14,7 +14,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import SimpleLayout from "@/components/layout/SimpleLayout";
-import SEO from "@/components/SEO";
+import SEO from "@/components/common/SEO";
 
 function SignInContent() {
   const router = useRouter();

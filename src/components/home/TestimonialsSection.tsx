@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { Review } from '@/lib/supabase';
-import { addReview, getRandomReviews } from '@/lib/reviews';
+import { addReview, getRandomReviews } from '@/lib/database/reviews';
 
 const TestimonialsSectionComponent = () => {
     const [currentTestimonial, setCurrentTestimonial] = useState(0);

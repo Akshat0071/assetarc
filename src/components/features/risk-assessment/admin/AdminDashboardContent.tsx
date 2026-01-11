@@ -5,8 +5,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Search, Filter, ArrowUpDown, Eye, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { RiskAnalysisModal } from "@/components/dashboard/RiskAnalysisModal";
-import { ResponsesModal } from "@/components/dashboard/ResponsesModal";
+import { RiskAnalysisModal } from "@/components/features/risk-assessment/modals/RiskAnalysisModal";
+import { ResponsesModal } from "@/components/features/risk-assessment/modals/ResponsesModal";
 import { createClient } from "@/lib/supabase/client";
 import {
   Card,
@@ -23,7 +23,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import type { RiskAttemptWithProfile } from "@/lib/supabase/types";
+import type { Review, QueryRecord } from "@/lib/supabase";
 import { formatDate } from "@/lib/utils";
+import { AdminReviewsContent } from "./AdminReviewsContent";
+import { AdminQueriesContent } from "./AdminQueriesContent";
 
 interface AdminDashboardContentProps {
   attempts: RiskAttemptWithProfile[];
@@ -34,6 +37,8 @@ interface AdminDashboardContentProps {
     category: string;
     sort: string;
   };
+  reviews: Review[];
+  queries: QueryRecord[];
 }
 
 const riskCategories = [
@@ -52,14 +57,19 @@ const riskCategoryColors = {
   Aggressive: "bg-red-500/20 text-red-400 border-red-500/40",
 };
 
+type TabType = "attempts" | "reviews" | "queries";
+
 export function AdminDashboardContent({
   attempts,
   currentPage,
   totalPages,
   filters,
+  reviews,
+  queries,
 }: AdminDashboardContentProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const [activeTab, setActiveTab] = useState<TabType>("attempts");
   const [emailFilter, setEmailFilter] = useState(filters.email);
   const [categoryFilter, setCategoryFilter] = useState(filters.category || "all");
   const [sortFilter, setSortFilter] = useState(filters.sort || "highest");
@@ -162,29 +172,71 @@ export function AdminDashboardContent({
   };
 
   return (
-    <section className="relative px-4 sm:px-6 lg:px-8 py-16 min-h-screen">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#072923] via-[#031815] to-[#010d0c] opacity-90" />
-      <div className="max-w-7xl mx-auto space-y-8">
-        {/* Header */}
-        <header className="space-y-2">
-          <h1 className="font-product-sans text-4xl sm:text-5xl font-normal text-white">
-            Admin <span className="gradient-text">Dashboard</span>
-          </h1>
-          <p className="text-white/70 text-lg">
-            Manage and view all user risk profiling attempts
-          </p>
-        </header>
+    <>
+      {/* Tab Navigation */}
+      <div className="sticky top-0 z-50 bg-gradient-to-b from-[#072923] via-[#031815] to-[#010d0c] border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex gap-4 overflow-x-auto">
+            <button
+              onClick={() => setActiveTab("attempts")}
+              className={`px-4 py-3 font-medium text-sm sm:text-base transition-colors border-b-2 ${
+                activeTab === "attempts"
+                  ? "text-stockstrail-green-light border-stockstrail-green-light"
+                  : "text-white/70 hover:text-white border-transparent hover:border-white/30"
+              }`}
+            >
+              Risk Attempts ({attempts.length})
+            </button>
+            <button
+              onClick={() => setActiveTab("reviews")}
+              className={`px-4 py-3 font-medium text-sm sm:text-base transition-colors border-b-2 ${
+                activeTab === "reviews"
+                  ? "text-stockstrail-green-light border-stockstrail-green-light"
+                  : "text-white/70 hover:text-white border-transparent hover:border-white/30"
+              }`}
+            >
+              Reviews ({reviews.length})
+            </button>
+            <button
+              onClick={() => setActiveTab("queries")}
+              className={`px-4 py-3 font-medium text-sm sm:text-base transition-colors border-b-2 ${
+                activeTab === "queries"
+                  ? "text-stockstrail-green-light border-stockstrail-green-light"
+                  : "text-white/70 hover:text-white border-transparent hover:border-white/30"
+              }`}
+            >
+              Queries ({queries.length})
+            </button>
+          </div>
+        </div>
+      </div>
 
-        {/* Filters */}
-        <Card className="bg-white/5 border-white/10">
-          <CardHeader>
-            <CardTitle className="text-white text-xl flex items-center gap-2">
-              <Filter className="w-5 h-5 text-stockstrail-green-light" />
-              Filters
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid gap-4 md:grid-cols-3">
+      {/* Tab Content */}
+      {activeTab === "attempts" && (
+        <section className="relative px-4 sm:px-6 lg:px-8 py-16 min-h-screen">
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#072923] via-[#031815] to-[#010d0c] opacity-90" />
+          <div className="max-w-7xl mx-auto space-y-8">
+            {/* Header and Filters */}
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+              <header className="space-y-2 flex-1">
+                <h1 className="font-product-sans text-4xl sm:text-5xl font-normal text-white">
+                  Risk <span className="gradient-text">Attempts</span>
+                </h1>
+                <p className="text-white/70 text-lg">
+                  Manage and view all user risk profiling attempts
+                </p>
+              </header>
+
+              {/* Filters */}
+              <Card className="bg-white/5 border-white/10 lg:w-80 xl:w-96 lg:flex-shrink-0">
+            <CardHeader>
+              <CardTitle className="text-white text-xl flex items-center gap-2">
+                <Filter className="w-5 h-5 text-stockstrail-green-light" />
+                Filters
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-4 md:grid-cols-3">
               <div className="space-y-2">
                 <label htmlFor="email" className="text-white/70 text-sm">
                   Filter by Email (Live Search)
@@ -276,14 +328,15 @@ export function AdminDashboardContent({
               </div>
             </div>
           </CardContent>
-        </Card>
+          </Card>
+        </div>
 
         {/* Results */}
         <Card className="bg-white/5 border-white/10">
           <CardHeader>
             <CardTitle className="text-white text-xl flex items-center gap-2">
               <ArrowUpDown className="w-5 h-5 text-stockstrail-green-light" />
-              Risk Attempts (Sorted by Highest Score)
+              Risk Attempts
             </CardTitle>
             <CardDescription className="text-white/70">
               Showing {attempts.length} result{attempts.length !== 1 ? "s" : ""}
@@ -466,6 +519,14 @@ export function AdminDashboardContent({
           </>
         )}
       </div>
-    </section>
+        </section>
+      )}
+
+      {/* Reviews Tab */}
+      {activeTab === "reviews" && <AdminReviewsContent reviews={reviews} />}
+
+      {/* Queries Tab */}
+      {activeTab === "queries" && <AdminQueriesContent queries={queries} />}
+    </>
   );
 }

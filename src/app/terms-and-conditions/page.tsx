@@ -1,7 +1,7 @@
 "use client";
 
 import Layout from "@/components/layout/Layout";
-import SEO from "@/components/SEO";
+import SEO from "@/components/common/SEO";
 import Link from "next/link";
 
 const TermsAndConditions = () => {

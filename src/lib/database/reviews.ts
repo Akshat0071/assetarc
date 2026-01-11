@@ -1,4 +1,4 @@
-import { supabase, Review } from './supabase'
+import { supabase, Review } from '../supabase'
 
 // Add a new review to the database
 export const addReview = async (reviewData: Omit<Review, 'id' | 'created_at'>) => {

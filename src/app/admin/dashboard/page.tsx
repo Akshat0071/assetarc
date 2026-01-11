@@ -1,20 +1,28 @@
+
 import { redirect } from "next/navigation";
 import { createClient, getServerUser, getServerProfile } from "@/lib/supabase/server";
 import SimpleLayout from "@/components/layout/SimpleLayout";
-import SEO from "@/components/SEO";
-import { AdminDashboardContent } from "@/components/admin/AdminDashboardContent";
+import SEO from "@/components/common/SEO";
+import { AdminDashboardContent } from "@/components/features/risk-assessment/admin/AdminDashboardContent";
+import { AdminReviewsContent } from "@/components/features/risk-assessment/admin/AdminReviewsContent";
+import { AdminQueriesContent } from "@/components/features/risk-assessment/admin/AdminQueriesContent";
 import type { RiskAttemptWithProfile } from "@/lib/supabase/types";
+import type { Review, QueryRecord } from "@/lib/supabase";
 
 export const metadata = {
   title: "Admin Dashboard | Stockstrail",
   description: "Admin panel for managing risk profiles",
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function AdminDashboardPage({
   searchParams,
 }: {
-  searchParams: { page?: string; email?: string; category?: string; sort?: string };
+  searchParams: Promise<{ page?: string; email?: string; category?: string; sort?: string }> | { page?: string; email?: string; category?: string; sort?: string };
 }) {
+  // Handle Next.js 15+ searchParams Promise
+  const params = searchParams instanceof Promise ? await searchParams : searchParams;
    const user = await getServerUser();
 
   if (!user) {
@@ -34,11 +42,11 @@ export default async function AdminDashboardPage({
 
   // Get user IDs for email filter if needed (partial match)
   let userIds: string[] | null = null;
-  if (searchParams.email) {
+  if (params.email) {
     const { data: profiles } = await supabase
       .from("profiles")
       .select("id")
-      .ilike("email", `%${searchParams.email}%`);
+      .ilike("email", `%${params.email}%`);
     
     if (profiles && profiles.length > 0) {
       userIds = profiles.map((p) => p.id);
@@ -71,12 +79,12 @@ export default async function AdminDashboardPage({
     }
   }
 
-  if (searchParams.category && searchParams.category !== "all") {
-    query = query.eq("risk_category", searchParams.category);
+  if (params.category && params.category !== "all") {
+    query = query.eq("risk_category", params.category);
   }
 
   // Apply sorting
-  const sortOption = searchParams.sort || "highest";
+  const sortOption = params.sort || "highest";
   switch (sortOption) {
     case "lowest":
       query = query.order("score", { ascending: true });
@@ -92,7 +100,7 @@ export default async function AdminDashboardPage({
   }
 
   // Pagination
-  const page = parseInt(searchParams.page || "1");
+  const page = parseInt(params.page || "1");
   const pageSize = 20;
   const from = (page - 1) * pageSize;
   const to = from + pageSize - 1;
@@ -116,13 +124,25 @@ export default async function AdminDashboardPage({
     }
   }
 
-  if (searchParams.category && searchParams.category !== "all") {
-    countQuery = countQuery.eq("risk_category", searchParams.category);
+  if (params.category && params.category !== "all") {
+    countQuery = countQuery.eq("risk_category", params.category);
   }
 
   const { count } = await countQuery;
 
   const totalPages = Math.ceil((count || 0) / pageSize);
+
+  // Fetch reviews
+  const { data: reviews = [] } = await supabase
+    .from('reviews')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  // Fetch queries
+  const { data: queries = [] } = await supabase
+    .from('queries')
+    .select('*')
+    .order('created_at', { ascending: false });
 
   return (
     <SimpleLayout>
@@ -136,11 +156,14 @@ export default async function AdminDashboardPage({
         currentPage={page}
         totalPages={totalPages}
         filters={{
-          email: searchParams.email || "",
-          category: searchParams.category || "",
-          sort: searchParams.sort || "highest",
+          email: params.email || "",
+          category: params.category || "",
+          sort: params.sort || "highest",
         }}
+        reviews={(reviews as Review[]) || []}
+        queries={(queries as QueryRecord[]) || []}
       />
+
     </SimpleLayout>
   );
 }
