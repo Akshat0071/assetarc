@@ -13,7 +13,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Layout from "@/components/layout/Layout";
+import SimpleLayout from "@/components/layout/SimpleLayout";
 import SEO from "@/components/SEO";
 import { Loader2 } from "lucide-react";
 
@@ -98,12 +98,15 @@ export default function CompleteProfilePage() {
       }
 
       const supabase = createClient();
+      
+      // Update the phone number in the profile (profile should already exist from trigger)
       const { error: updateError } = await supabase
         .from("profiles")
         .update({ phone_number: cleanedPhone })
         .eq("id", user.id);
 
       if (updateError) {
+        console.error("Error updating profile:", updateError);
         throw updateError;
       }
 
@@ -112,6 +115,7 @@ export default function CompleteProfilePage() {
         .from("risk_attempts")
         .select("id")
         .eq("user_id", user.id)
+        .gte("visibility", 1)
         .limit(1);
 
       if (attempts && attempts.length > 0) {
@@ -119,25 +123,26 @@ export default function CompleteProfilePage() {
       } else {
         router.push("/risk-profile");
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error("Error updating profile:", err);
-      setError(err instanceof Error ? err.message : "Failed to save phone number. Please try again.");
+      const errorMessage = err?.message || err?.error_description || "Failed to save phone number. Please try again.";
+      setError(errorMessage);
       setLoading(false);
     }
   };
 
   if (checking) {
     return (
-      <Layout>
+      <SimpleLayout>
         <section className="relative px-4 sm:px-6 lg:px-8 py-16 min-h-screen flex items-center justify-center">
           <div className="text-white">Loading...</div>
         </section>
-      </Layout>
+      </SimpleLayout>
     );
   }
 
   return (
-    <Layout>
+    <SimpleLayout>
       <SEO
         title="Complete Your Profile | Stockstrail"
         description="Add your phone number to complete your profile"
@@ -203,6 +208,6 @@ export default function CompleteProfilePage() {
           </Card>
         </div>
       </section>
-    </Layout>
+    </SimpleLayout>
   );
 }

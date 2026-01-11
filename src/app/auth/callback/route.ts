@@ -22,7 +22,8 @@ export async function GET(request: Request) {
     
     if (error) {
       console.error('Error exchanging code for session:', error)
-      return NextResponse.redirect(new URL('/sign-in?error=auth_failed', requestUrl.origin))
+      const signInPath = next.startsWith('/admin') ? '/admin/sign-in' : '/sign-in'
+      return NextResponse.redirect(new URL(`${signInPath}?error=auth_failed`, requestUrl.origin))
     }
 
     // Get the user from the session
@@ -30,13 +31,14 @@ export async function GET(request: Request) {
     
     if (userError || !user) {
       console.error('Error getting user after OAuth:', userError)
-      return NextResponse.redirect(new URL('/sign-in?error=user_fetch_failed', requestUrl.origin))
+      const signInPath = next.startsWith('/admin') ? '/admin/sign-in' : '/sign-in'
+      return NextResponse.redirect(new URL(`${signInPath}?error=user_fetch_failed`, requestUrl.origin))
     }
 
-    // Check if phone number exists in profile
+    // Get profile to check role and phone number
     const { data: profile, error: profileError } = await supabase
       .from('profiles')
-      .select('phone_number')
+      .select('phone_number, role')
       .eq('id', user.id)
       .single()
 
@@ -45,7 +47,12 @@ export async function GET(request: Request) {
       console.error('Error fetching profile:', profileError)
     }
 
-    // If no phone number, redirect to complete-profile
+    // If admin user, skip complete-profile and go directly to admin dashboard
+    if (profile?.role === 'admin') {
+      return NextResponse.redirect(new URL('/admin/dashboard', requestUrl.origin))
+    }
+
+    // For regular users, check if phone number exists
     if (!profile?.phone_number) {
       return NextResponse.redirect(new URL('/complete-profile', requestUrl.origin))
     }
@@ -63,8 +70,8 @@ export async function GET(request: Request) {
       return NextResponse.redirect(new URL('/risk-profile', requestUrl.origin))
     }
 
-    // User has attempts, redirect to dashboard
-    return NextResponse.redirect(new URL('/dashboard', requestUrl.origin))
+    // User has attempts, redirect to requested page or dashboard
+    return NextResponse.redirect(new URL(next, requestUrl.origin))
   }
 
   // No code provided, redirect to sign-in

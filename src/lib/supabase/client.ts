@@ -23,6 +23,7 @@ export function createClient() {
 
 /**
  * Get the current authenticated user
+ * Handles invalid JWT errors by clearing the session
  */
 export async function getCurrentUser(): Promise<User | null> {
   const supabase = createClient()
@@ -32,7 +33,23 @@ export async function getCurrentUser(): Promise<User | null> {
   } = await supabase.auth.getUser()
 
   if (error) {
-    console.error('Error getting user:', error)
+    // If the JWT user doesn't exist (invalid/stale session), clear it
+    // This happens when the user was deleted or the JWT is invalid
+    const errorMessage = error.message?.toLowerCase() || ''
+    if (
+      errorMessage.includes('does not exist') ||
+      errorMessage.includes('jwt') ||
+      errorMessage.includes('user') && errorMessage.includes('claim')
+    ) {
+      // Clear the invalid session silently (local scope only, doesn't refresh)
+      try {
+        await supabase.auth.signOut({ scope: 'local' })
+      } catch {
+        // Ignore sign out errors
+      }
+      return null
+    }
+    // For other errors, just return null (don't log to avoid console spam)
     return null
   }
 
@@ -77,12 +94,13 @@ export async function signUpWithEmail(
 /**
  * Sign in with Google OAuth
  */
-export async function signInWithGoogle() {
+export async function signInWithGoogle(redirectPath?: string) {
   const supabase = createClient()
   
   // Use the current origin (works for both localhost and production)
   const origin = typeof window !== 'undefined' ? window.location.origin : ''
-  const redirectTo = `${origin}/auth/callback`
+  const nextPath = redirectPath || '/dashboard'
+  const redirectTo = `${origin}/auth/callback?next=${encodeURIComponent(nextPath)}`
   
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',

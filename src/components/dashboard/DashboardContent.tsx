@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, TrendingUp, Calendar, Award, Eye, Trash2 } from "lucide-react";
+import { ArrowRight, TrendingUp, Calendar, Award, Eye, Trash2, ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -92,15 +92,26 @@ export function DashboardContent({
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Header */}
         <header className="space-y-2">
-          <h1 className="font-product-sans text-4xl sm:text-5xl font-normal text-white">
-            Welcome back,{" "}
-            <span className="gradient-text">
-              {profile?.full_name || user.email?.split("@")[0] || "User"}
-            </span>
-          </h1>
-          <p className="text-white/70 text-lg">
-            Manage your risk profile and track your investment journey
-          </p>
+          <div className="flex items-start justify-between gap-4">
+            <div className="flex-1">
+              <h1 className="font-product-sans text-4xl sm:text-5xl font-normal text-white">
+                Welcome back,{" "}
+                <span className="gradient-text">
+                  {profile?.full_name || user.email?.split("@")[0] || "User"}
+                </span>
+              </h1>
+              <p className="text-white/70 text-lg">
+                Manage your risk profile and track your investment journey
+              </p>
+            </div>
+            <Link 
+              href="/" 
+              className="inline-flex items-center text-white/50 hover:text-stockstrail-green-light transition-colors duration-300 font-work-sans text-sm sm:text-base group shrink-0"
+            >
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
+              Back to Home
+            </Link>
+          </div>
         </header>
 
         {/* Latest Risk Profile */}
@@ -198,6 +209,18 @@ export function DashboardContent({
                     </p>
                   </div>
                 )}
+                <div className={`pt-4 ${allAttempts.length > 0 ? 'border-t border-white/10' : ''}`}>
+                  <Button
+                    onClick={() => router.push("/risk-profile")}
+                    disabled={!canTakeAssessment}
+                    className="w-full bg-stockstrail-green-light text-stockstrail-bg hover:bg-stockstrail-green-light/90 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {canTakeAssessment
+                      ? "Take Assessment"
+                      : "Maximum Attempts Reached (5/5)"}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -219,22 +242,6 @@ export function DashboardContent({
               </Button>
             </CardContent>
           </Card>
-        )}
-
-        {/* Take Assessment Button */}
-        {latestAttempt && (
-          <div className="flex justify-center">
-            <Button
-              onClick={() => router.push("/risk-profile")}
-              disabled={!canTakeAssessment}
-              className="bg-stockstrail-green-light text-stockstrail-bg hover:bg-stockstrail-green-light/90 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {canTakeAssessment
-                ? "Take Another Assessment"
-                : "Maximum Attempts Reached (5/5)"}
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </div>
         )}
 
         {/* Attempts History */}

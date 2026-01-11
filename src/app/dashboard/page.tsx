@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { createClient, getServerUser, getServerProfile } from "@/lib/supabase/server";
-import Layout from "@/components/layout/Layout";
+import SimpleLayout from "@/components/layout/SimpleLayout";
 import SEO from "@/components/SEO";
 import { DashboardContent } from "@/components/dashboard/DashboardContent";
 import type { RiskAttempt } from "@/lib/supabase/types";
@@ -37,7 +37,7 @@ export default async function DashboardPage() {
   const canTakeAssessment = attemptCount < 5;
 
   return (
-    <Layout>
+    <SimpleLayout>
       <SEO
         title="Dashboard | Stockstrail"
         description="View your risk profile and investment history"
@@ -50,6 +50,6 @@ export default async function DashboardPage() {
         allAttempts={(attempts as RiskAttempt[]) || []}
         canTakeAssessment={canTakeAssessment}
       />
-    </Layout>
+    </SimpleLayout>
   );
 }

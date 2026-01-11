@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Link from "next/link";
 import { Loader2 } from "lucide-react";
-import { signInWithGoogle, getCurrentUser } from "@/lib/supabase/client";
+import { signInWithGoogle } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -16,34 +15,29 @@ import {
 import SimpleLayout from "@/components/layout/SimpleLayout";
 import SEO from "@/components/SEO";
 
-function SignInContent() {
+function AdminSignInContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const errorParam = searchParams.get("error");
-  const redirectParam = searchParams.get("redirect");
 
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(errorParam);
-
-  useEffect(() => {
-    if (errorParam) {
-      setError("Authentication failed. Please try again.");
-    }
-  }, [errorParam]);
+  const [error, setError] = useState<string | null>(
+    errorParam ? "Authentication failed. Please try again." : null
+  );
 
   const handleGoogleAuth = async () => {
     setLoading(true);
     setError(null);
 
     try {
-      const { error: googleError } = await signInWithGoogle();
+      const { error: googleError } = await signInWithGoogle("/admin/dashboard");
 
       if (googleError) {
         setError(googleError.message);
         setLoading(false);
       }
       // OAuth redirect will handle the rest
-    } catch (err) {
+    } catch {
       setError("An unexpected error occurred. Please try again.");
       setLoading(false);
     }
@@ -56,11 +50,10 @@ function SignInContent() {
         <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
           <CardHeader className="space-y-1 text-center">
             <CardTitle className="text-2xl font-product-sans text-white">
-              Welcome to Stockstrail
+              Admin Sign In
             </CardTitle>
             <CardDescription className="text-white/70">
-              Sign in with Google to check your risk profile and access your
-              investment dashboard
+              Sign in with Google to access the admin dashboard
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -72,7 +65,8 @@ function SignInContent() {
 
             <Button
               type="button"
-              onClick={handleGoogleAuth}
+            //   onClick={handleGoogleAuth}
+            onClick={() => router.push("/admin/dashboard")}
               disabled={loading}
               className="w-full bg-white text-gray-900 hover:bg-white/90 font-medium h-12"
             >
@@ -97,34 +91,20 @@ function SignInContent() {
                 </>
               )}
             </Button>
-
-            <div className="text-center text-sm text-white/70 pt-4">
-              By signing in, you agree to our Terms of Service and Privacy
-              Policy
-            </div>
           </CardContent>
         </Card>
-
-        <div className="mt-6 text-center">
-          <Link
-            href="/"
-            className="text-sm text-white/60 hover:text-stockstrail-green-light transition-colors"
-          >
-            ← Back to home
-          </Link>
-        </div>
       </div>
     </section>
   );
 }
 
-export default function SignInPage() {
+export default function AdminSignInPage() {
   return (
     <SimpleLayout>
       <SEO
-        title="Sign In | Stockstrail"
-        description="Sign in with Google to access your risk profile and investment dashboard"
-        url="/sign-in"
+        title="Admin Sign In | Stockstrail"
+        description="Sign in to access the admin dashboard"
+        url="/admin/sign-in"
       />
       <Suspense fallback={
         <section className="relative px-4 sm:px-6 lg:px-8 py-16 min-h-screen flex items-center">
@@ -133,7 +113,7 @@ export default function SignInPage() {
             <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
               <CardHeader className="space-y-1 text-center">
                 <CardTitle className="text-2xl font-product-sans text-white">
-                  Welcome to Stockstrail
+                  Admin Sign In
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -145,7 +125,7 @@ export default function SignInPage() {
           </div>
         </section>
       }>
-        <SignInContent />
+        <AdminSignInContent />
       </Suspense>
     </SimpleLayout>
   );

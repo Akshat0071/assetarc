@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Search, Filter, ArrowUpDown, Eye, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -32,6 +32,7 @@ interface AdminDashboardContentProps {
   filters: {
     email: string;
     category: string;
+    sort: string;
   };
 }
 
@@ -60,11 +61,62 @@ export function AdminDashboardContent({
   const router = useRouter();
   const searchParams = useSearchParams();
   const [emailFilter, setEmailFilter] = useState(filters.email);
-  const [categoryFilter, setCategoryFilter] = useState(filters.category);
+  const [categoryFilter, setCategoryFilter] = useState(filters.category || "all");
+  const [sortFilter, setSortFilter] = useState(filters.sort || "highest");
   const [selectedAttempt, setSelectedAttempt] = useState<RiskAttemptWithProfile | null>(null);
   const [analysisModalOpen, setAnalysisModalOpen] = useState(false);
   const [responsesModalOpen, setResponsesModalOpen] = useState(false);
   const [deletingId, setDeletingId] = useState<string | null>(null);
+
+  const updateFilters = (newFilters: { email?: string; category?: string; sort?: string }) => {
+    const params = new URLSearchParams(searchParams.toString());
+    
+    if (newFilters.email !== undefined) {
+      if (newFilters.email) {
+        params.set("email", newFilters.email);
+      } else {
+        params.delete("email");
+      }
+    }
+
+    if (newFilters.category !== undefined) {
+      if (newFilters.category && newFilters.category !== "all") {
+        params.set("category", newFilters.category);
+      } else {
+        params.delete("category");
+      }
+    }
+
+    if (newFilters.sort !== undefined) {
+      if (newFilters.sort && newFilters.sort !== "highest") {
+        params.set("sort", newFilters.sort);
+      } else {
+        params.delete("sort");
+      }
+    }
+
+    params.set("page", "1"); // Reset to first page
+    router.push(`/admin/dashboard?${params.toString()}`);
+  };
+  
+  // Debounce email filter for live search
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (emailFilter !== filters.email) {
+        updateFilters({ email: emailFilter });
+      }
+    }, 500); // 500ms delay for live search
+    
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [emailFilter]);
+  
+  // Sync state with URL params when they change
+  useEffect(() => {
+    setEmailFilter(filters.email);
+    setCategoryFilter(filters.category || "all");
+    setSortFilter(filters.sort || "highest");
+  }, [filters.email, filters.category, filters.sort]);
 
   const handleViewAnalysis = (attempt: RiskAttemptWithProfile) => {
     setSelectedAttempt(attempt);
@@ -103,38 +155,10 @@ export function AdminDashboardContent({
     }
   };
 
-  const updateFilters = (newFilters: { email?: string; category?: string }) => {
-    const params = new URLSearchParams(searchParams.toString());
-    
-    if (newFilters.email !== undefined) {
-      if (newFilters.email) {
-        params.set("email", newFilters.email);
-      } else {
-        params.delete("email");
-      }
-    }
-
-    if (newFilters.category !== undefined) {
-      if (newFilters.category) {
-        params.set("category", newFilters.category);
-      } else {
-        params.delete("category");
-      }
-    }
-
-    params.set("page", "1"); // Reset to first page
-    router.push(`/admin?${params.toString()}`);
-  };
-
-  const handleEmailSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    updateFilters({ email: emailFilter });
-  };
-
   const changePage = (newPage: number) => {
     const params = new URLSearchParams(searchParams.toString());
     params.set("page", newPage.toString());
-    router.push(`/admin?${params.toString()}`);
+    router.push(`/admin/dashboard?${params.toString()}`);
   };
 
   return (
@@ -160,26 +184,21 @@ export function AdminDashboardContent({
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid gap-4 md:grid-cols-2">
-              <form onSubmit={handleEmailSearch} className="space-y-2">
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="space-y-2">
                 <label htmlFor="email" className="text-white/70 text-sm">
-                  Filter by Email
+                  Filter by Email (Live Search)
                 </label>
-                <div className="flex gap-2">
+                <div className="relative">
                   <Input
                     id="email"
                     type="email"
                     placeholder="user@example.com"
                     value={emailFilter}
                     onChange={(e) => setEmailFilter(e.target.value)}
-                    className="bg-white/5 border-white/10 text-white placeholder:text-white/50"
+                    className="bg-white/5 border-white/10 text-white placeholder:text-white/50 pr-10"
                   />
-                  <Button
-                    type="submit"
-                    className="bg-stockstrail-green-light text-stockstrail-bg hover:bg-stockstrail-green-light/90"
-                  >
-                    <Search className="w-4 h-4" />
-                  </Button>
+                  <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50" />
                 </div>
                 {filters.email && (
                   <Button
@@ -194,7 +213,7 @@ export function AdminDashboardContent({
                     Clear email filter
                   </Button>
                 )}
-              </form>
+              </div>
 
               <div className="space-y-2">
                 <label htmlFor="category" className="text-white/70 text-sm">
@@ -202,13 +221,16 @@ export function AdminDashboardContent({
                 </label>
                 <Select
                   value={categoryFilter}
-                  onValueChange={(value) => updateFilters({ category: value })}
+                  onValueChange={(value) => {
+                    setCategoryFilter(value);
+                    updateFilters({ category: value });
+                  }}
                 >
                   <SelectTrigger className="bg-white/5 border-white/10 text-white">
                     <SelectValue placeholder="All categories" />
                   </SelectTrigger>
                   <SelectContent className="bg-stockstrail-bg border-white/10">
-                    <SelectItem value="">All categories</SelectItem>
+                    <SelectItem value="all" className="text-white">All categories</SelectItem>
                     {riskCategories.map((cat) => (
                       <SelectItem key={cat} value={cat} className="text-white">
                         {cat}
@@ -216,19 +238,41 @@ export function AdminDashboardContent({
                     ))}
                   </SelectContent>
                 </Select>
-                {filters.category && (
+                {filters.category && filters.category !== "all" && (
                   <Button
                     type="button"
                     variant="outline"
                     onClick={() => {
-                      setCategoryFilter("");
-                      updateFilters({ category: "" });
+                      setCategoryFilter("all");
+                      updateFilters({ category: "all" });
                     }}
                     className="text-xs border-white/20 text-white hover:border-stockstrail-green-light"
                   >
                     Clear category filter
                   </Button>
                 )}
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="sort" className="text-white/70 text-sm">
+                  Sort By
+                </label>
+                <Select
+                  value={sortFilter}
+                  onValueChange={(value) => {
+                    setSortFilter(value);
+                    updateFilters({ sort: value });
+                  }}
+                >
+                  <SelectTrigger className="bg-white/5 border-white/10 text-white">
+                    <SelectValue placeholder="Sort by" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-stockstrail-bg border-white/10">
+                    <SelectItem value="highest" className="text-white">Highest Score</SelectItem>
+                    <SelectItem value="lowest" className="text-white">Lowest Score</SelectItem>
+                    <SelectItem value="latest" className="text-white">Latest</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
             </div>
           </CardContent>
