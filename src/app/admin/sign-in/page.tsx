@@ -65,8 +65,7 @@ function AdminSignInContent() {
 
             <Button
               type="button"
-            //   onClick={handleGoogleAuth}
-            onClick={() => router.push("/admin/dashboard")}
+             onClick={handleGoogleAuth}
               disabled={loading}
               className="w-full bg-white text-gray-900 hover:bg-white/90 font-medium h-12"
             >

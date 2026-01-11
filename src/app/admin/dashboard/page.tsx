@@ -26,7 +26,7 @@ export default async function AdminDashboardPage({
   
   // Check if user is admin
   if (!profile || profile.role !== "admin") {
-    redirect("/admin/dashboard");
+    redirect("/admin/sign-in");
   }
 
  
