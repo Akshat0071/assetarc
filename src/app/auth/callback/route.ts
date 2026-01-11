@@ -36,15 +36,55 @@ export async function GET(request: Request) {
     }
 
     // Get profile to check role and phone number
-    const { data: profile, error: profileError } = await supabase
-      .from('profiles')
-      .select('phone_number, role')
-      .eq('id', user.id)
-      .single()
+    // The trigger should create the profile, but we'll wait a bit if it doesn't exist yet
+    let profile = null
+    let profileError = null
+    
+    // Try to fetch profile, with a small retry if it doesn't exist (trigger might be delayed)
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('phone_number, role')
+        .eq('id', user.id)
+        .single()
+      
+      if (data) {
+        profile = data
+        break
+      }
+      
+      if (error?.code !== 'PGRST116') {
+        // PGRST116 = no rows returned
+        profileError = error
+        console.error('Error fetching profile:', error)
+        break
+      }
+      
+      // Profile doesn't exist yet, wait a bit for trigger to complete
+      if (attempt < 2) {
+        await new Promise(resolve => setTimeout(resolve, 500))
+      }
+    }
 
-    if (profileError && profileError.code !== 'PGRST116') {
-      // PGRST116 = no rows returned, which is fine if profile doesn't exist yet
-      console.error('Error fetching profile:', profileError)
+    // If profile still doesn't exist, create it (fallback if trigger failed)
+    if (!profile && !profileError) {
+      const { data: newProfile, error: createError } = await supabase
+        .from('profiles')
+        .insert({
+          id: user.id,
+          email: user.email || '',
+          full_name: user.user_metadata?.full_name || user.user_metadata?.name || null,
+          phone_number: null,
+          role: 'user'
+        })
+        .select('phone_number, role')
+        .single()
+      
+      if (newProfile) {
+        profile = newProfile
+      } else if (createError) {
+        console.error('Error creating profile:', createError)
+      }
     }
 
     // If admin user, skip complete-profile and go directly to admin dashboard
