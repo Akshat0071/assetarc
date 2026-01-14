@@ -19,6 +19,8 @@ import { Loader2 } from "lucide-react";
 export default function CompleteProfilePage() {
   const router = useRouter();
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [checking, setChecking] = useState(true);
@@ -33,17 +35,58 @@ export default function CompleteProfilePage() {
       }
 
       const supabase = createClient();
-      const { data: profile, error: fetchError } = await supabase
+      
+      // Try fetching with age column first, fallback if it doesn't exist
+      let profile = null;
+      let fetchError = null;
+      
+      console.log("Attempting to fetch profile for user:", user.id);
+      
+      const { data: profileData, error: err1 } = await supabase
         .from("profiles")
-        .select("phone_number")
+        .select("phone_number, full_name, age")
         .eq("id", user.id)
         .single();
+      
+      if (err1) {
+        // Try without age column if it doesn't exist
+        console.warn("Initial query failed, trying without age column:", err1);
+        const { data: profileData2, error: err2 } = await supabase
+          .from("profiles")
+          .select("phone_number, full_name")
+          .eq("id", user.id)
+          .single();
+        
+        if (err2) {
+          console.error("Both profile queries failed:", err2);
+          // Profile might not exist yet - that's okay, we can create fields
+          console.warn("Profile may not exist yet, allowing form to proceed");
+          fetchError = null; // Don't error out
+        } else {
+          profile = profileData2;
+          console.log("Successfully fetched profile without age");
+        }
+      } else {
+        profile = profileData;
+        console.log("Successfully fetched profile with age");
+      }
 
       if (fetchError) {
-        console.error("Error fetching profile:", fetchError);
         setError("Failed to load profile. Please try again.");
         setChecking(false);
         return;
+      }
+
+      // Prefill name and age if profile and data exist
+      if (profile) {
+        if (profile.full_name) {
+          setName(profile.full_name);
+          console.log("Prefilled name:", profile.full_name);
+        }
+        if (profile.age !== undefined && profile.age !== null) {
+          setAge(String(profile.age));
+          console.log("Prefilled age:", profile.age);
+        }
       }
 
       // If phone number exists, redirect to dashboard or risk profile
@@ -99,9 +142,16 @@ export default function CompleteProfilePage() {
       const supabase = createClient();
       
       // Update the phone number in the profile (profile should already exist from trigger)
+      const updatePayload: Record<string, any> = { phone_number: cleanedPhone };
+      // Include name (full_name) if present
+      if (name) updatePayload.full_name = name;
+      // Include age if provided and valid
+      const numericAge = age ? parseInt(age, 10) : null;
+      if (numericAge) updatePayload.age = numericAge;
+
       const { error: updateError } = await supabase
         .from("profiles")
-        .update({ phone_number: cleanedPhone })
+        .update(updatePayload)
         .eq("id", user.id);
 
       if (updateError) {
@@ -166,6 +216,36 @@ export default function CompleteProfilePage() {
                     {error}
                   </div>
                 )}
+
+                <div className="space-y-2">
+                  <Label htmlFor="name" className="text-white">
+                    Full Name
+                  </Label>
+                  <Input
+                    id="name"
+                    type="text"
+                    placeholder="Your full name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="bg-white/5 border-white/10 text-white placeholder:text-white/50"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="age" className="text-white">
+                    Age
+                  </Label>
+                  <Input
+                    id="age"
+                    type="number"
+                    placeholder="e.g. 30"
+                    value={age}
+                    onChange={(e) => setAge(e.target.value)}
+                    min={1}
+                    max={120}
+                    className="bg-white/5 border-white/10 text-white placeholder:text-white/50"
+                  />
+                </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="phone" className="text-white">
