@@ -9,9 +9,10 @@ const HeroSection = () => {
         items-start
         lg:items-center
         justify-center
-      min-h-[600px]
+        min-h-[600px]
         px-6 sm:px-12 md:px-16 lg:px-16
-        pt-8 sm:pt-8 md:pt-8 lg:pt-8
+        pt-8 sm:pt-20 md:pt-12
+        sm:mt-12 md:mt-20
         overflow-hidden
       "
     >
