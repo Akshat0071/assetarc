@@ -189,10 +189,9 @@ const ServicesPage: React.FC = () => {
             ]}
             cta="APPLY MUTUAL FUNDS"
             ctaLink="/services/mutual-funds"
-            imageSrc="/services/mf.webp"
+            imageSrc="/services/MUTUAL FUNDS.webp"
             imageAlt="Mutual Funds"
           />
-
           <SectionBlock
             id="risk-profile"
             title="Discover Your Investment Profile | RISK PROFILE"
@@ -206,7 +205,7 @@ const ServicesPage: React.FC = () => {
             ]}
             cta="Check Your Risk Profile"
             ctaLink="/check-risk-profile"
-            imageSrc="/services/others.webp"
+            imageSrc="/services/RISK PROFILE.webp"
             imageAlt="Risk Profile Assessment"
           />
 
@@ -223,7 +222,7 @@ const ServicesPage: React.FC = () => {
             ]}
             cta="APPLY FIXED DEPOSIT"
             ctaLink="/services/fixed-deposit"
-            imageSrc="/services/fd.webp"
+            imageSrc="/services/FIX DEPOSIT.webp"
             imageAlt="Fixed Deposit"
           />
 
@@ -256,7 +255,7 @@ const ServicesPage: React.FC = () => {
             ]}
             cta="APPLY LOAN"
             ctaLink="/services/loan"
-            imageSrc="/services/loan.webp"
+            imageSrc="/services/BANK LOANS.webp"
             imageAlt="Loan Services"
           />
 
@@ -274,7 +273,7 @@ const ServicesPage: React.FC = () => {
             ]}
             cta="EXPLORE OTHER SERVICES"
             ctaLink="/services/others"
-            imageSrc="/services/others.webp"
+            imageSrc="/services/OTHER SERVICES.webp"
             imageAlt="Other Services"
           />
 
