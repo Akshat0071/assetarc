@@ -438,25 +438,25 @@ const ValueChip = ({
     setIsEditing(false);
     const isRate = suffix === "%";
     let parsed = parseFloat(editValue || "0");
-    
+
     if (isNaN(parsed)) {
       parsed = 0;
     }
-    
+
     if (isRate) {
       parsed = Math.round(parsed * 10) / 10;
     }
-    
+
     onChange?.(parsed);
   };
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const isRate = suffix === "%";
     let raw = e.target.value;
-    
+
     if (prefix) raw = raw.replace(prefix, "");
     if (suffix) raw = raw.replace(suffix, "").trim();
-    
+
     if (isRate) {
       raw = raw.replace(/[^0-9.]/g, "");
       const parts = raw.split(".");
@@ -469,9 +469,9 @@ const ValueChip = ({
     } else {
       raw = raw.replace(/[^0-9]/g, "");
     }
-    
+
     setEditValue(raw);
-    
+
     const n = parseFloat(raw || "0");
     if (!isNaN(n)) {
       onChange?.(n);
@@ -484,9 +484,9 @@ const ValueChip = ({
     }
   };
 
-  const display = isEditing 
-    ? editValue 
-    : suffix === "%" 
+  const display = isEditing
+    ? editValue
+    : suffix === "%"
       ? `${formatRate(value)}${suffix ? ` ${suffix}` : ""}`
       : `${prefix ?? ""}${formatINR(value)}${suffix ? ` ${suffix}` : ""}`;
 
@@ -510,23 +510,41 @@ const ValueChip = ({
 
 const Donut = ({ invested, returns, investedLabel = "INVESTED AMOUNT", returnsLabel = "Returns" }: { invested: number; returns: number; investedLabel?: string; returnsLabel?: string }) => {
   const total = Math.max(1, invested + returns);
-  const pct = (returns / total) * 100;
+  const multiplier = invested > 0 ? total / invested : 1; // Calculate the growth multiplier
+
+  // Calculate the actual growth/ROI percentage: (returns / invested) × 100
+  const growthPct = invested > 0 ? (returns / invested) * 100 : 0;
+
+  // For donut visualization: calculate proportions relative to invested amount
+  const investedPct = 50; // Invested amount is always 50% in the graph
+  const totalPct = invested > 0 ? (total / invested) * 50 : 50; // Total value as percentage relative to invested
+  const returnsPct = totalPct - investedPct; // The green portion (returns)
+
   return (
     <div className="flex flex-col items-center gap-4 sm:gap-6 group">
       <div
         className="relative w-48 h-48 sm:w-64 sm:h-64 rounded-full transition-all duration-500 group-hover:scale-105 group-hover:shadow-[0_0_40px_rgba(0,255,151,0.3)]"
         style={{
-          background: `conic-gradient(#00FF97 ${pct}%, rgba(255,255,255,0.12) 0)`
+          background: `conic-gradient(#00FF97 ${returnsPct}%, rgba(255,255,255,0.12) 0)`
         }}
       >
         <div className="absolute inset-8 sm:inset-10 rounded-full bg-[#0A1E1A] group-hover:bg-[#0A1E1A]/90 transition-colors duration-300" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
-            <div className="text-white text-lg sm:text-xl font-semibold group-hover:text-stockstrail-green-light transition-colors duration-300">
-              {pct.toFixed(1)}%
+            <div className="text-stockstrail-green-light text-2xl sm:text-3xl font-semibold group-hover:text-stockstrail-green-accent transition-colors duration-300">
+              {multiplier.toFixed(2)}x
             </div>
-            <div className="text-white/60 text-xs sm:text-sm group-hover:text-white/80 transition-colors duration-300">
+            <div className="text-white/60 text-xs sm:text-sm group-hover:text-white/80 transition-colors duration-300 mb-2">
               Returns
+            </div>
+            {/* Growth Percentage Badge */}
+            <div className="inline-flex items-center gap-1 px-1 py-0.5 rounded-full bg-gradient-to-r from-stockstrail-green-light/20 to-stockstrail-green-accent/20 border border-stockstrail-green-light/30 group-hover:border-stockstrail-green-light group-hover:shadow-[0_0_15px_rgba(0,255,151,0.4)] transition-all duration-300">
+              <span className="text-white/70 text-xs sm:text-xs font-bold group-hover:scale-110 transition-transform duration-300">
+                {growthPct.toFixed(1)}%
+              </span>
+              <span className="text-white/50 text-[9px] sm:text-xs uppercase tracking-wider">
+                Growth
+              </span>
             </div>
           </div>
         </div>
@@ -548,7 +566,7 @@ const Donut = ({ invested, returns, investedLabel = "INVESTED AMOUNT", returnsLa
 function CalculatorsPageContent() {
   const searchParams = useSearchParams();
   const tabParam = searchParams.get('tab');
-  
+
   const [tab, setTab] = useState<Tab>(() => {
     if (tabParam && ['SIP', 'LUMPSUM', 'FD', 'RD', 'EMI', 'TAX'].includes(tabParam)) {
       return tabParam as Tab;
@@ -582,8 +600,8 @@ function CalculatorsPageContent() {
   const [hra, setHra] = useState(0);
   const [rentPaid, setRentPaid] = useState(0);
   const [isMetro, setIsMetro] = useState(false);
-  const [taxOpen, setTaxOpen] = useState<{income:boolean; deductions:boolean; hra:boolean}>({income:true, deductions:false, hra:false});
-  
+  const [taxOpen, setTaxOpen] = useState<{ income: boolean; deductions: boolean; hra: boolean }>({ income: true, deductions: false, hra: false });
+
   const months = years * 12;
   const amountMax = (tab === "LUMPSUM" || tab === "FD") ? 10000000 : 200000;
 
@@ -616,7 +634,7 @@ function CalculatorsPageContent() {
     const i = Math.pow(1 + rate / 100, 1 / 12) - 1;
     const n = months;
     const m = amount;
-    const value = i === 0 ? m * n : m * (Math.pow(1 + i, n) - 1) / i;
+    const value = i === 0 ? m * n : m * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
     const invested = m * n;
     const returns = Math.max(0, value - invested);
     return { invested, returns, value };
@@ -642,28 +660,39 @@ function CalculatorsPageContent() {
   const taxCalc = useMemo(() => {
     const hraExempt = computeHRAExemption(basicSalary, da, hra, rentPaid, isMetro);
     const grossOld = Math.max(0, taxIncome - hraExempt);
-    const totalDeductions = Math.min(150000, tax80C) + Math.min(50000, tax80CCD1B) + tax80D + tax80G + tax80E + tax80TTA;
+
+    // Fix 80TTA deduction with proper limits
+    const ttaLimit = taxAgeCat === "<60" ? 10000 : 50000;
+    const ttaDeduction = Math.min(tax80TTA, ttaLimit);
+
+    const totalDeductions = Math.min(150000, tax80C) + Math.min(50000, tax80CCD1B) + tax80D + tax80G + tax80E + ttaDeduction;
     const taxableOld = Math.max(0, grossOld - totalDeductions);
 
     const taxableNew = Math.max(0, taxIncome);
 
+    // New regime with Section 87A rebate (Budget 2025)
     const slabTaxNew = (ti: number) => {
-      if (ti <= 1200000) return 0;
+      let t = 0;
       const addBand = (from: number, to: number | null, rate: number) => {
         const upper = to ?? ti;
         if (ti <= from) return 0;
         const band = Math.min(ti, upper) - from;
         return Math.max(0, band * rate);
       };
-      let t = 0;
       t += addBand(400000, 800000, 0.05);
       t += addBand(800000, 1200000, 0.10);
       t += addBand(1200000, 1600000, 0.15);
       t += addBand(1600000, 2000000, 0.20);
       t += addBand(2000000, 2400000, 0.25);
       t += addBand(2400000, null, 0.30);
-      return t;
+
+      // Apply rebate under Section 87A
+      const rebate = ti <= 1200000 ? Math.min(t, 60000) : 0;
+      return Math.max(0, t - rebate);
     };
+
+    // Old regime with age-based exemption limits
+    const oldExemption = taxAgeCat === ">=80" ? 500000 : taxAgeCat === "60-80" ? 300000 : 250000;
 
     const slabTaxOld = (ti: number) => {
       let t = 0;
@@ -673,7 +702,7 @@ function CalculatorsPageContent() {
         const band = Math.min(ti, upper) - from;
         return Math.max(0, band * rate);
       };
-      t += add(250000, 500000, 0.05);
+      t += add(oldExemption, 500000, 0.05);
       t += add(500000, 1000000, 0.20);
       t += add(1000000, null, 0.30);
       return t;
@@ -710,15 +739,14 @@ function CalculatorsPageContent() {
 
           <div className="rounded-3xl border border-white/10 bg-white/5 p-6 lg:p-10">
             <div className="flex flex-wrap gap-3 mb-8">
-              {(["SIP","LUMPSUM","FD","RD","EMI","TAX"] as Tab[]).map(t => (
+              {(["SIP", "LUMPSUM", "FD", "RD", "EMI", "TAX"] as Tab[]).map(t => (
                 <button
                   key={t}
                   onClick={() => setTab(t)}
-                  className={`px-4 py-1.5 rounded-full text-sm tracking-wide border transition-all duration-300 ${
-                    tab===t
-                      ?"bg-stockstrail-green-light/20 text-stockstrail-green-light border-stockstrail-green-light shadow-[0_0_15px_rgba(0,255,151,0.3)] scale-105"
-                      :"text-white/70 border-transparent hover:border-stockstrail-green-light/50 hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-105"
-                  }`}
+                  className={`px-4 py-1.5 rounded-full text-sm tracking-wide border transition-all duration-300 ${tab === t
+                    ? "bg-stockstrail-green-light/20 text-stockstrail-green-light border-stockstrail-green-light shadow-[0_0_15px_rgba(0,255,151,0.3)] scale-105"
+                    : "text-white/70 border-transparent hover:border-stockstrail-green-light/50 hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-105"
+                    }`}
                 >
                   {t}
                 </button>
@@ -727,32 +755,49 @@ function CalculatorsPageContent() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
               <div className="space-y-7">
-                {(["SIP","LUMPSUM","FD","RD"] as Tab[]).includes(tab) && (
-                <div className="space-y-6">
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between text-white/80">
-                      <span className="uppercase tracking-wide text-xs sm:text-sm">{tab === "LUMPSUM" || tab === "FD" ? "PRINCIPAL AMOUNT" : "MONTHLY INVESTMENT"}</span>
-                      <ValueChip ariaLabel="amount" value={amount} prefix="₹ " onChange={(n)=> setAmount(Math.min(Math.max(n, 0), amountMax))} />
+                {(["SIP", "LUMPSUM", "FD", "RD"] as Tab[]).includes(tab) && (
+                  <div className="space-y-6">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between text-white/80">
+                        <span className="uppercase tracking-wide text-xs sm:text-sm">{tab === "LUMPSUM" || tab === "FD" ? "PRINCIPAL AMOUNT" : "MONTHLY INVESTMENT"}</span>
+                        <ValueChip ariaLabel="amount" value={amount} prefix="₹ " onChange={(n) => setAmount(Math.min(Math.max(n, 0), amountMax))} />
+                      </div>
+                      <input type="range" min={1000} max={amountMax} step={500} value={Math.min(amount, amountMax)} onChange={(e) => setAmount(Number(e.target.value))} className="w-full accent-[#00FF97]" />
                     </div>
-                    <input type="range" min={1000} max={amountMax} step={500} value={Math.min(amount, amountMax)} onChange={(e)=>setAmount(Number(e.target.value))} className="w-full accent-[#00FF97]" />
-                  </div>
 
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between text-white/80">
-                      <span className="uppercase tracking-wide text-xs sm:text-sm">EXPECTED RETURN RATE (p.a.)</span>
-                      <ValueChip ariaLabel="rate" value={rate} suffix="%" onChange={(n)=> setRate(Math.min(Math.max(n, 0), 100))} />
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between text-white/80">
+                        <span className="uppercase tracking-wide text-xs sm:text-sm">EXPECTED RETURN RATE (p.a.)</span>
+                        <ValueChip
+                          ariaLabel="rate"
+                          value={rate}
+                          suffix="%"
+                          onChange={(n) => {
+                            const minRate = (tab === "RD" || tab === "FD") ? 2 : 1;
+                            const maxRate = (tab === "RD" || tab === "FD") ? 10 : 24;
+                            setRate(Math.min(Math.max(n, minRate), maxRate));
+                          }}
+                        />
+                      </div>
+                      <input
+                        type="range"
+                        min={(tab === "RD" || tab === "FD") ? 2 : 1}
+                        max={(tab === "RD" || tab === "FD") ? 10 : 24}
+                        step={0.1}
+                        value={rate}
+                        onChange={(e) => setRate(Number(e.target.value))}
+                        className="w-full accent-[#00FF97]"
+                      />
                     </div>
-                    <input type="range" min={1} max={24} step={0.1} value={rate} onChange={(e)=>setRate(Number(e.target.value))} className="w-full accent-[#00FF97]" />
-                  </div>
 
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between text-white/80">
-                      <span className="uppercase tracking-wide text-xs sm:text-sm">TIME PERIOD</span>
-                      <ValueChip ariaLabel="years" value={years} suffix="Yr" onChange={(n)=> setYears(Math.min(Math.max(n, 1), 40))} />
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between text-white/80">
+                        <span className="uppercase tracking-wide text-xs sm:text-sm">TIME PERIOD</span>
+                        <ValueChip ariaLabel="years" value={years} suffix="Yr" onChange={(n) => setYears(Math.min(Math.max(n, 1), 40))} />
+                      </div>
+                      <input type="range" min={1} max={40} step={1} value={years} onChange={(e) => setYears(Number(e.target.value))} className="w-full accent-[#00FF97]" />
                     </div>
-                    <input type="range" min={1} max={40} step={1} value={years} onChange={(e)=>setYears(Number(e.target.value))} className="w-full accent-[#00FF97]" />
                   </div>
-                </div>
                 )}
 
                 {tab === "EMI" && (
@@ -760,23 +805,23 @@ function CalculatorsPageContent() {
                     <div className="space-y-3">
                       <div className="flex items-center justify-between text-white/80">
                         <span className="uppercase tracking-wide text-xs sm:text-sm">LOAN AMOUNT</span>
-                        <ValueChip ariaLabel="loan" value={emiPrincipal} prefix="₹ " onChange={(n)=> setEmiPrincipal(Math.min(Math.max(n, 0), 100000000))} />
+                        <ValueChip ariaLabel="loan" value={emiPrincipal} prefix="₹ " onChange={(n) => setEmiPrincipal(Math.min(Math.max(n, 0), 100000000))} />
                       </div>
-                      <input type="range" min={50000} max={100000000} step={5000} value={emiPrincipal} onChange={(e)=>setEmiPrincipal(Number(e.target.value))} className="w-full accent-[#00FF97]" />
+                      <input type="range" min={50000} max={100000000} step={5000} value={emiPrincipal} onChange={(e) => setEmiPrincipal(Number(e.target.value))} className="w-full accent-[#00FF97]" />
                     </div>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between text-white/80">
                         <span className="uppercase tracking-wide text-xs sm:text-sm">INTEREST RATE (p.a.)</span>
-                        <ValueChip ariaLabel="emi-rate" value={emiRate} suffix="%" onChange={(n)=> setEmiRate(Math.min(Math.max(n, 0), 40))} />
+                        <ValueChip ariaLabel="emi-rate" value={emiRate} suffix="%" onChange={(n) => setEmiRate(Math.min(Math.max(n, 0), 40))} />
                       </div>
-                      <input type="range" min={1} max={24} step={0.1} value={emiRate} onChange={(e)=>setEmiRate(Number(e.target.value))} className="w-full accent-[#00FF97]" />
+                      <input type="range" min={1} max={24} step={0.1} value={emiRate} onChange={(e) => setEmiRate(Number(e.target.value))} className="w-full accent-[#00FF97]" />
                     </div>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between text-white/80">
                         <span className="uppercase tracking-wide text-xs sm:text-sm">TENURE</span>
-                        <ValueChip ariaLabel="emi-years" value={emiYears} suffix="Yr" onChange={(n)=> setEmiYears(Math.min(Math.max(n, 1), 40))} />
+                        <ValueChip ariaLabel="emi-years" value={emiYears} suffix="Yr" onChange={(n) => setEmiYears(Math.min(Math.max(n, 1), 40))} />
                       </div>
-                      <input type="range" min={1} max={40} step={1} value={emiYears} onChange={(e)=>setEmiYears(Number(e.target.value))} className="w-full accent-[#00FF97]" />
+                      <input type="range" min={1} max={40} step={1} value={emiYears} onChange={(e) => setEmiYears(Number(e.target.value))} className="w-full accent-[#00FF97]" />
                     </div>
                   </div>
                 )}
@@ -788,19 +833,29 @@ function CalculatorsPageContent() {
                         <div className="flex items-center justify-between text-white/80">
                           <span className="uppercase tracking-wide text-xs sm:text-sm">Assessment Year</span>
                           <span className="inline-flex">
-                            <select value={taxAY} onChange={(e)=> setTaxAY(e.target.value)} className="bg-white/10 text-white text-sm px-3 py-1 rounded-md">
-                              <option value="2025-26">2025-26</option>
-                              <option value="2024-25">2024-25</option>
+                            <select
+                              value={taxAY}
+                              onChange={(e) => setTaxAY(e.target.value)}
+                              style={{ backgroundColor: '#0d2520', color: 'white' }}
+                              className="text-white text-sm px-3 py-1 rounded-md hover:bg-[#1a3d35] hover:border-stockstrail-green-light border border-transparent focus:border-stockstrail-green-light focus:outline-none transition-all duration-300 cursor-pointer"
+                            >
+                              <option value="2025-26" style={{ backgroundColor: '#0d2520', color: 'white' }}>2025-26</option>
+                              <option value="2024-25" style={{ backgroundColor: '#0d2520', color: 'white' }}>2024-25</option>
                             </select>
                           </span>
                         </div>
                         <div className="flex items-center justify-between text-white/80">
                           <span className="uppercase tracking-wide text-xs sm:text-sm">Age category</span>
                           <span className="inline-flex">
-                            <select value={taxAgeCat} onChange={(e)=> setTaxAgeCat(e.target.value as any)} className="bg-white/10 text-white text-sm px-3 py-1 rounded-md">
-                              <option value="<60">Below 60</option>
-                              <option value="60-80">Senior (60-80)</option>
-                              <option value=">=80">Super Senior (80+)</option>
+                            <select
+                              value={taxAgeCat}
+                              onChange={(e) => setTaxAgeCat(e.target.value as any)}
+                              style={{ backgroundColor: '#0d2520', color: 'white' }}
+                              className="text-white text-sm px-3 py-1 rounded-md hover:bg-[#1a3d35] hover:border-stockstrail-green-light border border-transparent focus:border-stockstrail-green-light focus:outline-none transition-all duration-300 cursor-pointer"
+                            >
+                              <option value="<60" style={{ backgroundColor: '#0d2520', color: 'white' }}>Below 60</option>
+                              <option value="60-80" style={{ backgroundColor: '#0d2520', color: 'white' }}>Senior (60-80)</option>
+                              <option value=">=80" style={{ backgroundColor: '#0d2520', color: 'white' }}>Super Senior (80+)</option>
                             </select>
                           </span>
                         </div>
@@ -808,57 +863,57 @@ function CalculatorsPageContent() {
                       <div className="space-y-3">
                         <div className="flex items-center justify-between text-white/80">
                           <span className="uppercase tracking-wide text-xs sm:text-sm">Total annual income</span>
-                          <ValueChip ariaLabel="income" value={taxIncome} prefix="₹ " onChange={(n)=> setTaxIncome(Math.max(0,n))} />
+                          <ValueChip ariaLabel="income" value={taxIncome} prefix="₹ " onChange={(n) => setTaxIncome(Math.max(0, n))} />
                         </div>
                       </div>
                     </div>
 
                     <div className="rounded-xl border border-white/10 overflow-hidden">
-                      <button onClick={()=> setTaxOpen(s=>({...s, income:!s.income}))} className="w-full text-left px-4 py-3 bg-white/5 text-white flex justify-between items-center">
+                      <button onClick={() => setTaxOpen(s => ({ ...s, income: !s.income }))} className="w-full text-left px-4 py-3 bg-white/5 text-white flex justify-between items-center">
                         <span className="font-medium">Income</span>
                         <span>{taxOpen.income ? "▴" : "▾"}</span>
                       </button>
                       {taxOpen.income && (
                         <div className="p-4 space-y-3">
-                          <div className="flex items-center justify-between text-white/80"><span>Gross salary income</span><ValueChip ariaLabel="basic" value={basicSalary} prefix="₹ " onChange={(n)=> setBasicSalary(Math.max(0,n))} /></div>
-                          <div className="flex items-center justify-between text-white/80"><span>Annual income from other sources</span><ValueChip ariaLabel="da" value={da} prefix="₹ " onChange={(n)=> setDa(Math.max(0,n))} /></div>
-                          <div className="flex items-center justify-between text-white/80"><span>Annual income from interest</span><ValueChip ariaLabel="80tta-inc" value={tax80TTA} prefix="₹ " onChange={(n)=> setTax80TTA(Math.max(0,n))} /></div>
-                          <div className="flex items-center justify-between text-white/80"><span>Annual income from let-out property</span><ValueChip ariaLabel="rentinc" value={rentPaid} prefix="₹ " onChange={(n)=> setRentPaid(Math.max(0,n))} /></div>
-                          <div className="flex items-center justify-between text-white/80"><span>Interest on home loan (self-occupied)</span><ValueChip ariaLabel="homeint1" value={tax80E} prefix="₹ " onChange={(n)=> setTax80E(Math.max(0,n))} /></div>
-                          <div className="flex items-center justify-between text-white/80"><span>Interest on home loan (let-out)</span><ValueChip ariaLabel="homeint2" value={tax80G} prefix="₹ " onChange={(n)=> setTax80G(Math.max(0,n))} /></div>
+                          <div className="flex items-center justify-between text-white/80"><span>Gross salary income</span><ValueChip ariaLabel="basic" value={basicSalary} prefix="₹ " onChange={(n) => setBasicSalary(Math.max(0, n))} /></div>
+                          <div className="flex items-center justify-between text-white/80"><span>Annual income from other sources</span><ValueChip ariaLabel="da" value={da} prefix="₹ " onChange={(n) => setDa(Math.max(0, n))} /></div>
+                          <div className="flex items-center justify-between text-white/80"><span>Annual income from interest</span><ValueChip ariaLabel="80tta-inc" value={tax80TTA} prefix="₹ " onChange={(n) => setTax80TTA(Math.max(0, n))} /></div>
+                          <div className="flex items-center justify-between text-white/80"><span>Annual income from let-out property</span><ValueChip ariaLabel="rentinc" value={rentPaid} prefix="₹ " onChange={(n) => setRentPaid(Math.max(0, n))} /></div>
+                          <div className="flex items-center justify-between text-white/80"><span>Interest on home loan (self-occupied)</span><ValueChip ariaLabel="homeint1" value={tax80E} prefix="₹ " onChange={(n) => setTax80E(Math.max(0, n))} /></div>
+                          <div className="flex items-center justify-between text-white/80"><span>Interest on home loan (let-out)</span><ValueChip ariaLabel="homeint2" value={tax80G} prefix="₹ " onChange={(n) => setTax80G(Math.max(0, n))} /></div>
                         </div>
                       )}
                     </div>
 
                     <div className="rounded-xl border border-white/10 overflow-hidden">
-                      <button onClick={()=> setTaxOpen(s=>({...s, deductions:!s.deductions}))} className="w-full text-left px-4 py-3 bg-white/5 text-white flex justify-between items-center">
+                      <button onClick={() => setTaxOpen(s => ({ ...s, deductions: !s.deductions }))} className="w-full text-left px-4 py-3 bg-white/5 text-white flex justify-between items-center">
                         <span className="font-medium">Deductions</span>
                         <span>{taxOpen.deductions ? "▴" : "▾"}</span>
                       </button>
                       {taxOpen.deductions && (
                         <div className="p-4 space-y-3">
-                          <div className="flex items-center justify-between text-white/80"><span>Basic deductions u/s 80C</span><ValueChip ariaLabel="80c" value={tax80C} prefix="₹ " onChange={(n)=> setTax80C(Math.max(0,n))} /></div>
-                          <div className="flex items-center justify-between text-white/80"><span>NPS u/s 80CCD(1B)</span><ValueChip ariaLabel="80ccd1b" value={tax80CCD1B} prefix="₹ " onChange={(n)=> setTax80CCD1B(Math.max(0,n))} /></div>
-                          <div className="flex items-center justify-between text-white/80"><span>Medical Insurance Premium u/s 80D</span><ValueChip ariaLabel="80d" value={tax80D} prefix="₹ " onChange={(n)=> setTax80D(Math.max(0,n))} /></div>
-                          <div className="flex items-center justify-between text-white/80"><span>Donation to charity u/s 80G</span><ValueChip ariaLabel="80g" value={tax80G} prefix="₹ " onChange={(n)=> setTax80G(Math.max(0,n))} /></div>
-                          <div className="flex items-center justify-between text-white/80"><span>Interest on Educational Loan u/s 80E</span><ValueChip ariaLabel="80e" value={tax80E} prefix="₹ " onChange={(n)=> setTax80E(Math.max(0,n))} /></div>
-                          <div className="flex items-center justify-between text-white/80"><span>Interest on savings (80TTA/TTB)</span><ValueChip ariaLabel="80tta" value={tax80TTA} prefix="₹ " onChange={(n)=> setTax80TTA(Math.max(0,n))} /></div>
+                          <div className="flex items-center justify-between text-white/80"><span>Basic deductions u/s 80C</span><ValueChip ariaLabel="80c" value={tax80C} prefix="₹ " onChange={(n) => setTax80C(Math.max(0, n))} /></div>
+                          <div className="flex items-center justify-between text-white/80"><span>NPS u/s 80CCD(1B)</span><ValueChip ariaLabel="80ccd1b" value={tax80CCD1B} prefix="₹ " onChange={(n) => setTax80CCD1B(Math.max(0, n))} /></div>
+                          <div className="flex items-center justify-between text-white/80"><span>Medical Insurance Premium u/s 80D</span><ValueChip ariaLabel="80d" value={tax80D} prefix="₹ " onChange={(n) => setTax80D(Math.max(0, n))} /></div>
+                          <div className="flex items-center justify-between text-white/80"><span>Donation to charity u/s 80G</span><ValueChip ariaLabel="80g" value={tax80G} prefix="₹ " onChange={(n) => setTax80G(Math.max(0, n))} /></div>
+                          <div className="flex items-center justify-between text-white/80"><span>Interest on Educational Loan u/s 80E</span><ValueChip ariaLabel="80e" value={tax80E} prefix="₹ " onChange={(n) => setTax80E(Math.max(0, n))} /></div>
+                          <div className="flex items-center justify-between text-white/80"><span>Interest on savings (80TTA/TTB)</span><ValueChip ariaLabel="80tta" value={tax80TTA} prefix="₹ " onChange={(n) => setTax80TTA(Math.max(0, n))} /></div>
                         </div>
                       )}
                     </div>
 
                     <div className="rounded-xl border border-white/10 overflow-hidden">
-                      <button onClick={()=> setTaxOpen(s=>({...s, hra:!s.hra}))} className="w-full text-left px-4 py-3 bg-white/5 text-white flex justify-between items-center">
+                      <button onClick={() => setTaxOpen(s => ({ ...s, hra: !s.hra }))} className="w-full text-left px-4 py-3 bg-white/5 text-white flex justify-between items-center">
                         <span className="font-medium">HRA Exemption</span>
                         <span>{taxOpen.hra ? "▴" : "▾"}</span>
                       </button>
                       {taxOpen.hra && (
                         <div className="p-4 space-y-3">
-                          <div className="flex items-center justify-between text-white/80"><span>Basic salary (p.a.)</span><ValueChip ariaLabel="basic2" value={basicSalary} prefix="₹ " onChange={(n)=> setBasicSalary(Math.max(0,n))} /></div>
-                          <div className="flex items-center justify-between text-white/80"><span>Dearness allowance (DA)</span><ValueChip ariaLabel="da2" value={da} prefix="₹ " onChange={(n)=> setDa(Math.max(0,n))} /></div>
-                          <div className="flex items-center justify-between text-white/80"><span>HRA received (p.a.)</span><ValueChip ariaLabel="hra2" value={hra} prefix="₹ " onChange={(n)=> setHra(Math.max(0,n))} /></div>
-                          <div className="flex items-center justify-between text-white/80"><span>Total rent paid (p.a.)</span><ValueChip ariaLabel="rent2" value={rentPaid} prefix="₹ " onChange={(n)=> setRentPaid(Math.max(0,n))} /></div>
-                          <div className="flex items-center justify-between text-white/80"><span>Do you live in a metro city?</span><input type="checkbox" checked={isMetro} onChange={(e)=> setIsMetro(e.target.checked)} className="w-5 h-5 accent-[#00FF97]" /></div>
+                          <div className="flex items-center justify-between text-white/80"><span>Basic salary (p.a.)</span><ValueChip ariaLabel="basic2" value={basicSalary} prefix="₹ " onChange={(n) => setBasicSalary(Math.max(0, n))} /></div>
+                          <div className="flex items-center justify-between text-white/80"><span>Dearness allowance (DA)</span><ValueChip ariaLabel="da2" value={da} prefix="₹ " onChange={(n) => setDa(Math.max(0, n))} /></div>
+                          <div className="flex items-center justify-between text-white/80"><span>HRA received (p.a.)</span><ValueChip ariaLabel="hra2" value={hra} prefix="₹ " onChange={(n) => setHra(Math.max(0, n))} /></div>
+                          <div className="flex items-center justify-between text-white/80"><span>Total rent paid (p.a.)</span><ValueChip ariaLabel="rent2" value={rentPaid} prefix="₹ " onChange={(n) => setRentPaid(Math.max(0, n))} /></div>
+                          <div className="flex items-center justify-between text-white/80"><span>Do you live in a metro city?</span><input type="checkbox" checked={isMetro} onChange={(e) => setIsMetro(e.target.checked)} className="w-5 h-5 accent-[#00FF97]" /></div>
                         </div>
                       )}
                     </div>
@@ -870,7 +925,7 @@ function CalculatorsPageContent() {
                 )}
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-white/90">
-                  {(["SIP","LUMPSUM","FD","RD"] as Tab[]).includes(tab) && (
+                  {(["SIP", "LUMPSUM", "FD", "RD"] as Tab[]).includes(tab) && (
                     <>
                       <div className="rounded-lg bg-white/5 p-4 hover:bg-white/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,151,0.2)] transition-all duration-300 group cursor-pointer">
                         <div className="text-white/60 text-xs uppercase group-hover:text-white/80 transition-colors duration-300">Invested amount</div>
@@ -910,8 +965,8 @@ function CalculatorsPageContent() {
               </div>
 
               <div className="flex items-center justify-center">
-                {(["SIP","LUMPSUM","FD","RD"] as Tab[]).includes(tab) && (
-                <Donut invested={active.invested} returns={active.returns} />
+                {(["SIP", "LUMPSUM", "FD", "RD"] as Tab[]).includes(tab) && (
+                  <Donut invested={active.invested} returns={active.returns} />
                 )}
                 {tab === "EMI" && (
                   <Donut investedLabel="Principal Amount" returnsLabel="Interest Amount" invested={emiCalc.principal} returns={emiCalc.interest} />
