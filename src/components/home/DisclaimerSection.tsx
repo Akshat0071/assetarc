@@ -22,7 +22,7 @@ const DisclaimerSection = () => {
                 <div className="space-y-8 text-center">
                     <div className="animate-slide-in-from-top" style={{ animationDelay: '200ms' }}>
                         <p className="text-white font-work-sans text-base sm:text-xl lg:text-2xl font-light leading-relaxed max-w-5xl mx-auto group-hover:text-stockstrail-green-light transition-colors duration-500">
-                            <span className="text-white">www.stockstrail.in is an online website of</span>
+                            <span className="text-white">www.stockstrail.in is an online website of </span>
                             <span className="text-stockstrail-green-light inline-block font-bold"> Vikrant Bhardwaj</span>
                             <span className="text-white">, who is registered under </span>
                             <span className="text-stockstrail-green-light inline-block font-bold">ARN-284122</span>
