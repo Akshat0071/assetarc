@@ -80,7 +80,7 @@ export function AdminDashboardContent({
 
   const updateFilters = (newFilters: { email?: string; category?: string; sort?: string }) => {
     const params = new URLSearchParams(searchParams.toString());
-    
+
     if (newFilters.email !== undefined) {
       if (newFilters.email) {
         params.set("email", newFilters.email);
@@ -108,7 +108,7 @@ export function AdminDashboardContent({
     params.set("page", "1"); // Reset to first page
     router.push(`/admin/dashboard?${params.toString()}`);
   };
-  
+
   // Debounce email filter for live search
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -116,11 +116,11 @@ export function AdminDashboardContent({
         updateFilters({ email: emailFilter });
       }
     }, 500); // 500ms delay for live search
-    
+
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [emailFilter]);
-  
+
   // Sync state with URL params when they change
   useEffect(() => {
     setEmailFilter(filters.email);
@@ -179,31 +179,28 @@ export function AdminDashboardContent({
           <div className="flex gap-4 overflow-x-auto">
             <button
               onClick={() => setActiveTab("attempts")}
-              className={`px-4 py-3 font-medium text-sm sm:text-base transition-colors border-b-2 ${
-                activeTab === "attempts"
+              className={`px-4 py-3 font-medium text-sm sm:text-base transition-colors border-b-2 ${activeTab === "attempts"
                   ? "text-stockstrail-green-light border-stockstrail-green-light"
                   : "text-white/70 hover:text-white border-transparent hover:border-white/30"
-              }`}
+                }`}
             >
               Risk Attempts ({attempts.length})
             </button>
             <button
               onClick={() => setActiveTab("reviews")}
-              className={`px-4 py-3 font-medium text-sm sm:text-base transition-colors border-b-2 ${
-                activeTab === "reviews"
+              className={`px-4 py-3 font-medium text-sm sm:text-base transition-colors border-b-2 ${activeTab === "reviews"
                   ? "text-stockstrail-green-light border-stockstrail-green-light"
                   : "text-white/70 hover:text-white border-transparent hover:border-white/30"
-              }`}
+                }`}
             >
               Reviews ({reviews.length})
             </button>
             <button
               onClick={() => setActiveTab("queries")}
-              className={`px-4 py-3 font-medium text-sm sm:text-base transition-colors border-b-2 ${
-                activeTab === "queries"
+              className={`px-4 py-3 font-medium text-sm sm:text-base transition-colors border-b-2 ${activeTab === "queries"
                   ? "text-stockstrail-green-light border-stockstrail-green-light"
                   : "text-white/70 hover:text-white border-transparent hover:border-white/30"
-              }`}
+                }`}
             >
               Queries ({queries.length})
             </button>
@@ -216,9 +213,9 @@ export function AdminDashboardContent({
         <section className="relative px-4 sm:px-6 lg:px-8 py-16 min-h-screen">
           <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#072923] via-[#031815] to-[#010d0c] opacity-90" />
           <div className="max-w-7xl mx-auto space-y-8">
-            {/* Header and Filters */}
-            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-              <header className="space-y-2 flex-1">
+            {/* Header */}
+            <div className="flex flex-col gap-6">
+              <header className="space-y-2">
                 <h1 className="font-product-sans text-4xl sm:text-5xl font-normal text-white">
                   Risk <span className="gradient-text">Attempts</span>
                 </h1>
@@ -228,297 +225,287 @@ export function AdminDashboardContent({
               </header>
 
               {/* Filters */}
-              <Card className="bg-white/5 border-white/10 lg:w-80 xl:w-96 lg:flex-shrink-0">
-            <CardHeader>
-              <CardTitle className="text-white text-xl flex items-center gap-2">
-                <Filter className="w-5 h-5 text-stockstrail-green-light" />
-                Filters
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid gap-4 md:grid-cols-3">
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-white/70 text-sm">
-                  Filter by Email (Live Search)
-                </label>
-                <div className="relative">
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="user@example.com"
-                    value={emailFilter}
-                    onChange={(e) => setEmailFilter(e.target.value)}
-                    className="bg-white/5 border-white/10 text-white placeholder:text-white/50 pr-10"
-                  />
-                  <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50" />
-                </div>
-                {filters.email && (
-                  <Button
-                    type="button"
-                    variant="outline"
-                    onClick={() => {
-                      setEmailFilter("");
-                      updateFilters({ email: "" });
-                    }}
-                    className="text-xs border-white/20 text-white hover:border-stockstrail-green-light"
-                  >
-                    Clear email filter
-                  </Button>
-                )}
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="category" className="text-white/70 text-sm">
-                  Filter by Risk Category
-                </label>
-                <Select
-                  value={categoryFilter}
-                  onValueChange={(value) => {
-                    setCategoryFilter(value);
-                    updateFilters({ category: value });
-                  }}
-                >
-                  <SelectTrigger className="bg-white/5 border-white/10 text-white">
-                    <SelectValue placeholder="All categories" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-stockstrail-bg border-white/10">
-                    <SelectItem value="all" className="text-white">All categories</SelectItem>
-                    {riskCategories.map((cat) => (
-                      <SelectItem key={cat} value={cat} className="text-white">
-                        {cat}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                {filters.category && filters.category !== "all" && (
-                  <Button
-                    type="button"
-                    variant="outline"
-                    onClick={() => {
-                      setCategoryFilter("all");
-                      updateFilters({ category: "all" });
-                    }}
-                    className="text-xs border-white/20 text-white hover:border-stockstrail-green-light"
-                  >
-                    Clear category filter
-                  </Button>
-                )}
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="sort" className="text-white/70 text-sm">
-                  Sort By
-                </label>
-                <Select
-                  value={sortFilter}
-                  onValueChange={(value) => {
-                    setSortFilter(value);
-                    updateFilters({ sort: value });
-                  }}
-                >
-                  <SelectTrigger className="bg-white/5 border-white/10 text-white">
-                    <SelectValue placeholder="Sort by" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-stockstrail-bg border-white/10">
-                    <SelectItem value="highest" className="text-white">Highest Score</SelectItem>
-                    <SelectItem value="lowest" className="text-white">Lowest Score</SelectItem>
-                    <SelectItem value="latest" className="text-white">Latest</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-          </CardContent>
-          </Card>
-        </div>
-
-        {/* Results */}
-        <Card className="bg-white/5 border-white/10">
-          <CardHeader>
-            <CardTitle className="text-white text-xl flex items-center gap-2">
-              <ArrowUpDown className="w-5 h-5 text-stockstrail-green-light" />
-              Risk Attempts
-            </CardTitle>
-            <CardDescription className="text-white/70">
-              Showing {attempts.length} result{attempts.length !== 1 ? "s" : ""}
-              {filters.email && ` for ${filters.email}`}
-              {filters.category && ` with ${filters.category} profile`}
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            {attempts.length === 0 ? (
-              <div className="text-center py-12 text-white/60">
-                No attempts found matching your filters.
-              </div>
-            ) : (
-              <>
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead>
-                      <tr className="border-b border-white/10">
-                        <th className="text-left py-3 px-4 text-white/70 font-medium text-sm">
-                          User Email
-                        </th>
-                        <th className="text-left py-3 px-4 text-white/70 font-medium text-sm">
-                          Name
-                        </th>
-                        <th className="text-left py-3 px-4 text-white/70 font-medium text-sm">
-                          Score
-                        </th>
-                        <th className="text-left py-3 px-4 text-white/70 font-medium text-sm">
-                          Risk Category
-                        </th>
-                        <th className="text-left py-3 px-4 text-white/70 font-medium text-sm">
-                          Attempt #
-                        </th>
-                        <th className="text-left py-3 px-4 text-white/70 font-medium text-sm">
-                          Date
-                        </th>
-                        <th className="text-left py-3 px-4 text-white/70 font-medium text-sm">
-                          Visibility
-                        </th>
-                        <th className="text-left py-3 px-4 text-white/70 font-medium text-sm">
-                          Actions
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {attempts.map((attempt) => {
-                        const profile = Array.isArray(attempt.profiles)
-                          ? attempt.profiles[0]
-                          : attempt.profiles;
-
-                        const visibilityLabels: Record<number, { label: string; color: string }> = {
-                          2: { label: "Visible", color: "bg-green-500/20 text-green-400 border-green-500/40" },
-                          1: { label: "Deleted by User", color: "bg-yellow-500/20 text-yellow-400 border-yellow-500/40" },
-                          0: { label: "Deleted by Admin", color: "bg-red-500/20 text-red-400 border-red-500/40" },
-                        };
-
-                        const visibilityInfo = visibilityLabels[attempt.visibility] || visibilityLabels[2];
-
-                        return (
-                          <tr
-                            key={attempt.id}
-                            className="border-b border-white/5 hover:bg-white/5 transition-colors"
-                          >
-                            <td className="py-3 px-4 text-white">
-                              {profile?.email || "N/A"}
-                            </td>
-                            <td className="py-3 px-4 text-white/80">
-                              {profile?.full_name || "—"}
-                            </td>
-                            <td className="py-3 px-4">
-                              <span className="text-stockstrail-green-light font-semibold">
-                                {attempt.score}
-                              </span>
-                              <span className="text-white/60 text-sm ml-1">/ 100</span>
-                            </td>
-                            <td className="py-3 px-4">
-                              <span
-                                className={`inline-block px-3 py-1 rounded-full text-xs font-medium border ${
-                                  riskCategoryColors[
-                                    attempt.risk_category as keyof typeof riskCategoryColors
-                                  ] || riskCategoryColors.Moderate
-                                }`}
-                              >
-                                {attempt.risk_category}
-                              </span>
-                            </td>
-                            <td className="py-3 px-4 text-white">
-                              {attempt.attempt_number}
-                            </td>
-                            <td className="py-3 px-4 text-white/80 text-sm">
-                              {formatDate(attempt.created_at)}
-                            </td>
-                            <td className="py-3 px-4">
-                              <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium border ${visibilityInfo.color}`}>
-                                {visibilityInfo.label}
-                              </span>
-                            </td>
-                            <td className="py-3 px-4">
-                              <div className="flex items-center gap-2">
-                                <Button
-                                  variant="ghost"
-                                  size="sm"
-                                  onClick={() => handleViewAnalysis(attempt)}
-                                  className="text-white/70 hover:text-stockstrail-green-light hover:bg-white/10 h-8"
-                                >
-                                  <Eye className="w-4 h-4 mr-1" />
-                                  Analysis
-                                </Button>
-                                <Button
-                                  variant="ghost"
-                                  size="sm"
-                                  onClick={() => handleViewResponses(attempt)}
-                                  className="text-white/70 hover:text-stockstrail-green-light hover:bg-white/10 h-8"
-                                >
-                                  <Eye className="w-4 h-4 mr-1" />
-                                  Responses
-                                </Button>
-                                <Button
-                                  variant="ghost"
-                                  size="sm"
-                                  onClick={() => handleDelete(attempt.id)}
-                                  disabled={deletingId === attempt.id}
-                                  className="text-red-400 hover:text-red-300 hover:bg-red-500/10 h-8"
-                                >
-                                  <Trash2 className="w-4 h-4" />
-                                </Button>
-                              </div>
-                            </td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
-                </div>
-
-                {/* Pagination */}
-                {totalPages > 1 && (
-                  <div className="flex items-center justify-between mt-6 pt-6 border-t border-white/10">
-                    <div className="text-white/70 text-sm">
-                      Page {currentPage} of {totalPages}
+              <Card className="bg-white/5 border-white/10 w-full">
+                <CardHeader>
+                  <CardTitle className="text-white text-xl flex items-center gap-2">
+                    <Filter className="w-5 h-5 text-stockstrail-green-light" />
+                    Filters
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4 items-end">
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="text-white/70 text-sm">
+                        Filter by Email
+                      </label>
+                      <div className="relative">
+                        <Input
+                          id="email"
+                          type="email"
+                          placeholder="Search email..."
+                          value={emailFilter}
+                          onChange={(e) => setEmailFilter(e.target.value)}
+                          className="bg-white/5 border-white/10 text-white placeholder:text-white/50 pr-10"
+                        />
+                        <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50" />
+                      </div>
                     </div>
-                    <div className="flex gap-2">
-                      <Button
-                        variant="outline"
-                        onClick={() => changePage(currentPage - 1)}
-                        disabled={currentPage === 1}
-                        className="border-white/20 text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light disabled:opacity-50"
+
+                    <div className="space-y-2">
+                      <label htmlFor="category" className="text-white/70 text-sm">
+                        Risk Category
+                      </label>
+                      <Select
+                        value={categoryFilter}
+                        onValueChange={(value) => {
+                          setCategoryFilter(value);
+                          updateFilters({ category: value });
+                        }}
                       >
-                        Previous
-                      </Button>
-                      <Button
-                        variant="outline"
-                        onClick={() => changePage(currentPage + 1)}
-                        disabled={currentPage === totalPages}
-                        className="border-white/20 text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light disabled:opacity-50"
-                      >
-                        Next
-                      </Button>
+                        <SelectTrigger className="bg-white/5 border-white/10 text-white">
+                          <SelectValue placeholder="All categories" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-stockstrail-bg border-white/10">
+                          <SelectItem value="all" className="text-white">All categories</SelectItem>
+                          {riskCategories.map((cat) => (
+                            <SelectItem key={cat} value={cat} className="text-white">
+                              {cat}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
                     </div>
+
+                    <div className="space-y-2">
+                      <label htmlFor="sort" className="text-white/70 text-sm">
+                        Sort By
+                      </label>
+                      <Select
+                        value={sortFilter}
+                        onValueChange={(value) => {
+                          setSortFilter(value);
+                          updateFilters({ sort: value });
+                        }}
+                      >
+                        <SelectTrigger className="bg-white/5 border-white/10 text-white">
+                          <SelectValue placeholder="Sort by" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-stockstrail-bg border-white/10">
+                          <SelectItem value="highest" className="text-white">Highest Score</SelectItem>
+                          <SelectItem value="lowest" className="text-white">Lowest Score</SelectItem>
+                          <SelectItem value="latest" className="text-white">Latest</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    {/* Clear Filters Button - Show if any filter is active */}
+                    {(filters.email || (filters.category && filters.category !== "all") || (filters.sort && filters.sort !== "highest")) && (
+                      <Button
+                        type="button"
+                        variant="outline"
+                        onClick={() => {
+                          setEmailFilter("");
+                          setCategoryFilter("all");
+                          setSortFilter("highest");
+                          updateFilters({ email: "", category: "all", sort: "highest" });
+                        }}
+                        className="border-white/20 text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light"
+                      >
+                        Clear Filters
+                      </Button>
+                    )}
                   </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Results */}
+            <Card className="bg-white/5 border-white/10">
+              <CardHeader>
+                <CardTitle className="text-white text-xl flex items-center gap-2">
+                  <ArrowUpDown className="w-5 h-5 text-stockstrail-green-light" />
+                  Risk Attempts
+                </CardTitle>
+                <CardDescription className="text-white/70">
+                  Showing {attempts.length} result{attempts.length !== 1 ? "s" : ""}
+                  {filters.email && ` for ${filters.email}`}
+                  {filters.category && ` with ${filters.category} profile`}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                {attempts.length === 0 ? (
+                  <div className="text-center py-12 text-white/60">
+                    No attempts found matching your filters.
+                  </div>
+                ) : (
+                  <>
+                    <div className="overflow-x-auto">
+                      <table className="w-full">
+                        <thead>
+                          <tr className="border-b border-white/10">
+                            <th className="text-left py-3 px-4 text-white/70 font-medium text-sm">
+                              User Email
+                            </th>
+                            <th className="text-left py-3 px-4 text-white/70 font-medium text-sm">
+                              Name
+                            </th>
+                            <th className="text-left py-3 px-4 text-white/70 font-medium text-sm">
+                              Score
+                            </th>
+                            <th className="text-left py-3 px-4 text-white/70 font-medium text-sm">
+                              Risk Category
+                            </th>
+                            <th className="text-left py-3 px-4 text-white/70 font-medium text-sm">
+                              Attempt #
+                            </th>
+                            <th className="text-left py-3 px-4 text-white/70 font-medium text-sm">
+                              Date
+                            </th>
+                            <th className="text-left py-3 px-4 text-white/70 font-medium text-sm">
+                              Visibility
+                            </th>
+                            <th className="text-left py-3 px-4 text-white/70 font-medium text-sm">
+                              Actions
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {attempts.map((attempt) => {
+                            const profile = Array.isArray(attempt.profiles)
+                              ? attempt.profiles[0]
+                              : attempt.profiles;
+
+                            const visibilityLabels: Record<number, { label: string; color: string }> = {
+                              2: { label: "Visible", color: "bg-green-500/20 text-green-400 border-green-500/40" },
+                              1: { label: "Deleted by User", color: "bg-yellow-500/20 text-yellow-400 border-yellow-500/40" },
+                              0: { label: "Deleted by Admin", color: "bg-red-500/20 text-red-400 border-red-500/40" },
+                            };
+
+                            const visibilityInfo = visibilityLabels[attempt.visibility] || visibilityLabels[2];
+
+                            return (
+                              <tr
+                                key={attempt.id}
+                                className="border-b border-white/5 hover:bg-white/5 transition-colors"
+                              >
+                                <td className="py-3 px-4 text-white">
+                                  {profile?.email || "N/A"}
+                                </td>
+                                <td className="py-3 px-4 text-white/80">
+                                  {profile?.full_name || "—"}
+                                </td>
+                                <td className="py-3 px-4">
+                                  <span className="text-stockstrail-green-light font-semibold">
+                                    {attempt.score}
+                                  </span>
+                                  <span className="text-white/60 text-sm ml-1">/ 100</span>
+                                </td>
+                                <td className="py-3 px-4">
+                                  <span
+                                    className={`inline-block px-3 py-1 rounded-full text-xs font-medium border ${riskCategoryColors[
+                                      attempt.risk_category as keyof typeof riskCategoryColors
+                                      ] || riskCategoryColors.Moderate
+                                      }`}
+                                  >
+                                    {attempt.risk_category}
+                                  </span>
+                                </td>
+                                <td className="py-3 px-4 text-white">
+                                  {attempt.attempt_number}
+                                </td>
+                                <td className="py-3 px-4 text-white/80 text-sm">
+                                  {formatDate(attempt.created_at)}
+                                </td>
+                                <td className="py-3 px-4">
+                                  <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium border ${visibilityInfo.color}`}>
+                                    {visibilityInfo.label}
+                                  </span>
+                                </td>
+                                <td className="py-3 px-4">
+                                  <div className="flex items-center gap-2">
+                                    <Button
+                                      variant="ghost"
+                                      size="sm"
+                                      onClick={() => handleViewAnalysis(attempt)}
+                                      className="text-white/70 hover:text-stockstrail-green-light hover:bg-white/10 h-8"
+                                    >
+                                      <Eye className="w-4 h-4 mr-1" />
+                                      Analysis
+                                    </Button>
+                                    <Button
+                                      variant="ghost"
+                                      size="sm"
+                                      onClick={() => handleViewResponses(attempt)}
+                                      className="text-white/70 hover:text-stockstrail-green-light hover:bg-white/10 h-8"
+                                    >
+                                      <Eye className="w-4 h-4 mr-1" />
+                                      Responses
+                                    </Button>
+                                    <Button
+                                      variant="ghost"
+                                      size="sm"
+                                      onClick={() => handleDelete(attempt.id)}
+                                      disabled={deletingId === attempt.id}
+                                      className="text-red-400 hover:text-red-300 hover:bg-red-500/10 h-8"
+                                    >
+                                      <Trash2 className="w-4 h-4" />
+                                    </Button>
+                                  </div>
+                                </td>
+                              </tr>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
+
+                    {/* Pagination */}
+                    {totalPages > 1 && (
+                      <div className="flex items-center justify-between mt-6 pt-6 border-t border-white/10">
+                        <div className="text-white/70 text-sm">
+                          Page {currentPage} of {totalPages}
+                        </div>
+                        <div className="flex gap-2">
+                          <Button
+                            variant="outline"
+                            onClick={() => changePage(currentPage - 1)}
+                            disabled={currentPage === 1}
+                            className="border-white/20 text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light disabled:opacity-50"
+                          >
+                            Previous
+                          </Button>
+                          <Button
+                            variant="outline"
+                            onClick={() => changePage(currentPage + 1)}
+                            disabled={currentPage === totalPages}
+                            className="border-white/20 text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light disabled:opacity-50"
+                          >
+                            Next
+                          </Button>
+                        </div>
+                      </div>
+                    )}
+                  </>
                 )}
+              </CardContent>
+            </Card>
+
+            {/* Modals */}
+            {selectedAttempt && (
+              <>
+                <RiskAnalysisModal
+                  attempt={selectedAttempt}
+                  open={analysisModalOpen}
+                  onOpenChange={setAnalysisModalOpen}
+                />
+                <ResponsesModal
+                  attemptId={selectedAttempt.id}
+                  open={responsesModalOpen}
+                  onOpenChange={setResponsesModalOpen}
+                />
               </>
             )}
-          </CardContent>
-        </Card>
-
-        {/* Modals */}
-        {selectedAttempt && (
-          <>
-            <RiskAnalysisModal
-              attempt={selectedAttempt}
-              open={analysisModalOpen}
-              onOpenChange={setAnalysisModalOpen}
-            />
-            <ResponsesModal
-              attemptId={selectedAttempt.id}
-              open={responsesModalOpen}
-              onOpenChange={setResponsesModalOpen}
-            />
-          </>
-        )}
-      </div>
+          </div>
         </section>
       )}
 
