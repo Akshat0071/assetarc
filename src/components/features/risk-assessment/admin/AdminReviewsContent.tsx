@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Trash2, Star } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Trash2, Star, Edit, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,6 +11,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { formatDate } from "@/lib/utils";
 import type { Review } from "@/lib/supabase";
 
@@ -18,7 +29,10 @@ interface AdminReviewsContentProps {
 }
 
 export function AdminReviewsContent({ reviews }: AdminReviewsContentProps) {
+  const router = useRouter();
   const [deletingId, setDeletingId] = useState<number | null>(null);
+  const [editingReview, setEditingReview] = useState<Review | null>(null);
+  const [isUpdating, setIsUpdating] = useState(false);
 
   const handleDelete = async (reviewId: number) => {
     if (!confirm("Are you sure you want to delete this review?")) {
@@ -40,12 +54,41 @@ export function AdminReviewsContent({ reviews }: AdminReviewsContentProps) {
         throw new Error("Failed to delete review");
       }
 
-      window.location.reload();
+      router.refresh();
     } catch (err) {
       console.error("Error deleting review:", err);
       alert("Failed to delete review. Please try again.");
     } finally {
       setDeletingId(null);
+    }
+  };
+
+  const handleUpdate = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingReview) return;
+
+    setIsUpdating(true);
+
+    try {
+      const response = await fetch("/api/admin/reviews", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(editingReview),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to update review");
+      }
+
+      setEditingReview(null);
+      router.refresh();
+    } catch (err) {
+      console.error("Error updating review:", err);
+      alert("Failed to update review. Please try again.");
+    } finally {
+      setIsUpdating(false);
     }
   };
 
@@ -55,11 +98,10 @@ export function AdminReviewsContent({ reviews }: AdminReviewsContentProps) {
         {Array.from({ length: 5 }).map((_, i) => (
           <Star
             key={i}
-            className={`w-4 h-4 ${
-              i < rating
-                ? "fill-yellow-400 text-yellow-400"
-                : "text-white/30"
-            }`}
+            className={`w-4 h-4 ${i < rating
+              ? "fill-yellow-400 text-yellow-400"
+              : "text-white/30"
+              }`}
           />
         ))}
       </div>
@@ -118,15 +160,25 @@ export function AdminReviewsContent({ reviews }: AdminReviewsContentProps) {
                             {review.position}
                           </p>
                         </div>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={() => handleDelete(review.id)}
-                          disabled={deletingId === review.id}
-                          className="text-red-400 hover:text-red-300 hover:bg-red-500/10 h-8 w-8 p-0 flex-shrink-0"
-                        >
-                          <Trash2 className="w-4 h-4" />
-                        </Button>
+                        <div className="flex gap-1">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => setEditingReview(review)}
+                            className="text-blue-400 hover:text-blue-300 hover:bg-blue-500/10 h-8 w-8 p-0 flex-shrink-0"
+                          >
+                            <Edit className="w-4 h-4" />
+                          </Button>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => handleDelete(review.id)}
+                            disabled={deletingId === review.id}
+                            className="text-red-400 hover:text-red-300 hover:bg-red-500/10 h-8 w-8 p-0 flex-shrink-0"
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </Button>
+                        </div>
                       </div>
 
                       {/* Rating */}
@@ -153,6 +205,73 @@ export function AdminReviewsContent({ reviews }: AdminReviewsContentProps) {
             )}
           </CardContent>
         </Card>
+
+        {/* Edit Review Modal */}
+        <Dialog open={!!editingReview} onOpenChange={(open) => !open && setEditingReview(null)}>
+          <DialogContent className="sm:max-w-[425px] bg-[#072923] border-white/10 text-white">
+            <DialogHeader>
+              <DialogTitle>Edit Review</DialogTitle>
+            </DialogHeader>
+            {editingReview && (
+              <form onSubmit={handleUpdate} className="grid gap-4 py-4">
+                <div className="grid gap-2">
+                  <Label htmlFor="name">Name</Label>
+                  <Input
+                    id="name"
+                    value={editingReview.name}
+                    onChange={(e) => setEditingReview({ ...editingReview, name: e.target.value })}
+                    className="bg-white/5 border-white/10 text-white"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="company">Company</Label>
+                  <Input
+                    id="company"
+                    value={editingReview.company || ""}
+                    onChange={(e) => setEditingReview({ ...editingReview, company: e.target.value })}
+                    className="bg-white/5 border-white/10 text-white"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="position">Position</Label>
+                  <Input
+                    id="position"
+                    value={editingReview.position}
+                    onChange={(e) => setEditingReview({ ...editingReview, position: e.target.value })}
+                    className="bg-white/5 border-white/10 text-white"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="rating">Rating (1-5)</Label>
+                  <Input
+                    id="rating"
+                    type="number"
+                    min="1"
+                    max="5"
+                    value={editingReview.rating}
+                    onChange={(e) => setEditingReview({ ...editingReview, rating: parseInt(e.target.value) })}
+                    className="bg-white/5 border-white/10 text-white"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="comment">Comment</Label>
+                  <Textarea
+                    id="comment"
+                    value={editingReview.comment}
+                    onChange={(e) => setEditingReview({ ...editingReview, comment: e.target.value })}
+                    className="bg-white/5 border-white/10 text-white"
+                  />
+                </div>
+                <DialogFooter>
+                  <Button type="submit" disabled={isUpdating}>
+                    {isUpdating && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                    Save Changes
+                  </Button>
+                </DialogFooter>
+              </form>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );

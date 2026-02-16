@@ -65,3 +65,27 @@ export const deleteQuery = async (id: number) => {
     return { error }
   }
 }
+
+// Update a query (for admin purposes)
+export const updateQuery = async (id: number, updates: Partial<QueryRecord>) => {
+  try {
+    if (!supabase) {
+      return { error: new Error('Supabase not initialized') }
+    }
+
+    const { error } = await supabase
+      .from('queries')
+      .update(updates)
+      .eq('id', id)
+
+    if (error) {
+      throw error
+    }
+
+    return { error: null }
+  } catch (error) {
+    console.error('Error updating query:', error)
+    return { error }
+  }
+}
+

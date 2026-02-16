@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Trash2, Mail, Phone } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Trash2, Mail, Phone, Edit, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,6 +11,23 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { formatDate } from "@/lib/utils";
 import type { QueryRecord } from "@/lib/supabase";
 
@@ -18,7 +36,10 @@ interface AdminQueriesContentProps {
 }
 
 export function AdminQueriesContent({ queries }: AdminQueriesContentProps) {
+  const router = useRouter();
   const [deletingId, setDeletingId] = useState<number | null>(null);
+  const [editingQuery, setEditingQuery] = useState<QueryRecord | null>(null);
+  const [isUpdating, setIsUpdating] = useState(false);
 
   const handleDelete = async (queryId: number) => {
     if (!confirm("Are you sure you want to delete this query?")) {
@@ -40,12 +61,41 @@ export function AdminQueriesContent({ queries }: AdminQueriesContentProps) {
         throw new Error("Failed to delete query");
       }
 
-      window.location.reload();
+      router.refresh();
     } catch (err) {
       console.error("Error deleting query:", err);
       alert("Failed to delete query. Please try again.");
     } finally {
       setDeletingId(null);
+    }
+  };
+
+  const handleUpdate = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingQuery) return;
+
+    setIsUpdating(true);
+
+    try {
+      const response = await fetch("/api/admin/queries", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(editingQuery),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to update query");
+      }
+
+      setEditingQuery(null);
+      router.refresh();
+    } catch (err) {
+      console.error("Error updating query:", err);
+      alert("Failed to update query. Please try again.");
+    } finally {
+      setIsUpdating(false);
     }
   };
 
@@ -145,10 +195,9 @@ export function AdminQueriesContent({ queries }: AdminQueriesContentProps) {
                           </td>
                           <td className="py-3 px-4">
                             <span
-                              className={`inline-block px-3 py-1 rounded-full text-xs font-medium border ${
-                                serviceColors[query.service] ||
+                              className={`inline-block px-3 py-1 rounded-full text-xs font-medium border ${serviceColors[query.service] ||
                                 serviceColors.others
-                              }`}
+                                }`}
                             >
                               {query.service}
                             </span>
@@ -160,15 +209,25 @@ export function AdminQueriesContent({ queries }: AdminQueriesContentProps) {
                             {formatDate(query.created_at)}
                           </td>
                           <td className="py-3 px-4">
-                            <Button
-                              variant="ghost"
-                              size="sm"
-                              onClick={() => handleDelete(query.id)}
-                              disabled={deletingId === query.id}
-                              className="text-red-400 hover:text-red-300 hover:bg-red-500/10 h-8"
-                            >
-                              <Trash2 className="w-4 h-4" />
-                            </Button>
+                            <div className="flex gap-1">
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                onClick={() => setEditingQuery(query)}
+                                className="text-blue-400 hover:text-blue-300 hover:bg-blue-500/10 h-8 w-8 p-0 flex-shrink-0"
+                              >
+                                <Edit className="w-4 h-4" />
+                              </Button>
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                onClick={() => handleDelete(query.id)}
+                                disabled={deletingId === query.id}
+                                className="text-red-400 hover:text-red-300 hover:bg-red-500/10 h-8 w-8 p-0 flex-shrink-0"
+                              >
+                                <Trash2 className="w-4 h-4" />
+                              </Button>
+                            </div>
                           </td>
                         </tr>
                       ))}
@@ -205,22 +264,31 @@ export function AdminQueriesContent({ queries }: AdminQueriesContentProps) {
                             </a>
                           </div>
                         </div>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={() => handleDelete(query.id)}
-                          disabled={deletingId === query.id}
-                          className="text-red-400 hover:text-red-300 hover:bg-red-500/10 h-8 w-8 p-0 flex-shrink-0"
-                        >
-                          <Trash2 className="w-4 h-4" />
-                        </Button>
+                        <div className="flex gap-1">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => setEditingQuery(query)}
+                            className="text-blue-400 hover:text-blue-300 hover:bg-blue-500/10 h-8 w-8 p-0 flex-shrink-0"
+                          >
+                            <Edit className="w-4 h-4" />
+                          </Button>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => handleDelete(query.id)}
+                            disabled={deletingId === query.id}
+                            className="text-red-400 hover:text-red-300 hover:bg-red-500/10 h-8 w-8 p-0 flex-shrink-0"
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </Button>
+                        </div>
                       </div>
 
                       <div className="flex items-center justify-between gap-2 flex-wrap">
                         <span
-                          className={`inline-block px-3 py-1 rounded-full text-xs font-medium border ${
-                            serviceColors[query.service] || serviceColors.others
-                          }`}
+                          className={`inline-block px-3 py-1 rounded-full text-xs font-medium border ${serviceColors[query.service] || serviceColors.others
+                            }`}
                         >
                           {query.service}
                         </span>
@@ -243,6 +311,80 @@ export function AdminQueriesContent({ queries }: AdminQueriesContentProps) {
             )}
           </CardContent>
         </Card>
+
+        {/* Edit Query Modal */}
+        <Dialog open={!!editingQuery} onOpenChange={(open) => !open && setEditingQuery(null)}>
+          <DialogContent className="sm:max-w-[425px] bg-[#072923] border-white/10 text-white">
+            <DialogHeader>
+              <DialogTitle>Edit Query</DialogTitle>
+            </DialogHeader>
+            {editingQuery && (
+              <form onSubmit={handleUpdate} className="grid gap-4 py-4">
+                <div className="grid gap-2">
+                  <Label htmlFor="name">Name</Label>
+                  <Input
+                    id="name"
+                    value={editingQuery.name}
+                    onChange={(e) => setEditingQuery({ ...editingQuery, name: e.target.value })}
+                    className="bg-white/5 border-white/10 text-white"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    value={editingQuery.email}
+                    onChange={(e) => setEditingQuery({ ...editingQuery, email: e.target.value })}
+                    className="bg-white/5 border-white/10 text-white"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="phone">Phone</Label>
+                  <Input
+                    id="phone"
+                    value={editingQuery.phone}
+                    onChange={(e) => setEditingQuery({ ...editingQuery, phone: e.target.value })}
+                    className="bg-white/5 border-white/10 text-white"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="service">Service</Label>
+                  <Select
+                    value={editingQuery.service}
+                    onValueChange={(value) => setEditingQuery({ ...editingQuery, service: value })}
+                  >
+                    <SelectTrigger className="bg-white/5 border-white/10 text-white">
+                      <SelectValue placeholder="Select service" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-[#072923] border-white/10 text-white">
+                      <SelectItem value="mutual-funds">Mutual Funds</SelectItem>
+                      <SelectItem value="fixed-deposit">Fixed Deposit</SelectItem>
+                      <SelectItem value="insurance">Insurance</SelectItem>
+                      <SelectItem value="loan">Loan</SelectItem>
+                      <SelectItem value="others">Others</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea
+                    id="message"
+                    value={editingQuery.message}
+                    onChange={(e) => setEditingQuery({ ...editingQuery, message: e.target.value })}
+                    className="bg-white/5 border-white/10 text-white"
+                  />
+                </div>
+                <DialogFooter>
+                  <Button type="submit" disabled={isUpdating}>
+                    {isUpdating && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                    Save Changes
+                  </Button>
+                </DialogFooter>
+              </form>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );
