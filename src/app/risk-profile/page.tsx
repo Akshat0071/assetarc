@@ -6,9 +6,9 @@ import SEO from "@/components/common/SEO";
 import { getServerUser, getServerProfile } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
-  title: "Risk Profiling Questionnaire | Stockstrail",
+  title: "Risk Profiling Questionnaire | AssetArc",
   description:
-    "Answer 11 questions to determine your risk tolerance, investment horizon, and get an indicative allocation profile aligned with Stockstrail's methodology.",
+    "Answer 11 questions to determine your risk tolerance, investment horizon, and get an indicative allocation profile aligned with AssetArc's methodology.",
 };
 
 export default async function RiskProfilePage() {
@@ -27,8 +27,8 @@ export default async function RiskProfilePage() {
   return (
     <SimpleLayout>
       <SEO
-        title="Risk Profiling Questionnaire | Stockstrail"
-        description="Gauge your risk tolerance and investment horizon with Stockstrail's 11-question assessment. View your risk profile and indicative allocation instantly."
+        title="Risk Profiling Questionnaire | AssetArc"
+        description="Gauge your risk tolerance and investment horizon with AssetArc's 11-question assessment. View your risk profile and indicative allocation instantly."
         url="/risk-profile"
       />
       <RiskQuestionnaire />

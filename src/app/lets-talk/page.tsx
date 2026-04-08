@@ -132,8 +132,8 @@ export default function LetsTalk() {
       if (error) throw error;
 
       // 2. Open WhatsApp with pre-filled message
-      const whatsappNumber = '919736304663';
-      const whatsappMessage = `*New Query from Stockstrail Website*
+      const whatsappNumber = '918219890171';
+      const whatsappMessage = `*New Query from AssetArc Website*
       
 *Name:* ${form.name}
 *Phone:* ${form.phone}
@@ -196,11 +196,11 @@ export default function LetsTalk() {
                     Phone
                   </p>
                   <a
-                    href="tel:+919736304663"
+                    href="tel:+918219890171"
                     className="text-white text-sm font-medium flex items-center"
                   >
                     <PhoneIcon />
-                    +91 97363-04663
+                    +91 8219890171
                   </a>
                   <p className="text-white/50 text-xs mt-1">Available 9am – 8pm IST</p>
                 </div>
@@ -211,13 +211,13 @@ export default function LetsTalk() {
                     WhatsApp
                   </p>
                   <a
-                    href="https://wa.me/919736304663"
+                    href="https://wa.me/918219890171"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white text-sm font-medium flex items-center"
                   >
                     <WhatsAppIcon />
-                    +91 97363-04663
+                    +91 8219890171
                   </a>
                   <p className="text-white/50 text-xs mt-1">Quick questions or follow-ups</p>
                 </div>
@@ -228,11 +228,11 @@ export default function LetsTalk() {
                     Email
                   </p>
                   <a
-                    href="mailto:connect@stockstrail.in"
+                    href="mailto:akshatbansa04@gmail.com"
                     className="text-white text-sm font-medium flex items-center break-all"
                   >
                     <EmailIcon />
-                    connect@stockstrail.in
+                    akshatbansa04@gmail.com
                   </a>
                   <p className="text-white/50 text-xs mt-1">Usually replies within 12 hours</p>
                 </div>
@@ -244,7 +244,7 @@ export default function LetsTalk() {
                   </p>
                   <div className="flex items-center gap-4">
                     <a
-                      href="https://www.facebook.com/people/Stockstrail-Stockstrail/100089234534696/"
+                      href="https://www.facebook.com/people/AssetArc/100089234534696/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-white hover:text-stockstrail-green-light hover:scale-110 transition-transform"

@@ -32,7 +32,7 @@ const TestimonialsSectionComponent = () => {
             name: "Sarah Johnson",
             company: "Investment Group",
             position: "Long-term Investor",
-            comment: "Stockstrail helped me build a diversified portfolio that has consistently outperformed my expectations. Their expertise in mutual funds is unmatched.",
+            comment: "AssetArc helped me build a diversified portfolio that has consistently outperformed my expectations. Their expertise in mutual funds is unmatched.",
             rating: 4.5,
         },
         {
@@ -50,7 +50,7 @@ const TestimonialsSectionComponent = () => {
             name: "Priya Sharma",
             company: "Software Corp",
             position: "Software Engineer",
-            comment: "From SIP planning to tax optimization, Stockstrail covers all aspects of financial planning. Their calculators are incredibly helpful.",
+            comment: "From SIP planning to tax optimization, AssetArc covers all aspects of financial planning. Their calculators are incredibly helpful.",
             rating: 4.5,
         },
         {
@@ -59,7 +59,7 @@ const TestimonialsSectionComponent = () => {
             name: "Rajesh Kumar",
             company: "Retirement Planning",
             position: "Retired Professional",
-            comment: "The fixed deposit rates offered through Stockstrail are competitive, and the process is completely hassle-free. Great service!",
+            comment: "The fixed deposit rates offered through AssetArc are competitive, and the process is completely hassle-free. Great service!",
             rating: 4,
         },
     ], []);

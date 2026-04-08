@@ -21,7 +21,7 @@ const HeroSection = () => {
         {/* Heading */}
         <h1
           className="
-            
+             
             text-4xl sm:text-5xl lg:text-6xl
             font-normal
             leading-tight
@@ -45,9 +45,9 @@ const HeroSection = () => {
             mb-8
           "
         >
-          Achieve financial independence with Stockstrail. Our expert guidance
+          Achieve financial independence with AssetArc. Our expert guidance
           and innovative tools help you navigate investing and reach your
-          long-term goals. Whether you&apos;re a beginner or experienced investor,
+          long-term goals. Whether you're a beginner or experienced investor,
           stay ahead and attain.
         </p>
 

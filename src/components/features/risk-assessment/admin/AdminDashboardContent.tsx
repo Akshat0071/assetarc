@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Search, Filter, ArrowUpDown, Eye, Trash2 } from "lucide-react";
+import { Search, Filter, ArrowUpDown, Eye, Trash2, PenTool } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { RiskAnalysisModal } from "@/components/features/risk-assessment/modals/RiskAnalysisModal";
@@ -204,6 +205,13 @@ export function AdminDashboardContent({
             >
               Queries ({queries.length})
             </button>
+            <Link
+              href="/admin/blog"
+              className="px-4 py-3 font-medium text-sm sm:text-base transition-colors border-b-2 text-white/70 hover:text-white border-transparent hover:border-white/30 flex items-center gap-2"
+            >
+              <PenTool className="w-4 h-4" />
+              Blog Management
+            </Link>
           </div>
         </div>
       </div>

@@ -40,7 +40,7 @@ const WhyChooseSectionComponent = () => {
                 <div className="text-center mb-16">
                     <h2 className="font-product-sans text-2xl sm:text-4xl lg:text-6xl font-normal uppercase">
                         <span className="text-white">Why Choose </span>
-                        <span className="gradient-text">StocksTrail</span>
+                        <span className="gradient-text">AssetArc</span>
                     </h2>
                 </div>
 

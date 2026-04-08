@@ -56,7 +56,7 @@ function SignInContent() {
         <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
           <CardHeader className="space-y-1 text-center">
             <CardTitle className="text-2xl font-product-sans text-white">
-              Welcome to Stockstrail
+              Welcome to AssetArc
             </CardTitle>
             <CardDescription className="text-white/70">
               Sign in with Google to check your risk profile and access your
@@ -122,7 +122,7 @@ export default function SignInPage() {
   return (
     <SimpleLayout>
       <SEO
-        title="Sign In | Stockstrail"
+        title="Sign In | AssetArc"
         description="Sign in with Google to access your risk profile and investment dashboard"
         url="/sign-in"
       />

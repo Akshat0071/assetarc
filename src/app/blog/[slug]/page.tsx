@@ -30,24 +30,24 @@ const ContactCard = () => {
       <div className="space-y-4 text-white/90">
         <div>
           <div className="text-white/60 text-sm mb-1">Email</div>
-          <a href="mailto:connect@stockstrail.in" className="underline hover:text-stockstrail-green-light transition-colors">connect@stockstrail.in</a>
+          <a href="mailto:akshatbansa04@gmail.com" className="underline hover:text-stockstrail-green-light transition-colors">akshatbansa04@gmail.com</a>
         </div>
         <div>
           <div className="text-white/60 text-sm mb-1">WhatsApp</div>
-          <a href="https://wa.me/919736304663" target="_blank" rel="noopener noreferrer" className="underline hover:text-stockstrail-green-light transition-colors">+91 97363-04663</a>
+          <a href="https://wa.me/918219890171" target="_blank" rel="noopener noreferrer" className="underline hover:text-stockstrail-green-light transition-colors">+91 8219890171</a>
         </div>
         <div>
           <div className="text-white/60 text-sm mb-1">Mobile No.</div>
-          <a href="tel:+919736304663" className="underline hover:text-stockstrail-green-light transition-colors">+91 97363-04663</a>
+          <a href="tel:+918219890171" className="underline hover:text-stockstrail-green-light transition-colors">+91 8219890171</a>
         </div>
       </div>
       <div className="mt-6">
         <h4 className="text-white/80 text-sm uppercase tracking-widest mb-2">Socials</h4>
         <div className="flex items-center gap-5">
-          <a href="https://www.facebook.com/people/Stockstrail-Stockstrail/100089234534696/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-stockstrail-green-light hover:scale-110 transition-transform duration-300"><Facebook className="w-6 h-6"/></a>
-          <a href="https://www.linkedin.com/company/stockstrail/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-stockstrail-green-light hover:scale-110 transition-transform duration-300"><Linkedin className="w-6 h-6"/></a>
-          <a href="http://instagram.com/stockstrail/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-stockstrail-green-light hover:scale-110 transition-transform duration-300"><Instagram className="w-6 h-6"/></a>
-          <a href="https://t.me/stockstrail" target="_blank" rel="noopener noreferrer" className="text-white hover:text-stockstrail-green-light hover:scale-110 transition-transform duration-300"><Send className="w-6 h-6"/></a>
+          <a href="https://www.facebook.com/people/AssetArc/100089234534696/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-stockstrail-green-light hover:scale-110 transition-transform duration-300"><Facebook className="w-6 h-6" /></a>
+          <a href="https://www.linkedin.com/company/assetarc/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-stockstrail-green-light hover:scale-110 transition-transform duration-300"><Linkedin className="w-6 h-6" /></a>
+          <a href="http://instagram.com/assetarc/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-stockstrail-green-light hover:scale-110 transition-transform duration-300"><Instagram className="w-6 h-6" /></a>
+          <a href="https://t.me/assetarc" target="_blank" rel="noopener noreferrer" className="text-white hover:text-stockstrail-green-light hover:scale-110 transition-transform duration-300"><Send className="w-6 h-6" /></a>
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@ export async function generateMetadata(
 
   let post: Post | null = null;
   const idMatch = String(slugOrId || '').match(/-(\d+)$/);
-  
+
   try {
     if (idMatch) {
       const id = idMatch[1];
@@ -198,7 +198,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
             Back to All Posts
           </Link>
-            
+
           {/* Floating Mobile Share Button - always visible on mobile */}
           <MobileShareButton />
 

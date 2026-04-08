@@ -4,23 +4,23 @@ import Image from 'next/image';
 
 export const metadata: Metadata = {
   title:
-    'Complete Financial Protection Services | Motor Insurance, Demat & More | Stockstrail',
+    'Complete Financial Protection Services | Motor Insurance, Demat & More | AssetArc',
   description:
     'Comprehensive financial and protection services including Motor Insurance, Demat accounts, Travel Insurance, ULIPs, and Guaranteed Plans. Expert guidance for complete financial coverage.',
   keywords:
     'motor insurance, demat account, travel insurance, ULIP, guaranteed plans, financial services',
   openGraph: {
     title:
-      'Complete Financial Protection Services | Motor Insurance, Demat & More | Stockstrail',
+      'Complete Financial Protection Services | Motor Insurance, Demat & More | AssetArc',
     description:
       'Comprehensive financial and protection services including Motor Insurance, Demat accounts, Travel Insurance, ULIPs, and Guaranteed Plans.',
-    url: 'https://stockstrail.in/services/others',
+    url: 'https://assetarc.in/services/others',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title:
-      'Complete Financial Protection Services | Motor Insurance, Demat & More | Stockstrail',
+      'Complete Financial Protection Services | Motor Insurance, Demat & More | AssetArc',
     description:
       'Comprehensive financial and protection services including Motor Insurance, Demat accounts, Travel Insurance, ULIPs, and Guaranteed Plans.',
   },
@@ -38,7 +38,7 @@ export default function Others() {
             Complete Financial Protection Services
           </h1>
           <p className="text-white/80 max-w-3xl mx-auto leading-relaxed text-lg">
-            Beyond investments and loans, Stockstrail offers a comprehensive range of financial and protection services
+            Beyond investments and loans, AssetArc offers a comprehensive range of financial and protection services
             designed to support you at every stage of life.
           </p>
         </div>
@@ -63,7 +63,7 @@ export default function Others() {
                 Other Financial & Protection Services
               </h2>
               <p className="text-white/80 leading-relaxed mb-4">
-                In addition to mutual funds, fixed deposits, loans, and insurance, Stockstrail offers a range of
+                In addition to mutual funds, fixed deposits, loans, and insurance, AssetArc offers a range of
                 additional financial and protection services. These services are designed to support clients at every
                 stage of life, ensuring convenience, security, and long-term financial planning.
               </p>
@@ -81,7 +81,7 @@ export default function Others() {
         </div>
       </section>
 
-          {/* CTA after intro */}
+      {/* CTA after intro */}
       <section className="px-4 sm:px-6 lg:px-8 py-8">
         <div className="max-w-6xl mx-auto text-center">
           <a
@@ -97,7 +97,7 @@ export default function Others() {
       </section>
 
       <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-stockstrail-bg-light/20">
-            
+
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold gradient-text mb-12 text-center">
             Why Choose These Additional Services?
@@ -232,7 +232,7 @@ export default function Others() {
                 Traditional Life Insurance Plans
               </h3>
               <p className="text-white/80 mb-4">
-                Stockstrail offers long-term life insurance products combining insurance protection with wealth creation
+                AssetArc offers long-term life insurance products combining insurance protection with wealth creation
                 for long-term financial planning and goals.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -267,7 +267,7 @@ export default function Others() {
         </div>
       </section>
 
-         {/* Mid-page CTA after 'Our Financial & Protection Services' */}
+      {/* Mid-page CTA after 'Our Financial & Protection Services' */}
       <section className="px-4 sm:px-6 lg:px-8 py-10">
         <div className="max-w-6xl mx-auto text-center">
           <a
@@ -340,7 +340,7 @@ export default function Others() {
       <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-stockstrail-bg-light/20">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold gradient-text mb-12 text-center">
-            Why Choose Stockstrail for These Services?
+            Why Choose AssetArc for These Services?
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

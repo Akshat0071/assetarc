@@ -137,12 +137,12 @@ export default function About() {
 
           <div className="bg-white/5 border border-white/10 rounded-2xl p-8 sm:p-10 hover:border-stockstrail-green-light/50 transition-colors duration-300">
             <div className="mb-6">
-              <h3 className="text-3xl font-product-sans text-stockstrail-green-light mb-2">Vikrant Bhardwaj</h3>
+              <h3 className="text-3xl font-product-sans text-stockstrail-green-light mb-2">Akshat Bansal</h3>
               <p className="text-white/70 text-lg">AMFI-Registered Mutual Fund Distributor</p>
             </div>
 
             <p className="text-white/80 text-lg leading-relaxed mb-6">
-              Vikrant founded Stockstrail with a clear intention: To make financial planning feel simple, honest, and approachable for everyday individuals. He observed how families struggled with decisions, how young earners felt lost, and how first-time investors carried more fear than guidance—and decided to provide a solution rooted in clarity and trust.
+              Akshat founded AssetArc with a clear intention: To make financial planning feel simple, honest, and approachable for everyday individuals. He observed how families struggled with decisions, how young earners felt lost, and how first-time investors carried more fear than guidance—and decided to provide a solution rooted in clarity and trust.
             </p>
 
            <div className="mb-6">

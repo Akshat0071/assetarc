@@ -8,9 +8,9 @@ const TermsAndConditions = () => {
   return (
     <Layout>
       <SEO
-        title="Terms and Conditions & Cancellation Policy | Stockstrail"
-        description="Read Stockstrail's Terms and Conditions and Cancellation Policy for all financial services including mutual funds, fixed deposits, insurance, loans, and demat accounts."
-        keywords="terms and conditions, cancellation policy, stockstrail, financial services"
+        title="Terms and Conditions & Cancellation Policy | AssetArc"
+        description="Read AssetArc's Terms and Conditions and Cancellation Policy for all financial services including mutual funds, fixed deposits, insurance, loans, and demat accounts."
+        keywords="terms and conditions, cancellation policy, assetarc, financial services"
         url="/terms-and-conditions"
       />
 
@@ -86,7 +86,7 @@ const TermsAndConditions = () => {
                 Registration and KYC
               </h2>
               <div className="space-y-4 text-white/80">
-                <p>To use Stockstrail services, users must complete:</p>
+                <p>To use AssetArc services, users must complete:</p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>Phone number & password</li>
                   <li>PAN details</li>
@@ -204,14 +204,14 @@ const TermsAndConditions = () => {
               <div className="space-y-2 text-white/80">
                 <p>
                   <strong className="text-white">Email:</strong>{" "}
-                  <Link href="mailto:connect@stockstrail.in" className="text-stockstrail-green-light hover:underline">
-                    connect@stockstrail.in
+                  <Link href="mailto:akshatbansa04@gmail.com" className="text-stockstrail-green-light hover:underline">
+                    akshatbansa04@gmail.com
                   </Link>
                 </p>
                 <p>
                   <strong className="text-white">Phone:</strong>{" "}
-                  <Link href="tel:+919736304663" className="text-stockstrail-green-light hover:underline">
-                    +91 97363-04663
+                  <Link href="tel:+918219890171" className="text-stockstrail-green-light hover:underline">
+                    +91 8219890171
                   </Link>
                 </p>
               </div>
@@ -220,7 +220,7 @@ const TermsAndConditions = () => {
             {/* FOOTNOTE */}
             <div className="text-center text-white/60 text-sm pt-8">
               <p>Last Updated: November 2025</p>
-              <p>© 2025 Stockstrail. All Rights Reserved.</p>
+              <p>© 2025 AssetArc. All Rights Reserved.</p>
             </div>
 
           </div>

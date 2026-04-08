@@ -3,19 +3,19 @@ import Image from "next/image";
 import Layout from "@/components/layout/Layout";
 
 export const metadata: Metadata = {
-  title: "Fixed Deposits - Secure & Guaranteed Returns | Stockstrail",
+  title: "Fixed Deposits - Secure & Guaranteed Returns | AssetArc",
   description:
-    "Invest in Fixed Deposits with guaranteed returns, flexible tenure, and zero market risk. Compare FD rates and grow your savings safely with Stockstrail.",
+    "Invest in Fixed Deposits with guaranteed returns, flexible tenure, and zero market risk. Compare FD rates and grow your savings safely with AssetArc.",
   keywords:
     "fixed deposit, FD investment, guaranteed returns, safe investment, savings account, interest rates",
   alternates: {
-    canonical: "https://stockstrail.com/services/fixed-deposit",
+    canonical: "https://assetarc.in/services/fixed-deposit",
   },
   openGraph: {
     title: "Fixed Deposits - Secure & Guaranteed Returns",
     description:
       "Guaranteed returns, flexible tenure, zero market risk. Compare FD rates and grow your wealth safely.",
-    url: "https://stockstrail.com/services/fixed-deposit",
+    url: "https://assetarc.in/services/fixed-deposit",
     type: "website",
     locale: "en_IN",
     images: ["/stockstrail.png"],
@@ -84,7 +84,7 @@ export default function FixedDeposit() {
         </div>
       </section>
 
-         {/* CTA after 'What is a Fixed Deposit' */}
+      {/* CTA after 'What is a Fixed Deposit' */}
       <section className="px-4 sm:px-6 lg:px-8 py-8">
         <div className="max-w-6xl mx-auto text-center">
           <a
@@ -393,11 +393,11 @@ export default function FixedDeposit() {
         </div>
       </section>
 
-      {/* Why Choose Stockstrail */}
+      {/* Why Choose AssetArc */}
       <section className="relative px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold gradient-text mb-12 text-center">
-            Why Choose Stockstrail for Fixed Deposits?
+            Why Choose AssetArc for Fixed Deposits?
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -453,7 +453,7 @@ export default function FixedDeposit() {
               "Decide the deposit amount.",
               "Select tenure (3m, 6m, 1y, 3y, 5y, etc.).",
               "Choose cumulative or periodic payout.",
-              "Complete the FD application with Stockstrail.",
+              "Complete the FD application with AssetArc.",
               "Receive FD receipt with maturity details.",
             ].map((step, index) => (
               <div

@@ -154,7 +154,7 @@ const ServicesPage: React.FC = () => {
   return (
     <Layout>
       <SEO
-        title="Services - Mutual Funds, Insurance, Fixed Deposits & Loans | Stockstrail"
+        title="Services - Mutual Funds, Insurance, Fixed Deposits & Loans | AssetArc"
         description="Explore our comprehensive financial services including Mutual Funds, Fixed Deposits, Insurance, and Loans. Expert guidance tailored to your needs."
         keywords="mutual funds services, fixed deposit, insurance plans, loans, financial services, SIP, investment services"
         url="/services"
@@ -262,7 +262,7 @@ const ServicesPage: React.FC = () => {
           <SectionBlock
             id="others"
             title="Complete Financial Protection | OTHER SERVICES"
-            description="Beyond core investments, Stockstrail offers comprehensive additional financial services including Motor Insurance, Travel Insurance, Demat accounts, ULIPs, and Guaranteed Plans. Each service is designed to provide complete protection and convenience at every stage of life."
+            description="Beyond core investments, AssetArc offers comprehensive additional financial services including Motor Insurance, Travel Insurance, Demat accounts, ULIPs, and Guaranteed Plans. Each service is designed to provide complete protection and convenience at every stage of life."
             benefits={[
               "Motor Insurance for comprehensive vehicle protection",
               "Travel Insurance for domestic and international coverage",

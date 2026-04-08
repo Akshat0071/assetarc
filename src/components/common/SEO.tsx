@@ -13,15 +13,15 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = "Stockstrail - Your Journey to Financial Freedom",
-  description = "Achieve financial independence with Stockstrail. Expert guidance for mutual funds, insurance, fixed deposits, and loans. Start your investment journey today.",
-  keywords = "mutual funds, investment, financial planning, SIP, insurance, fixed deposit, loans, Stockstrail, financial advisor, wealth management",
-  image = "/stockstrail.png",
+  title = "AssetArc - Your Journey to Financial Freedom",
+  description = "Achieve financial independence with AssetArc. Expert guidance for mutual funds, insurance, fixed deposits, and loans. Start your investment journey today.",
+  keywords = "mutual funds, investment, financial planning, SIP, insurance, fixed deposit, loans, AssetArc, financial advisor, wealth management",
+  image = "/assetarclogo.png",
   url,
   type = "website",
   structuredData,
 }: SEOProps) => {
-  const siteUrl = "https://stockstrail.in";
+  const siteUrl = "https://assetarc.in";
 
   // Resolve full URL
   const fullUrl =
@@ -36,24 +36,24 @@ const SEO = ({
   const defaultStructuredData = {
     "@context": "https://schema.org",
     "@type": "FinancialService",
-    name: "Stockstrail",
+    name: "AssetArc",
     description:
       "Financial services and investment guidance for Indians",
     url: siteUrl,
-    logo: `${siteUrl}/stockstrail.png`,
+    logo: `${siteUrl}/assetarclogo.png`,
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+91-97363-04663",
+      telephone: "+91-8219890171",
       contactType: "customer service",
-      email: "connect@stockstrail.in",
+      email: "akshatbansa04@gmail.com",
       areaServed: "IN",
       availableLanguage: "English",
     },
     sameAs: [
-      "https://www.facebook.com/people/Stockstrail-Stockstrail/100089234534696/",
-      "https://www.linkedin.com/company/stockstrail/",
-      "http://instagram.com/stockstrail/",
-      "https://t.me/stockstrail",
+      "https://www.facebook.com/people/AssetArc/100089234534696/",
+      "https://www.linkedin.com/company/assetarc/",
+      "http://instagram.com/assetarc/",
+      "https://t.me/assetarc",
     ],
   };
 
@@ -66,7 +66,7 @@ const SEO = ({
       <meta name="title" content={title} />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="author" content="Stockstrail" />
+      <meta name="author" content="AssetArc" />
       <meta name="robots" content="index, follow" />
       <meta name="language" content="English" />
       <meta name="revisit-after" content="7 days" />
@@ -80,7 +80,7 @@ const SEO = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={fullImageUrl} />
-      <meta property="og:site_name" content="Stockstrail" />
+      <meta property="og:site_name" content="AssetArc" />
       <meta property="og:locale" content="en_IN" />
 
       {/* Twitter Tags */}

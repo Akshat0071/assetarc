@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://stockstrail.in/sitemap.xml',
+    sitemap: 'https://assetarc.in/sitemap.xml',
   }
 }

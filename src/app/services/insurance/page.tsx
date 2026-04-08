@@ -3,19 +3,19 @@ import Image from "next/image";
 import Layout from "@/components/layout/Layout";
 
 export const metadata: Metadata = {
-  title: "Insurance — Term & Health Plans | Stockstrail",
+  title: "Insurance — Term & Health Plans | AssetArc",
   description:
-    "Compare term and health insurance plans, see real-life examples, and get tailored guidance to protect your family’s finances.",
+    "Compare term and health insurance plans, see real-life examples, and get tailored guidance to protect your family's finances.",
   keywords:
-    "term insurance, health insurance, life cover, family protection, Stockstrail insurance",
+    "term insurance, health insurance, life cover, family protection, AssetArc insurance",
   alternates: {
-    canonical: "https://stockstrail.com/services/insurance",
+    canonical: "https://assetarc.in/services/insurance",
   },
   openGraph: {
-    title: "Insurance — Term & Health Plans | Stockstrail",
+    title: "Insurance — Term & Health Plans | AssetArc",
     description:
-      "Secure your family’s future with Term & Health Insurance. Compare plans and get guidance from Stockstrail.",
-    url: "https://stockstrail.com/services/insurance",
+      "Secure your family's future with Term & Health Insurance. Compare plans and get guidance from AssetArc.",
+    url: "https://assetarc.in/services/insurance",
     locale: "en_IN",
     type: "website",
     images: ["/stockstrail.png"],
@@ -40,7 +40,7 @@ export default function Insurance() {
           <p className="text-white/80 max-w-3xl mx-auto leading-relaxed text-lg">
             Protection that gives you peace of mind — compare term and health
             plans, understand how they work, and get personalised recommendations
-            from Stockstrail.
+            from AssetArc.
           </p>
         </div>
       </section>
@@ -57,7 +57,7 @@ export default function Insurance() {
             </h2>
             <p className="text-white/80 mb-4 leading-relaxed">
               Insurance provides financial protection against unexpected events
-              so your family, health, and finances remain secure. At Stockstrail
+              so your family, health, and finances remain secure. At AssetArc
               we help you choose the right plans based on your needs, income,
               family size and long-term goals.
             </p>
@@ -227,7 +227,7 @@ export default function Insurance() {
                 Explore Term Insurance Plans
               </a>
             </div>
-            
+
             {/* Mid-page CTA after Term Insurance
             <div className="mt-8">
               <a

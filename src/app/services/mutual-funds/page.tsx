@@ -3,21 +3,21 @@ import Layout from '@/components/layout/Layout';
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: 'Mutual Funds Investment Guide | Grow Your Wealth with Stockstrail',
+  title: 'Mutual Funds Investment Guide | Grow Your Wealth with AssetArc',
   description:
-    "Learn about mutual funds, how they work, and why they're ideal for wealth creation. Get professional fund management, diversification, and low entry barriers with Stockstrail.",
+    "Learn about mutual funds, how they work, and why they're ideal for wealth creation. Get professional fund management, diversification, and low entry barriers with AssetArc.",
   keywords:
     'mutual funds, SIP, wealth creation, investment, equity funds, debt funds, hybrid funds',
   openGraph: {
-    title: 'Mutual Funds Investment Guide | Grow Your Wealth with Stockstrail',
+    title: 'Mutual Funds Investment Guide | Grow Your Wealth with AssetArc',
     description:
       "Learn about mutual funds, how they work, and why they're ideal for wealth creation.",
-    url: 'https://stockstrail.in/services/mutual-funds',
+    url: 'https://assetarc.in/services/mutual-funds',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mutual Funds Investment Guide | Grow Your Wealth with Stockstrail',
+    title: 'Mutual Funds Investment Guide | Grow Your Wealth with AssetArc',
     description:
       "Learn about mutual funds, how they work, and why they're ideal for wealth creation.",
   },
@@ -41,7 +41,7 @@ export default function MutualFunds() {
         </div>
       </section>
 
-      
+
 
       <section className="relative px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-6xl mx-auto">
@@ -164,7 +164,7 @@ export default function MutualFunds() {
         </div>
       </section>
 
-      
+
 
       <section className="relative px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-6xl mx-auto">
@@ -446,7 +446,7 @@ export default function MutualFunds() {
       <section className="relative px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold gradient-text mb-12 text-center">
-            Why Choose Stockstrail for Mutual Funds?
+            Why Choose AssetArc for Mutual Funds?
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -482,7 +482,7 @@ export default function MutualFunds() {
           <div className="space-y-4">
             {[
               'Share your basic details and complete KYC verification',
-              'Discuss your financial goals with Stockstrail experts',
+              'Discuss your financial goals with AssetArc experts',
               'Choose between SIP (monthly) or lump sum investment',
               'Receive personalized fund recommendations',
               'Complete a simple online investment process',

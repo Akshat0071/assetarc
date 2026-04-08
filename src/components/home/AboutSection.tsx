@@ -17,7 +17,7 @@ const AboutSection = () => {
                 <div className="animate-slide-in-from-top" style={{ animationDelay: '100ms' }}>
                     <h2 className="font-product-sans text-2xl sm:text-4xl lg:text-6xl font-normal uppercase mb-8 group">
                         <span className="text-white group-hover:text-stockstrail-green-light transition-colors duration-500">About </span>
-                        <span className="gradient-text group-hover:scale-105 transition-transform duration-500 inline-block">StocksTrail</span>
+                        <span className="gradient-text group-hover:scale-105 transition-transform duration-500 inline-block">AssetArc</span>
                     </h2>
                 </div>
 

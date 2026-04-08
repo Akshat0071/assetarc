@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Management - Stockstrail</title>
+    <link rel="stylesheet" href="blog-admin.css">
+</head>
+<body>
+    <div class="blog-admin-container">
+        <!-- Header Section -->
+        <header class="blog-header">
+            <div class="header-content">
+                <h1 class="page-title">
+                    <span class="gradient-text">Blog</span> Management
+                </h1>
+                <p class="page-description">Create, edit, and manage your blog posts</p>
+            </div>
+            <button class="btn btn-primary" id="newPostBtn">
+                <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                New Post
+            </button>
+        </header>
+
+        <!-- Stats Section -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="totalPosts">0</div>
+                <div class="stat-label">Total Posts</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value stat-value-green" id="publishedPosts">0</div>
+                <div class="stat-label">Published</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value stat-value-gray" id="draftPosts">0</div>
+                <div class="stat-label">Drafts</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value stat-value-accent" id="visiblePosts">0</div>
+                <div class="stat-label">Visible</div>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="filters-section">
+            <div class="search-wrapper">
+                <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search posts by title, category, or author...">
+            </div>
+            <div class="filter-select-wrapper">
+                <svg class="filter-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                </svg>
+                <select id="statusFilter" class="filter-select">
+                    <option value="all">All Status</option>
+                    <option value="draft">Draft</option>
+                    <option value="published">Published</option>
+                    <option value="archived">Archived</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Posts Table -->
+        <section class="table-section">
+            <div class="table-wrapper">
+                <table class="posts-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Author</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Visible</th>
+                            <th class="text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="postsTableBody">
+                        <!-- Posts will be rendered here -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="noPostsMessage" class="no-posts-message hidden">
+                No blog posts found
+            </div>
+        </section>
+    </div>
+
+    <!-- Post Form Modal -->
+    <div class="modal-overlay" id="postModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">New Blog Post</h2>
+                <button class="modal-close" id="closeModalBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <form id="postForm" class="post-form">
+                <input type="hidden" id="postId">
+                
+                <!-- Basic Information -->
+                <div class="form-section">
+                    <h3 class="form-section-title">Basic Information</h3>
+                    <div class="form-group">
+                        <label for="title" class="form-label">Title *</label>
+                        <input type="text" id="title" name="title" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="slug" class="form-label">Slug</label>
+                        <input type="text" id="slug" name="slug" class="form-input" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="excerpt" class="form-label">Excerpt</label>
+                        <textarea id="excerpt" name="excerpt" class="form-textarea" rows="3" placeholder="Brief summary of the post..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Content Editor -->
+                <div class="form-section">
+                    <h3 class="form-section-title">Content</h3>
+                    <div class="editor-toolbar">
+                        <button type="button" class="editor-btn" data-format="bold" title="Bold">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"></path>
+                                <path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"></path>
+                            </svg>
+                        </button>
+                        <button type="button" class="editor-btn" data-format="italic" title="Italic">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="19" y1="4" x2="10" y2="4"></line>
+                                <line x1="14" y1="20" x2="5" y2="20"></line>
+                                <line x1="15" y1="4" x2="9" y2="20"></line>
+                            </svg>
+                        </button>
+                        <button type="button" class="editor-btn" data-format="h2" title="Heading">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 12h8"></path>
+                                <path d="M4 18V6"></path>
+                                <path d="M12 18V6"></path>
+                                <path d="M21 18h-4c0-4 4-3 4-6 0-1.5-2-2.5-4-1"></path>
+                            </svg>
+                        </button>
+                        <button type="button" class="editor-btn" data-format="link" title="Link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                            </svg>
+                        </button>
+                        <button type="button" class="editor-btn" data-format="list" title="List">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="8" y1="6" x2="21" y2="6"></line>
+                                <line x1="8" y1="12" x2="21" y2="12"></line>
+                                <line x1="8" y1="18" x2="21" y2="18"></line>
+                                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <textarea id="content" name="content" class="form-textarea content-editor" rows="12" placeholder="Write your blog content here... (HTML supported)" required></textarea>
+                </div>
+
+                <!-- Featured Image -->
+                <div class="form-section">
+                    <h3 class="form-section-title">Featured Image</h3>
+                    <div class="form-row">
+                        <div class="form-group flex-1">
+                            <label for="featuredImageUrl" class="form-label">Image URL</label>
+                            <input type="url" id="featuredImageUrl" name="featuredImageUrl" class="form-input" placeholder="https://example.com/image.jpg">
+                        </div>
+                        <div class="form-group flex-1">
+                            <label for="featuredImageAlt" class="form-label">Alt Text</label>
+                            <input type="text" id="featuredImageAlt" name="featuredImageAlt" class="form-input" placeholder="Image description">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category & Tags -->
+                <div class="form-section">
+                    <h3 class="form-section-title">Category & Tags</h3>
+                    <div class="form-group">
+                        <label for="category" class="form-label">Category</label>
+                        <select id="category" name="category" class="form-select">
+                            <option value="">Select category</option>
+                            <option value="Mutual Funds">Mutual Funds</option>
+                            <option value="Stock Market">Stock Market</option>
+                            <option value="Insurance">Insurance</option>
+                            <option value="Fixed Deposits">Fixed Deposits</option>
+                            <option value="Loans">Loans</option>
+                            <option value="Tax Planning">Tax Planning</option>
+                            <option value="Retirement Planning">Retirement Planning</option>
+                            <option value="Investment Tips">Investment Tips</option>
+                            <option value="Market Analysis">Market Analysis</option>
+                            <option value="Financial Planning">Financial Planning</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tagInput" class="form-label">Tags</label>
+                        <div class="tags-input-wrapper">
+                            <input type="text" id="tagInput" class="form-input" placeholder="Add tag and press Enter">
+                            <button type="button" class="btn btn-sm btn-secondary" id="addTagBtn">Add</button>
+                        </div>
+                        <div class="tags-container" id="tagsContainer">
+                            <!-- Tags will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEO Settings -->
+                <div class="form-section">
+                    <h3 class="form-section-title">SEO Settings</h3>
+                    <div class="form-group">
+                        <label for="metaTitle" class="form-label">Meta Title</label>
+                        <input type="text" id="metaTitle" name="metaTitle" class="form-input" placeholder="Custom title for search engines">
+                    </div>
+                    <div class="form-group">
+                        <label for="metaDescription" class="form-label">Meta Description</label>
+                        <textarea id="metaDescription" name="metaDescription" class="form-textarea" rows="2" placeholder="Description for search results"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="metaKeywordsInput" class="form-label">Meta Keywords</label>
+                        <div class="tags-input-wrapper">
+                            <input type="text" id="metaKeywordsInput" class="form-input" placeholder="Add keyword and press Enter">
+                            <button type="button" class="btn btn-sm btn-secondary" id="addMetaKeywordBtn">Add</button>
+                        </div>
+                        <div class="tags-container" id="metaKeywordsContainer">
+                            <!-- Meta keywords will be rendered here -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ogImageUrl" class="form-label">Open Graph Image URL</label>
+                        <input type="url" id="ogImageUrl" name="ogImageUrl" class="form-input" placeholder="https://example.com/og-image.jpg">
+                    </div>
+                </div>
+
+                <!-- Publishing Options -->
+                <div class="form-section">
+                    <h3 class="form-section-title">Publishing Options</h3>
+                    <div class="form-group">
+                        <label for="status" class="form-label">Status</label>
+                        <select id="status" name="status" class="form-select">
+                            <option value="draft">Draft</option>
+                            <option value="published">Published</option>
+                            <option value="archived">Archived</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label checkbox-label">
+                            <input type="checkbox" id="visibleOnWebsite" name="visibleOnWebsite" checked>
+                            <span class="checkbox-custom"></span>
+                            <span>Visible on website</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="saveBtn">
+                        <span class="btn-text">Save Post</span>
+                        <span class="btn-loader hidden"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal-overlay" id="deleteModal">
+        <div class="modal-container modal-small">
+            <div class="modal-header">
+                <h2 class="modal-title">Delete Blog Post</h2>
+                <button class="modal-close" id="closeDeleteModalBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="delete-message">Are you sure you want to delete &ldquo;<span id="deletePostTitle"></span>&rdquo;? This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelDeleteBtn">Cancel</button>
+                <button class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon"></span>
+        <span class="toast-message"></span>
+    </div>
+
+    <script src="blog-admin.js"></script>
+</body>
+</html>

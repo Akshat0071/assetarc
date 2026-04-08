@@ -3,19 +3,19 @@ import Image from "next/image";
 import Layout from "@/components/layout/Layout";
 
 export const metadata: Metadata = {
-  title: "Loans — LAMF, Business & Home Loans | Stockstrail",
+  title: "Loans — LAMF, Business & Home Loans | AssetArc",
   description:
-    "Explore Loan Against Mutual Funds, business loans, and home loans with expert guidance, minimal documentation, and competitive rates from Stockstrail.",
+    "Explore Loan Against Mutual Funds, business loans, and home loans with expert guidance, minimal documentation, and competitive rates from AssetArc.",
   keywords:
-    "loan against mutual funds, LAMF, business loan, home loan, personal loan, Stockstrail loans",
+    "loan against mutual funds, LAMF, business loan, home loan, personal loan, AssetArc loans",
   alternates: {
-    canonical: "https://stockstrail.com/services/loan",
+    canonical: "https://assetarc.in/services/loan",
   },
   openGraph: {
-    title: "Loans — LAMF, Business & Home Loans | Stockstrail",
+    title: "Loans — LAMF, Business & Home Loans | AssetArc",
     description:
       "Access funds without selling investments. Explore LAMF, business loans & home loans with expert assistance.",
-    url: "https://stockstrail.com/services/loan",
+    url: "https://assetarc.in/services/loan",
     locale: "en_IN",
     type: "website",
     images: ["/stockstrail.png"],
@@ -38,7 +38,7 @@ export default function Loan() {
           <p className="text-white/80 max-w-3xl mx-auto leading-relaxed text-lg">
             Access funds without disrupting your investments — explore LAMF,
             business loans, and home loans with minimal documentation and
-            transparent guidance from Stockstrail.
+            transparent guidance from AssetArc.
           </p>
         </div>
       </section>
@@ -60,7 +60,7 @@ export default function Loan() {
             </p>
 
             <p className="text-white/80 mb-4 leading-relaxed">
-              Stockstrail offers carefully selected loan services designed to be
+              AssetArc offers carefully selected loan services designed to be
               simple, transparent, and suitable for various financial
               requirements. We ensure access to funds with minimal documentation,
               faster approval, competitive rates, and expert guidance.
@@ -136,7 +136,7 @@ export default function Loan() {
         </div>
       </section>
 
-        {/* CTA after intro overview */}
+      {/* CTA after intro overview */}
       <section className="px-4 sm:px-6 lg:px-8 py-8">
         <div className="max-w-6xl mx-auto text-center">
           <a
@@ -156,17 +156,17 @@ export default function Loan() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* IMAGE */}
           <div className="flex items-center justify-center">
-                      <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-white/5 w-full max-w-md group hover:border-stockstrail-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.12)] transition-all">
-                        <Image
-                          src="/services/loan4.webp"
-                          alt="Loan Against Mutual Funds"
-                          width={520}
-                          height={360}
-                          loading="lazy"
-                          className="w-full object-contain max-h- sm:max80-h-[420px] group-hover:scale-105 transition-transform duration-300 bg-white/5"
-                        />
-                      </div>
-                    </div>
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-white/5 w-full max-w-md group hover:border-stockstrail-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.12)] transition-all">
+              <Image
+                src="/services/loan4.webp"
+                alt="Loan Against Mutual Funds"
+                width={520}
+                height={360}
+                loading="lazy"
+                className="w-full object-contain max-h- sm:max80-h-[420px] group-hover:scale-105 transition-transform duration-300 bg-white/5"
+              />
+            </div>
+          </div>
 
           {/* CONTENT */}
           <div>
@@ -304,21 +304,21 @@ export default function Loan() {
 
           {/* IMAGE */}
           <div className="flex items-center justify-center">
-                      <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-white/5 w-full max-w-md group hover:border-stockstrail-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.12)] transition-all">
-                        <Image
-                          src="/services/loan3.webp"
-                          alt="Business and Home Loans"
-                          width={520}
-                          height={360}
-                          loading="lazy"
-                          className="w-full object-contain max-h- sm:max80-h-[420px] group-hover:scale-105 transition-transform duration-300 bg-white/5"
-                        />
-                      </div>
-                    </div>
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-white/5 w-full max-w-md group hover:border-stockstrail-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.12)] transition-all">
+              <Image
+                src="/services/loan3.webp"
+                alt="Business and Home Loans"
+                width={520}
+                height={360}
+                loading="lazy"
+                className="w-full object-contain max-h- sm:max80-h-[420px] group-hover:scale-105 transition-transform duration-300 bg-white/5"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
-        {/* Mid-page CTA after LAMF section */}
+      {/* Mid-page CTA after LAMF section */}
       <section className="px-4 sm:px-6 lg:px-8 py-10">
         <div className="max-w-6xl mx-auto text-center">
           <a
@@ -363,11 +363,11 @@ export default function Loan() {
         </div>
       </section>
 
-      {/* WHY STOCKSTRAIL */}
+      {/* WHY ASSETARC */}
       <section className="relative px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-semibold gradient-text mb-6 text-center">
-            Why Choose Stockstrail for Loan Assistance?
+            Why Choose AssetArc for Loan Assistance?
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -33,21 +33,21 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://stockstrail.in"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://assetarc.in"
   ),
 
-  title: "Stockstrail - Financial Planning & Investment Guidance",
+  title: "AssetArc - Financial Planning & Investment Guidance",
   description:
-    "Achieve financial independence with expert financial planning, investment guidance, and advisory services from Stockstrail.",
+    "Achieve financial independence with expert financial planning, investment guidance, and advisory services from AssetArc.",
   keywords:
-    "financial planning, investment, mutual funds, insurance, loan, fixed deposit, stockstrail",
-  authors: [{ name: "Stockstrail" }],
+    "financial planning, investment, mutual funds, insurance, loan, fixed deposit, assetarc",
+  authors: [{ name: "AssetArc" }],
 
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://stockstrail.in",
-    title: "Stockstrail - Financial Planning & Investment Guidance",
+    url: "https://assetarc.in",
+    title: "AssetArc - Financial Planning & Investment Guidance",
     description:
       "Achieve financial independence with expert financial planning and investment guidance.",
     images: [
@@ -55,14 +55,14 @@ export const metadata: Metadata = {
         url: "/og-stockstrail.png", // Must exist in /public
         width: 1100,
         height: 630,
-        alt: "Stockstrail OG Image",
+        alt: "AssetArc OG Image",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Stockstrail - Financial Planning & Investment Guidance",
+    title: "AssetArc - Financial Planning & Investment Guidance",
     description:
       "Achieve financial independence with expert financial planning and investment guidance.",
     images: ["/og-stockstrail.png"],
