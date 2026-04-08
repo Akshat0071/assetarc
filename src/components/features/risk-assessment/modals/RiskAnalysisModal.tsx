@@ -57,7 +57,7 @@ export function RiskAnalysisModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-stockstrail-bg border-white/10 text-white max-w-4xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="bg-AssetArc-bg border-white/10 text-white max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-product-sans text-white">
             Risk Profile Analysis
@@ -75,7 +75,7 @@ export function RiskAnalysisModal({
               </CardHeader>
               <CardContent className="space-y-2">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-semibold text-stockstrail-green-light">
+                  <span className="text-3xl font-semibold text-AssetArc-green-light">
                     {attempt.score}
                   </span>
                   <span className="text-white/60">/ 100</span>
@@ -89,7 +89,7 @@ export function RiskAnalysisModal({
                 <CardTitle className="text-white text-lg">Risk Category</CardTitle>
               </CardHeader>
               <CardContent>
-                <span className="text-xl font-semibold text-stockstrail-green-light">
+                <span className="text-xl font-semibold text-AssetArc-green-light">
                   {attempt.risk_category}
                 </span>
               </CardContent>
@@ -123,7 +123,7 @@ export function RiskAnalysisModal({
                   <p className="text-sm uppercase tracking-wide text-white/60">
                     Risk Profile
                   </p>
-                  <p className="text-2xl text-stockstrail-green-light font-semibold">
+                  <p className="text-2xl text-AssetArc-green-light font-semibold">
                     {attempt.risk_category}
                   </p>
                   <p className="text-white/80 text-sm leading-relaxed">

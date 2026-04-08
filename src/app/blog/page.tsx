@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import Image from 'next/image';
 import { format } from 'date-fns';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -77,7 +77,7 @@ export default async function BlogPage() {
                 return (
                   <article
                     key={post.id}
-                    className="bg-stockstrail-bg-light/30 backdrop-blur-sm rounded-xl overflow-hidden border border-white/5 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-500 group"
+                    className="bg-AssetArc-bg-light/30 backdrop-blur-sm rounded-xl overflow-hidden border border-white/5 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-500 group"
                   >
                     <div className="flex flex-col lg:flex-row gap-6 p-6 lg:p-6">
                       {imageUrl && (
@@ -97,11 +97,11 @@ export default async function BlogPage() {
 
                       <div className="flex-1 flex flex-col justify-between min-w-0">
                         <div>
-                          <p className="text-stockstrail-green-light text-xs sm:text-sm uppercase tracking-wider mb-4 font-work-sans font-medium">
+                          <p className="text-AssetArc-green-light text-xs sm:text-sm uppercase tracking-wider mb-4 font-work-sans font-medium">
                             {post.author?.displayName || 'Building Vendor'}
                           </p>
                           <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-3 font-product-sans leading-snug">
-                            <Link href={postPath} className="text-stockstrail-green-light hover:text-white transition-colors duration-300">
+                            <Link href={postPath} className="text-AssetArc-green-light hover:text-white transition-colors duration-300">
                               {post.title}
                             </Link>
                           </h2>
@@ -111,7 +111,7 @@ export default async function BlogPage() {
                         </div>
 
                         <div className="flex items-center justify-between pt-4 border-t border-white/10">
-                          <Link href={postPath} className="inline-flex items-center gap-2 text-stockstrail-green-light hover:text-white font-medium transition-colors duration-300 font-work-sans text-sm sm:text-base group-hover:gap-3">
+                          <Link href={postPath} className="inline-flex items-center gap-2 text-AssetArc-green-light hover:text-white font-medium transition-colors duration-300 font-work-sans text-sm sm:text-base group-hover:gap-3">
                             Read More
                             <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

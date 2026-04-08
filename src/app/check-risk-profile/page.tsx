@@ -22,7 +22,7 @@ export default function CheckRiskProfilePage() {
   };
 
   return (
-    <div className="min-h-screen bg-stockstrail-bg flex items-center justify-center">
+    <div className="min-h-screen bg-AssetArc-bg flex items-center justify-center">
       <div className="text-white">Redirecting...</div>
     </div>
   );

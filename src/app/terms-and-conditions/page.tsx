@@ -22,20 +22,20 @@ const TermsAndConditions = () => {
               Terms and Conditions
             </h1>
             <p className="text-white/70 text-lg">
-              Please read these terms carefully before using Stockstrail&apos;s services
+              Please read these terms carefully before using AssetArc&apos;s services
             </p>
           </div>
 
           {/* Content */}
-          <div className="bg-stockstrail-bg-light/30 rounded-2xl p-8 lg:p-12 backdrop-blur-sm border border-white/10 space-y-8">
+          <div className="bg-AssetArc-bg-light/30 rounded-2xl p-8 lg:p-12 backdrop-blur-sm border border-white/10 space-y-8">
 
             {/* INTRODUCTION */}
             <section>
-              <h2 className="text-2xl lg:text-3xl font-semibold text-stockstrail-green-light mb-4 font-product-sans">
+              <h2 className="text-2xl lg:text-3xl font-semibold text-AssetArc-green-light mb-4 font-product-sans">
                 Introduction
               </h2>
               <p className="text-white/80 leading-relaxed">
-                Stockstrail (hereinafter referred to as &quot;Platform&quot; or &quot;we&quot; or &quot;us&quot; or &quot;our&quot;)
+                AssetArc (hereinafter referred to as &quot;Platform&quot; or &quot;we&quot; or &quot;us&quot; or &quot;our&quot;)
                 is a financial advisory and distribution platform that provides access to
                 various financial products and services including Mutual Funds, Fixed
                 Deposits, Insurance, Loans, Demat Accounts, and other investment solutions.
@@ -49,11 +49,11 @@ const TermsAndConditions = () => {
 
             {/* DEFINITIONS */}
             <section>
-              <h2 className="text-2xl lg:text-3xl font-semibold text-stockstrail-green-light mb-4 font-product-sans">
+              <h2 className="text-2xl lg:text-3xl font-semibold text-AssetArc-green-light mb-4 font-product-sans">
                 Definitions
               </h2>
               <ul className="space-y-3 text-white/80">
-                <li><strong className="text-white">&quot;User&quot;</strong> means any person who accesses or uses the Stockstrail Platform.</li>
+                <li><strong className="text-white">&quot;User&quot;</strong> means any person who accesses or uses the AssetArc Platform.</li>
                 <li><strong className="text-white">&quot;Services&quot;</strong> means all financial services offered including mutual funds, fixed deposits, insurance, loans, and demat accounts.</li>
                 <li><strong className="text-white">&quot;Mutual Funds&quot;</strong> means investment schemes managed by AMCs.</li>
                 <li><strong className="text-white">&quot;SIP&quot;</strong> means Systematic Investment Plans.</li>
@@ -64,7 +64,7 @@ const TermsAndConditions = () => {
 
             {/* USE OF PLATFORM */}
             <section>
-              <h2 className="text-2xl lg:text-3xl font-semibold text-stockstrail-green-light mb-4 font-product-sans">
+              <h2 className="text-2xl lg:text-3xl font-semibold text-AssetArc-green-light mb-4 font-product-sans">
                 Use of Platform
               </h2>
               <div className="space-y-4 text-white/80">
@@ -82,7 +82,7 @@ const TermsAndConditions = () => {
 
             {/* KYC */}
             <section>
-              <h2 className="text-2xl lg:text-3xl font-semibold text-stockstrail-green-light mb-4 font-product-sans">
+              <h2 className="text-2xl lg:text-3xl font-semibold text-AssetArc-green-light mb-4 font-product-sans">
                 Registration and KYC
               </h2>
               <div className="space-y-4 text-white/80">
@@ -99,7 +99,7 @@ const TermsAndConditions = () => {
 
             {/* INVESTMENT SERVICES */}
             <section>
-              <h2 className="text-2xl lg:text-3xl font-semibold text-stockstrail-green-light mb-4 font-product-sans">
+              <h2 className="text-2xl lg:text-3xl font-semibold text-AssetArc-green-light mb-4 font-product-sans">
                 Investment Services
               </h2>
               <div className="space-y-4 text-white/80">
@@ -113,7 +113,7 @@ const TermsAndConditions = () => {
 
             {/* TRANSACTIONS */}
             <section>
-              <h2 className="text-2xl lg:text-3xl font-semibold text-stockstrail-green-light mb-4 font-product-sans">
+              <h2 className="text-2xl lg:text-3xl font-semibold text-AssetArc-green-light mb-4 font-product-sans">
                 Transaction Processing
               </h2>
               <ul className="list-disc pl-6 space-y-2 text-white/80">
@@ -126,7 +126,7 @@ const TermsAndConditions = () => {
 
             {/* FEES */}
             <section>
-              <h2 className="text-2xl lg:text-3xl font-semibold text-stockstrail-green-light mb-4 font-product-sans">
+              <h2 className="text-2xl lg:text-3xl font-semibold text-AssetArc-green-light mb-4 font-product-sans">
                 Fees and Charges
               </h2>
               <p className="text-white/80">
@@ -136,7 +136,7 @@ const TermsAndConditions = () => {
 
             {/* DISCLAIMER */}
             <section>
-              <h2 className="text-2xl lg:text-3xl font-semibold text-stockstrail-green-light mb-4 font-product-sans">
+              <h2 className="text-2xl lg:text-3xl font-semibold text-AssetArc-green-light mb-4 font-product-sans">
                 Disclaimer and Limitation of Liability
               </h2>
               <div className="space-y-4 text-white/80">
@@ -147,7 +147,7 @@ const TermsAndConditions = () => {
 
             {/* PAYMENT TERMS */}
             <section>
-              <h2 className="text-2xl lg:text-3xl font-semibold text-stockstrail-green-light mb-4 font-product-sans">
+              <h2 className="text-2xl lg:text-3xl font-semibold text-AssetArc-green-light mb-4 font-product-sans">
                 Payment and Payment Gateway
               </h2>
               <p className="text-white/80">
@@ -157,7 +157,7 @@ const TermsAndConditions = () => {
 
             {/* PRIVACY */}
             <section>
-              <h2 className="text-2xl lg:text-3xl font-semibold text-stockstrail-green-light mb-4 font-product-sans">
+              <h2 className="text-2xl lg:text-3xl font-semibold text-AssetArc-green-light mb-4 font-product-sans">
                 Privacy and Data Sharing
               </h2>
               <ul className="list-disc pl-6 space-y-2 text-white/80">
@@ -168,7 +168,7 @@ const TermsAndConditions = () => {
 
             {/* MODIFICATION */}
             <section>
-              <h2 className="text-2xl lg:text-3xl font-semibold text-stockstrail-green-light mb-4 font-product-sans">
+              <h2 className="text-2xl lg:text-3xl font-semibold text-AssetArc-green-light mb-4 font-product-sans">
                 Modification of Terms
               </h2>
               <p className="text-white/80">
@@ -178,7 +178,7 @@ const TermsAndConditions = () => {
 
             {/* TERMINATION */}
             <section>
-              <h2 className="text-2xl lg:text-3xl font-semibold text-stockstrail-green-light mb-4 font-product-sans">
+              <h2 className="text-2xl lg:text-3xl font-semibold text-AssetArc-green-light mb-4 font-product-sans">
                 Termination of Services
               </h2>
               <p className="text-white/80">
@@ -188,7 +188,7 @@ const TermsAndConditions = () => {
 
             {/* CANCELLATION POLICY */}
             <section>
-              <h2 className="text-2xl lg:text-3xl font-semibold text-stockstrail-green-light mb-4 font-product-sans">
+              <h2 className="text-2xl lg:text-3xl font-semibold text-AssetArc-green-light mb-4 font-product-sans">
                 Cancellation Policy
               </h2>
               <p className="text-white/80">
@@ -197,20 +197,20 @@ const TermsAndConditions = () => {
             </section>
 
             {/* CONTACT */}
-            <section className="bg-stockstrail-bg-light/50 p-6 rounded-lg border border-stockstrail-green-light/20">
-              <h3 className="text-xl font-semibold text-stockstrail-green-light mb-4 font-product-sans">
+            <section className="bg-AssetArc-bg-light/50 p-6 rounded-lg border border-AssetArc-green-light/20">
+              <h3 className="text-xl font-semibold text-AssetArc-green-light mb-4 font-product-sans">
                 Contact Us
               </h3>
               <div className="space-y-2 text-white/80">
                 <p>
                   <strong className="text-white">Email:</strong>{" "}
-                  <Link href="mailto:akshatbansa04@gmail.com" className="text-stockstrail-green-light hover:underline">
+                  <Link href="mailto:akshatbansa04@gmail.com" className="text-AssetArc-green-light hover:underline">
                     akshatbansa04@gmail.com
                   </Link>
                 </p>
                 <p>
                   <strong className="text-white">Phone:</strong>{" "}
-                  <Link href="tel:+918219890171" className="text-stockstrail-green-light hover:underline">
+                  <Link href="tel:+918219890171" className="text-AssetArc-green-light hover:underline">
                     +91 8219890171
                   </Link>
                 </p>

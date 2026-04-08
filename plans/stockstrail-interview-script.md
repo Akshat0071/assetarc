@@ -78,7 +78,7 @@ Finally, React pairs very well with Next.js, which gave me benefits like server-
 
 **Candidate:** A REST API is a way for different software systems to communicate with each other over the internet using standard web methods like GET, POST, PUT, and DELETE. It follows a set of rules that make communication predictable and organized.
 
-In Stockstrail, I implemented REST APIs in two main ways:
+In AssetArc, I implemented REST APIs in two main ways:
 
 1. **Blogger API Integration:** I used the Blogger REST API to fetch blog posts and display them on the platform. When a user visits the blog section, the application makes a GET request to the Blogger API, retrieves the latest articles, and displays them in a clean, readable format.
 
@@ -94,7 +94,7 @@ I used the Axios library in React to handle these API requests because it provid
 ## Quick Reference Notes
 
 ### Key Talking Points:
-- Stockstrail is a financial services platform with lead intake capabilities
+- AssetArc is a financial services platform with lead intake capabilities
 - Built with React.js, Next.js, Supabase, Tailwind CSS, deployed on Vercel
 - Features include real-time reviews, blog integration, risk assessment
 - Chose React for component architecture, performance, and ecosystem
@@ -135,7 +135,7 @@ The database schema includes proper security through Row Level Security (RLS) po
 
 **Interviewer:** How does the Blogger API integration work in your project?
 
-**Candidate:** The Blogger API integration allows us to fetch and display blog content from a Google Blogger blog directly on the Stockstrail platform. Here's the architecture:
+**Candidate:** The Blogger API integration allows us to fetch and display blog content from a Google Blogger blog directly on the AssetArc platform. Here's the architecture:
 
 I created a module in `src/lib/database/blog.ts` that handles all Blogger API interactions. The integration uses Axios to make HTTP requests to Google's Blogger API endpoints.
 
@@ -233,7 +233,7 @@ This approach provides a robust synchronization system that keeps the frontend a
 
 **Interviewer:** What challenges did you face during development, and how did you solve them?
 
-**Candidate:** I encountered several interesting challenges during the development of Stockstrail:
+**Candidate:** I encountered several interesting challenges during the development of AssetArc:
 
 **Challenge 1: Random Review Selection**
 Initially, I wanted to display random reviews so users would see different content each visit. Supabase doesn't have a built-in random selection function that works well with our needs. I solved this by fetching all reviews and then implementing a Fisher-Yates shuffle algorithm in JavaScript to randomly select five reviews. This ensures true randomness every time the page loads.
@@ -260,7 +260,7 @@ Each of these challenges taught me valuable lessons about building robust, user-
 ## Quick Reference Notes
 
 ### Key Talking Points:
-- Stockstrail is a financial services platform with lead intake capabilities
+- AssetArc is a financial services platform with lead intake capabilities
 - Built with React.js, Next.js, Supabase, Tailwind CSS, deployed on Vercel
 - Features include real-time reviews, blog integration, risk assessment
 - Chose React for component architecture, performance, and ecosystem

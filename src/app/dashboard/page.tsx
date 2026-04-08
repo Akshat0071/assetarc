@@ -6,7 +6,7 @@ import { DashboardContent } from "@/components/features/risk-assessment/dashboar
 import type { RiskAttempt } from "@/lib/supabase/types";
 
 export const metadata = {
-  title: "Dashboard | Stockstrail",
+  title: "Dashboard | AssetArc",
   description: "View your risk profile and investment history",
 };
 
@@ -46,7 +46,7 @@ export default async function DashboardPage() {
   return (
     <SimpleLayout>
       <SEO
-        title="Dashboard | Stockstrail"
+        title="Dashboard | AssetArc"
         description="View your risk profile and investment history"
         url="/dashboard"
       />

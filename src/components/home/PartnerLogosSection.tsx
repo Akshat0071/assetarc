@@ -38,8 +38,8 @@ const PartnerLogosSection = () => {
         <section className="pb-8 sm:py-2 relative overflow-hidden pt-16 lg:pt-12">
             {/* Enhanced background effects */}
             <div className="absolute inset-0">
-                <div className="absolute top-10 left-1/4 w-4 h-4 bg-stockstrail-green-light/20 rounded-full"></div>
-                <div className="absolute bottom-10 right-1/4 w-3 h-3 bg-stockstrail-green-accent/30 rounded-full"></div>
+                <div className="absolute top-10 left-1/4 w-4 h-4 bg-AssetArc-green-light/20 rounded-full"></div>
+                <div className="absolute bottom-10 right-1/4 w-3 h-3 bg-AssetArc-green-accent/30 rounded-full"></div>
                 <div className="absolute top-1/2 left-10 w-2 h-2 bg-white/20 rounded-full"></div>
             </div>
 
@@ -49,7 +49,7 @@ const PartnerLogosSection = () => {
                         OUR PARTNERS
                     </h3>
                 </div>
-                <div className="w-full bg-[#0F2A2A] border-y border-[#1A3A3A] overflow-hidden hover:border-stockstrail-green-light/30 transition-colors duration-500">
+                <div className="w-full bg-[#0F2A2A] border-y border-[#1A3A3A] overflow-hidden hover:border-AssetArc-green-light/30 transition-colors duration-500">
                     <div className="partners-track animate-scroll">
                         {partners.concat(partners).map((partner, i) => (
                             <div key={`partner-${i}`} className="flex items-center justify-center px-4 sm:px-6 py-4 sm:py-4 min-w-[120px] sm:min-w-[200px] group">

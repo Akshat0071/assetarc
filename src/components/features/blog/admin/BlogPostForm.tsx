@@ -271,7 +271,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
                 <form onSubmit={handleSubmit} className="space-y-6">
                     {/* Basic Information */}
                     <div className="space-y-4">
-                        <h3 className="text-lg font-semibold text-stockstrail-green-light">Basic Information</h3>
+                        <h3 className="text-lg font-semibold text-AssetArc-green-light">Basic Information</h3>
 
                         <div className="space-y-2">
                             <Label htmlFor="title">Title *</Label>
@@ -282,7 +282,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
                                 onChange={handleInputChange}
                                 required
                                 placeholder="Enter post title..."
-                                className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-stockstrail-green-light"
+                                className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-AssetArc-green-light"
                             />
                         </div>
 
@@ -294,7 +294,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
                                 value={formData.slug}
                                 onChange={handleInputChange}
                                 placeholder="url-friendly-slug"
-                                className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-stockstrail-green-light"
+                                className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-AssetArc-green-light"
                             />
                             <p className="text-xs text-white/40">
                                 Auto-generated from title. Customize if needed.
@@ -310,14 +310,14 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
                                 onChange={handleInputChange}
                                 placeholder="Brief description of the post (shown in listings)..."
                                 rows={2}
-                                className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-stockstrail-green-light resize-none"
+                                className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-AssetArc-green-light resize-none"
                             />
                         </div>
                     </div>
 
                     {/* Content Editor */}
                     <div className="space-y-4">
-                        <h3 className="text-lg font-semibold text-stockstrail-green-light">Content *</h3>
+                        <h3 className="text-lg font-semibold text-AssetArc-green-light">Content *</h3>
 
                         {/* Formatting Toolbar */}
                         <div className="flex flex-wrap gap-2 p-2 bg-white/5 rounded-lg border border-white/10">
@@ -326,7 +326,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
                                 variant="ghost"
                                 size="sm"
                                 onClick={() => insertFormat("bold")}
-                                className="text-white hover:text-stockstrail-green-light"
+                                className="text-white hover:text-AssetArc-green-light"
                             >
                                 <Bold className="w-4 h-4" />
                             </Button>
@@ -335,7 +335,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
                                 variant="ghost"
                                 size="sm"
                                 onClick={() => insertFormat("italic")}
-                                className="text-white hover:text-stockstrail-green-light"
+                                className="text-white hover:text-AssetArc-green-light"
                             >
                                 <Italic className="w-4 h-4" />
                             </Button>
@@ -344,7 +344,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
                                 variant="ghost"
                                 size="sm"
                                 onClick={() => insertFormat("h2")}
-                                className="text-white hover:text-stockstrail-green-light"
+                                className="text-white hover:text-AssetArc-green-light"
                             >
                                 <Heading className="w-4 h-4" />
                             </Button>
@@ -353,7 +353,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
                                 variant="ghost"
                                 size="sm"
                                 onClick={() => insertFormat("link")}
-                                className="text-white hover:text-stockstrail-green-light"
+                                className="text-white hover:text-AssetArc-green-light"
                             >
                                 <Link className="w-4 h-4" />
                             </Button>
@@ -362,7 +362,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
                                 variant="ghost"
                                 size="sm"
                                 onClick={() => insertFormat("list")}
-                                className="text-white hover:text-stockstrail-green-light"
+                                className="text-white hover:text-AssetArc-green-light"
                             >
                                 <List className="w-4 h-4" />
                             </Button>
@@ -376,7 +376,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
                             required
                             placeholder="Write your blog content here... You can use HTML tags for formatting."
                             rows={15}
-                            className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-stockstrail-green-light font-mono text-sm"
+                            className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-AssetArc-green-light font-mono text-sm"
                         />
                         <p className="text-xs text-white/40">
                             Supports HTML tags for formatting: bold, italic, headings, links, lists, images
@@ -385,7 +385,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
 
                     {/* Featured Image */}
                     <div className="space-y-4">
-                        <h3 className="text-lg font-semibold text-stockstrail-green-light">Featured Image</h3>
+                        <h3 className="text-lg font-semibold text-AssetArc-green-light">Featured Image</h3>
 
                         <div className="space-y-2">
                             <Label htmlFor="featured_image_url">Image URL</Label>
@@ -395,7 +395,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
                                 value={formData.featured_image_url}
                                 onChange={handleInputChange}
                                 placeholder="https://example.com/image.jpg"
-                                className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-stockstrail-green-light"
+                                className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-AssetArc-green-light"
                             />
                         </div>
 
@@ -407,14 +407,14 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
                                 value={formData.featured_image_alt}
                                 onChange={handleInputChange}
                                 placeholder="Image description for accessibility..."
-                                className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-stockstrail-green-light"
+                                className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-AssetArc-green-light"
                             />
                         </div>
                     </div>
 
                     {/* Category and Tags */}
                     <div className="space-y-4">
-                        <h3 className="text-lg font-semibold text-stockstrail-green-light">Category & Tags</h3>
+                        <h3 className="text-lg font-semibold text-AssetArc-green-light">Category & Tags</h3>
 
                         <div className="space-y-2">
                             <Label htmlFor="category">Category</Label>
@@ -440,7 +440,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
                                     onChange={(e) => setTagInput(e.target.value)}
                                     onKeyPress={(e) => e.key === "Enter" && (e.preventDefault(), handleAddTag())}
                                     placeholder="Add a tag..."
-                                    className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-stockstrail-green-light"
+                                    className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-AssetArc-green-light"
                                 />
                                 <Button
                                     type="button"
@@ -470,7 +470,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
 
                     {/* SEO Meta Tags */}
                     <div className="space-y-4">
-                        <h3 className="text-lg font-semibold text-stockstrail-green-light">SEO Meta Tags</h3>
+                        <h3 className="text-lg font-semibold text-AssetArc-green-light">SEO Meta Tags</h3>
 
                         <div className="space-y-2">
                             <Label htmlFor="meta_title">Meta Title</Label>
@@ -480,7 +480,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
                                 value={formData.meta_title}
                                 onChange={handleInputChange}
                                 placeholder="SEO title (defaults to post title if empty)"
-                                className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-stockstrail-green-light"
+                                className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-AssetArc-green-light"
                             />
                         </div>
 
@@ -493,7 +493,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
                                 onChange={handleInputChange}
                                 placeholder="SEO description for search engines..."
                                 rows={2}
-                                className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-stockstrail-green-light resize-none"
+                                className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-AssetArc-green-light resize-none"
                             />
                         </div>
 
@@ -505,7 +505,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
                                 value={formData.og_image_url}
                                 onChange={handleInputChange}
                                 placeholder="https://example.com/og-image.jpg"
-                                className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-stockstrail-green-light"
+                                className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-AssetArc-green-light"
                             />
                         </div>
 
@@ -517,7 +517,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
                                     onChange={(e) => setTagInput(e.target.value)}
                                     onKeyPress={(e) => e.key === "Enter" && (e.preventDefault(), handleAddMetaKeyword())}
                                     placeholder="Add a keyword..."
-                                    className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-stockstrail-green-light"
+                                    className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-AssetArc-green-light"
                                 />
                                 <Button
                                     type="button"
@@ -547,7 +547,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
 
                     {/* Status and Visibility */}
                     <div className="space-y-4">
-                        <h3 className="text-lg font-semibold text-stockstrail-green-light">Publishing</h3>
+                        <h3 className="text-lg font-semibold text-AssetArc-green-light">Publishing</h3>
 
                         <div className="space-y-2">
                             <Label htmlFor="status">Status</Label>
@@ -593,7 +593,7 @@ export function BlogPostForm({ open, onClose, post }: BlogPostFormProps) {
                         <Button
                             type="submit"
                             disabled={isSubmitting}
-                            className="bg-stockstrail-green-light hover:bg-stockstrail-green-light/90 text-black"
+                            className="bg-AssetArc-green-light hover:bg-AssetArc-green-light/90 text-black"
                         >
                             {isSubmitting ? "Saving..." : post ? "Update Post" : "Create Post"}
                         </Button>

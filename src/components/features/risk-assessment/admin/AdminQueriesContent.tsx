@@ -178,7 +178,7 @@ export function AdminQueriesContent({ queries }: AdminQueriesContentProps) {
                           <td className="py-3 px-4 text-white/80 text-sm">
                             <a
                               href={`mailto:${query.email}`}
-                              className="text-stockstrail-green-light hover:underline flex items-center gap-1"
+                              className="text-AssetArc-green-light hover:underline flex items-center gap-1"
                             >
                               <Mail className="w-3 h-3" />
                               {query.email}
@@ -187,7 +187,7 @@ export function AdminQueriesContent({ queries }: AdminQueriesContentProps) {
                           <td className="py-3 px-4 text-white/80 text-sm">
                             <a
                               href={`tel:${query.phone}`}
-                              className="text-stockstrail-green-light hover:underline flex items-center gap-1"
+                              className="text-AssetArc-green-light hover:underline flex items-center gap-1"
                             >
                               <Phone className="w-3 h-3" />
                               {query.phone}
@@ -250,14 +250,14 @@ export function AdminQueriesContent({ queries }: AdminQueriesContentProps) {
                           <div className="space-y-1 mt-2">
                             <a
                               href={`mailto:${query.email}`}
-                              className="text-stockstrail-green-light hover:underline text-xs flex items-center gap-1 break-all"
+                              className="text-AssetArc-green-light hover:underline text-xs flex items-center gap-1 break-all"
                             >
                               <Mail className="w-3 h-3 flex-shrink-0" />
                               {query.email}
                             </a>
                             <a
                               href={`tel:${query.phone}`}
-                              className="text-stockstrail-green-light hover:underline text-xs flex items-center gap-1"
+                              className="text-AssetArc-green-light hover:underline text-xs flex items-center gap-1"
                             >
                               <Phone className="w-3 h-3 flex-shrink-0" />
                               {query.phone}

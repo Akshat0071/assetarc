@@ -6,7 +6,7 @@ import { BlogAdminContent } from "@/components/features/blog/admin/BlogAdminCont
 import type { BlogPost } from "@/lib/supabase/types";
 
 export const metadata = {
-    title: "Blog Management | Stockstrail",
+    title: "Blog Management | AssetArc",
     description: "Admin panel for managing blog posts",
 };
 
@@ -41,7 +41,7 @@ export default async function BlogAdminPage() {
     return (
         <SimpleLayout>
             <SEO
-                title="Blog Management | Stockstrail"
+                title="Blog Management | AssetArc"
                 description="Admin panel for managing blog posts"
                 url="/admin/blog"
             />

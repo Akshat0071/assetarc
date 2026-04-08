@@ -1,4 +1,4 @@
-﻿import { NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 const BLOG_ID = process.env.BLOG_ID || process.env.NEXT_PUBLIC_BLOG_ID || process.env.NEXT_PUBLIC_BLOGGER_ID;
 const API_KEY = process.env.BLOGGER_API_KEY || process.env.NEXT_PUBLIC_BLOGGER_API_KEY || process.env.BLOGGER_KEY;

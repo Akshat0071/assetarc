@@ -1,6 +1,6 @@
 import Layout from '@/components/layout/Layout';
 import Link from "next/link";
-const StockstrailLogoBW = () => (
+const AssetArcLogoBW = () => (
   <div className="flex items-center gap-4 sm:gap-8">
     <svg
       width="192"
@@ -34,7 +34,7 @@ export default function NotFound() {
               404
             </h1>
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-stockstrail-green-light to-stockstrail-green-accent blur-3xl opacity-30 animate-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-AssetArc-green-light to-AssetArc-green-accent blur-3xl opacity-30 animate-pulse"></div>
               <h2 className="relative text-4xl sm:text-5xl font-product-sans font-normal uppercase gradient-text mb-6">
                 Page Not Found
               </h2>
@@ -44,7 +44,7 @@ export default function NotFound() {
           {/* Logo */}
           <div className="mb-8 flex justify-center">
             <div className="animate-bounce">
-              <StockstrailLogoBW />
+              <AssetArcLogoBW />
             </div>
           </div>
 
@@ -62,26 +62,26 @@ export default function NotFound() {
 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
   <Link
     href="/"
-    className="inline-flex items-center gap-3 sm:gap-4 px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,151,0.3)] transition-all duration-300 font-work-sans font-medium text-base sm:text-lg group"
+    className="inline-flex items-center gap-3 sm:gap-4 px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,151,0.3)] transition-all duration-300 font-work-sans font-medium text-base sm:text-lg group"
   >
-    <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full group-hover:scale-110 transition-transform duration-300" />
+    <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full group-hover:scale-110 transition-transform duration-300" />
     Return Home
   </Link>
 
   <Link
     href="/services"
-    className="inline-flex items-center gap-3 sm:gap-4 px-6 sm:px-8 py-3 sm:py-4 bg-stockstrail-green-light/10 border-2 border-stockstrail-green-light/30 rounded-full text-stockstrail-green-light hover:bg-stockstrail-green-light hover:text-white hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,151,0.4)] transition-all duration-300 font-work-sans font-medium text-base sm:text-lg group"
+    className="inline-flex items-center gap-3 sm:gap-4 px-6 sm:px-8 py-3 sm:py-4 bg-AssetArc-green-light/10 border-2 border-AssetArc-green-light/30 rounded-full text-AssetArc-green-light hover:bg-AssetArc-green-light hover:text-white hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,151,0.4)] transition-all duration-300 font-work-sans font-medium text-base sm:text-lg group"
   >
-    <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full group-hover:scale-110 transition-transform duration-300" />
+    <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full group-hover:scale-110 transition-transform duration-300" />
     Explore Services
   </Link>
 </div>
 
           {/* Floating Elements */}
-          <div className="absolute top-20 left-10 w-4 h-4 bg-stockstrail-green-light/30 rounded-full animate-ping"></div>
-          <div className="absolute top-40 right-20 w-3 h-3 bg-stockstrail-green-accent/40 rounded-full animate-pulse"></div>
+          <div className="absolute top-20 left-10 w-4 h-4 bg-AssetArc-green-light/30 rounded-full animate-ping"></div>
+          <div className="absolute top-40 right-20 w-3 h-3 bg-AssetArc-green-accent/40 rounded-full animate-pulse"></div>
           <div className="absolute bottom-20 left-20 w-2 h-2 bg-white/20 rounded-full animate-bounce"></div>
-          <div className="absolute bottom-40 right-10 w-5 h-5 bg-stockstrail-green-light/20 rounded-full animate-ping"></div>
+          <div className="absolute bottom-40 right-10 w-5 h-5 bg-AssetArc-green-light/20 rounded-full animate-ping"></div>
         </div>
       </section>
     </Layout>

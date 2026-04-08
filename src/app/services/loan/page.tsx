@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: "https://assetarc.in/services/loan",
     locale: "en_IN",
     type: "website",
-    images: ["/stockstrail.png"],
+    images: ["/assetarclogo.png"],
   },
 };
 
@@ -28,7 +28,7 @@ export default function Loan() {
       {/* HERO */}
       <section className="relative px-4 sm:px-6 lg:px-8 pt-24 pb-16">
         <div className="absolute inset-0 -z-10">
-          <div className="w-full h-72 bg-stockstrail-bg-light blur-185 opacity-40" />
+          <div className="w-full h-72 bg-AssetArc-bg-light blur-185 opacity-40" />
         </div>
 
         <div className="max-w-6xl mx-auto text-center">
@@ -90,16 +90,16 @@ export default function Loan() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="rounded-xl p-5 bg-stockstrail-bg-light/30 border border-white/10"
+                  className="rounded-xl p-5 bg-AssetArc-bg-light/30 border border-white/10"
                 >
-                  <h3 className="text-lg font-semibold text-stockstrail-green-light mb-2">
+                  <h3 className="text-lg font-semibold text-AssetArc-green-light mb-2">
                     {item.title}
                   </h3>
                   <p className="text-white/80 text-sm mb-4">{item.desc}</p>
                   {item.link && (
                     <a
                       href={item.link}
-                      className="text-stockstrail-green-light hover:underline text-sm"
+                      className="text-AssetArc-green-light hover:underline text-sm"
                     >
                       Explore {item.title}
                     </a>
@@ -110,7 +110,7 @@ export default function Loan() {
           </div>
 
           {/* SIDEBAR */}
-          <aside className="rounded-2xl p-16 bg-stockstrail-bg-light/40 border border-white/10">
+          <aside className="rounded-2xl p-16 bg-AssetArc-bg-light/40 border border-white/10">
             <Image
               src="/services/loan2.webp"
               alt="Loan Overview"
@@ -128,7 +128,7 @@ export default function Loan() {
 
             <a
               href="/contact"
-              className="text-stockstrail-green-light underline focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-stockstrail-green-light"
+              className="text-AssetArc-green-light underline focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-AssetArc-green-light"
             >
               Get personalised loan advice
             </a>
@@ -143,20 +143,20 @@ export default function Loan() {
             href="https://flow.assetplus.in/client_onboarding/?advisor=659a79c11af778e82872513a"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-105 transition-all duration-300 font-work-sans font-medium"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 hover:scale-105 transition-all duration-300 font-work-sans font-medium"
           >
-            <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full" />
+            <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full" />
             Apply For A Loan — Quick Start
           </a>
         </div>
       </section>
 
       {/* LAMF SECTION */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-stockstrail-bg-light/20">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-AssetArc-bg-light/20">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* IMAGE */}
           <div className="flex items-center justify-center">
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-white/5 w-full max-w-md group hover:border-stockstrail-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.12)] transition-all">
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-white/5 w-full max-w-md group hover:border-AssetArc-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.12)] transition-all">
               <Image
                 src="/services/loan4.webp"
                 alt="Loan Against Mutual Funds"
@@ -170,7 +170,7 @@ export default function Loan() {
 
           {/* CONTENT */}
           <div>
-            <h2 className="text-2xl sm:text-3xl text-stockstrail-green-light font-semibold mb-4">
+            <h2 className="text-2xl sm:text-3xl text-AssetArc-green-light font-semibold mb-4">
               Loan Against Mutual Funds — What & Why
             </h2>
 
@@ -202,7 +202,7 @@ export default function Loan() {
             </ol>
 
             {/* CASE STUDIES */}
-            <div className="rounded-2xl p-6 bg-stockstrail-bg-light/30 border border-white/10 mt-6">
+            <div className="rounded-2xl p-6 bg-AssetArc-bg-light/30 border border-white/10 mt-6">
               <h4 className="text-white font-semibold mb-3">Realistic Cases</h4>
 
               <div className="space-y-4 text-white/80">
@@ -239,13 +239,13 @@ export default function Loan() {
       <section className="relative px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* LEFT CONTENT */}
-          <div className="rounded-2xl p-6 bg-stockstrail-bg-light/30">
+          <div className="rounded-2xl p-6 bg-AssetArc-bg-light/30">
             <h2 className="text-2xl sm:text-3xl font-semibold mb-3">
               Business & Home Loans — What & Why
             </h2>
 
             {/* BUSINESS LOANS */}
-            <h3 className="text-lg font-semibold text-stockstrail-green-light mb-2 mt-4">
+            <h3 className="text-lg font-semibold text-AssetArc-green-light mb-2 mt-4">
               Business Loans
             </h3>
             <p className="text-white/80 mb-3">
@@ -262,7 +262,7 @@ export default function Loan() {
             </ol>
 
             {/* HOME LOANS */}
-            <h3 className="text-lg font-semibold text-stockstrail-green-light mb-2 mt-6">
+            <h3 className="text-lg font-semibold text-AssetArc-green-light mb-2 mt-6">
               Home Loans
             </h3>
             <p className="text-white/80 mb-3">
@@ -279,7 +279,7 @@ export default function Loan() {
             </ol>
 
             {/* CASES */}
-            <div className="mt-6 rounded-2xl p-6 bg-stockstrail-bg-light/30 border border-white/10">
+            <div className="mt-6 rounded-2xl p-6 bg-AssetArc-bg-light/30 border border-white/10">
               <h4 className="text-white font-semibold mb-3">Real-Life Examples</h4>
 
               <div className="space-y-4 text-white/80">
@@ -304,7 +304,7 @@ export default function Loan() {
 
           {/* IMAGE */}
           <div className="flex items-center justify-center">
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-white/5 w-full max-w-md group hover:border-stockstrail-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.12)] transition-all">
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-white/5 w-full max-w-md group hover:border-AssetArc-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.12)] transition-all">
               <Image
                 src="/services/loan3.webp"
                 alt="Business and Home Loans"
@@ -323,16 +323,16 @@ export default function Loan() {
         <div className="max-w-6xl mx-auto text-center">
           <a
             href="https://flow.assetplus.in/client_onboarding/?advisor=659a79c11af778e82872513a"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-stockstrail-green-accent/5 border-2 border-stockstrail-green-accent/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-bg hover:bg-stockstrail-green-accent transition-all duration-300 font-work-sans font-medium"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-AssetArc-green-accent/5 border-2 border-AssetArc-green-accent/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-bg hover:bg-AssetArc-green-accent transition-all duration-300 font-work-sans font-medium"
           >
-            <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full" />
+            <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full" />
             Check Loan Options & Start Application
           </a>
         </div>
       </section>
 
       {/* WHO SHOULD CONSIDER LOANS */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-stockstrail-bg-light/20">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-AssetArc-bg-light/20">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-semibold gradient-text mb-6 text-center">
             Who Should Consider Loans?
@@ -351,9 +351,9 @@ export default function Loan() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="flex gap-4 items-start bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-lg p-5 border border-white/10"
+                className="flex gap-4 items-start bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-lg p-5 border border-white/10"
               >
-                <div className="text-stockstrail-green-light text-2xl font-bold">
+                <div className="text-AssetArc-green-light text-2xl font-bold">
                   →
                 </div>
                 <p className="text-white/80">{item}</p>
@@ -399,7 +399,7 @@ export default function Loan() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="rounded-2xl p-6 bg-stockstrail-bg-light/30 border border-white/10 text-center"
+                className="rounded-2xl p-6 bg-AssetArc-bg-light/30 border border-white/10 text-center"
               >
                 <h3 className="text-white font-semibold mb-2 text-lg">{item.title}</h3>
                 <p className="text-white/80 text-sm">{item.desc}</p>
@@ -410,7 +410,7 @@ export default function Loan() {
       </section>
 
       {/* HOW TO GET STARTED */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-stockstrail-bg-light/10">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-AssetArc-bg-light/10">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-semibold gradient-text mb-8 text-center">
             How to Get Started with a Loan
@@ -445,7 +445,7 @@ export default function Loan() {
               },
             ].map((item, i) => (
               <div key={i} className="flex gap-6 items-start">
-                <div className="shrink-0 flex items-center justify-center h-12 w-12 rounded-2xl bg-stockstrail-green-light text-black font-semibold">
+                <div className="shrink-0 flex items-center justify-center h-12 w-12 rounded-2xl bg-AssetArc-green-light text-black font-semibold">
                   {item.step}
                 </div>
                 <div>
@@ -459,7 +459,7 @@ export default function Loan() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-stockstrail-bg-light/20">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-AssetArc-bg-light/20">
         <div className="max-w-6xl mx-auto text-center">
           <h3 className="text-xl font-semibold text-white mb-3">
             Ready to access funds without disrupting your investments?
@@ -471,7 +471,7 @@ export default function Loan() {
 
           <a
             href="/contact"
-            className="inline-flex items-center gap-3 px-6 py-3 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 transition-all duration-300 font-work-sans"
+            className="inline-flex items-center gap-3 px-6 py-3 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 transition-all duration-300 font-work-sans"
           >
             Get personalised loan advice
           </a>

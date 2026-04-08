@@ -106,7 +106,7 @@ export function DashboardContent({
             </div>
             <Link 
               href="/" 
-              className="inline-flex items-center text-white/50 hover:text-stockstrail-green-light transition-colors duration-300 font-work-sans text-sm sm:text-base group shrink-0"
+              className="inline-flex items-center text-white/50 hover:text-AssetArc-green-light transition-colors duration-300 font-work-sans text-sm sm:text-base group shrink-0"
             >
               <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
               Back to Home
@@ -120,7 +120,7 @@ export function DashboardContent({
             <Card className="bg-white/5 border-white/10 lg:col-span-2">
               <CardHeader>
                 <CardTitle className="text-white text-xl flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5 text-stockstrail-green-light" />
+                  <TrendingUp className="w-5 h-5 text-AssetArc-green-light" />
                   Latest Risk Profile
                 </CardTitle>
                 <CardDescription className="text-white/70">
@@ -131,7 +131,7 @@ export function DashboardContent({
                 <div className="flex items-baseline gap-4">
                   <div>
                     <p className="text-white/60 text-sm">Risk Score</p>
-                    <p className="text-4xl font-semibold text-stockstrail-green-light">
+                    <p className="text-4xl font-semibold text-AssetArc-green-light">
                       {latestAttempt.score}
                     </p>
                     <p className="text-white/60 text-sm">/ 100</p>
@@ -170,7 +170,7 @@ export function DashboardContent({
                   <Button
                     onClick={() => latestAttempt && handleViewResponses(latestAttempt)}
                     variant="outline"
-                    className="w-full border-white/20 text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light"
+                    className="w-full border-white/20 text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light"
                   >
                     View Response
                     <Eye className="w-4 h-4 ml-2" />
@@ -182,7 +182,7 @@ export function DashboardContent({
             <Card className="bg-white/5 border-white/10">
               <CardHeader>
                 <CardTitle className="text-white text-xl flex items-center gap-2">
-                  <Award className="w-5 h-5 text-stockstrail-green-light" />
+                  <Award className="w-5 h-5 text-AssetArc-green-light" />
                   Quick Stats
                 </CardTitle>
               </CardHeader>
@@ -195,7 +195,7 @@ export function DashboardContent({
                 </div>
                 <div>
                   <p className="text-white/60 text-sm">Attempts Remaining</p>
-                  <p className="text-2xl font-semibold text-stockstrail-green-light">
+                  <p className="text-2xl font-semibold text-AssetArc-green-light">
                     {Math.max(0, 5 - allAttempts.length)}
                   </p>
                 </div>
@@ -214,9 +214,9 @@ export function DashboardContent({
                   <button
                     onClick={() => router.push("/risk-profile")}
                     disabled={!canTakeAssessment}
-                    className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light transition-all duration-300 font-medium text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed w-full justify-center"
+                    className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light transition-all duration-300 font-medium text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed w-full justify-center"
                   >
-                    <div className="w-2 h-2 sm:w-3 sm:h-3 bg-stockstrail-green-accent rounded-full" />
+                    <div className="w-2 h-2 sm:w-3 sm:h-3 bg-AssetArc-green-accent rounded-full" />
                     {canTakeAssessment
                       ? "Take Assessment"
                       : "Maximum Attempts Reached (5/5)"}
@@ -236,7 +236,7 @@ export function DashboardContent({
             <CardContent>
               <Button
                 onClick={() => router.push("/risk-profile")}
-                className="bg-stockstrail-green-light text-stockstrail-bg hover:bg-stockstrail-green-light/90 font-medium"
+                className="bg-AssetArc-green-light text-AssetArc-bg hover:bg-AssetArc-green-light/90 font-medium"
               >
                 Take Risk Assessment
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -250,7 +250,7 @@ export function DashboardContent({
           <Card className="bg-white/5 border-white/10">
             <CardHeader>
               <CardTitle className="text-white text-xl flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-stockstrail-green-light" />
+                <Calendar className="w-5 h-5 text-AssetArc-green-light" />
                 Assessment History
               </CardTitle>
               <CardDescription className="text-white/70">
@@ -289,7 +289,7 @@ export function DashboardContent({
                           {attempt.attempt_number}
                         </td>
                         <td className="py-3 px-4">
-                          <span className="text-stockstrail-green-light font-semibold">
+                          <span className="text-AssetArc-green-light font-semibold">
                             {attempt.score}
                           </span>
                           <span className="text-white/60 text-sm ml-1">/ 100</span>
@@ -314,7 +314,7 @@ export function DashboardContent({
                               variant="ghost"
                               size="sm"
                               onClick={() => handleViewAnalysis(attempt)}
-                              className="text-white/70 hover:text-stockstrail-green-light hover:bg-white/10 h-8"
+                              className="text-white/70 hover:text-AssetArc-green-light hover:bg-white/10 h-8"
                             >
                               <Eye className="w-4 h-4 mr-1" />
                               Analysis
@@ -323,7 +323,7 @@ export function DashboardContent({
                               variant="ghost"
                               size="sm"
                               onClick={() => handleViewResponses(attempt)}
-                              className="text-white/70 hover:text-stockstrail-green-light hover:bg-white/10 h-8"
+                              className="text-white/70 hover:text-AssetArc-green-light hover:bg-white/10 h-8"
                             >
                               <Eye className="w-4 h-4 mr-1" />
                               Responses

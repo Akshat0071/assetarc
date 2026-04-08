@@ -28,7 +28,7 @@ export default function MutualFunds() {
     <Layout>
       <section className="relative px-4 sm:px-6 lg:px-8 pt-24 pb-16">
         <div className="absolute inset-0 -z-10">
-          <div className="w-full h-96 bg-stockstrail-bg-light blur-185 opacity-40" />
+          <div className="w-full h-96 bg-AssetArc-bg-light blur-185 opacity-40" />
         </div>
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="font-product-sans text-2xl sm:text-4xl lg:text-6xl font-normal uppercase gradient-text mb-6">
@@ -46,7 +46,7 @@ export default function MutualFunds() {
       <section className="relative px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-white/5 group hover:border-stockstrail-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.2)] transition-all duration-300">
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-white/5 group hover:border-AssetArc-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.2)] transition-all duration-300">
               <Image
                 src="/services/mf2.webp"
                 alt="What is Mutual Fund"
@@ -58,7 +58,7 @@ export default function MutualFunds() {
             </div>
 
             <div>
-              <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold text-stockstrail-green-light mb-6">
+              <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold text-AssetArc-green-light mb-6">
                 What is a Mutual Fund?
               </h2>
               <p className="text-white/80 leading-relaxed mb-4">
@@ -86,23 +86,23 @@ export default function MutualFunds() {
             href="https://flow.assetplus.in/client_onboarding/?advisor=659a79c11af778e82872513a"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-105 transition-all duration-300 font-work-sans font-medium"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 hover:scale-105 transition-all duration-300 font-work-sans font-medium"
           >
-            <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full" />
+            <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full" />
             Secure Your First SIP — Start Now
           </a>
         </div>
       </section>
 
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-stockstrail-bg-light/20">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-AssetArc-bg-light/20">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold gradient-text mb-12 text-center">
             Why Invest in Mutual Funds?
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
-              <h3 className="text-xl font-semibold text-stockstrail-green-light mb-3 group-hover:text-white transition-colors">
+            <div className="bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
+              <h3 className="text-xl font-semibold text-AssetArc-green-light mb-3 group-hover:text-white transition-colors">
                 Low Entry Barrier
               </h3>
               <p className="text-white/80">
@@ -111,8 +111,8 @@ export default function MutualFunds() {
               </p>
             </div>
 
-            <div className="bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
-              <h3 className="text-xl font-semibold text-stockstrail-green-light mb-3 group-hover:text-white transition-colors">
+            <div className="bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
+              <h3 className="text-xl font-semibold text-AssetArc-green-light mb-3 group-hover:text-white transition-colors">
                 Professional Management
               </h3>
               <p className="text-white/80">
@@ -121,8 +121,8 @@ export default function MutualFunds() {
               </p>
             </div>
 
-            <div className="bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
-              <h3 className="text-xl font-semibold text-stockstrail-green-light mb-3 group-hover:text-white transition-colors">
+            <div className="bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
+              <h3 className="text-xl font-semibold text-AssetArc-green-light mb-3 group-hover:text-white transition-colors">
                 Diversification
               </h3>
               <p className="text-white/80">
@@ -131,8 +131,8 @@ export default function MutualFunds() {
               </p>
             </div>
 
-            <div className="bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
-              <h3 className="text-xl font-semibold text-stockstrail-green-light mb-3 group-hover:text-white transition-colors">
+            <div className="bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
+              <h3 className="text-xl font-semibold text-AssetArc-green-light mb-3 group-hover:text-white transition-colors">
                 Higher Returns Potential
               </h3>
               <p className="text-white/80">
@@ -141,8 +141,8 @@ export default function MutualFunds() {
               </p>
             </div>
 
-            <div className="bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
-              <h3 className="text-xl font-semibold text-stockstrail-green-light mb-3 group-hover:text-white transition-colors">
+            <div className="bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
+              <h3 className="text-xl font-semibold text-AssetArc-green-light mb-3 group-hover:text-white transition-colors">
                 Liquidity
               </h3>
               <p className="text-white/80">
@@ -151,8 +151,8 @@ export default function MutualFunds() {
               </p>
             </div>
 
-            <div className="bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
-              <h3 className="text-xl font-semibold text-stockstrail-green-light mb-3 group-hover:text-white transition-colors">
+            <div className="bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
+              <h3 className="text-xl font-semibold text-AssetArc-green-light mb-3 group-hover:text-white transition-colors">
                 Passive Investing
               </h3>
               <p className="text-white/80">
@@ -173,8 +173,8 @@ export default function MutualFunds() {
           </h2>
 
           <div className="space-y-8">
-            <div className="bg-stockstrail-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300">
-              <h3 className="text-2xl font-semibold text-stockstrail-green-light mb-3">Equity Funds</h3>
+            <div className="bg-AssetArc-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300">
+              <h3 className="text-2xl font-semibold text-AssetArc-green-light mb-3">Equity Funds</h3>
               <p className="text-white/80 mb-4">
                 Equity funds invest primarily in the shares of companies. These funds aim for long-term capital growth.
               </p>
@@ -193,8 +193,8 @@ export default function MutualFunds() {
               </div>
             </div>
 
-            <div className="bg-stockstrail-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300">
-              <h3 className="text-2xl font-semibold text-stockstrail-green-light mb-3">Debt Funds</h3>
+            <div className="bg-AssetArc-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300">
+              <h3 className="text-2xl font-semibold text-AssetArc-green-light mb-3">Debt Funds</h3>
               <p className="text-white/80 mb-4">
                 Debt funds invest in fixed-income instruments such as government bonds, corporate bonds, certificates
                 of deposit, and other debt securities.
@@ -211,8 +211,8 @@ export default function MutualFunds() {
               </div>
             </div>
 
-            <div className="bg-stockstrail-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300">
-              <h3 className="text-2xl font-semibold text-stockstrail-green-light mb-3">Hybrid Funds</h3>
+            <div className="bg-AssetArc-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300">
+              <h3 className="text-2xl font-semibold text-AssetArc-green-light mb-3">Hybrid Funds</h3>
               <p className="text-white/80 mb-4">
                 Hybrid funds invest in a mix of equity and debt instruments. The combination provides both growth
                 potential and stability.
@@ -239,15 +239,15 @@ export default function MutualFunds() {
             href="https://flow.assetplus.in/client_onboarding/?advisor=659a79c11af778e82872513a"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-stockstrail-green-accent/5 border-2 border-stockstrail-green-accent/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-bg hover:bg-stockstrail-green-accent transition-all duration-300 font-work-sans font-medium"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-AssetArc-green-accent/5 border-2 border-AssetArc-green-accent/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-bg hover:bg-AssetArc-green-accent transition-all duration-300 font-work-sans font-medium"
           >
-            <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full" />
+            <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full" />
             Compare SIP Plans & Get Personalized Advice
           </a>
         </div>
       </section>
 
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-stockstrail-bg-light/20">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-AssetArc-bg-light/20">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold gradient-text mb-12 text-center">
             How Mutual Funds Work
@@ -264,9 +264,9 @@ export default function MutualFunds() {
             ].map((step, index) => (
               <div
                 key={index}
-                className="flex gap-4 items-start bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-lg p-4 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300"
+                className="flex gap-4 items-start bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-lg p-4 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300"
               >
-                <div className="shrink-0 w-8 h-8 bg-stockstrail-green-light rounded-full flex items-center justify-center text-black font-semibold">
+                <div className="shrink-0 w-8 h-8 bg-AssetArc-green-light rounded-full flex items-center justify-center text-black font-semibold">
                   {index + 1}
                 </div>
                 <p className="text-white/80 pt-1">{step}</p>
@@ -283,29 +283,29 @@ export default function MutualFunds() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-stockstrail-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300">
-              <h3 className="text-2xl font-semibold text-stockstrail-green-light mb-4">
+            <div className="bg-AssetArc-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300">
+              <h3 className="text-2xl font-semibold text-AssetArc-green-light mb-4">
                 SIP (Systematic Investment Plan)
               </h3>
               <ul className="space-y-3 text-white/80">
                 <li className="flex gap-3">
-                  <span className="text-stockstrail-green-light">✓</span>
+                  <span className="text-AssetArc-green-light">✓</span>
                   <span>Investing a fixed amount every month</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-stockstrail-green-light">✓</span>
+                  <span className="text-AssetArc-green-light">✓</span>
                   <span>Ideal for salaried individuals or beginners</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-stockstrail-green-light">✓</span>
+                  <span className="text-AssetArc-green-light">✓</span>
                   <span>Provides the benefit of rupee-cost averaging</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-stockstrail-green-light">✓</span>
+                  <span className="text-AssetArc-green-light">✓</span>
                   <span>Builds discipline and habit of saving</span>
                 </li>
               </ul>
-              <div className="mt-6 p-4 bg-stockstrail-green-light/10 border border-stockstrail-green-light/20 rounded-lg">
+              <div className="mt-6 p-4 bg-AssetArc-green-light/10 border border-AssetArc-green-light/20 rounded-lg">
                 <p className="text-sm text-white/80">
                   <strong className="text-white">Example:</strong> A monthly SIP of ₹2,000 for 15 years may potentially
                   grow into ₹10–12 lakh depending on the fund&apos;s performance.
@@ -313,27 +313,27 @@ export default function MutualFunds() {
               </div>
             </div>
 
-            <div className="bg-stockstrail-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300">
-              <h3 className="text-2xl font-semibold text-stockstrail-green-light mb-4">Lump Sum Investment</h3>
+            <div className="bg-AssetArc-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300">
+              <h3 className="text-2xl font-semibold text-AssetArc-green-light mb-4">Lump Sum Investment</h3>
               <ul className="space-y-3 text-white/80">
                 <li className="flex gap-3">
-                  <span className="text-stockstrail-green-light">✓</span>
+                  <span className="text-AssetArc-green-light">✓</span>
                   <span>Investing a large amount at once</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-stockstrail-green-light">✓</span>
+                  <span className="text-AssetArc-green-light">✓</span>
                   <span>Suitable for those with surplus funds available</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-stockstrail-green-light">✓</span>
+                  <span className="text-AssetArc-green-light">✓</span>
                   <span>Can be a good option if market valuations are attractive</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-stockstrail-green-light">✓</span>
+                  <span className="text-AssetArc-green-light">✓</span>
                   <span>Allows immediate capital deployment</span>
                 </li>
               </ul>
-              <div className="mt-6 p-4 bg-stockstrail-green-light/10 border border-stockstrail-green-light/20 rounded-lg">
+              <div className="mt-6 p-4 bg-AssetArc-green-light/10 border border-AssetArc-green-light/20 rounded-lg">
                 <p className="text-sm text-white/80">
                   <strong className="text-white">Flexibility:</strong> You can combine both SIP and lump sum to optimize
                   your investment strategy.
@@ -344,38 +344,38 @@ export default function MutualFunds() {
         </div>
       </section>
 
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-stockstrail-bg-light/20">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-AssetArc-bg-light/20">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold gradient-text mb-12 text-center">
             Illustrative Examples
           </h2>
 
           <div className="space-y-6">
-            <div className="bg-stockstrail-bg-light/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300">
-              <p className="text-stockstrail-green-light font-semibold mb-2">Example 1:</p>
+            <div className="bg-AssetArc-bg-light/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300">
+              <p className="text-AssetArc-green-light font-semibold mb-2">Example 1:</p>
               <p className="text-white/80">
                 Investing ₹1,000 per month for 10 years may grow to approximately ₹2–2.5 lakh depending on market
                 conditions.
               </p>
             </div>
 
-            <div className="bg-stockstrail-bg-light/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300">
-              <p className="text-stockstrail-green-light font-semibold mb-2">Example 2:</p>
+            <div className="bg-AssetArc-bg-light/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300">
+              <p className="text-AssetArc-green-light font-semibold mb-2">Example 2:</p>
               <p className="text-white/80">
                 Investing ₹5,000 per month for 20 years may create a corpus of ₹50–60 lakh, assuming consistent market
                 performance.
               </p>
             </div>
 
-            <div className="bg-stockstrail-bg-light/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300">
-              <p className="text-stockstrail-green-light font-semibold mb-2">Example 3:</p>
+            <div className="bg-AssetArc-bg-light/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300">
+              <p className="text-AssetArc-green-light font-semibold mb-2">Example 3:</p>
               <p className="text-white/80">
                 Investing ₹1,00,000 in a debt fund for one year may yield around ₹6,000–8,000 in returns, depending on
                 interest rate conditions.
               </p>
             </div>
 
-            <div className="bg-stockstrail-bg-light/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300">
+            <div className="bg-AssetArc-bg-light/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300">
               <p className="text-white font-semibold mb-2 text-sm">⚠️ Disclaimer:</p>
               <p className="text-white/70 text-sm">
                 These are illustrative examples only. Actual returns may vary based on market performance, fund
@@ -403,9 +403,9 @@ export default function MutualFunds() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="flex gap-4 items-start bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-lg p-6 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300"
+                className="flex gap-4 items-start bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-lg p-6 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300"
               >
-                <div className="text-stockstrail-green-light text-2xl font-bold">→</div>
+                <div className="text-AssetArc-green-light text-2xl font-bold">→</div>
                 <p className="text-white/80">{item}</p>
               </div>
             ))}
@@ -413,7 +413,7 @@ export default function MutualFunds() {
         </div>
       </section>
 
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-stockstrail-bg-light/20">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-AssetArc-bg-light/20">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold gradient-text mb-12 text-center">
             Understanding Risks
@@ -426,16 +426,16 @@ export default function MutualFunds() {
               'Short-term losses are possible',
               'Choosing unsuitable funds may affect performance',
             ].map((risk, index) => (
-              <div key={index} className="flex gap-4 items-start bg-stockstrail-bg-light/50 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+              <div key={index} className="flex gap-4 items-start bg-AssetArc-bg-light/50 backdrop-blur-sm rounded-lg p-4 border border-white/10">
                 <span className="text-red-400 font-bold">!</span>
                 <p className="text-white/80">{risk}</p>
               </div>
             ))}
           </div>
 
-          <div className="bg-stockstrail-green-light/10 border-l-4 border-stockstrail-green-light rounded-lg p-6">
+          <div className="bg-AssetArc-green-light/10 border-l-4 border-AssetArc-green-light rounded-lg p-6">
             <p className="text-white/90">
-              <strong className="text-stockstrail-green-light">How to Manage Risk:</strong> These risks can be managed
+              <strong className="text-AssetArc-green-light">How to Manage Risk:</strong> These risks can be managed
               through long-term investing, diversification across different fund types, and selecting well-performing
               funds aligned with your risk profile.
             </p>
@@ -463,9 +463,9 @@ export default function MutualFunds() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300"
+                className="bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300"
               >
-                <h3 className="text-lg font-semibold text-stockstrail-green-light mb-2">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-AssetArc-green-light mb-2">{item.title}</h3>
                 <p className="text-white/70 text-sm">{item.desc}</p>
               </div>
             ))}
@@ -473,7 +473,7 @@ export default function MutualFunds() {
         </div>
       </section>
 
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-stockstrail-bg-light/20">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-AssetArc-bg-light/20">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold gradient-text mb-12 text-center">
             How to Start Investing in 6 Simple Steps
@@ -490,9 +490,9 @@ export default function MutualFunds() {
             ].map((step, index) => (
               <div
                 key={index}
-                className="flex gap-4 items-start bg-stockstrail-bg-light/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300"
+                className="flex gap-4 items-start bg-AssetArc-bg-light/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300"
               >
-                <div className="shrink-0 w-10 h-10 bg-stockstrail-green-light rounded-full flex items-center justify-center text-black font-bold text-lg">
+                <div className="shrink-0 w-10 h-10 bg-AssetArc-green-light rounded-full flex items-center justify-center text-black font-bold text-lg">
                   {index + 1}
                 </div>
                 <p className="text-white/80 pt-1">{step}</p>
@@ -503,9 +503,9 @@ export default function MutualFunds() {
           <div className="mt-12 text-center">
             <a
               href="https://flow.assetplus.in/client_onboarding/?advisor=659a79c11af778e82872513a"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-110 transition-all duration-300 font-work-sans font-medium group"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 hover:scale-110 transition-all duration-300 font-work-sans font-medium group"
             >
-              <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full group-hover:scale-125 transition-transform duration-300"></div>
+              <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full group-hover:scale-125 transition-transform duration-300"></div>
               Start Your Mutual Fund Journey Today
             </a>
           </div>

@@ -1,4 +1,4 @@
-﻿import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss";
 import animatePlugin from "tailwindcss-animate";
 
 const config: Config = {
@@ -15,18 +15,18 @@ const config: Config = {
       colors: {
         // Colors referenced by the project's globals.css via CSS variables.
         // Use HSL token wrappers so classes like `border-border` and
-        // `bg-stockstrail-bg` are generated and map to CSS variables.
+        // `bg-AssetArc-bg` are generated and map to CSS variables.
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        stockstrail: {
+        AssetArc: {
           bg: "hsl(var(--background))",
           "bg-light": "#0b3b34",
           "green-light": "#00FF97",
           "green-accent": "#007D42",
         },
         // Backwards compat simple names used in CSS
-        "stockstrail-bg": "hsl(var(--background))",
+        "AssetArc-bg": "hsl(var(--background))",
       },
       fontFamily: {
         "product-sans": [

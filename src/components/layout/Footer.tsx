@@ -58,18 +58,18 @@ const Footer = () => {
                 Financial advice Monday to Friday, 8 a.m. to 6 p.m.
               </p>
               <div className="flex flex-col gap-2">
-                <a href="tel:+918219890171" className="text-white font-montserrat text-base hover:text-stockstrail-green-light transition-colors duration-300 underline">
+                <a href="tel:+918219890171" className="text-white font-montserrat text-base hover:text-AssetArc-green-light transition-colors duration-300 underline">
                   +91 8219890171
                 </a>
-                <a href="mailto:akshatbansa04@gmail.com" className="text-white font-montserrat text-base hover:text-stockstrail-green-light transition-colors duration-300 underline">
+                <a href="mailto:akshatbansa04@gmail.com" className="text-white font-montserrat text-base hover:text-AssetArc-green-light transition-colors duration-300 underline">
                   akshatbansa04@gmail.com
                 </a>
               </div>
-              <Link href="/contact" className="flex items-center gap-4 cursor-pointer group hover:text-stockstrail-green-light transition-colors duration-300">
-                <span className="text-white font-montserrat text-base group-hover:text-stockstrail-green-light transition-colors duration-300">
+              <Link href="/contact" className="flex items-center gap-4 cursor-pointer group hover:text-AssetArc-green-light transition-colors duration-300">
+                <span className="text-white font-montserrat text-base group-hover:text-AssetArc-green-light transition-colors duration-300">
                   Get in touch with us
                 </span>
-                <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 group-hover:text-stockstrail-green-light transition-all duration-300" />
+                <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 group-hover:text-AssetArc-green-light transition-all duration-300" />
               </Link>
             </div>
           </FooterSection>
@@ -77,19 +77,22 @@ const Footer = () => {
           {/* Important Link */}
           <FooterSection title="Important Link">
             <div className="space-y-4">
-              <Link href="/services" className="block text-white font-work-sans text-base hover:text-stockstrail-green-light hover:translate-x-2 transition-all duration-300">
+              <Link href="/services" className="block text-white font-work-sans text-base hover:text-AssetArc-green-light hover:translate-x-2 transition-all duration-300">
                 Services
               </Link>
-              <Link href="/about" className="block text-white font-work-sans text-base hover:text-stockstrail-green-light hover:translate-x-2 transition-all duration-300">
+              <Link href="/about" className="block text-white font-work-sans text-base hover:text-AssetArc-green-light hover:translate-x-2 transition-all duration-300">
                 About Us
               </Link>
-              <Link href="/blog" className="block text-white font-work-sans text-base hover:text-stockstrail-green-light hover:translate-x-2 transition-all duration-300">
+              <Link href="/blog" className="block text-white font-work-sans text-base hover:text-AssetArc-green-light hover:translate-x-2 transition-all duration-300">
                 Blog
               </Link>
-              <Link href="/calculators" className="block text-white font-work-sans text-base hover:text-stockstrail-green-light hover:translate-x-2 transition-all duration-300">
+              <Link href="/careers" className="block text-white font-work-sans text-base hover:text-AssetArc-green-light hover:translate-x-2 transition-all duration-300">
+                Careers
+              </Link>
+              <Link href="/calculators" className="block text-white font-work-sans text-base hover:text-AssetArc-green-light hover:translate-x-2 transition-all duration-300">
                 Calculators
               </Link>
-              <Link href="/commission-disclosure" className="block text-white font-work-sans text-base hover:text-stockstrail-green-light hover:translate-x-2 transition-all duration-300">
+              <Link href="/commission-disclosure" className="block text-white font-work-sans text-base hover:text-AssetArc-green-light hover:translate-x-2 transition-all duration-300">
                 Commission Disclosure
               </Link>
             </div>
@@ -98,11 +101,11 @@ const Footer = () => {
           {/* Download */}
           <FooterSection title="Download">
             <div className="space-y-4">
-              <a href="/CoC/revisedcoc.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 cursor-pointer group hover:text-stockstrail-green-light transition-colors duration-300">
-                <span className="text-white font-montserrat text-base group-hover:text-stockstrail-green-light transition-colors duration-300">
+              <a href="/CoC/revisedcoc.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 cursor-pointer group hover:text-AssetArc-green-light transition-colors duration-300">
+                <span className="text-white font-montserrat text-base group-hover:text-AssetArc-green-light transition-colors duration-300">
                   Code of Conduct
                 </span>
-                <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 group-hover:text-stockstrail-green-light transition-all duration-300" />
+                <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 group-hover:text-AssetArc-green-light transition-all duration-300" />
               </a>
             </div>
           </FooterSection>
@@ -110,31 +113,31 @@ const Footer = () => {
           {/* Holidays Calendar */}
           <FooterSection title="Holidays Calendar">
             <div className="space-y-4">
-              <Link href="/nse-holidays" className="block text-white hover:text-stockstrail-green-light hover:translate-x-2 transition-all duration-300 group cursor-pointer">
+              <Link href="/nse-holidays" className="block text-white hover:text-AssetArc-green-light hover:translate-x-2 transition-all duration-300 group cursor-pointer">
                 <div className="flex items-center justify-between gap-4 p-3 rounded-md hover:bg-white/5 transition-colors duration-200">
                   <div>
-                    <div className="text-white font-montserrat text-base group-hover:text-stockstrail-green-light">
+                    <div className="text-white font-montserrat text-base group-hover:text-AssetArc-green-light">
                       NSE Holiday List 2026
                     </div>
                     <div className="text-white/70 text-xs mt-1 max-w-[220px]">
                       Republic Day — Jan 26, 2026 · Holi — Mar 03, 2026 · Good Friday — Apr 03, 2026
                     </div>
                   </div>
-                  <ArrowRight className="w-4 h-4 text-white group-hover:text-stockstrail-green-light group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="w-4 h-4 text-white group-hover:text-AssetArc-green-light group-hover:translate-x-1 transition-all" />
                 </div>
               </Link>
 
-              <Link href="/bse-holidays" className="block text-white hover:text-stockstrail-green-light hover:translate-x-2 transition-all duration-300 group cursor-pointer">
+              <Link href="/bse-holidays" className="block text-white hover:text-AssetArc-green-light hover:translate-x-2 transition-all duration-300 group cursor-pointer">
                 <div className="flex items-center justify-between gap-4 p-3 rounded-md hover:bg-white/5 transition-colors duration-200">
                   <div>
-                    <div className="text-white font-montserrat text-base group-hover:text-stockstrail-green-light">
+                    <div className="text-white font-montserrat text-base group-hover:text-AssetArc-green-light">
                       BSE Holiday List 2026
                     </div>
                     <div className="text-white/70 text-xs mt-1 max-w-[220px]">
                       Republic Day — Jan 26, 2026 · Holi — Mar 03, 2026 · Christmas — Dec 25, 2026
                     </div>
                   </div>
-                  <ArrowRight className="w-4 h-4 text-white group-hover:text-stockstrail-green-light group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="w-4 h-4 text-white group-hover:text-AssetArc-green-light group-hover:translate-x-1 transition-all" />
                 </div>
               </Link>
             </div>
@@ -146,16 +149,16 @@ const Footer = () => {
 
         {/* Social Media Links */}
         <div className="flex justify-center gap-8 mb-12 mt-20">
-          <a href="https://www.facebook.com/people/AssetArc/100089234534696/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-white hover:text-stockstrail-green-light hover:scale-125 hover:rotate-12 transition-all duration-300">
+          <a href="https://www.facebook.com/people/AssetArc/100089234534696/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-white hover:text-AssetArc-green-light hover:scale-125 hover:rotate-12 transition-all duration-300">
             <Facebook className="w-6 h-6" />
           </a>
-          <a href="https://www.linkedin.com/company/assetarc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white hover:text-stockstrail-green-light hover:scale-125 hover:rotate-12 transition-all duration-300">
+          <a href="https://www.linkedin.com/company/assetarc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white hover:text-AssetArc-green-light hover:scale-125 hover:rotate-12 transition-all duration-300">
             <Linkedin className="w-6 h-6" />
           </a>
-          <a href="http://instagram.com/assetarc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-white hover:text-stockstrail-green-light hover:scale-125 hover:rotate-12 transition-all duration-300">
+          <a href="http://instagram.com/assetarc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-white hover:text-AssetArc-green-light hover:scale-125 hover:rotate-12 transition-all duration-300">
             <Instagram className="w-6 h-6" />
           </a>
-          <a href="https://t.me/assetarc" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="group text-white hover:text-stockstrail-green-light hover:scale-125 hover:rotate-12 transition-all duration-300">
+          <a href="https://t.me/assetarc" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="group text-white hover:text-AssetArc-green-light hover:scale-125 hover:rotate-12 transition-all duration-300">
             <Send className="w-6 h-6" />
           </a>
         </div>
@@ -165,7 +168,7 @@ const Footer = () => {
 
         {/* Bottom Links and Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <Link href="/terms-and-conditions" target="_blank" className="text-white hover:text-stockstrail-green-light font-montserrat text-xs leading-relaxed transition-colors duration-300">
+          <Link href="/terms-and-conditions" target="_blank" className="text-white hover:text-AssetArc-green-light font-montserrat text-xs leading-relaxed transition-colors duration-300">
             Terms and Conditions & Cancellation Policy
           </Link>
           <p className="text-white font-montserrat text-xs leading-relaxed">

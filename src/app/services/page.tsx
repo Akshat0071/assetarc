@@ -32,7 +32,7 @@ const SectionBlock: React.FC<SectionBlockProps> = ({
     <div id={id} className="grid grid-cols-1 gap-10 items-start group">
       {/* Image on top - fully responsive with maintained aspect ratio */}
       <div className="justify-self-center w-full">
-        <div className="w-full max-w-[420px] mx-auto rounded-xl overflow-hidden shadow-lg border border-white/10 bg-white/5 group-hover:border-stockstrail-green-light group-hover:shadow-[0_0_30px_rgba(0,255,151,0.2)] transition-all duration-300">
+        <div className="w-full max-w-[420px] mx-auto rounded-xl overflow-hidden shadow-lg border border-white/10 bg-white/5 group-hover:border-AssetArc-green-light group-hover:shadow-[0_0_30px_rgba(0,255,151,0.2)] transition-all duration-300">
           <div className="relative w-full aspect-4/3">
             <Image
               src={imageSrc}
@@ -49,7 +49,7 @@ const SectionBlock: React.FC<SectionBlockProps> = ({
 
       {/* Text below */}
       <div>
-        <h3 className="text-stockstrail-green-light text-base sm:text-lg lg:text-xl tracking-wide font-semibold mb-3 group-hover:text-white transition-colors duration-300">
+        <h3 className="text-AssetArc-green-light text-base sm:text-lg lg:text-xl tracking-wide font-semibold mb-3 group-hover:text-white transition-colors duration-300">
           {title}
         </h3>
         <p className="text-white/80 text-xs sm:text-sm lg:text-base leading-relaxed mb-5 max-w-4xl group-hover:text-white/90 transition-colors duration-300">
@@ -74,14 +74,14 @@ const SectionBlock: React.FC<SectionBlockProps> = ({
         {ctaLink ? (
           <Link
             href={ctaLink}
-            className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-2 sm:py-3 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-105 transition-all duration-300 font-work-sans font-medium text-sm sm:text-base group-hover:shadow-[0_0_20px_rgba(0,255,151,0.3)]"
+            className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-2 sm:py-3 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 hover:scale-105 transition-all duration-300 font-work-sans font-medium text-sm sm:text-base group-hover:shadow-[0_0_20px_rgba(0,255,151,0.3)]"
           >
-            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-stockstrail-green-accent rounded-full group-hover:scale-110 transition-transform duration-300" />
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-AssetArc-green-accent rounded-full group-hover:scale-110 transition-transform duration-300" />
             {cta}
           </Link>
         ) : (
-          <button className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-2 sm:py-3 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-105 transition-all duration-300 font-work-sans font-medium text-sm sm:text-base group-hover:shadow-[0_0_20px_rgba(0,255,151,0.3)]">
-            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-stockstrail-green-accent rounded-full group-hover:scale-110 transition-transform duration-300" />
+          <button className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-2 sm:py-3 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 hover:scale-105 transition-all duration-300 font-work-sans font-medium text-sm sm:text-base group-hover:shadow-[0_0_20px_rgba(0,255,151,0.3)]">
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-AssetArc-green-accent rounded-full group-hover:scale-110 transition-transform duration-300" />
             {cta}
           </button>
         )}
@@ -172,7 +172,7 @@ const ServicesPage: React.FC = () => {
       {/* Main content */}
       <section className="relative px-4 sm:px-6 lg:px-8 pb-24">
         <div className="absolute inset-0 -z-10">
-          <div className="w-full h-[500px] bg-stockstrail-bg-light blur-185 opacity-40" />
+          <div className="w-full h-[500px] bg-AssetArc-bg-light blur-185 opacity-40" />
         </div>
 
         <div className="max-w-6xl mx-auto space-y-20">

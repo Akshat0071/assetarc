@@ -78,14 +78,14 @@ const HeroSection = () => {
               border-2 border-white/20
               rounded-full
               text-white
-              hover:border-stockstrail-green-light
-              hover:text-stockstrail-green-light
+              hover:border-AssetArc-green-light
+              hover:text-AssetArc-green-light
               transition-colors
               duration-300
               font-medium
             "
           >
-            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-stockstrail-green-accent rounded-full" />
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-AssetArc-green-accent rounded-full" />
             Learn More About Our Services
           </a>
           <a
@@ -102,15 +102,15 @@ const HeroSection = () => {
               border-white/20
               rounded-full
               text-white
-              hover:border-stockstrail-green-light
-              hover:text-stockstrail-green-light
+              hover:border-AssetArc-green-light
+              hover:text-AssetArc-green-light
               transition-all
               duration-300
               font-medium
               text-sm sm:text-base
             "
           >
-            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-stockstrail-green-accent rounded-full" />
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-AssetArc-green-accent rounded-full" />
             Check Your Risk Profile
           </a>
         </div>

@@ -78,7 +78,7 @@ const AboutSection = dynamic(() => import('@/components/home/AboutSection'), {
 
 const DisclaimerSection = dynamic(() => import('@/components/home/DisclaimerSection'), {
   ssr: false,
-  loading: () => <div className="h-24 bg-stockstrail-bg" />,
+  loading: () => <div className="h-24 bg-AssetArc-bg" />,
 });
 
 export default function BelowFoldSections() {

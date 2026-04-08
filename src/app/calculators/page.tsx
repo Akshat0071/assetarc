@@ -212,8 +212,8 @@
 //   return (
 //     <Layout>
 //       <SEO
-//         title="Calculators - SIP, FD, Lumpsum, RD | Stockstrail"
-//         description="Use Stockstrail calculators for SIP, lumpsum, FD, and RD investment planning."
+//         title="Calculators - SIP, FD, Lumpsum, RD | AssetArc"
+//         description="Use AssetArc calculators for SIP, lumpsum, FD, and RD investment planning."
 //         url="/calculators"
 //       />
 
@@ -233,8 +233,8 @@
 //                     onClick={() => setTab(t)}
 //                     className={`px-4 py-1.5 rounded-full text-sm tracking-wide border transition-all duration-300 ${
 //                       tab === t
-//                         ? "bg-stockstrail-green-light/20 text-stockstrail-green-light border-stockstrail-green-light shadow-[0_0_15px_rgba(0,255,151,0.3)] scale-105"
-//                         : "text-white/70 border-transparent hover:border-stockstrail-green-light/50 hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-105"
+//                         ? "bg-AssetArc-green-light/20 text-AssetArc-green-light border-AssetArc-green-light shadow-[0_0_15px_rgba(0,255,151,0.3)] scale-105"
+//                         : "text-white/70 border-transparent hover:border-AssetArc-green-light/50 hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 hover:scale-105"
 //                     }`}
 //                   >
 //                     {t}
@@ -345,7 +345,7 @@
 //                       <div className="text-white/60 text-xs uppercase group-hover:text-white/80 transition-colors duration-300">
 //                         Invested amount
 //                       </div>
-//                       <div className="text-lg group-hover:text-stockstrail-green-light transition-colors duration-300">
+//                       <div className="text-lg group-hover:text-AssetArc-green-light transition-colors duration-300">
 //                         ₹{formatINR(active.invested)}
 //                       </div>
 //                     </div>
@@ -353,7 +353,7 @@
 //                       <div className="text-white/60 text-xs uppercase group-hover:text-white/80 transition-colors duration-300">
 //                         Est. returns
 //                       </div>
-//                       <div className="text-lg group-hover:text-stockstrail-green-light transition-colors duration-300">
+//                       <div className="text-lg group-hover:text-AssetArc-green-light transition-colors duration-300">
 //                         ₹{formatINR(active.returns)}
 //                       </div>
 //                     </div>
@@ -361,7 +361,7 @@
 //                       <div className="text-white/60 text-xs uppercase group-hover:text-white/80 transition-colors duration-300">
 //                         Total value
 //                       </div>
-//                       <div className="text-lg group-hover:text-stockstrail-green-light transition-colors duration-300">
+//                       <div className="text-lg group-hover:text-AssetArc-green-light transition-colors duration-300">
 //                         ₹{formatINR(active.value)}
 //                       </div>
 //                     </div>
@@ -371,9 +371,9 @@
 //                 {/* CTA */}
 //                 <a
 //                   href="#"
-//                   className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-2 sm:py-3 bg-transparent border-2 border-white/20 rounded-full text-white w-fit hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,151,0.3)] transition-all duration-300 text-sm sm:text-base group"
+//                   className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-2 sm:py-3 bg-transparent border-2 border-white/20 rounded-full text-white w-fit hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,151,0.3)] transition-all duration-300 text-sm sm:text-base group"
 //                 >
-//                   <div className="w-2 h-2 sm:w-3 sm:h-3 bg-stockstrail-green-accent rounded-full group-hover:scale-110 transition-transform duration-300" />
+//                   <div className="w-2 h-2 sm:w-3 sm:h-3 bg-AssetArc-green-accent rounded-full group-hover:scale-110 transition-transform duration-300" />
 //                   INVEST NOW
 //                 </a>
 //               </div>
@@ -531,14 +531,14 @@ const Donut = ({ invested, returns, investedLabel = "INVESTED AMOUNT", returnsLa
         <div className="absolute inset-8 sm:inset-10 rounded-full bg-[#0A1E1A] group-hover:bg-[#0A1E1A]/90 transition-colors duration-300" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
-            <div className="text-stockstrail-green-light text-2xl sm:text-3xl font-semibold group-hover:text-stockstrail-green-accent transition-colors duration-300">
+            <div className="text-AssetArc-green-light text-2xl sm:text-3xl font-semibold group-hover:text-AssetArc-green-accent transition-colors duration-300">
               {multiplier.toFixed(2)}x
             </div>
             <div className="text-white/60 text-xs sm:text-sm group-hover:text-white/80 transition-colors duration-300 mb-2">
               Returns
             </div>
             {/* Growth Percentage Badge */}
-            <div className="inline-flex items-center gap-1 px-1 py-0.5 rounded-full bg-gradient-to-r from-stockstrail-green-light/20 to-stockstrail-green-accent/20 border border-stockstrail-green-light/30 group-hover:border-stockstrail-green-light group-hover:shadow-[0_0_15px_rgba(0,255,151,0.4)] transition-all duration-300">
+            <div className="inline-flex items-center gap-1 px-1 py-0.5 rounded-full bg-gradient-to-r from-AssetArc-green-light/20 to-AssetArc-green-accent/20 border border-AssetArc-green-light/30 group-hover:border-AssetArc-green-light group-hover:shadow-[0_0_15px_rgba(0,255,151,0.4)] transition-all duration-300">
               <span className="text-white/70 text-xs sm:text-xs font-bold group-hover:scale-110 transition-transform duration-300">
                 {growthPct.toFixed(1)}%
               </span>
@@ -744,8 +744,8 @@ function CalculatorsPageContent() {
                   key={t}
                   onClick={() => setTab(t)}
                   className={`px-4 py-1.5 rounded-full text-sm tracking-wide border transition-all duration-300 ${tab === t
-                    ? "bg-stockstrail-green-light/20 text-stockstrail-green-light border-stockstrail-green-light shadow-[0_0_15px_rgba(0,255,151,0.3)] scale-105"
-                    : "text-white/70 border-transparent hover:border-stockstrail-green-light/50 hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-105"
+                    ? "bg-AssetArc-green-light/20 text-AssetArc-green-light border-AssetArc-green-light shadow-[0_0_15px_rgba(0,255,151,0.3)] scale-105"
+                    : "text-white/70 border-transparent hover:border-AssetArc-green-light/50 hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 hover:scale-105"
                     }`}
                 >
                   {t}
@@ -837,7 +837,7 @@ function CalculatorsPageContent() {
                               value={taxAY}
                               onChange={(e) => setTaxAY(e.target.value)}
                               style={{ backgroundColor: '#0d2520', color: 'white' }}
-                              className="text-white text-sm px-3 py-1 rounded-md hover:bg-[#1a3d35] hover:border-stockstrail-green-light border border-transparent focus:border-stockstrail-green-light focus:outline-none transition-all duration-300 cursor-pointer"
+                              className="text-white text-sm px-3 py-1 rounded-md hover:bg-[#1a3d35] hover:border-AssetArc-green-light border border-transparent focus:border-AssetArc-green-light focus:outline-none transition-all duration-300 cursor-pointer"
                             >
                               <option value="2025-26" style={{ backgroundColor: '#0d2520', color: 'white' }}>2025-26</option>
                               <option value="2024-25" style={{ backgroundColor: '#0d2520', color: 'white' }}>2024-25</option>
@@ -851,7 +851,7 @@ function CalculatorsPageContent() {
                               value={taxAgeCat}
                               onChange={(e) => setTaxAgeCat(e.target.value as any)}
                               style={{ backgroundColor: '#0d2520', color: 'white' }}
-                              className="text-white text-sm px-3 py-1 rounded-md hover:bg-[#1a3d35] hover:border-stockstrail-green-light border border-transparent focus:border-stockstrail-green-light focus:outline-none transition-all duration-300 cursor-pointer"
+                              className="text-white text-sm px-3 py-1 rounded-md hover:bg-[#1a3d35] hover:border-AssetArc-green-light border border-transparent focus:border-AssetArc-green-light focus:outline-none transition-all duration-300 cursor-pointer"
                             >
                               <option value="<60" style={{ backgroundColor: '#0d2520', color: 'white' }}>Below 60</option>
                               <option value="60-80" style={{ backgroundColor: '#0d2520', color: 'white' }}>Senior (60-80)</option>
@@ -919,7 +919,7 @@ function CalculatorsPageContent() {
                     </div>
 
                     <div>
-                      <button className="mt-2 inline-flex items-center gap-3 px-6 py-3 bg-stockstrail-green-light/20 border border-stockstrail-green-light rounded-full text-white hover:bg-stockstrail-green-light/30 transition-all">CALCULATE</button>
+                      <button className="mt-2 inline-flex items-center gap-3 px-6 py-3 bg-AssetArc-green-light/20 border border-AssetArc-green-light rounded-full text-white hover:bg-AssetArc-green-light/30 transition-all">CALCULATE</button>
                     </div>
                   </div>
                 )}
@@ -929,15 +929,15 @@ function CalculatorsPageContent() {
                     <>
                       <div className="rounded-lg bg-white/5 p-4 hover:bg-white/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,151,0.2)] transition-all duration-300 group cursor-pointer">
                         <div className="text-white/60 text-xs uppercase group-hover:text-white/80 transition-colors duration-300">Invested amount</div>
-                        <div className="text-lg group-hover:text-stockstrail-green-light transition-colors duration-300">₹{formatINR(active.invested)}</div>
+                        <div className="text-lg group-hover:text-AssetArc-green-light transition-colors duration-300">₹{formatINR(active.invested)}</div>
                       </div>
                       <div className="rounded-lg bg-white/5 p-4 hover:bg-white/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,151,0.2)] transition-all duration-300 group cursor-pointer">
                         <div className="text-white/60 text-xs uppercase group-hover:text-white/80 transition-colors duration-300">Est. returns</div>
-                        <div className="text-lg group-hover:text-stockstrail-green-light transition-colors duration-300">₹{formatINR(active.returns)}</div>
+                        <div className="text-lg group-hover:text-AssetArc-green-light transition-colors duration-300">₹{formatINR(active.returns)}</div>
                       </div>
                       <div className="rounded-lg bg-white/5 p-4 hover:bg-white/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,151,0.2)] transition-all duration-300 group cursor-pointer">
                         <div className="text-white/60 text-xs uppercase group-hover:text-white/80 transition-colors duration-300">Total value</div>
-                        <div className="text-lg group-hover:text-stockstrail-green-light transition-colors duration-300">₹{formatINR(active.value)}</div>
+                        <div className="text-lg group-hover:text-AssetArc-green-light transition-colors duration-300">₹{formatINR(active.value)}</div>
                       </div>
                     </>
                   )}
@@ -958,8 +958,8 @@ function CalculatorsPageContent() {
                   )}
                 </div>
 
-                <a href="#" className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-2 sm:py-3 bg-transparent border-2 border-white/20 rounded-full text-white w-fit hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,151,0.3)] transition-all duration-300 text-sm sm:text-base group">
-                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-stockstrail-green-accent rounded-full group-hover:scale-110 transition-transform duration-300"></div>
+                <a href="#" className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-2 sm:py-3 bg-transparent border-2 border-white/20 rounded-full text-white w-fit hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,151,0.3)] transition-all duration-300 text-sm sm:text-base group">
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-AssetArc-green-accent rounded-full group-hover:scale-110 transition-transform duration-300"></div>
                   INVEST NOW
                 </a>
               </div>

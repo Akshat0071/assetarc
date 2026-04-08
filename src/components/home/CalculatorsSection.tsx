@@ -52,9 +52,9 @@ const CalculatorsSection = () => {
         <section className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 relative">
             {/* Background elements */}
             <div className="absolute inset-0">
-                <div className="w-full h-96 bg-stockstrail-bg-light blur-185 opacity-40"></div>
+                <div className="w-full h-96 bg-AssetArc-bg-light blur-185 opacity-40"></div>
                 {/* Pulsing ring (hero-style) behind Calculators header */}
-                <div className="absolute left-1/2 top-6 -translate-x-1/2 w-[620px] h-[620px] bg-stockstrail-bg-light rounded-full blur-100 opacity-50 pointer-events-none" />
+                <div className="absolute left-1/2 top-6 -translate-x-1/2 w-[620px] h-[620px] bg-AssetArc-bg-light rounded-full blur-100 opacity-50 pointer-events-none" />
             </div>
 
             <div className="relative z-10 max-w-6xl mx-auto">
@@ -73,10 +73,10 @@ const CalculatorsSection = () => {
                         <a
                             key={index}
                             href={calculator.href}
-                            className="group relative bg-stockstrail-bg border border-white/10 rounded-2xl p-8 hover:border-stockstrail-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.2)] transition-all duration-300 flex flex-col h-full"
+                            className="group relative bg-AssetArc-bg border border-white/10 rounded-2xl p-8 hover:border-AssetArc-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.2)] transition-all duration-300 flex flex-col h-full"
                         >
                             {/* Background glow on hover */}
-                            <div className="absolute inset-0 bg-stockstrail-green-light/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="absolute inset-0 bg-AssetArc-green-light/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                             <div className="relative z-10 flex flex-col h-full">
                                 {/* Icon */}
@@ -98,7 +98,7 @@ const CalculatorsSection = () => {
                                 </div>
 
                                 {/* Title */}
-                                <h3 className="font-product-sans text-lg sm:text-xl lg:text-2xl font-semibold text-white mb-3 group-hover:text-stockstrail-green-light transition-colors duration-300">
+                                <h3 className="font-product-sans text-lg sm:text-xl lg:text-2xl font-semibold text-white mb-3 group-hover:text-AssetArc-green-light transition-colors duration-300">
                                     {calculator.title}
                                 </h3>
 
@@ -108,7 +108,7 @@ const CalculatorsSection = () => {
                                 </p>
 
                                 {/* Button */}
-                                <div className="inline-flex items-center gap-2 text-stockstrail-green-light font-work-sans font-semibold text-sm sm:text-base group-hover:gap-4 transition-all duration-300">
+                                <div className="inline-flex items-center gap-2 text-AssetArc-green-light font-work-sans font-semibold text-sm sm:text-base group-hover:gap-4 transition-all duration-300">
                                     <span>Open Calculator</span>
                                     <svg
                                         width="20"
@@ -136,9 +136,9 @@ const CalculatorsSection = () => {
                 <div className="text-center mt-16">
                     <a
                         href="/calculators"
-                        className="inline-flex items-center gap-4 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-110 hover:shadow-[0_0_30px_rgba(0,255,151,0.4)] transition-all duration-500 font-work-sans font-medium group"
+                        className="inline-flex items-center gap-4 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 hover:scale-110 hover:shadow-[0_0_30px_rgba(0,255,151,0.4)] transition-all duration-500 font-work-sans font-medium group"
                     >
-                        <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full group-hover:scale-125 group-hover:animate-pulse transition-all duration-300"></div>
+                        <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full group-hover:scale-125 group-hover:animate-pulse transition-all duration-300"></div>
                         View All Calculators
                     </a>
                 </div>

@@ -7,8 +7,8 @@ const CommissionDisclosure = () => {
   return (
     <Layout>
       <SEO
-        title="Commission Disclosure - Stockstrail"
-        description="Transparent commission disclosure for Stockstrail's services."
+        title="Commission Disclosure - AssetArc"
+        description="Transparent commission disclosure for AssetArc's services."
         url="/commission-disclosure"
       />
 
@@ -67,7 +67,7 @@ const CommissionDisclosure = () => {
             <p className="text-white/70 mt-6">
               If you would like a detailed breakdown of commission rates for a specific product,
               please{" "}
-              <a href="/lets-talk" className="text-stockstrail-green-light underline">
+              <a href="/lets-talk" className="text-AssetArc-green-light underline">
                 contact us
               </a>{" "}
               and we will provide the complete information.
@@ -78,7 +78,7 @@ const CommissionDisclosure = () => {
                 href="/CoC/revisedcoc.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-5 py-3 bg-transparent border-2 border-white/10 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light transition-all duration-200"
+                className="inline-block px-5 py-3 bg-transparent border-2 border-white/10 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light transition-all duration-200"
               >
                 View Code of Conduct
               </a>

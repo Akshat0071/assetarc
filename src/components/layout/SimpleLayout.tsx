@@ -8,7 +8,7 @@ interface SimpleLayoutProps {
 
 export default function SimpleLayout({ children }: SimpleLayoutProps) {
   return (
-    <div className="min-h-screen bg-stockstrail-bg">
+    <div className="min-h-screen bg-AssetArc-bg">
       <main>
         {children}
       </main>

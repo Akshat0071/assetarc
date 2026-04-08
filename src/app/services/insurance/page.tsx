@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: "https://assetarc.in/services/insurance",
     locale: "en_IN",
     type: "website",
-    images: ["/stockstrail.png"],
+    images: ["/assetarclogo.png"],
   },
 };
 
@@ -30,7 +30,7 @@ export default function Insurance() {
       {/* ========================================================= */}
       <section className="relative px-4 sm:px-6 lg:px-8 pt-24 pb-16">
         <div className="absolute inset-0 -z-10">
-          <div className="w-full h-72 bg-stockstrail-bg-light blur-185 opacity-40" />
+          <div className="w-full h-72 bg-AssetArc-bg-light blur-185 opacity-40" />
         </div>
 
         <div className="max-w-6xl mx-auto text-center">
@@ -85,9 +85,9 @@ export default function Insurance() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="rounded-xl p-5 bg-stockstrail-bg-light/30 border border-white/10"
+                  className="rounded-xl p-5 bg-AssetArc-bg-light/30 border border-white/10"
                 >
-                  <h3 className="text-lg font-semibold text-stockstrail-green-light mb-2">
+                  <h3 className="text-lg font-semibold text-AssetArc-green-light mb-2">
                     {item.title}
                   </h3>
                   <p className="text-white/80 text-sm mb-4">{item.desc}</p>
@@ -96,7 +96,7 @@ export default function Insurance() {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block text-stockstrail-green-light text-sm hover:underline"
+                      className="inline-block text-AssetArc-green-light text-sm hover:underline"
                     >
                       Explore {item.title}
                     </a>
@@ -107,7 +107,7 @@ export default function Insurance() {
           </div>
 
           {/* SIDEBAR IMAGE + EXAMPLE */}
-          <aside className="rounded-2xl p-10 bg-stockstrail-bg-light/40 border border-white/10">
+          <aside className="rounded-2xl p-10 bg-AssetArc-bg-light/40 border border-white/10">
             <Image
               src="/services/insurance2.webp"
               alt="Insurance overview"
@@ -123,7 +123,7 @@ export default function Insurance() {
             </p>
             <a
               href="https://insurance.assetplus.in/284122"
-              className="inline-block text-stockstrail-green-light underline focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-stockstrail-green-light"
+              className="inline-block text-AssetArc-green-light underline focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-AssetArc-green-light"
             >
               Get personalised insurance advice
             </a>
@@ -138,9 +138,9 @@ export default function Insurance() {
             href="https://flow.assetplus.in/client_onboarding/?advisor=659a79c11af778e82872513a"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-105 transition-all duration-300 font-work-sans font-medium"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 hover:scale-105 transition-all duration-300 font-work-sans font-medium"
           >
-            <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full" />
+            <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full" />
             Get Personalised Insurance Guidance
           </a>
         </div>
@@ -149,11 +149,11 @@ export default function Insurance() {
       {/* ========================================================= */}
       {/* TERM INSURANCE SECTION */}
       {/* ========================================================= */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-stockstrail-bg-light/20">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-AssetArc-bg-light/20">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* IMAGE */}
           <div className="flex items-center justify-center">
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-white/5 w-full max-w-md group hover:border-stockstrail-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.12)] transition-all">
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-white/5 w-full max-w-md group hover:border-AssetArc-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.12)] transition-all">
               <Image
                 src="/services/insurance3.webp"
                 alt="Term Insurance"
@@ -167,7 +167,7 @@ export default function Insurance() {
 
           {/* CONTENT */}
           <div>
-            <h2 className="text-2xl sm:text-3xl text-stockstrail-green-light font-semibold mb-4">
+            <h2 className="text-2xl sm:text-3xl text-AssetArc-green-light font-semibold mb-4">
               Term Insurance — What & Why
             </h2>
             <p className="text-white/80 mb-4">
@@ -195,7 +195,7 @@ export default function Insurance() {
             </ol>
 
             {/* Real case examples */}
-            <div className="rounded-2xl p-6 bg-stockstrail-bg-light/30 border border-white/10 mt-6">
+            <div className="rounded-2xl p-6 bg-AssetArc-bg-light/30 border border-white/10 mt-6">
               <h4 className="text-white font-semibold mb-3">Realistic Cases</h4>
 
               <div className="space-y-4 text-white/80">
@@ -222,7 +222,7 @@ export default function Insurance() {
                 href="https://insurance.assetplus.in/284122/term"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-6 py-3 bg-transparent border-2 border-stockstrail-green-light rounded-full text-stockstrail-green-light hover:bg-stockstrail-green-light/10 transition-all"
+                className="inline-flex items-center gap-3 px-6 py-3 bg-transparent border-2 border-AssetArc-green-light rounded-full text-AssetArc-green-light hover:bg-AssetArc-green-light/10 transition-all"
               >
                 Explore Term Insurance Plans
               </a>
@@ -234,9 +234,9 @@ export default function Insurance() {
                 href="https://flow.assetplus.in/client_onboarding/?advisor=659a79c11af778e82872513a"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-stockstrail-green-accent/5 border-2 border-stockstrail-green-accent/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-bg hover:bg-stockstrail-green-accent transition-all duration-300 font-work-sans font-medium"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-AssetArc-green-accent/5 border-2 border-AssetArc-green-accent/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-bg hover:bg-AssetArc-green-accent transition-all duration-300 font-work-sans font-medium"
               >
-                <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full" />
+                <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full" />
                 Talk to an Insurance Expert
               </a>
             </div> */}
@@ -250,7 +250,7 @@ export default function Insurance() {
       <section className="relative px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* CONTENT */}
-          <div className="rounded-2xl p-6 bg-stockstrail-bg-light/30">
+          <div className="rounded-2xl p-6 bg-AssetArc-bg-light/30">
             <h2 className="text-2xl sm:text-3xl font-semibold mb-3">
               Health Insurance — What & Why
             </h2>
@@ -275,7 +275,7 @@ export default function Insurance() {
             </ol>
 
             {/* Real Case Examples */}
-            <div className="mt-6 rounded-2xl p-6 bg-stockstrail-bg-light/30 border border-white/10">
+            <div className="mt-6 rounded-2xl p-6 bg-AssetArc-bg-light/30 border border-white/10">
               <h4 className="text-white font-semibold mb-3">Health — Real Cases</h4>
               <div className="space-y-4 text-white/80">
                 <div>
@@ -300,7 +300,7 @@ export default function Insurance() {
                 href="https://insurance.assetplus.in/284122/health"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-6 py-3 bg-transparent border-2 border-stockstrail-green-light rounded-full text-stockstrail-green-light hover:bg-stockstrail-green-light/10 transition-all"
+                className="inline-flex items-center gap-3 px-6 py-3 bg-transparent border-2 border-AssetArc-green-light rounded-full text-AssetArc-green-light hover:bg-AssetArc-green-light/10 transition-all"
               >
                 Explore Health Insurance Plans
               </a>
@@ -309,7 +309,7 @@ export default function Insurance() {
 
           {/* IMAGE */}
           <div className="flex items-center justify-center">
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-white/5 w-full max-w-md group hover:border-stockstrail-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.12)] transition-all">
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-white/5 w-full max-w-md group hover:border-AssetArc-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.12)] transition-all">
               <Image
                 src="/services/insurance4.webp"
                 alt="Term Insurance"
@@ -326,7 +326,7 @@ export default function Insurance() {
       {/* ========================================================= */}
       {/* COMPARISON TABLE */}
       {/* ========================================================= */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-stockstrail-bg-light/20">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-AssetArc-bg-light/20">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-semibold gradient-text mb-6 text-center">
             Health Insurance vs Term Insurance
@@ -401,9 +401,9 @@ export default function Insurance() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="flex gap-4 items-start bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-lg p-5 border border-white/10"
+                className="flex gap-4 items-start bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-lg p-5 border border-white/10"
               >
-                <div className="text-stockstrail-green-light text-2xl font-bold">
+                <div className="text-AssetArc-green-light text-2xl font-bold">
                   →
                 </div>
                 <p className="text-white/80">{item}</p>
@@ -416,7 +416,7 @@ export default function Insurance() {
       {/* ========================================================= */}
       {/* FINAL CTA */}
       {/* ========================================================= */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-stockstrail-bg-light/10">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-AssetArc-bg-light/10">
         <div className="max-w-6xl mx-auto text-center">
           <h3 className="text-xl font-semibold text-white mb-3">
             Ready to protect what matters?
@@ -428,7 +428,7 @@ export default function Insurance() {
 
           <a
             href="https://insurance.assetplus.in/284122"
-            className="inline-flex items-center gap-3 px-6 py-3 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 transition-all font-work-sans"
+            className="inline-flex items-center gap-3 px-6 py-3 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 transition-all font-work-sans"
           >
             Get personalised insurance advice
           </a>

@@ -395,14 +395,14 @@ export function RiskQuestionnaire() {
   return (
     <>
       <Dialog open={showLoader} onOpenChange={() => {}}>
-        <DialogContent className="bg-stockstrail-bg border-white/10 text-white sm:max-w-md [&>button]:hidden">
+        <DialogContent className="bg-AssetArc-bg border-white/10 text-white sm:max-w-md [&>button]:hidden">
           <div className="flex flex-col items-center justify-center py-8 space-y-6">
             {/* Animated loader */}
             <div className="relative w-20 h-20">
-              <div className="absolute inset-0 rounded-full border-4 border-stockstrail-green-light/20"></div>
-              <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-stockstrail-green-light animate-spin"></div>
-              <div className="absolute inset-2 rounded-full border-4 border-stockstrail-green-light/10"></div>
-              <div className="absolute inset-2 rounded-full border-4 border-transparent border-t-stockstrail-green-light/60 animate-spin" style={{ animationDirection: 'reverse', animationDuration: '1.5s' }}></div>
+              <div className="absolute inset-0 rounded-full border-4 border-AssetArc-green-light/20"></div>
+              <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-AssetArc-green-light animate-spin"></div>
+              <div className="absolute inset-2 rounded-full border-4 border-AssetArc-green-light/10"></div>
+              <div className="absolute inset-2 rounded-full border-4 border-transparent border-t-AssetArc-green-light/60 animate-spin" style={{ animationDirection: 'reverse', animationDuration: '1.5s' }}></div>
             </div>
             
             <div className="text-center space-y-2">
@@ -435,7 +435,7 @@ export function RiskQuestionnaire() {
             Answer 11 questions to gauge your risk tolerance and investment
             horizon. We map your responses to a score-based methodology to
             recommend a risk profile and indicative allocation aligned with
-            Stockstrail&apos;s guidance.
+            AssetArc&apos;s guidance.
           </p>
         </header>
 
@@ -451,7 +451,7 @@ export function RiskQuestionnaire() {
           <CardContent className="space-y-3">
             <Progress value={(answeredCount / 11) * 100} />
             <div className="text-sm text-white/80 flex items-center gap-2">
-              <span className="inline-flex w-2 h-2 rounded-full bg-stockstrail-green-accent" />
+              <span className="inline-flex w-2 h-2 rounded-full bg-AssetArc-green-accent" />
               All fields are required for a complete profile.
             </div>
           </CardContent>
@@ -470,11 +470,11 @@ export function RiskQuestionnaire() {
           {riskQuestions.map((question, idx) => (
             <Card
               key={question.id}
-              className="bg-white/5 border-white/10 hover:border-stockstrail-green-light/40 transition-all duration-300"
+              className="bg-white/5 border-white/10 hover:border-AssetArc-green-light/40 transition-all duration-300"
             >
               <CardHeader className="pb-4">
                 <CardTitle className="text-white text-xl flex items-start gap-3">
-                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-stockstrail-green-light/10 text-stockstrail-green-light text-base">
+                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-AssetArc-green-light/10 text-AssetArc-green-light text-base">
                     {idx + 1}
                   </span>
                   <span>{question.title}</span>
@@ -499,7 +499,7 @@ export function RiskQuestionnaire() {
                       className={cn(
                         "flex items-start gap-3 rounded-lg border border-white/10 bg-white/5 px-3 py-3 cursor-pointer transition-all duration-200",
                         answers[question.id] === option.id
-                          ? "border-stockstrail-green-light/60 bg-stockstrail-green-light/10 shadow-[0_0_20px_rgba(0,255,151,0.15)]"
+                          ? "border-AssetArc-green-light/60 bg-AssetArc-green-light/10 shadow-[0_0_20px_rgba(0,255,151,0.15)]"
                           : "hover:border-white/30 hover:bg-white/10"
                       )}
                     >
@@ -516,10 +516,10 @@ export function RiskQuestionnaire() {
             </Card>
           ))}
 
-          <Card className="bg-white/5 border-white/10 hover:border-stockstrail-green-light/40 transition-all duration-300 lg:col-span-2">
+          <Card className="bg-white/5 border-white/10 hover:border-AssetArc-green-light/40 transition-all duration-300 lg:col-span-2">
             <CardHeader className="pb-4">
               <CardTitle className="text-white text-xl flex items-start gap-3">
-                <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-stockstrail-green-light/10 text-stockstrail-green-light text-base">
+                <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-AssetArc-green-light/10 text-AssetArc-green-light text-base">
                   11
                 </span>
                 <span>{horizonQuestion.title}</span>
@@ -539,7 +539,7 @@ export function RiskQuestionnaire() {
                     className={cn(
                       "flex items-start gap-3 rounded-lg border border-white/10 bg-white/5 px-3 py-3 cursor-pointer transition-all duration-200",
                       answers[horizonQuestion.id] === option.id
-                        ? "border-stockstrail-green-light/60 bg-stockstrail-green-light/10 shadow-[0_0_20px_rgba(0,255,151,0.15)]"
+                        ? "border-AssetArc-green-light/60 bg-AssetArc-green-light/10 shadow-[0_0_20px_rgba(0,255,151,0.15)]"
                         : "hover:border-white/30 hover:bg-white/10"
                     )}
                   >
@@ -560,7 +560,7 @@ export function RiskQuestionnaire() {
         <div className="flex items-center justify-center flex-wrap gap-3">
           <button
             onClick={resetForm}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-white/20 text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light transition-all duration-300 font-medium text-sm sm:text-base"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-white/20 text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light transition-all duration-300 font-medium text-sm sm:text-base"
           >
             <RefreshCw className="w-4 h-4" />
             Reset Form
@@ -583,7 +583,7 @@ export function RiskQuestionnaire() {
               )}
 
               {submitSuccess && (
-                <div className="p-3 rounded-lg bg-stockstrail-green-light/10 border border-stockstrail-green-light/20 text-stockstrail-green-light text-sm">
+                <div className="p-3 rounded-lg bg-AssetArc-green-light/10 border border-AssetArc-green-light/20 text-AssetArc-green-light text-sm">
                   Success! Your risk profile has been saved. Redirecting to dashboard...
                 </div>
               )}
@@ -591,7 +591,7 @@ export function RiskQuestionnaire() {
               <button
                 onClick={handleSubmit}
                 disabled={!canSubmit}
-                className="w-full inline-flex items-center justify-center gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light transition-all duration-300 font-medium text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full inline-flex items-center justify-center gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light transition-all duration-300 font-medium text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {submitting ? (
                   <>
@@ -604,7 +604,7 @@ export function RiskQuestionnaire() {
                   </>
                 ) : (
                   <>
-                    <div className="w-2 h-2 sm:w-3 sm:h-3 bg-stockstrail-green-accent rounded-full" />
+                    <div className="w-2 h-2 sm:w-3 sm:h-3 bg-AssetArc-green-accent rounded-full" />
                     Submit Risk Profile
                   </>
                 )}

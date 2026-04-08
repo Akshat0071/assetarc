@@ -49,7 +49,7 @@ const NseHolidays = () => {
   return (
     <Layout>
       <SEO
-        title="NSE Holiday List 2026 | Stockstrail"
+        title="NSE Holiday List 2026 | AssetArc"
         description="Official NSE trading holidays for the year 2026 including national, regional holidays and weekends."
         url="/nse-holidays"
       />
@@ -66,7 +66,7 @@ const NseHolidays = () => {
           </p>
 
           {/* Main Holiday Table */}
-          <div className="bg-stockstrail-bg-light/20 rounded-lg border border-white/5 p-4">
+          <div className="bg-AssetArc-bg-light/20 rounded-lg border border-white/5 p-4">
             {/* Desktop/Table view */}
             <table className="w-full text-left hidden md:table">
               <thead>
@@ -91,7 +91,7 @@ const NseHolidays = () => {
             {/* Mobile/Card view */}
             <div className="md:hidden space-y-3">
               {equityData.map((row) => (
-                <div key={`${row.holiday}-${row.date}`} className="rounded-md border border-white/10 bg-stockstrail-bg-light/10 p-3">
+                <div key={`${row.holiday}-${row.date}`} className="rounded-md border border-white/10 bg-AssetArc-bg-light/10 p-3">
                   <div className="flex items-center justify-between">
                     <span className="text-white font-medium text-sm">{row.holiday}</span>
                     <span className="text-white/70 text-xs">{row.day}</span>
@@ -107,7 +107,7 @@ const NseHolidays = () => {
             NSE Holidays That Fall on Saturday or Sunday in 2026
           </h2>
 
-          <div className="bg-stockstrail-bg-light/20 rounded-lg border border-white/5 p-4">
+          <div className="bg-AssetArc-bg-light/20 rounded-lg border border-white/5 p-4">
             {/* Desktop/Table view */}
             <table className="w-full text-left hidden md:table">
               <thead>
@@ -132,7 +132,7 @@ const NseHolidays = () => {
             {/* Mobile/Card view */}
             <div className="md:hidden space-y-3">
               {weekendData.map((row) => (
-                <div key={`${row.holiday}-${row.date}`} className="rounded-md border border-white/10 bg-stockstrail-bg-light/10 p-3">
+                <div key={`${row.holiday}-${row.date}`} className="rounded-md border border-white/10 bg-AssetArc-bg-light/10 p-3">
                   <div className="flex items-center justify-between">
                     <span className="text-white font-medium text-sm">{row.holiday}</span>
                     <span className="text-white/70 text-xs">{row.day}</span>
@@ -151,7 +151,7 @@ const NseHolidays = () => {
 
             <h3 className="text-xl font-semibold text-white mt-4 mb-2">NSE Market Timings</h3>
 
-            <div className="bg-stockstrail-bg-light/10 p-4 rounded-md border border-white/5">
+            <div className="bg-AssetArc-bg-light/10 p-4 rounded-md border border-white/5">
               <ul className="text-white/80 list-disc pl-5 space-y-2">
                 <li>
                   <strong>Pre-Open Session:</strong>  
@@ -182,7 +182,7 @@ const NseHolidays = () => {
             NSE Holidays 2026 for the Commodity Derivatives Segment
           </h2>
 
-          <div className="bg-stockstrail-bg-light/20 rounded-lg border border-white/5 p-4">
+          <div className="bg-AssetArc-bg-light/20 rounded-lg border border-white/5 p-4">
             {/* Desktop/Table view */}
             <table className="w-full text-left hidden md:table">
               <thead>
@@ -211,7 +211,7 @@ const NseHolidays = () => {
             {/* Mobile/Card view */}
             <div className="md:hidden space-y-3">
               {commodityData.map((row) => (
-                <div key={`${row.date}-${row.description}`} className="rounded-md border border-white/10 bg-stockstrail-bg-light/10 p-3">
+                <div key={`${row.date}-${row.description}`} className="rounded-md border border-white/10 bg-AssetArc-bg-light/10 p-3">
                   <div className="flex items-center justify-between">
                     <span className="text-white font-medium text-sm">{row.description}</span>
                     <span className="text-white/70 text-xs">{row.day}</span>

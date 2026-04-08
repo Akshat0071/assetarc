@@ -64,16 +64,16 @@ canonical: "https://assetarc.in/services/insurance"
 **Metadata Template for About Page:**
 ```typescript
 export const metadata: Metadata = {
-  title: "About Stockstrail - SEBI Registered Investment Advisors in India",
-  description: "Learn about Stockstrail, your trusted SEBI-registered financial advisory firm. Our mission: honest guidance, simple explanations, and confident financial decisions for every Indian investor.",
-  keywords: "about stockstrail, SEBI registered investment advisor, financial advisory India, wealth management firm",
+  title: "About AssetArc - SEBI Registered Investment Advisors in India",
+  description: "Learn about AssetArc, your trusted SEBI-registered financial advisory firm. Our mission: honest guidance, simple explanations, and confident financial decisions for every Indian investor.",
+  keywords: "about AssetArc, SEBI registered investment advisor, financial advisory India, wealth management firm",
   alternates: {
-    canonical: "https://stockstrail.in/about",
+    canonical: "https://AssetArc.in/about",
   },
   openGraph: {
-    title: "About Stockstrail - SEBI Registered Investment Advisors in India",
+    title: "About AssetArc - SEBI Registered Investment Advisors in India",
     description: "Your trusted SEBI-registered financial advisory firm providing honest guidance and simple explanations for confident financial decisions.",
-    url: "https://stockstrail.in/about",
+    url: "https://AssetArc.in/about",
     type: "website",
   },
 };
@@ -97,9 +97,9 @@ export const metadata: Metadata = {
 export const metadata: Metadata = {
   // ... existing metadata
   alternates: {
-    canonical: "https://stockstrail.in",
+    canonical: "https://AssetArc.in",
     languages: {
-      "en-IN": "https://stockstrail.in",
+      "en-IN": "https://AssetArc.in",
     },
   },
 };
@@ -123,9 +123,9 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "FinancialService",
-  "name": "Stockstrail",
-  "url": "https://stockstrail.in",
-  "logo": "https://stockstrail.in/stockstrail.png",
+  "name": "AssetArc",
+  "url": "https://AssetArc.in",
+  "logo": "https://AssetArc.in/AssetArc.png",
   "description": "SEBI registered financial advisory firm providing investment guidance, mutual funds, insurance, and loan services in India.",
   "address": {
     "@type": "PostalAddress",
@@ -135,15 +135,15 @@ const organizationSchema = {
     "@type": "ContactPoint",
     "telephone": "+91-97363-04663",
     "contactType": "customer service",
-    "email": "connect@stockstrail.in",
+    "email": "connect@AssetArc.in",
     "areaServed": "IN",
     "availableLanguage": "English",
   },
   "sameAs": [
-    "https://www.facebook.com/people/Stockstrail-Stockstrail/100089234534696/",
-    "https://www.linkedin.com/company/stockstrail/",
-    "https://instagram.com/stockstrail/",
-    "https://t.me/stockstrail",
+    "https://www.facebook.com/people/AssetArc-AssetArc/100089234534696/",
+    "https://www.linkedin.com/company/AssetArc/",
+    "https://instagram.com/AssetArc/",
+    "https://t.me/AssetArc",
   ],
 };
 ```
@@ -206,7 +206,7 @@ const organizationSchema = {
 **Metadata Template:**
 ```typescript
 export const metadata: Metadata = {
-  title: "Financial Calculators - SIP, FD, EMI, Tax Calculator | Stockstrail",
+  title: "Financial Calculators - SIP, FD, EMI, Tax Calculator | AssetArc",
   description: "Free online financial calculators for SIP, lumpsum, fixed deposit, recurring deposit, EMI, and tax planning. Calculate your investments and savings accurately.",
   keywords: "SIP calculator, mutual fund calculator, FD calculator, EMI calculator, tax calculator, RD calculator",
 };
@@ -238,19 +238,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://stockstrail.in"
+      "item": "https://AssetArc.in"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://stockstrail.in/services"
+      "item": "https://AssetArc.in/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Mutual Funds",
-      "item": "https://stockstrail.in/services/mutual-funds"
+      "item": "https://AssetArc.in/services/mutual-funds"
     }
   ]
 };
@@ -278,14 +278,14 @@ const articleSchema = {
   "image": post?.featured_image_url || post?.og_image_url,
   "author": {
     "@type": "Person",
-    "name": post?.author_name || "Stockstrail Team",
+    "name": post?.author_name || "AssetArc Team",
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Stockstrail",
+    "name": "AssetArc",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://stockstrail.in/stockstrail.png"
+      "url": "https://AssetArc.in/AssetArc.png"
     }
   },
   "datePublished": post?.published_at || post?.created_at,
@@ -349,10 +349,10 @@ const faqSchema = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "FinancialService",
-  "name": "Stockstrail",
-  "image": "https://stockstrail.in/stockstrail.png",
+  "name": "AssetArc",
+  "image": "https://AssetArc.in/AssetArc.png",
   "telephone": "+91-97363-04663",
-  "email": "connect@stockstrail.in",
+  "email": "connect@AssetArc.in",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "IN",
@@ -411,7 +411,7 @@ const localBusinessSchema = {
 **Metadata:**
 ```typescript
 export const metadata: Metadata = {
-  title: "Complete Guide to Mutual Fund Investment in India | Stockstrail",
+  title: "Complete Guide to Mutual Fund Investment in India | AssetArc",
   description: "Learn everything about mutual funds - types, SIP vs lumpsum, taxation, how to choose funds, and common mistakes. Start your investment journey today.",
   keywords: "mutual funds guide, mutual fund investment India, SIP investment, mutual fund types, mutual fund taxation",
 };
@@ -775,12 +775,12 @@ const personSchema = {
   "jobTitle": "Investment Advisor",
   "worksFor": {
     "@type": "Organization",
-    "name": "Stockstrail"
+    "name": "AssetArc"
   },
   "alumniOf": "University Name",
   "knowsAbout": ["Mutual Funds", "Financial Planning", "Insurance"],
   "sebiRegistration": "INH000XXXXX",
-  "url": "https://stockstrail.in/about/team/author-name"
+  "url": "https://AssetArc.in/about/team/author-name"
 };
 ```
 
@@ -835,7 +835,7 @@ const reviewSchema = {
   "@type": "Review",
   "itemReviewed": {
     "@type": "FinancialService",
-    "name": "Stockstrail"
+    "name": "AssetArc"
   },
   "reviewRating": {
     "@type": "Rating",

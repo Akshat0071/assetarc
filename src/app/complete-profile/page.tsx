@@ -193,7 +193,7 @@ export default function CompleteProfilePage() {
   return (
     <SimpleLayout>
       <SEO
-        title="Complete Your Profile | Stockstrail"
+        title="Complete Your Profile | AssetArc"
         description="Add your phone number to complete your profile"
         url="/complete-profile"
       />
@@ -271,7 +271,7 @@ export default function CompleteProfilePage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light transition-all duration-300 font-medium text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light transition-all duration-300 font-medium text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <>
@@ -280,7 +280,7 @@ export default function CompleteProfilePage() {
                     </>
                   ) : (
                     <>
-                      <div className="w-2 h-2 sm:w-3 sm:h-3 bg-stockstrail-green-accent rounded-full" />
+                      <div className="w-2 h-2 sm:w-3 sm:h-3 bg-AssetArc-green-accent rounded-full" />
                       Continue
                     </>
                   )}

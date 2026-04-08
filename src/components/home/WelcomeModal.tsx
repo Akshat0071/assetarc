@@ -70,11 +70,11 @@ export function WelcomeModal() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="bg-stockstrail-bg border border-white/10 text-white sm:max-w-md rounded-2xl shadow-2xl">
+      <DialogContent className="bg-AssetArc-bg border border-white/10 text-white sm:max-w-md rounded-2xl shadow-2xl">
         <DialogHeader className="space-y-4">
           {/* Icon / Badge */}
-          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-stockstrail-green-light/10 border border-stockstrail-green-light/30 mx-auto">
-            <ArrowRight className="w-5 h-5 text-stockstrail-green-light" />
+          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-AssetArc-green-light/10 border border-AssetArc-green-light/30 mx-auto">
+            <ArrowRight className="w-5 h-5 text-AssetArc-green-light" />
           </div>
   
           {/* Title */}
@@ -93,15 +93,15 @@ export function WelcomeModal() {
         {/* Value Points */}
         <div className="mt-6 space-y-3 text-sm text-white/80">
           <div className="flex items-start gap-3">
-            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-stockstrail-green-light" />
+            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-AssetArc-green-light" />
             <p>11-question assessment designed by investment experts</p>
           </div>
           <div className="flex items-start gap-3">
-            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-stockstrail-green-light" />
+            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-AssetArc-green-light" />
             <p>Personalized risk category & asset allocation insights</p>
           </div>
           <div className="flex items-start gap-3">
-            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-stockstrail-green-light" />
+            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-AssetArc-green-light" />
             <p>Takes less than 3 minutes to complete</p>
           </div>
         </div>
@@ -110,9 +110,9 @@ export function WelcomeModal() {
         <div className="flex flex-col gap-3 pt-6">
           <button
             onClick={handleGetStarted}
-            className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light transition-all duration-300 font-medium text-sm sm:text-base"
+            className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light transition-all duration-300 font-medium text-sm sm:text-base"
           >
-            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-stockstrail-green-accent rounded-full" />
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-AssetArc-green-accent rounded-full" />
             Check Your Risk Profile
           </button>
         </div>

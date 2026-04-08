@@ -108,7 +108,7 @@ function SignInContent() {
         <div className="mt-6 text-center">
           <Link
             href="/"
-            className="text-sm text-white/60 hover:text-stockstrail-green-light transition-colors"
+            className="text-sm text-white/60 hover:text-AssetArc-green-light transition-colors"
           >
             ← Back to home
           </Link>
@@ -133,12 +133,12 @@ export default function SignInPage() {
             <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
               <CardHeader className="space-y-1 text-center">
                 <CardTitle className="text-2xl font-product-sans text-white">
-                  Welcome to Stockstrail
+                  Welcome to AssetArc
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center justify-center py-8">
-                  <Loader2 className="w-6 h-6 animate-spin text-stockstrail-green-light" />
+                  <Loader2 className="w-6 h-6 animate-spin text-AssetArc-green-light" />
                 </div>
               </CardContent>
             </Card>

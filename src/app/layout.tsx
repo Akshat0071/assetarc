@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Work_Sans, Montserrat } from "next/font/google";
 import Script from "next/script";
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
       "Achieve financial independence with expert financial planning and investment guidance.",
     images: [
       {
-        url: "/og-stockstrail.png", // Must exist in /public
+        url: "/og-assetarc.png", // Must exist in /public
         width: 1100,
         height: 630,
         alt: "AssetArc OG Image",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     title: "AssetArc - Financial Planning & Investment Guidance",
     description:
       "Achieve financial independence with expert financial planning and investment guidance.",
-    images: ["/og-stockstrail.png"],
+    images: ["/og-assetarc.png"],
   },
 };
 
@@ -91,7 +91,7 @@ export default function RootLayout({
           __html: `
             body{background:#012928;color:#fff;margin:0;min-height:100vh;font-family:system-ui,-apple-system,sans-serif}
             .min-h-screen{min-height:100vh}
-            .bg-stockstrail-bg{background-color:#012928}
+            .bg-AssetArc-bg{background-color:#012928}
             .text-\[\#809393\]{color:#809393}
             .text-white{color:#fff}
             .text-center{text-align:center}
@@ -104,9 +104,9 @@ export default function RootLayout({
         }} />
 
         {/* Favicon - explicit link for Google and all browsers */}
-        <link rel="icon" href="/favicon.svg" sizes="any" />
-        <link rel="icon" href="/favicon.svg" type="image/x-icon" />
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="icon" href="/assetarclogo.png" sizes="any" />
+        <link rel="icon" href="/assetarclogo.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="/assetarclogo.png" />
 
         {/* Microsoft Clarity - load only after first user interaction to avoid long tasks during initial render */}
         <Script id="clarity-bootstrap" strategy="afterInteractive">

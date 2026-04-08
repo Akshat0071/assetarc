@@ -1,5 +1,5 @@
 /**
- * Shared types for Stockstrail API
+ * Shared types for AssetArc API
  * Used across client and server
  */
 

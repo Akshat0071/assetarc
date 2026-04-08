@@ -172,7 +172,7 @@ export function BlogAdminContent({ posts: initialPosts }: BlogAdminContentProps)
                     </div>
                     <Button
                         onClick={handleCreatePost}
-                        className="bg-stockstrail-green-light hover:bg-stockstrail-green-light/90 text-black font-medium px-6"
+                        className="bg-AssetArc-green-light hover:bg-AssetArc-green-light/90 text-black font-medium px-6"
                     >
                         <Plus className="w-4 h-4 mr-2" />
                         New Post
@@ -188,7 +188,7 @@ export function BlogAdminContent({ posts: initialPosts }: BlogAdminContentProps)
                                 placeholder="Search posts by title, category, or author..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="pl-10 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-stockstrail-green-light !bg-white/5 !border-white/10"
+                                className="pl-10 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-AssetArc-green-light !bg-white/5 !border-white/10"
                             />
                         </div>
                     </div>
@@ -229,7 +229,7 @@ export function BlogAdminContent({ posts: initialPosts }: BlogAdminContentProps)
                         <div className="text-white/60 text-sm">Drafts</div>
                     </div>
                     <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-                        <div className="text-2xl sm:text-3xl font-semibold text-stockstrail-green-light mb-1">
+                        <div className="text-2xl sm:text-3xl font-semibold text-AssetArc-green-light mb-1">
                             {posts.filter((p) => p.visible_on_website).length}
                         </div>
                         <div className="text-white/60 text-sm">Visible</div>
@@ -309,7 +309,7 @@ export function BlogAdminContent({ posts: initialPosts }: BlogAdminContentProps)
                                                     <DropdownMenuContent align="end" className="bg-[#031815] border-white/10">
                                                         <DropdownMenuItem
                                                             onClick={() => handleEditPost(post)}
-                                                            className="text-white hover:text-stockstrail-green-light cursor-pointer"
+                                                            className="text-white hover:text-AssetArc-green-light cursor-pointer"
                                                         >
                                                             <Edit className="w-4 h-4 mr-2" />
                                                             Edit

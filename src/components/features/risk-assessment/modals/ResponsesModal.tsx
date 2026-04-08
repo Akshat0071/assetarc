@@ -151,7 +151,7 @@ export function ResponsesModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-stockstrail-bg border-white/10 text-white max-w-3xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="bg-AssetArc-bg border-white/10 text-white max-w-3xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-product-sans text-white">
             Question Responses
@@ -163,7 +163,7 @@ export function ResponsesModal({
 
         {loading ? (
           <div className="flex items-center justify-center py-12">
-            <Loader2 className="w-6 h-6 animate-spin text-stockstrail-green-light" />
+            <Loader2 className="w-6 h-6 animate-spin text-AssetArc-green-light" />
           </div>
         ) : error ? (
           <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400">

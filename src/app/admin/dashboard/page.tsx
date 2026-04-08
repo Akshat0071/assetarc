@@ -10,7 +10,7 @@ import type { RiskAttemptWithProfile } from "@/lib/supabase/types";
 import type { Review, QueryRecord } from "@/lib/supabase";
 
 export const metadata = {
-  title: "Admin Dashboard | Stockstrail",
+  title: "Admin Dashboard | AssetArc",
   description: "Admin panel for managing risk profiles",
 };
 
@@ -170,7 +170,7 @@ export default async function AdminDashboardPage({
   return (
     <SimpleLayout>
       <SEO
-        title="Admin Dashboard | Stockstrail"
+        title="Admin Dashboard | AssetArc"
         description="Admin panel for managing risk profiles"
         url="/admin"
       />

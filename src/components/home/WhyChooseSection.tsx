@@ -31,9 +31,9 @@ const WhyChooseSectionComponent = () => {
         <section className="w-full py-12 sm:py-24 px-4 sm:px-6 lg:px-8 relative">
             {/* Background elements */}
             <div className="absolute inset-0">
-                <div className="w-full h-96 bg-stockstrail-bg-light blur-185 opacity-40"></div>
+                <div className="w-full h-96 bg-AssetArc-bg-light blur-185 opacity-40"></div>
                 {/* Pulsing ring (hero-style) behind Why Choose header */}
-                <div className="absolute left-1/2 top-8 -translate-x-1/2 w-[640px] h-[640px] bg-stockstrail-bg-light rounded-full blur-100 opacity-55 pointer-events-none" />
+                <div className="absolute left-1/2 top-8 -translate-x-1/2 w-[640px] h-[640px] bg-AssetArc-bg-light rounded-full blur-100 opacity-55 pointer-events-none" />
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto">
@@ -48,7 +48,7 @@ const WhyChooseSectionComponent = () => {
                     {features.map((feature, index) => (
                         <div
                             key={index}
-                            className="-translate-y-4 animate-fade-in opacity-0 bg-stockstrail-bg border-2 border-[#ffffff21] backdrop-blur-[50px] backdrop-brightness-100 [-webkit-backdrop-filter:blur(50px)_brightness(100%)] rounded-[100px] md:rounded-[200px] h-[250px] md:h-[307px] w-full max-w-[250px] mx-auto transition-all duration-300 hover:border-white hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-white/20 hover:scale-105 group cursor-pointer"
+                            className="-translate-y-4 animate-fade-in opacity-0 bg-AssetArc-bg border-2 border-[#ffffff21] backdrop-blur-[50px] backdrop-brightness-100 [-webkit-backdrop-filter:blur(50px)_brightness(100%)] rounded-[100px] md:rounded-[200px] h-[250px] md:h-[307px] w-full max-w-[250px] mx-auto transition-all duration-300 hover:border-white hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-white/20 hover:scale-105 group cursor-pointer"
                             style={
                                 { "--animation-delay": feature.delay } as React.CSSProperties
                             }

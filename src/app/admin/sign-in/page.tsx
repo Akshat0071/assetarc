@@ -101,7 +101,7 @@ export default function AdminSignInPage() {
   return (
     <SimpleLayout>
       <SEO
-        title="Admin Sign In | Stockstrail"
+        title="Admin Sign In | AssetArc"
         description="Sign in to access the admin dashboard"
         url="/admin/sign-in"
       />
@@ -117,7 +117,7 @@ export default function AdminSignInPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center justify-center py-8">
-                  <Loader2 className="w-6 h-6 animate-spin text-stockstrail-green-light" />
+                  <Loader2 className="w-6 h-6 animate-spin text-AssetArc-green-light" />
                 </div>
               </CardContent>
             </Card>

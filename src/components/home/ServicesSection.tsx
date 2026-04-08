@@ -55,9 +55,9 @@ const ServicesSection = () => {
         <section id="services" className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 relative">
             {/* Background elements */}
             <div className="absolute inset-0">
-                <div className="w-full h-96 bg-stockstrail-bg-light blur-185 opacity-40"></div>
+                <div className="w-full h-96 bg-AssetArc-bg-light blur-185 opacity-40"></div>
                 {/* Pulsing ring (hero-style) */}
-                <div className="absolute left-1/2 top-10 -translate-x-1/2 w-[700px] h-[700px] bg-stockstrail-bg-light rounded-full blur-100 opacity-60 pointer-events-none" />
+                <div className="absolute left-1/2 top-10 -translate-x-1/2 w-[700px] h-[700px] bg-AssetArc-bg-light rounded-full blur-100 opacity-60 pointer-events-none" />
             </div>
 
             <div className="relative z-10 max-w-6xl mx-auto">
@@ -72,10 +72,10 @@ const ServicesSection = () => {
                 <div className="space-y-16">
                     {services.map((service, index) => (
                         <div key={index} className="relative">
-                            <div className="bg-stockstrail-bg border-2 border-white/13 rounded-[105px] p-4 sm:p-8 flex flex-col sm:flex-row items-center group hover:border-stockstrail-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.2)] transition-all duration-300">
+                            <div className="bg-AssetArc-bg border-2 border-white/13 rounded-[105px] p-4 sm:p-8 flex flex-col sm:flex-row items-center group hover:border-AssetArc-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.2)] transition-all duration-300">
 
                                 {/* Icon / Image */}
-                                <div className="w-16 h-16 sm:w-24 sm:h-24 bg-white/10 rounded-full flex items-center justify-center mb-4 sm:mb-0 sm:mr-8 shrink-0 group-hover:scale-110 group-hover:bg-stockstrail-green-light/20 transition-all duration-300">
+                                <div className="w-16 h-16 sm:w-24 sm:h-24 bg-white/10 rounded-full flex items-center justify-center mb-4 sm:mb-0 sm:mr-8 shrink-0 group-hover:scale-110 group-hover:bg-AssetArc-green-light/20 transition-all duration-300">
                                     {service.isImage ? (
                                         <Image
                                             src={service.icon}
@@ -95,7 +95,7 @@ const ServicesSection = () => {
 
                                 {/* Text */}
                                 <div className="grow text-center">
-                                    <h3 className="font-product-sans text-lg sm:text-xl lg:text-2xl font-normal uppercase text-white mb-4 group-hover:text-stockstrail-green-light transition-colors duration-300">
+                                    <h3 className="font-product-sans text-lg sm:text-xl lg:text-2xl font-normal uppercase text-white mb-4 group-hover:text-AssetArc-green-light transition-colors duration-300">
                                         {service.title}
                                     </h3>
                                     <p className="text-white/50 font-work-sans text-xs sm:text-sm lg:text-base leading-relaxed max-w-[662px] mx-auto group-hover:text-white/70 transition-colors duration-300">
@@ -106,7 +106,7 @@ const ServicesSection = () => {
                                 {/* Arrow Link */}
                                 <a
                                     href={getHref(service.title)}
-                                    className="w-16 h-16 sm:w-24 sm:h-24 bg-white/20 rounded-full flex items-center justify-center mt-4 sm:mt-0 sm:ml-8 shrink-0 group-hover:bg-stockstrail-gradient group-hover:scale-110 transition-all duration-300 cursor-pointer"
+                                    className="w-16 h-16 sm:w-24 sm:h-24 bg-white/20 rounded-full flex items-center justify-center mt-4 sm:mt-0 sm:ml-8 shrink-0 group-hover:bg-AssetArc-gradient group-hover:scale-110 transition-all duration-300 cursor-pointer"
                                     aria-label={`${service.title} link`}
                                 >
                                     <svg

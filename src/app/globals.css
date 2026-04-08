@@ -3,11 +3,11 @@
 
 /* === Tailwind design tokens === */
 @theme {
-  --color-stockstrail-bg: #012928;
-  --color-stockstrail-bg-light: #003a39;
-  --color-stockstrail-green-light: #00ff97;
-  --color-stockstrail-green-dark: #007d42;
-  --color-stockstrail-green-accent: #00d873;
+  --color-AssetArc-bg: #012928;
+  --color-AssetArc-bg-light: #003a39;
+  --color-AssetArc-green-light: #00ff97;
+  --color-AssetArc-green-dark: #007d42;
+  --color-AssetArc-green-accent: #00d873;
 
   /* Font families using next/font variables */
   --font-product-sans: var(--font-inter), system-ui, sans-serif;
@@ -107,7 +107,7 @@
   }
 
   body {
-    @apply bg-stockstrail-bg text-white font-work-sans;
+    @apply bg-AssetArc-bg text-white font-work-sans;
     margin: 0;
     padding: 0;
     min-height: 100vh;

@@ -181,7 +181,7 @@ export function AdminDashboardContent({
             <button
               onClick={() => setActiveTab("attempts")}
               className={`px-4 py-3 font-medium text-sm sm:text-base transition-colors border-b-2 ${activeTab === "attempts"
-                  ? "text-stockstrail-green-light border-stockstrail-green-light"
+                  ? "text-AssetArc-green-light border-AssetArc-green-light"
                   : "text-white/70 hover:text-white border-transparent hover:border-white/30"
                 }`}
             >
@@ -190,7 +190,7 @@ export function AdminDashboardContent({
             <button
               onClick={() => setActiveTab("reviews")}
               className={`px-4 py-3 font-medium text-sm sm:text-base transition-colors border-b-2 ${activeTab === "reviews"
-                  ? "text-stockstrail-green-light border-stockstrail-green-light"
+                  ? "text-AssetArc-green-light border-AssetArc-green-light"
                   : "text-white/70 hover:text-white border-transparent hover:border-white/30"
                 }`}
             >
@@ -199,7 +199,7 @@ export function AdminDashboardContent({
             <button
               onClick={() => setActiveTab("queries")}
               className={`px-4 py-3 font-medium text-sm sm:text-base transition-colors border-b-2 ${activeTab === "queries"
-                  ? "text-stockstrail-green-light border-stockstrail-green-light"
+                  ? "text-AssetArc-green-light border-AssetArc-green-light"
                   : "text-white/70 hover:text-white border-transparent hover:border-white/30"
                 }`}
             >
@@ -236,7 +236,7 @@ export function AdminDashboardContent({
               <Card className="bg-white/5 border-white/10 w-full">
                 <CardHeader>
                   <CardTitle className="text-white text-xl flex items-center gap-2">
-                    <Filter className="w-5 h-5 text-stockstrail-green-light" />
+                    <Filter className="w-5 h-5 text-AssetArc-green-light" />
                     Filters
                   </CardTitle>
                 </CardHeader>
@@ -273,7 +273,7 @@ export function AdminDashboardContent({
                         <SelectTrigger className="bg-white/5 border-white/10 text-white">
                           <SelectValue placeholder="All categories" />
                         </SelectTrigger>
-                        <SelectContent className="bg-stockstrail-bg border-white/10">
+                        <SelectContent className="bg-AssetArc-bg border-white/10">
                           <SelectItem value="all" className="text-white">All categories</SelectItem>
                           {riskCategories.map((cat) => (
                             <SelectItem key={cat} value={cat} className="text-white">
@@ -298,7 +298,7 @@ export function AdminDashboardContent({
                         <SelectTrigger className="bg-white/5 border-white/10 text-white">
                           <SelectValue placeholder="Sort by" />
                         </SelectTrigger>
-                        <SelectContent className="bg-stockstrail-bg border-white/10">
+                        <SelectContent className="bg-AssetArc-bg border-white/10">
                           <SelectItem value="highest" className="text-white">Highest Score</SelectItem>
                           <SelectItem value="lowest" className="text-white">Lowest Score</SelectItem>
                           <SelectItem value="latest" className="text-white">Latest</SelectItem>
@@ -317,7 +317,7 @@ export function AdminDashboardContent({
                           setSortFilter("highest");
                           updateFilters({ email: "", category: "all", sort: "highest" });
                         }}
-                        className="border-white/20 text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light"
+                        className="border-white/20 text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light"
                       >
                         Clear Filters
                       </Button>
@@ -331,7 +331,7 @@ export function AdminDashboardContent({
             <Card className="bg-white/5 border-white/10">
               <CardHeader>
                 <CardTitle className="text-white text-xl flex items-center gap-2">
-                  <ArrowUpDown className="w-5 h-5 text-stockstrail-green-light" />
+                  <ArrowUpDown className="w-5 h-5 text-AssetArc-green-light" />
                   Risk Attempts
                 </CardTitle>
                 <CardDescription className="text-white/70">
@@ -403,7 +403,7 @@ export function AdminDashboardContent({
                                   {profile?.full_name || "—"}
                                 </td>
                                 <td className="py-3 px-4">
-                                  <span className="text-stockstrail-green-light font-semibold">
+                                  <span className="text-AssetArc-green-light font-semibold">
                                     {attempt.score}
                                   </span>
                                   <span className="text-white/60 text-sm ml-1">/ 100</span>
@@ -435,7 +435,7 @@ export function AdminDashboardContent({
                                       variant="ghost"
                                       size="sm"
                                       onClick={() => handleViewAnalysis(attempt)}
-                                      className="text-white/70 hover:text-stockstrail-green-light hover:bg-white/10 h-8"
+                                      className="text-white/70 hover:text-AssetArc-green-light hover:bg-white/10 h-8"
                                     >
                                       <Eye className="w-4 h-4 mr-1" />
                                       Analysis
@@ -444,7 +444,7 @@ export function AdminDashboardContent({
                                       variant="ghost"
                                       size="sm"
                                       onClick={() => handleViewResponses(attempt)}
-                                      className="text-white/70 hover:text-stockstrail-green-light hover:bg-white/10 h-8"
+                                      className="text-white/70 hover:text-AssetArc-green-light hover:bg-white/10 h-8"
                                     >
                                       <Eye className="w-4 h-4 mr-1" />
                                       Responses
@@ -478,7 +478,7 @@ export function AdminDashboardContent({
                             variant="outline"
                             onClick={() => changePage(currentPage - 1)}
                             disabled={currentPage === 1}
-                            className="border-white/20 text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light disabled:opacity-50"
+                            className="border-white/20 text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light disabled:opacity-50"
                           >
                             Previous
                           </Button>
@@ -486,7 +486,7 @@ export function AdminDashboardContent({
                             variant="outline"
                             onClick={() => changePage(currentPage + 1)}
                             disabled={currentPage === totalPages}
-                            className="border-white/20 text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light disabled:opacity-50"
+                            className="border-white/20 text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light disabled:opacity-50"
                           >
                             Next
                           </Button>

@@ -232,7 +232,7 @@ By default, the module uses mock data. To test:
 
 ## License
 
-This module is part of the Stockstrail project.
+This module is part of the AssetArc project.
 
 ## Support
 

@@ -27,7 +27,7 @@
 //                 /* eslint-disable-next-line @next/next/no-img-element */
 //                 <img
 //                     src="/1..gif"
-//                     alt="Stockstrail Logo"
+//                     alt="AssetArc Logo"
 //                     className="w-28 h-28 xs:w-32 xs:h-32 sm:hidden object-contain"
 //                     style={{
 //                         backgroundColor: "transparent",
@@ -39,7 +39,7 @@
 //                 /* Android / Desktop Mobile View: Next Image */
 //                 <Image
 //                     src="/1..gif"
-//                     alt="Stockstrail Logo"
+//                     alt="AssetArc Logo"
 //                     className="w-28 h-28 xs:w-32 xs:h-32 sm:hidden object-contain"
 //                     width={128}
 //                     height={128}
@@ -54,7 +54,7 @@
 //             {/* Desktop/Laptop version */}
 //             <Image
 //                 src="/1..gif"
-//                 alt="Stockstrail Logo"
+//                 alt="AssetArc Logo"
 //                 className="hidden sm:block w-36 h-36 lg:w-48 lg:h-48 group-hover:scale-110 transition-transform duration-500 object-contain"
 //                 style={{ background: 'transparent' }}
 //                 width={300}

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: "https://assetarc.in/services/fixed-deposit",
     type: "website",
     locale: "en_IN",
-    images: ["/stockstrail.png"],
+    images: ["/assetarclogo.png"],
   },
 };
 
@@ -28,7 +28,7 @@ export default function FixedDeposit() {
       {/* Hero Section */}
       <section className="relative px-4 sm:px-6 lg:px-8 pt-24 pb-16">
         <div className="absolute inset-0 -z-10">
-          <div className="w-full h-96 bg-stockstrail-bg-light blur-185 opacity-40" />
+          <div className="w-full h-96 bg-AssetArc-bg-light blur-185 opacity-40" />
         </div>
 
         <div className="max-w-6xl mx-auto text-center">
@@ -48,7 +48,7 @@ export default function FixedDeposit() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-white/5 group hover:border-stockstrail-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.2)] transition-all duration-300">
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-white/5 group hover:border-AssetArc-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.2)] transition-all duration-300">
               <Image
                 src="/services/fd2.webp"
                 alt="What is Fixed Deposit"
@@ -61,7 +61,7 @@ export default function FixedDeposit() {
 
             {/* Content */}
             <div>
-              <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold text-stockstrail-green-light mb-6">
+              <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold text-AssetArc-green-light mb-6">
                 What is a Fixed Deposit?
               </h2>
               <p className="text-white/80 leading-relaxed mb-4">
@@ -91,16 +91,16 @@ export default function FixedDeposit() {
             href="https://flow.assetplus.in/client_onboarding/?advisor=659a79c11af778e82872513a"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-105 transition-all duration-300 font-work-sans font-medium"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 hover:scale-105 transition-all duration-300 font-work-sans font-medium"
           >
-            <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full" />
+            <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full" />
             Quick FD Setup — Open Now
           </a>
         </div>
       </section>
 
       {/* Why Invest in Fixed Deposits */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-stockstrail-bg-light/20">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-AssetArc-bg-light/20">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold gradient-text mb-12 text-center">
             Why Invest in Fixed Deposits?
@@ -135,9 +135,9 @@ export default function FixedDeposit() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group"
+                className="bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group"
               >
-                <h3 className="text-xl font-semibold text-stockstrail-green-light mb-3 group-hover:text-white transition-colors">
+                <h3 className="text-xl font-semibold text-AssetArc-green-light mb-3 group-hover:text-white transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-white/80">{item.desc}</p>
@@ -179,9 +179,9 @@ export default function FixedDeposit() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-stockstrail-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300"
+                className="bg-AssetArc-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300"
               >
-                <h3 className="text-2xl font-semibold text-stockstrail-green-light mb-3">
+                <h3 className="text-2xl font-semibold text-AssetArc-green-light mb-3">
                   {item.title}
                 </h3>
                 <p className="text-white/80 mb-4">{item.desc}</p>
@@ -201,16 +201,16 @@ export default function FixedDeposit() {
             href="https://flow.assetplus.in/client_onboarding/?advisor=659a79c11af778e82872513a"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-stockstrail-green-accent/5 border-2 border-stockstrail-green-accent/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-bg hover:bg-stockstrail-green-accent transition-all duration-300 font-work-sans font-medium"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-AssetArc-green-accent/5 border-2 border-AssetArc-green-accent/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-bg hover:bg-AssetArc-green-accent transition-all duration-300 font-work-sans font-medium"
           >
-            <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full" />
+            <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full" />
             Compare FD Rates & Start Now
           </a>
         </div>
       </section>
 
       {/* How Fixed Deposits Work */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-stockstrail-bg-light/20">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-AssetArc-bg-light/20">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold gradient-text mb-12 text-center">
             How Fixed Deposits Work
@@ -226,9 +226,9 @@ export default function FixedDeposit() {
             ].map((step, index) => (
               <div
                 key={index}
-                className="flex gap-4 items-start bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-lg p-4 border border-white/10 hover:border-stockstrail-green-light/30"
+                className="flex gap-4 items-start bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-lg p-4 border border-white/10 hover:border-AssetArc-green-light/30"
               >
-                <div className="shrink-0 w-8 h-8 bg-stockstrail-green-light rounded-full flex items-center justify-center text-black font-semibold">
+                <div className="shrink-0 w-8 h-8 bg-AssetArc-green-light rounded-full flex items-center justify-center text-black font-semibold">
                   {index + 1}
                 </div>
                 <p className="text-white/80 pt-1">{step}</p>
@@ -247,15 +247,15 @@ export default function FixedDeposit() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Cumulative */}
-            <div className="bg-stockstrail-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300">
-              <h3 className="text-2xl font-semibold text-stockstrail-green-light mb-4">
+            <div className="bg-AssetArc-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300">
+              <h3 className="text-2xl font-semibold text-AssetArc-green-light mb-4">
                 Cumulative FD
               </h3>
               <p className="text-white/80 mb-4">
                 Interest is added to the principal and paid at the end of
                 tenure—benefits from compounding.
               </p>
-              <div className="bg-stockstrail-green-light/10 border border-stockstrail-green-light/20 rounded-lg p-4">
+              <div className="bg-AssetArc-green-light/10 border border-AssetArc-green-light/20 rounded-lg p-4">
                 <p className="text-sm text-white/80">
                   <strong className="text-white">Best for:</strong> Long-term
                   compounding.
@@ -264,15 +264,15 @@ export default function FixedDeposit() {
             </div>
 
             {/* Non-Cumulative */}
-            <div className="bg-stockstrail-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300">
-              <h3 className="text-2xl font-semibold text-stockstrail-green-light mb-4">
+            <div className="bg-AssetArc-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300">
+              <h3 className="text-2xl font-semibold text-AssetArc-green-light mb-4">
                 Non-Cumulative FD
               </h3>
               <p className="text-white/80 mb-4">
                 Interest is paid periodically: Monthly, Quarterly, Half-yearly,
                 or Annually.
               </p>
-              <div className="bg-stockstrail-green-light/10 border border-stockstrail-green-light/20 rounded-lg p-4">
+              <div className="bg-AssetArc-green-light/10 border border-AssetArc-green-light/20 rounded-lg p-4">
                 <p className="text-sm text-white/80">
                   <strong className="text-white">Best for:</strong> Retirees
                   needing regular income.
@@ -284,7 +284,7 @@ export default function FixedDeposit() {
       </section>
 
       {/* Example Calculations */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-stockstrail-bg-light/20">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-AssetArc-bg-light/20">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold gradient-text mb-12 text-center">
             Example Calculations
@@ -310,21 +310,21 @@ export default function FixedDeposit() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-stockstrail-bg-light/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30"
+                className="bg-AssetArc-bg-light/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30"
               >
-                <p className="text-stockstrail-green-light font-semibold mb-2">
+                <p className="text-AssetArc-green-light font-semibold mb-2">
                   {item.title}
                 </p>
                 <p className="text-white/80">
                   {item.desc}
-                  <strong className="text-stockstrail-green-light">
+                  <strong className="text-AssetArc-green-light">
                     {item.value}
                   </strong>
                 </p>
               </div>
             ))}
 
-            <div className="bg-stockstrail-bg-light/50 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+            <div className="bg-AssetArc-bg-light/50 backdrop-blur-sm rounded-xl p-6 border border-white/10">
               <p className="text-white font-semibold mb-2 text-sm">⚠️ Note:</p>
               <p className="text-white/70 text-sm">
                 These are illustrative examples. Actual returns depend on the
@@ -351,7 +351,7 @@ export default function FixedDeposit() {
             ].map((point, index) => (
               <div
                 key={index}
-                className="flex gap-4 items-start bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-lg p-4 border border-white/10"
+                className="flex gap-4 items-start bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-lg p-4 border border-white/10"
               >
                 <span className="text-yellow-500 font-bold">!</span>
                 <p className="text-white/80">{point}</p>
@@ -362,7 +362,7 @@ export default function FixedDeposit() {
       </section>
 
       {/* Who Should Invest */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-stockstrail-bg-light/20">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-AssetArc-bg-light/20">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold gradient-text mb-12 text-center">
             Who Should Consider Fixed Deposits?
@@ -381,9 +381,9 @@ export default function FixedDeposit() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="flex gap-4 items-start bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-lg p-6 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300"
+                className="flex gap-4 items-start bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-lg p-6 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300"
               >
-                <div className="text-stockstrail-green-light text-2xl font-bold">
+                <div className="text-AssetArc-green-light text-2xl font-bold">
                   →
                 </div>
                 <p className="text-white/80">{item}</p>
@@ -429,9 +429,9 @@ export default function FixedDeposit() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300"
+                className="bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300"
               >
-                <h3 className="text-lg font-semibold text-stockstrail-green-light mb-2">
+                <h3 className="text-lg font-semibold text-AssetArc-green-light mb-2">
                   {item.title}
                 </h3>
                 <p className="text-white/70 text-sm">{item.desc}</p>
@@ -442,7 +442,7 @@ export default function FixedDeposit() {
       </section>
 
       {/* How to start */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-stockstrail-bg-light/20">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-AssetArc-bg-light/20">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold gradient-text mb-12 text-center">
             How to Start a Fixed Deposit
@@ -458,9 +458,9 @@ export default function FixedDeposit() {
             ].map((step, index) => (
               <div
                 key={index}
-                className="flex gap-4 items-start bg-stockstrail-bg-light/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300"
+                className="flex gap-4 items-start bg-AssetArc-bg-light/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300"
               >
-                <div className="shrink-0 w-10 h-10 bg-stockstrail-green-light rounded-full flex items-center justify-center text-black font-bold text-lg">
+                <div className="shrink-0 w-10 h-10 bg-AssetArc-green-light rounded-full flex items-center justify-center text-black font-bold text-lg">
                   {index + 1}
                 </div>
                 <p className="text-white/80 pt-1">{step}</p>
@@ -471,9 +471,9 @@ export default function FixedDeposit() {
           <div className="mt-12 text-center">
             <a
               href="/lets-talk"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-110 transition-all duration-300 font-work-sans font-medium group"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 hover:scale-110 transition-all duration-300 font-work-sans font-medium group"
             >
-              <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full group-hover:scale-125 transition-transform duration-300"></div>
+              <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full group-hover:scale-125 transition-transform duration-300"></div>
               Start Your Fixed Deposit Today
             </a>
           </div>

@@ -31,7 +31,7 @@ export default function Others() {
     <Layout>
       <section className="relative px-4 sm:px-6 lg:px-8 pt-24 pb-16">
         <div className="absolute inset-0 -z-10">
-          <div className="w-full h-96 bg-stockstrail-bg-light blur-185 opacity-40" />
+          <div className="w-full h-96 bg-AssetArc-bg-light blur-185 opacity-40" />
         </div>
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="font-product-sans text-2xl sm:text-4xl lg:text-6xl font-normal uppercase gradient-text mb-6">
@@ -47,7 +47,7 @@ export default function Others() {
       <section className="relative px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-white/5 group hover:border-stockstrail-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.2)] transition-all duration-300">
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 bg-white/5 group hover:border-AssetArc-green-light hover:shadow-[0_0_30px_rgba(0,255,151,0.2)] transition-all duration-300">
               <Image
                 src="/services/others2.webp"
                 alt="Financial Protection Services"
@@ -59,7 +59,7 @@ export default function Others() {
             </div>
 
             <div>
-              <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold text-stockstrail-green-light mb-6">
+              <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold text-AssetArc-green-light mb-6">
                 Other Financial & Protection Services
               </h2>
               <p className="text-white/80 leading-relaxed mb-4">
@@ -88,15 +88,15 @@ export default function Others() {
             href="https://flow.assetplus.in/client_onboarding/?advisor=659a79c11af778e82872513a"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-105 transition-all duration-300 font-work-sans font-medium"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 hover:scale-105 transition-all duration-300 font-work-sans font-medium"
           >
-            <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full" />
+            <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full" />
             Explore Additional Services — Get Help
           </a>
         </div>
       </section>
 
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-stockstrail-bg-light/20">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-AssetArc-bg-light/20">
 
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold gradient-text mb-12 text-center">
@@ -104,8 +104,8 @@ export default function Others() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
-              <h3 className="text-xl font-semibold text-stockstrail-green-light mb-3 group-hover:text-white transition-colors">
+            <div className="bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
+              <h3 className="text-xl font-semibold text-AssetArc-green-light mb-3 group-hover:text-white transition-colors">
                 Complete Protection
               </h3>
               <p className="text-white/80">
@@ -114,8 +114,8 @@ export default function Others() {
               </p>
             </div>
 
-            <div className="bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
-              <h3 className="text-xl font-semibold text-stockstrail-green-light mb-3 group-hover:text-white transition-colors">
+            <div className="bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
+              <h3 className="text-xl font-semibold text-AssetArc-green-light mb-3 group-hover:text-white transition-colors">
                 Expert Guidance
               </h3>
               <p className="text-white/80">
@@ -124,8 +124,8 @@ export default function Others() {
               </p>
             </div>
 
-            <div className="bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
-              <h3 className="text-xl font-semibold text-stockstrail-green-light mb-3 group-hover:text-white transition-colors">
+            <div className="bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
+              <h3 className="text-xl font-semibold text-AssetArc-green-light mb-3 group-hover:text-white transition-colors">
                 Multi-Provider Comparison
               </h3>
               <p className="text-white/80">
@@ -134,8 +134,8 @@ export default function Others() {
               </p>
             </div>
 
-            <div className="bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
-              <h3 className="text-xl font-semibold text-stockstrail-green-light mb-3 group-hover:text-white transition-colors">
+            <div className="bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
+              <h3 className="text-xl font-semibold text-AssetArc-green-light mb-3 group-hover:text-white transition-colors">
                 Transparent Recommendations
               </h3>
               <p className="text-white/80">
@@ -143,8 +143,8 @@ export default function Others() {
               </p>
             </div>
 
-            <div className="bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
-              <h3 className="text-xl font-semibold text-stockstrail-green-light mb-3 group-hover:text-white transition-colors">
+            <div className="bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
+              <h3 className="text-xl font-semibold text-AssetArc-green-light mb-3 group-hover:text-white transition-colors">
                 Complete Support
               </h3>
               <p className="text-white/80">
@@ -153,8 +153,8 @@ export default function Others() {
               </p>
             </div>
 
-            <div className="bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
-              <h3 className="text-xl font-semibold text-stockstrail-green-light mb-3 group-hover:text-white transition-colors">
+            <div className="bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group">
+              <h3 className="text-xl font-semibold text-AssetArc-green-light mb-3 group-hover:text-white transition-colors">
                 Peace of Mind
               </h3>
               <p className="text-white/80">
@@ -173,8 +173,8 @@ export default function Others() {
           </h2>
 
           <div className="space-y-8">
-            <div className="bg-stockstrail-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300">
-              <h3 className="text-2xl font-semibold text-stockstrail-green-light mb-3">Motor Insurance</h3>
+            <div className="bg-AssetArc-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300">
+              <h3 className="text-2xl font-semibold text-AssetArc-green-light mb-3">Motor Insurance</h3>
               <p className="text-white/80 mb-4">
                 Motor insurance provides financial protection against accidents, theft, damage, and third-party
                 liabilities for your vehicle. It is mandatory for all vehicles in India and ensures unexpected repair
@@ -198,8 +198,8 @@ export default function Others() {
               </div>
             </div>
 
-            <div className="bg-stockstrail-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300">
-              <h3 className="text-2xl font-semibold text-stockstrail-green-light mb-3">Travel Insurance</h3>
+            <div className="bg-AssetArc-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300">
+              <h3 className="text-2xl font-semibold text-AssetArc-green-light mb-3">Travel Insurance</h3>
               <p className="text-white/80 mb-4">
                 Travel insurance protects you from unexpected expenses during domestic or international travel. It
                 ensures financial safety in medical emergencies, baggage loss, flight delays, or trip cancellations.
@@ -227,8 +227,8 @@ export default function Others() {
               </div>
             </div>
 
-            <div className="bg-stockstrail-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300">
-              <h3 className="text-2xl font-semibold text-stockstrail-green-light mb-3">
+            <div className="bg-AssetArc-bg-light/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300">
+              <h3 className="text-2xl font-semibold text-AssetArc-green-light mb-3">
                 Traditional Life Insurance Plans
               </h3>
               <p className="text-white/80 mb-4">
@@ -236,7 +236,7 @@ export default function Others() {
                 for long-term financial planning and goals.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-stockstrail-bg-light/50 rounded-lg p-5 border border-white/5">
+                <div className="bg-AssetArc-bg-light/50 rounded-lg p-5 border border-white/5">
                   <p className="text-white font-semibold mb-2">ULIPs (Unit Linked Insurance Plans)</p>
                   <ul className="space-y-2 text-white/70 text-sm">
                     <li>• Investment + insurance in one</li>
@@ -249,7 +249,7 @@ export default function Others() {
                   </p>
                 </div>
 
-                <div className="bg-stockstrail-bg-light/50 rounded-lg p-5 border border-white/5">
+                <div className="bg-AssetArc-bg-light/50 rounded-lg p-5 border border-white/5">
                   <p className="text-white font-semibold mb-2">Guaranteed Return Plans</p>
                   <ul className="space-y-2 text-white/70 text-sm">
                     <li>• Fixed, assured maturity amount</li>
@@ -272,15 +272,15 @@ export default function Others() {
         <div className="max-w-6xl mx-auto text-center">
           <a
             href="https://flow.assetplus.in/client_onboarding/?advisor=659a79c11af778e82872513a"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-stockstrail-green-accent/5 border-2 border-stockstrail-green-accent/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-bg hover:bg-stockstrail-green-accent transition-all duration-300 font-work-sans font-medium"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-AssetArc-green-accent/5 border-2 border-AssetArc-green-accent/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-bg hover:bg-AssetArc-green-accent transition-all duration-300 font-work-sans font-medium"
           >
-            <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full" />
+            <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full" />
             Get Help Choosing The Right Service
           </a>
         </div>
       </section>
 
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-stockstrail-bg-light/20">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-AssetArc-bg-light/20">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold gradient-text mb-12 text-center">
             Who Should Consider These Services?
@@ -299,9 +299,9 @@ export default function Others() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="flex gap-4 items-start bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-lg p-5 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300"
+                className="flex gap-4 items-start bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-lg p-5 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300"
               >
-                <div className="text-stockstrail-green-light text-2xl font-bold">→</div>
+                <div className="text-AssetArc-green-light text-2xl font-bold">→</div>
                 <p className="text-white/80">{item}</p>
               </div>
             ))}
@@ -325,9 +325,9 @@ export default function Others() {
             ].map((step, index) => (
               <div
                 key={index}
-                className="flex gap-4 items-start bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-lg p-4 border border-white/10 hover:border-stockstrail-green-light/30 transition-all duration-300"
+                className="flex gap-4 items-start bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-lg p-4 border border-white/10 hover:border-AssetArc-green-light/30 transition-all duration-300"
               >
-                <div className="shrink-0 w-8 h-8 bg-stockstrail-green-light rounded-full flex items-center justify-center text-black font-semibold">
+                <div className="shrink-0 w-8 h-8 bg-AssetArc-green-light rounded-full flex items-center justify-center text-black font-semibold">
                   {index + 1}
                 </div>
                 <p className="text-white/80 pt-1">{step}</p>
@@ -337,7 +337,7 @@ export default function Others() {
         </div>
       </section>
 
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-stockstrail-bg-light/20">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-AssetArc-bg-light/20">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold gradient-text mb-12 text-center">
             Why Choose AssetArc for These Services?
@@ -372,9 +372,9 @@ export default function Others() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="bg-stockstrail-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-stockstrail-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group"
+                className="bg-AssetArc-bg-light/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-AssetArc-green-light/30 hover:shadow-[0_0_24px_rgba(0,255,151,0.12)] transition-all duration-300 group"
               >
-                <h3 className="text-lg font-semibold text-stockstrail-green-light mb-3 group-hover:text-white transition-colors">
+                <h3 className="text-lg font-semibold text-AssetArc-green-light mb-3 group-hover:text-white transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-white/80 text-sm group-hover:text-white/90 transition-colors">{item.desc}</p>
@@ -384,7 +384,7 @@ export default function Others() {
         </div>
       </section>
 
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-stockstrail-bg-light/10">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-AssetArc-bg-light/10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-product-sans font-semibold text-white mb-4">
             Ready to Secure Your Complete Financial Future?
@@ -395,7 +395,7 @@ export default function Others() {
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-3 px-6 py-3 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 transition-all duration-300 font-work-sans focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-stockstrail-green-light"
+            className="inline-flex items-center gap-3 px-6 py-3 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 transition-all duration-300 font-work-sans focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-AssetArc-green-light"
           >
             Get Personalized Recommendations
           </a>

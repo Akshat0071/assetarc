@@ -43,12 +43,12 @@ const EmailIcon = () => (
 
 /* ---------------- LOGO BLOCK ---------------- */
 
-const StockstrailLogoBW = () => (
+const AssetArcLogoBW = () => (
   <div className="flex items-center group">
     {/* Mobile logo */}
     <Image
-      src="/stockstrail_logo.gif"
-      alt="Stockstrail Logo"
+      src="/assetarclogo.png"
+      alt="AssetArc Logo"
       width={96}
       height={96}
       className="w-20 h-20 xs:w-24 xs:h-24 sm:hidden group-hover:scale-110 transition-transform duration-500 object-contain"
@@ -58,8 +58,8 @@ const StockstrailLogoBW = () => (
     />
     {/* Desktop logo */}
     <Image
-      src="/1..gif"
-      alt="Stockstrail Logo"
+      src="/assetarclogo.png"
+      alt="AssetArc Logo"
       width={200}
       height={200}
       className="hidden sm:block w-36 h-36 lg:w-36 lg:h-36 group-hover:scale-110 transition-transform duration-500 object-contain"
@@ -68,11 +68,11 @@ const StockstrailLogoBW = () => (
       priority
     />
     <div className="flex items-baseline">
-      <span className="text-white font-product-sans text-4xl sm:text-5xl font-bold group-hover:text-stockstrail-green-light transition-colors duration-500">
-        Stocks
+      <span className="text-white font-product-sans text-4xl sm:text-5xl font-bold group-hover:text-AssetArc-green-light transition-colors duration-500">
+        Asset
       </span>
-      <span className="text-white font-product-sans text-4xl sm:text-5xl font-normal group-hover:text-stockstrail-green-light transition-colors duration-500">
-        trail
+      <span className="text-white font-product-sans text-4xl sm:text-5xl font-normal group-hover:text-AssetArc-green-light transition-colors duration-500">
+        Arc
       </span>
     </div>
   </div>
@@ -163,13 +163,13 @@ export default function LetsTalk() {
       <section className="relative px-4 sm:px-6 lg:px-8 pt-4 pb-20 overflow-hidden">
         {/* soft glow */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute w-[800px] h-[800px] bg-stockstrail-bg-light rounded-full blur-3xl opacity-40 left-1/2 -translate-x-1/2 top-24" />
+          <div className="absolute w-[800px] h-[800px] bg-AssetArc-bg-light rounded-full blur-3xl opacity-40 left-1/2 -translate-x-1/2 top-24" />
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto">
           {/* TOP CENTER LOGO */}
           <div className="flex justify-center mb-8">
-            <StockstrailLogoBW />
+            <AssetArcLogoBW />
           </div>
 
           {/* GRID: LEFT CONTENT / RIGHT FORM */}
@@ -191,7 +191,7 @@ export default function LetsTalk() {
               {/* CONTACT CARDS (similar to reference layout) */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-12">
                 {/* Phone */}
-                <div className="bg-white/5 border border-white/10 rounded-xl p-3 hover:border-stockstrail-green-light hover:shadow-[0_0_20px_rgba(0,255,151,0.2)] transition-all">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-3 hover:border-AssetArc-green-light hover:shadow-[0_0_20px_rgba(0,255,151,0.2)] transition-all">
                   <p className="text-xs uppercase tracking-widest text-white/50 mb-1.5">
                     Phone
                   </p>
@@ -206,7 +206,7 @@ export default function LetsTalk() {
                 </div>
 
                 {/* WhatsApp */}
-                <div className="bg-white/5 border border-white/10 rounded-xl p-3 hover:border-stockstrail-green-light hover:shadow-[0_0_20px_rgba(0,255,151,0.2)] transition-all">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-3 hover:border-AssetArc-green-light hover:shadow-[0_0_20px_rgba(0,255,151,0.2)] transition-all">
                   <p className="text-xs uppercase tracking-widest text-white/50 mb-1.5">
                     WhatsApp
                   </p>
@@ -223,7 +223,7 @@ export default function LetsTalk() {
                 </div>
 
                 {/* Email */}
-                <div className="bg-white/5 border border-white/10 rounded-xl p-3 hover:border-stockstrail-green-light hover:shadow-[0_0_20px_rgba(0,255,151,0.2)] transition-all mt-4">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-3 hover:border-AssetArc-green-light hover:shadow-[0_0_20px_rgba(0,255,151,0.2)] transition-all mt-4">
                   <p className="text-xs uppercase tracking-widest text-white/50 mb-1.5">
                     Email
                   </p>
@@ -238,7 +238,7 @@ export default function LetsTalk() {
                 </div>
 
                 {/* Socials card */}
-                <div className="bg-white/5 border border-white/10 rounded-xl p-3 hover:border-stockstrail-green-light hover:shadow-[0_0_20px_rgba(0,255,151,0.2)] transition-all mt-4">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-3 hover:border-AssetArc-green-light hover:shadow-[0_0_20px_rgba(0,255,151,0.2)] transition-all mt-4">
                   <p className="text-xs uppercase tracking-widest text-white/50 mb-2">
                     Socials
                   </p>
@@ -247,31 +247,31 @@ export default function LetsTalk() {
                       href="https://www.facebook.com/people/AssetArc/100089234534696/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white hover:text-stockstrail-green-light hover:scale-110 transition-transform"
+                      className="text-white hover:text-AssetArc-green-light hover:scale-110 transition-transform"
                     >
                       <Facebook className="w-5 h-5" />
                     </a>
                     <a
-                      href="https://www.linkedin.com/company/stockstrail/"
+                      href="https://www.linkedin.com/company/assetarc/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white hover:text-stockstrail-green-light hover:scale-110 transition-transform"
+                      className="text-white hover:text-AssetArc-green-light hover:scale-110 transition-transform"
                     >
                       <Linkedin className="w-5 h-5" />
                     </a>
                     <a
-                      href="http://instagram.com/stockstrail/"
+                      href="http://instagram.com/assetarc/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white hover:text-stockstrail-green-light hover:scale-110 transition-transform"
+                      className="text-white hover:text-AssetArc-green-light hover:scale-110 transition-transform"
                     >
                       <Instagram className="w-5 h-5" />
                     </a>
                     <a
-                      href="https://t.me/stockstrail"
+                      href="https://t.me/assetarc"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white hover:text-stockstrail-green-light hover:scale-110 transition-transform"
+                      className="text-white hover:text-AssetArc-green-light hover:scale-110 transition-transform"
                     >
                       <Send className="w-5 h-5" />
                     </a>
@@ -280,7 +280,7 @@ export default function LetsTalk() {
                 </div>
 
                 {/* Address */}
-                <div className="bg-white/5 border border-white/10 rounded-xl p-3 hover:border-stockstrail-green-light hover:shadow-[0_0_20px_rgba(0,255,151,0.2)] transition-all sm:col-span-2 mt-4">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-3 hover:border-AssetArc-green-light hover:shadow-[0_0_20px_rgba(0,255,151,0.2)] transition-all sm:col-span-2 mt-4">
                   <p className="text-xs uppercase tracking-widest text-white/50 mb-1.5">
                     Office
                   </p>
@@ -302,7 +302,7 @@ export default function LetsTalk() {
             </div>
 
             {/* RIGHT: form card (project intake style) */}
-            <div className="w-full bg-white/10 rounded-3xl p-6 sm:p-8 border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:border-stockstrail-green-light hover:shadow-[0_0_40px_rgba(0,255,151,0.25)] transition-all">
+            <div className="w-full bg-white/10 rounded-3xl p-6 sm:p-8 border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.4)] hover:border-AssetArc-green-light hover:shadow-[0_0_40px_rgba(0,255,151,0.25)] transition-all">
               <p className="text-xs uppercase tracking-[0.25em] text-white/50 mb-2 text-center">
                 Query Intake
               </p>
@@ -324,7 +324,7 @@ export default function LetsTalk() {
                     value={form.name}
                     onChange={onChange}
                     required
-                    className="w-full px-3 py-2 rounded-lg bg-white/10 text-white border border-white/20 focus:outline-none focus:border-stockstrail-green-light"
+                    className="w-full px-3 py-2 rounded-lg bg-white/10 text-white border border-white/20 focus:outline-none focus:border-AssetArc-green-light"
                   />
                 </div>
                 <div>
@@ -339,7 +339,7 @@ export default function LetsTalk() {
                     required
                     inputMode="numeric"
                     maxLength={10}
-                    className="w-full px-3 py-2 rounded-lg bg-white/10 text-white border border-white/20 focus:outline-none focus:border-stockstrail-green-light"
+                    className="w-full px-3 py-2 rounded-lg bg-white/10 text-white border border-white/20 focus:outline-none focus:border-AssetArc-green-light"
                   />
                 </div>
                 <div>
@@ -352,7 +352,7 @@ export default function LetsTalk() {
                     value={form.email}
                     onChange={onChange}
                     required
-                    className="w-full px-3 py-2 rounded-lg bg-white/10 text-white border border-white/20 focus:outline-none focus:border-stockstrail-green-light"
+                    className="w-full px-3 py-2 rounded-lg bg-white/10 text-white border border-white/20 focus:outline-none focus:border-AssetArc-green-light"
                   />
                 </div>
                 <div>
@@ -364,7 +364,7 @@ export default function LetsTalk() {
                     value={form.service}
                     onChange={onChange}
                     required
-                    className="w-full px-3 py-2 rounded-lg bg-white/10 text-white border border-white/20 focus:outline-none focus:border-stockstrail-green-light"
+                    className="w-full px-3 py-2 rounded-lg bg-white/10 text-white border border-white/20 focus:outline-none focus:border-AssetArc-green-light"
                   >
                     <option value="" className="bg-[#0b1c1b]">
                       Select a service
@@ -397,7 +397,7 @@ export default function LetsTalk() {
                     rows={4}
                     required
                     minLength={20}
-                    className="w-full px-3 py-2 rounded-lg bg-white/10 text-white border border-white/20 focus:outline-none focus:border-stockstrail-green-light"
+                    className="w-full px-3 py-2 rounded-lg bg-white/10 text-white border border-white/20 focus:outline-none focus:border-AssetArc-green-light"
                   />
                 </div>
 
@@ -407,7 +407,7 @@ export default function LetsTalk() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="mt-2 px-6 py-3 bg-white/5 border border-white/30 rounded-full text-white text-sm font-medium hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="mt-2 px-6 py-3 bg-white/5 border border-white/30 rounded-full text-white text-sm font-medium hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {submitting ? 'Submitting…' : 'Submit query'}
                 </button>

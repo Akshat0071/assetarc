@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
             featured_image_url: body.featured_image_url || null,
             featured_image_alt: body.featured_image_alt || null,
             author_id: user.id,
-            author_name: profile.full_name || "Stockstrail",
+            author_name: profile.full_name || "AssetArc",
             status: body.status || "draft",
             category: body.category || null,
             tags: body.tags || [],

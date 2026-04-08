@@ -52,7 +52,7 @@ AssetArc.in is a Next.js-based financial services website offering mutual funds,
 - [`src/app/services/fixed-deposit/page.tsx`](src/app/services/fixed-deposit/page.tsx:12)
 - [`src/app/services/loan/page.tsx`](src/app/services/loan/page.tsx:12)
 
-**Action:** Change all canonical URLs from `https://stockstrail.com` to `https://stockstrail.in`
+**Action:** Change all canonical URLs from `https://AssetArc.com` to `https://AssetArc.in`
 
 #### 1.3.2 Reactivate Calculators Page
 **Current Status:** [`src/app/calculators/page.tsx`](src/app/calculators/page.tsx:1) is entirely commented out
@@ -96,7 +96,7 @@ AssetArc.in is a Next.js-based financial services website offering mutual funds,
 | Element | Current Status | Issues | Recommendations |
 |---------|---------------|--------|----------------|
 | H1 | "Embark on Your Journey to Success" | Generic, no keywords | Change to: "Financial Planning & Investment Guidance in India - Start Your Wealth Journey" |
-| Meta Title | "Stockstrail - Financial Planning & Investment Guidance" | Good | Add location modifier: "Financial Planning & Investment Advisory in India | Stockstrail" |
+| Meta Title | "AssetArc - Financial Planning & Investment Guidance" | Good | Add location modifier: "Financial Planning & Investment Advisory in India | AssetArc" |
 | Meta Description | 160 chars | Good | Add CTA: "Expert guidance for mutual funds, SIP, insurance & loans. Start investing with ₹100. Free consultation." |
 | Keywords | Basic list | Limited | Add: financial advisor India, investment advisory, wealth management India, SIP investment |
 
@@ -134,9 +134,9 @@ AssetArc.in is a Next.js-based financial services website offering mutual funds,
 **Suggested Metadata:**
 ```typescript
 export const metadata: Metadata = {
-  title: "About Stockstrail - SEBI Registered Investment Advisors in India",
-  description: "Learn about Stockstrail, your trusted SEBI-registered financial advisory firm. Our mission: honest guidance, simple explanations, and confident financial decisions for every Indian investor.",
-  keywords: "about stockstrail, SEBI registered investment advisor, financial advisory India, wealth management firm",
+  title: "About AssetArc - SEBI Registered Investment Advisors in India",
+  description: "Learn about AssetArc, your trusted SEBI-registered financial advisory firm. Our mission: honest guidance, simple explanations, and confident financial decisions for every Indian investor.",
+  keywords: "about AssetArc, SEBI registered investment advisor, financial advisory India, wealth management firm",
 }
 ```
 
@@ -401,7 +401,7 @@ export const metadata: Metadata = {
   "@type": "Person",
   "name": "Author Name",
   "jobTitle": "Investment Advisor",
-  "worksFor": "Stockstrail",
+  "worksFor": "AssetArc",
   "knowsAbout": ["Mutual Funds", "Financial Planning", "Insurance"],
   "alumniOf": "University",
   "sebiRegistration": "INH000XXXXX"
@@ -459,7 +459,7 @@ export const metadata: Metadata = {
 ### 5.1 Current Structure Analysis
 
 ```
-stockstrail.in/
+AssetArc.in/
 ├── / (Home)
 ├── /about
 ├── /services/
@@ -481,7 +481,7 @@ stockstrail.in/
 ### 5.2 Recommended Structure Improvements
 
 ```
-stockstrail.in/
+AssetArc.in/
 ├── / (Home)
 ├── /about
 │   ├── /team
@@ -925,7 +925,7 @@ stockstrail.in/
 
 ### 13.1 Summary
 
-Stockstrail.in has a solid technical foundation but requires significant improvements in content depth, structured data, E-E-A-T signals, and keyword optimization to compete effectively in the Indian financial services market. The roadmap outlined above provides a clear path to achieving competitive rankings.
+AssetArc.in has a solid technical foundation but requires significant improvements in content depth, structured data, E-E-A-T signals, and keyword optimization to compete effectively in the Indian financial services market. The roadmap outlined above provides a clear path to achieving competitive rankings.
 
 ### 13.2 Immediate Actions (This Week)
 
@@ -945,7 +945,7 @@ Stockstrail.in has a solid technical foundation but requires significant improve
 
 ### 13.4 Long-Term Vision (12 Months)
 
-Achieve 15,000+ monthly organic visitors, establish Stockstrail as a trusted financial advisory brand in India, and generate consistent qualified leads through organic search.
+Achieve 15,000+ monthly organic visitors, establish AssetArc as a trusted financial advisory brand in India, and generate consistent qualified leads through organic search.
 
 ---
 
@@ -957,9 +957,9 @@ Achieve 15,000+ monthly organic visitors, establish Stockstrail as a trusted fin
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Stockstrail",
-  "url": "https://stockstrail.in",
-  "logo": "https://stockstrail.in/stockstrail.png",
+  "name": "AssetArc",
+  "url": "https://AssetArc.in",
+  "logo": "https://AssetArc.in/AssetArc.png",
   "description": "SEBI registered financial advisory firm providing investment guidance, mutual funds, insurance, and loan services in India.",
   "address": {
     "@type": "PostalAddress",
@@ -972,15 +972,15 @@ Achieve 15,000+ monthly organic visitors, establish Stockstrail as a trusted fin
     "@type": "ContactPoint",
     "telephone": "+91-97363-04663",
     "contactType": "customer service",
-    "email": "connect@stockstrail.in",
+    "email": "connect@AssetArc.in",
     "areaServed": "IN",
     "availableLanguage": "English"
   },
   "sameAs": [
-    "https://www.facebook.com/people/Stockstrail-Stockstrail/100089234534696/",
-    "https://www.linkedin.com/company/stockstrail/",
-    "https://instagram.com/stockstrail/",
-    "https://t.me/stockstrail"
+    "https://www.facebook.com/people/AssetArc-AssetArc/100089234534696/",
+    "https://www.linkedin.com/company/AssetArc/",
+    "https://instagram.com/AssetArc/",
+    "https://t.me/AssetArc"
   ],
   "sebiRegistration": "INH000XXXXX"
 }
@@ -1003,10 +1003,10 @@ Achieve 15,000+ monthly organic visitors, establish Stockstrail as a trusted fin
     },
     {
       "@type": "Question",
-      "name": "Is Stockstrail SEBI registered?",
+      "name": "Is AssetArc SEBI registered?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, Stockstrail is a SEBI registered investment advisory firm. Our registration number is INH000XXXXX. We comply with all SEBI regulations to provide you with trustworthy financial guidance."
+        "text": "Yes, AssetArc is a SEBI registered investment advisory firm. Our registration number is INH000XXXXX. We comply with all SEBI regulations to provide you with trustworthy financial guidance."
       }
     }
   ]
@@ -1020,18 +1020,18 @@ Achieve 15,000+ monthly organic visitors, establish Stockstrail as a trusted fin
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "SIP Investment Guide for Beginners in India",
-  "image": "https://stockstrail.in/blog/sip-guide.jpg",
+  "image": "https://AssetArc.in/blog/sip-guide.jpg",
   "author": {
     "@type": "Person",
     "name": "Author Name",
-    "url": "https://stockstrail.in/about/team/author-name"
+    "url": "https://AssetArc.in/about/team/author-name"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Stockstrail",
+    "name": "AssetArc",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://stockstrail.in/stockstrail.png"
+      "url": "https://AssetArc.in/AssetArc.png"
     }
   },
   "datePublished": "2024-02-27",
@@ -1084,4 +1084,4 @@ Achieve 15,000+ monthly organic visitors, establish Stockstrail as a trusted fin
 
 **End of SEO Audit Report**
 
-*This document provides a comprehensive roadmap for improving Stockstrail.in's search engine visibility and organic traffic. All recommendations are prioritized based on impact and effort to guide implementation.*
+*This document provides a comprehensive roadmap for improving AssetArc.in's search engine visibility and organic traffic. All recommendations are prioritized based on impact and effort to guide implementation.*

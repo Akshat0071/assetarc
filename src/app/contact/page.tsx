@@ -51,12 +51,12 @@ const TelegramIcon = () => (
 
 /* ---------------- LOGO BLOCK ---------------- */
 
-const StockstrailLogoBW = () => (
+const AssetArcLogoBW = () => (
   <div className="flex items-center gap-4 sm:gap-8 group">
     {/* Mobile optimized logo for Android & iPhone */}
     <Image
-      src="/stockstrail_logo.gif"
-      alt="Stockstrail Logo"
+      src="/assetarclogo.png"
+      alt="AssetArc Logo"
       width={96}
       height={96}
       className="w-20 h-20 xs:w-24 xs:h-24 sm:hidden group-hover:scale-110 transition-transform duration-500 object-contain"
@@ -67,8 +67,8 @@ const StockstrailLogoBW = () => (
 
     {/* Desktop logo */}
     <Image
-      src="/1..gif"
-      alt="Stockstrail Logo"
+      src="/assetarclogo.png"
+      alt="AssetArc Logo"
       width={300}
       height={300}
       className="hidden sm:block w-36 h-36 lg:w-52 lg:h-52 group-hover:scale-110 transition-transform duration-500 object-contain"
@@ -78,11 +78,11 @@ const StockstrailLogoBW = () => (
     />
 
     <div className="flex items-baseline">
-      <span className="text-white font-product-sans text-4xl sm:text-7xl font-bold group-hover:text-stockstrail-green-light transition-colors duration-500">
-        Stocks
+      <span className="text-white font-product-sans text-4xl sm:text-7xl font-bold group-hover:text-AssetArc-green-light transition-colors duration-500">
+        Asset
       </span>
-      <span className="text-white font-product-sans text-4xl sm:text-7xl font-normal group-hover:text-stockstrail-green-light transition-colors duration-500">
-        trail
+      <span className="text-white font-product-sans text-4xl sm:text-7xl font-normal group-hover:text-AssetArc-green-light transition-colors duration-500">
+        Arc
       </span>
     </div>
   </div>
@@ -96,11 +96,11 @@ const Contact = () => {
       <section className="relative px-4 sm:px-6 lg:px-8 pt-24 pb-20">
 
         {/* Background Floating Animated Elements */}
-        <div className="absolute top-20 left-10 w-4 h-4 bg-stockstrail-green-light/30 rounded-full animate-ping"></div>
-        <div className="absolute top-40 right-20 w-3 h-3 bg-stockstrail-green-accent/40 rounded-full animate-pulse"></div>
+        <div className="absolute top-20 left-10 w-4 h-4 bg-AssetArc-green-light/30 rounded-full animate-ping"></div>
+        <div className="absolute top-40 right-20 w-3 h-3 bg-AssetArc-green-accent/40 rounded-full animate-pulse"></div>
         <div className="absolute bottom-20 left-20 w-2 h-2 bg-white/20 rounded-full animate-bounce"></div>
-        <div className="absolute bottom-40 right-10 w-5 h-5 bg-stockstrail-green-light/20 rounded-full animate-ping"></div>
-        <div className="absolute top-1/2 left-5 w-3 h-3 bg-stockstrail-green-accent/30 rounded-full animate-bounce-gentle"></div>
+        <div className="absolute bottom-40 right-10 w-5 h-5 bg-AssetArc-green-light/20 rounded-full animate-ping"></div>
+        <div className="absolute top-1/2 left-5 w-3 h-3 bg-AssetArc-green-accent/30 rounded-full animate-bounce-gentle"></div>
         <div className="absolute top-1/3 right-5 w-4 h-4 bg-white/10 rounded-full animate-pulse"></div>
 
         <div className="max-w-7xl mx-auto relative">
@@ -110,10 +110,10 @@ const Contact = () => {
 
             <div className="flex flex-col items-center text-center group">
               <div className="mb-6 hover:scale-105 transition-transform duration-500">
-                <StockstrailLogoBW />
+                <AssetArcLogoBW />
               </div>
               <div className="group-hover:scale-105 transition-transform duration-300">
-                <h3 className="text-white/80 text-xl mb-4 group-hover:text-stockstrail-green-light transition-colors duration-300">Get in touch</h3>
+                <h3 className="text-white/80 text-xl mb-4 group-hover:text-AssetArc-green-light transition-colors duration-300">Get in touch</h3>
                 <p className="text-white/60 group-hover:text-white/80 transition-colors duration-300">We welcome your inquiries by phone or e-mail</p>
               </div>
             </div>
@@ -121,13 +121,13 @@ const Contact = () => {
             {/* Address */}
             <div className="space-y-6 text-white/90">
               <div className="group">
-                <h2 className="text-white text-sm uppercase tracking-widest mb-2 group-hover:text-stockstrail-green-light transition-colors duration-300">Address</h2>
+                <h2 className="text-white text-sm uppercase tracking-widest mb-2 group-hover:text-AssetArc-green-light transition-colors duration-300">Address</h2>
 
                 <a
                   href="https://maps.google.com/maps?q=Near+Punjab+And+Sind+Bank,+V.P.O.+Chintpurni+Teh:Amb,+Distt.-+Una,+Himachal+Pradesh+177110"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-stockstrail-green-light block p-3 rounded-lg transition-all duration-300 hover:bg-white/5 hover:shadow-[0_0_15px_rgba(0,255,151,0.2)]"
+                  className="text-white hover:text-AssetArc-green-light block p-3 rounded-lg transition-all duration-300 hover:bg-white/5 hover:shadow-[0_0_15px_rgba(0,255,151,0.2)]"
                 >
                   <LocationIcon />
                   Near Punjab And Sind Bank,<br /> V.P.O. Chintpurni Teh:Amb,<br /> Distt.- Una, Himachal Pradesh (177110)
@@ -139,7 +139,7 @@ const Contact = () => {
                 <h2 className="text-white text-sm uppercase tracking-widest mb-2">Email</h2>
                 <a
                   href="mailto:akshatbansa04@gmail.com"
-                  className="underline block p-3 rounded-lg hover:text-stockstrail-green-light hover:bg-white/5 hover:shadow-[0_0_15px_rgba(0,255,151,0.2)] transition-all duration-300"
+                  className="underline block p-3 rounded-lg hover:text-AssetArc-green-light hover:bg-white/5 hover:shadow-[0_0_15px_rgba(0,255,151,0.2)] transition-all duration-300"
                 >
                   <EmailIcon /> akshatbansa04@gmail.com
                 </a>
@@ -149,16 +149,16 @@ const Contact = () => {
               <div className="group">
                 <h2 className="text-white text-sm uppercase tracking-widest mb-2">Socials</h2>
                 <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300">
-                  <a href="https://www.facebook.com/people/AssetArc/100089234534696/" target="_blank" className="hover:text-stockstrail-green-light hover:scale-110 transition-transform">
+                  <a href="https://www.facebook.com/people/AssetArc/100089234534696/" target="_blank" className="hover:text-AssetArc-green-light hover:scale-110 transition-transform">
                     <Facebook className="w-6 h-6" />
                   </a>
-                  <a href="https://www.linkedin.com/company/assetarc/" target="_blank" className="hover:text-stockstrail-green-light hover:scale-110 transition-transform">
+                  <a href="https://www.linkedin.com/company/assetarc/" target="_blank" className="hover:text-AssetArc-green-light hover:scale-110 transition-transform">
                     <Linkedin className="w-6 h-6" />
                   </a>
-                  <a href="http://instagram.com/assetarc/" target="_blank" className="hover:text-stockstrail-green-light hover:scale-110 transition-transform">
+                  <a href="http://instagram.com/assetarc/" target="_blank" className="hover:text-AssetArc-green-light hover:scale-110 transition-transform">
                     <Instagram className="w-6 h-6" />
                   </a>
-                  <a href="https://t.me/assetarc" target="_blank" className="hover:text-stockstrail-green-light hover:scale-110 transition-transform">
+                  <a href="https://t.me/assetarc" target="_blank" className="hover:text-AssetArc-green-light hover:scale-110 transition-transform">
                     <Send className="w-6 h-6" />
                   </a>
                 </div>
@@ -171,7 +171,7 @@ const Contact = () => {
                 <h2 className="text-white text-sm uppercase tracking-widest mb-2">Call Us</h2>
                 <a
                   href="tel:+918219890171"
-                  className="underline block p-2 rounded-lg hover:text-stockstrail-green-light hover:bg-white/5 hover:scale-105 transition-all duration-300"
+                  className="underline block p-2 rounded-lg hover:text-AssetArc-green-light hover:bg-white/5 hover:scale-105 transition-all duration-300"
                 >
                   <PhoneIcon /> +91 8219890171
                 </a>
@@ -182,7 +182,7 @@ const Contact = () => {
                 <a
                   href="https://wa.me/918219890171"
                   target="_blank"
-                  className="underline block p-2 rounded-lg hover:text-stockstrail-green-light hover:bg-white/5 hover:scale-105 transition-all duration-300"
+                  className="underline block p-2 rounded-lg hover:text-AssetArc-green-light hover:bg-white/5 hover:scale-105 transition-all duration-300"
                 >
                   <WhatsAppIcon /> +91 8219890171
                 </a>
@@ -201,7 +201,7 @@ const Contact = () => {
                 <a
                   href="https://maps.google.com/maps?q=Near+Punjab+And+Sind+Bank,+V.P.O.+Chintpurni+Teh:Amb,+Distt.-+Una,+Himachal+Pradesh+177110"
                   target="_blank"
-                  className="block p-3 rounded-lg hover:bg-white/5 hover:text-stockstrail-green-light transition-all"
+                  className="block p-3 rounded-lg hover:bg-white/5 hover:text-AssetArc-green-light transition-all"
                 >
                   <LocationIcon />
                   Near Punjab And Sind Bank,<br /> V.P.O. Chintpurni Teh:Amb,<br /> Distt.- Una, Himachal Pradesh (177110)
@@ -212,10 +212,10 @@ const Contact = () => {
               <div>
                 <h2 className="text-white text-sm uppercase tracking-widest mb-2">Email</h2>
                 <a
-                  href="mailto:connect@stockstrail.in"
-                  className="underline block p-3 rounded-lg hover:bg-white/5 hover:text-stockstrail-green-light transition-all"
+                  href="mailto:connect@assetarc.in"
+                  className="underline block p-3 rounded-lg hover:bg-white/5 hover:text-AssetArc-green-light transition-all"
                 >
-                  <EmailIcon /> connect@stockstrail.in
+                  <EmailIcon /> connect@assetarc.in
                 </a>
               </div>
 
@@ -223,16 +223,16 @@ const Contact = () => {
               <div>
                 <h2 className="text-white text-sm uppercase tracking-widest mb-2">Socials</h2>
                 <div className="flex items-center gap-4 p-3">
-                  <a href="https://www.facebook.com/people/Stockstrail-Stockstrail/100089234534696/" target="_blank" className="hover:text-stockstrail-green-light hover:scale-110 transition-transform">
+                  <a href="https://www.facebook.com/people/AssetArc/100089234534696/" target="_blank" className="hover:text-AssetArc-green-light hover:scale-110 transition-transform">
                     <Facebook className="w-6 h-6" />
                   </a>
-                  <a href="https://www.linkedin.com/company/stockstrail/" target="_blank" className="hover:text-stockstrail-green-light hover:scale-110 transition-transform">
+                  <a href="https://www.linkedin.com/company/assetarc/" target="_blank" className="hover:text-AssetArc-green-light hover:scale-110 transition-transform">
                     <Linkedin className="w-6 h-6" />
                   </a>
-                  <a href="http://instagram.com/stockstrail/" target="_blank" className="hover:text-stockstrail-green-light hover:scale-110 transition-transform">
+                  <a href="http://instagram.com/assetarc/" target="_blank" className="hover:text-AssetArc-green-light hover:scale-110 transition-transform">
                     <Instagram className="w-6 h-6" />
                   </a>
-                  <a href="https://t.me/stockstrail" target="_blank" className="hover:text-stockstrail-green-light hover:scale-110 transition-transform">
+                  <a href="https://t.me/assetarc" target="_blank" className="hover:text-AssetArc-green-light hover:scale-110 transition-transform">
                     <Send className="w-6 h-6" />
                   </a>
                 </div>
@@ -241,8 +241,8 @@ const Contact = () => {
 
             {/* Center Logo */}
             <div className="absolute top-1/2 left-[53%] -translate-x-1/2 -translate-y-1/2 text-center">
-              <StockstrailLogoBW />
-              <h3 className="text-white/80 text-xl mt-6 mb-4 group-hover:text-stockstrail-green-light transition-colors duration-300">Get in touch</h3>
+              <AssetArcLogoBW />
+              <h3 className="text-white/80 text-xl mt-6 mb-4 group-hover:text-AssetArc-green-light transition-colors duration-300">Get in touch</h3>
               <p className="text-center text-white/60 group-hover:text-white/80 transition-colors duration-300">We welcome your inquiries by phone or e-mail</p>
             </div>
 
@@ -252,7 +252,7 @@ const Contact = () => {
                 <h2 className="text-white text-sm uppercase tracking-widest mb-2">Call Us</h2>
                 <a
                   href="tel:+919736304663"
-                  className="underline block p-2 rounded-lg hover:bg-white/5 hover:text-stockstrail-green-light transition-all"
+                  className="underline block p-2 rounded-lg hover:bg-white/5 hover:text-AssetArc-green-light transition-all"
                 >
                   <PhoneIcon /> +91 97363-04663
                 </a>
@@ -263,7 +263,7 @@ const Contact = () => {
                 <a
                   href="https://wa.me/919736304663"
                   target="_blank"
-                  className="underline block p-2 rounded-lg hover:bg-white/5 hover:text-stockstrail-green-light transition-all"
+                  className="underline block p-2 rounded-lg hover:bg-white/5 hover:text-AssetArc-green-light transition-all"
                 >
                   <WhatsAppIcon /> +91 97363-04663
                 </a>

@@ -128,7 +128,7 @@ const TestimonialsSectionComponent = () => {
                 stars.push(
                     <svg
                         key={i}
-                        className="w-6 h-6 text-stockstrail-green-light"
+                        className="w-6 h-6 text-AssetArc-green-light"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                     >
@@ -139,7 +139,7 @@ const TestimonialsSectionComponent = () => {
                 stars.push(
                     <svg
                         key={i}
-                        className="w-6 h-6 text-stockstrail-green-light"
+                        className="w-6 h-6 text-AssetArc-green-light"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                     >
@@ -238,8 +238,8 @@ const TestimonialsSectionComponent = () => {
         <section className="py-12 px-4 sm:px-6 lg:px-8 relative" ref={sectionRef}>
             {/* Background Effects - MINIMAL to reduce main-thread work */}
             <div className="absolute inset-0">
-                <div className="absolute top-20 right-20 w-4 h-4 bg-stockstrail-green-light/20 rounded-full"></div>
-                <div className="absolute bottom-20 left-20 w-3 h-3 bg-stockstrail-green-accent/30 rounded-full"></div>
+                <div className="absolute top-20 right-20 w-4 h-4 bg-AssetArc-green-light/20 rounded-full"></div>
+                <div className="absolute bottom-20 left-20 w-3 h-3 bg-AssetArc-green-accent/30 rounded-full"></div>
                 <div className="absolute top-1/2 right-10 w-2 h-2 bg-white/20 rounded-full"></div>
             </div>
 
@@ -337,7 +337,7 @@ const TestimonialsSectionComponent = () => {
                     >
                         {loading ? (
                             <div className="flex items-center justify-center py-8">
-                                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stockstrail-green-light"></div>
+                                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-AssetArc-green-light"></div>
                             </div>
                         ) : (
                             <div
@@ -380,7 +380,7 @@ const TestimonialsSectionComponent = () => {
                             >
                                 <span
                                     className={`block w-3 h-3 rounded-full transition-all duration-300 ${index === currentTestimonial
-                                        ? "bg-stockstrail-green-light scale-125"
+                                        ? "bg-AssetArc-green-light scale-125"
                                         : "bg-white/30 group-hover:bg-white/50"
                                         }`}
                                 />
@@ -392,11 +392,11 @@ const TestimonialsSectionComponent = () => {
                     <div className="mt-8 flex flex-col items-center">
                         {!showForm && (
                             <button
-                                className="inline-flex items-center gap-4 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-110 hover:shadow-[0_0_30px_rgba(0,255,151,0.4)] transition-all duration-500 font-work-sans font-medium group"
+                                className="inline-flex items-center gap-4 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 hover:scale-110 hover:shadow-[0_0_30px_rgba(0,255,151,0.4)] transition-all duration-500 font-work-sans font-medium group"
                                 onClick={() => { setShowForm(true); setForm(prev => ({ ...prev, rating: 2.5 })); }}
                                 style={{ pointerEvents: 'auto' }}
                             >
-                                <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full group-hover:scale-125 group-hover:animate-pulse transition-all duration-300"></div>
+                                <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full group-hover:scale-125 group-hover:animate-pulse transition-all duration-300"></div>
                                 Add a review
                             </button>
                         )}
@@ -413,7 +413,7 @@ const TestimonialsSectionComponent = () => {
                                             name="name"
                                             value={form.name}
                                             onChange={handleFormChange}
-                                            className="px-3 py-2 rounded bg-white/20 text-white border border-white/30 focus:outline-none focus:border-stockstrail-green-light"
+                                            className="px-3 py-2 rounded bg-white/20 text-white border border-white/30 focus:outline-none focus:border-AssetArc-green-light"
                                             required
                                         />
                                     </div>
@@ -424,7 +424,7 @@ const TestimonialsSectionComponent = () => {
                                             name="company"
                                             value={form.company}
                                             onChange={handleFormChange}
-                                            className="px-3 py-2 rounded bg-white/20 text-white border border-white/30 focus:outline-none focus:border-stockstrail-green-light"
+                                            className="px-3 py-2 rounded bg-white/20 text-white border border-white/30 focus:outline-none focus:border-AssetArc-green-light"
                                         />
                                     </div>
                                     <div className="flex flex-col text-left">
@@ -434,7 +434,7 @@ const TestimonialsSectionComponent = () => {
                                             name="position"
                                             value={form.position}
                                             onChange={handleFormChange}
-                                            className="px-3 py-2 rounded bg-white/20 text-white border border-white/30 focus:outline-none focus:border-stockstrail-green-light"
+                                            className="px-3 py-2 rounded bg-white/20 text-white border border-white/30 focus:outline-none focus:border-AssetArc-green-light"
                                             required
                                         />
                                     </div>
@@ -444,7 +444,7 @@ const TestimonialsSectionComponent = () => {
                                             name="comment"
                                             value={form.comment}
                                             onChange={handleFormChange}
-                                            className="px-3 py-2 rounded bg-white/20 text-white border border-white/30 focus:outline-none focus:border-stockstrail-green-light"
+                                            className="px-3 py-2 rounded bg-white/20 text-white border border-white/30 focus:outline-none focus:border-AssetArc-green-light"
                                             rows={3}
                                             required
                                         />
@@ -466,7 +466,7 @@ const TestimonialsSectionComponent = () => {
                                             step={0.5}
                                             value={form.rating || 2.5}
                                             onChange={(e) => handleRatingChange(parseFloat(e.target.value))}
-                                            className="mt-3 w-full accent-stockstrail-green-light"
+                                            className="mt-3 w-full accent-AssetArc-green-light"
                                             aria-label="Select star rating in half-star steps"
                                         />
                                         <span className="text-white/50 text-xs mt-1">Use the slider to pick half stars (e.g., 4.5).</span>
@@ -475,7 +475,7 @@ const TestimonialsSectionComponent = () => {
                                     <button
                                         type="submit"
                                         disabled={submitting}
-                                        className="mt-4 px-6 py-2 bg-stockstrail-green-light text-black rounded-full font-semibold shadow hover:bg-stockstrail-green-accent transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                                        className="mt-4 px-6 py-2 bg-AssetArc-green-light text-black rounded-full font-semibold shadow hover:bg-AssetArc-green-accent transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
                                         {submitting ? (
                                             <div className="flex items-center gap-2">
@@ -488,11 +488,11 @@ const TestimonialsSectionComponent = () => {
                                     </button>
                                 </form>
                                 <button
-                                    className="mt-4 inline-flex items-center gap-4 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light hover:bg-stockstrail-green-light/10 hover:scale-110 hover:shadow-[0_0_30px_rgba(0,255,151,0.4)] transition-all duration-500 font-work-sans font-medium group"
+                                    className="mt-4 inline-flex items-center gap-4 px-8 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light hover:bg-AssetArc-green-light/10 hover:scale-110 hover:shadow-[0_0_30px_rgba(0,255,151,0.4)] transition-all duration-500 font-work-sans font-medium group"
                                     onClick={() => setShowForm(false)}
                                     style={{ pointerEvents: 'auto' }}
                                 >
-                                    <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full group-hover:scale-125 group-hover:animate-pulse transition-all duration-300"></div>
+                                    <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full group-hover:scale-125 group-hover:animate-pulse transition-all duration-300"></div>
                                     Close
                                 </button>
                             </>

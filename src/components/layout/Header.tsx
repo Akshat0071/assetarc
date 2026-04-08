@@ -75,13 +75,13 @@ const AssetArcLogo = () => (
   </div>
 );
 
-// const StockstrailLogo = () => (
+// const AssetArcLogo = () => (
 //   <div className="flex items-center">
 //     {/* Using native img to avoid Next.js Image hydration mismatches */}
 //     {/* eslint-disable-next-line @next/next/no-img-element */}
 //     <img
-//       src="/Stockstrailchristmas.webp"
-//       alt="Stockstrail Christmas Logo"
+//       src="/AssetArcchristmas.webp"
+//       alt="AssetArc Christmas Logo"
 //       width={280}
 //       height={84}
 //       className="w-[140px] sm:w-[280px] h-auto object-contain"
@@ -135,6 +135,7 @@ const Header = () => {
     },
     { name: 'About Us', href: '/about' },
     { name: 'Blog', href: '/blog' },
+    { name: 'Careers', href: '/careers' },
     {
       name: 'Calculators',
       href: '/calculators',
@@ -151,7 +152,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-stockstrail-bg/80 backdrop-blur-none sm:backdrop-blur-[100px] border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-AssetArc-bg/80 backdrop-blur-none sm:backdrop-blur-[100px] border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -174,7 +175,7 @@ const Header = () => {
                       onMouseEnter={() => openMenu(item.name)}
                       onMouseLeave={() => closeMenuWithDelay(250)}
                     >
-                      <button className="flex items-center gap-2 text-white hover:text-stockstrail-green-light transition-all duration-300 font-work-sans font-medium">
+                      <button className="flex items-center gap-2 text-white hover:text-AssetArc-green-light transition-all duration-300 font-work-sans font-medium">
                         {item.name}
                         <IconChevronDown
                           className={`w-4 h-4 transition-transform duration-300 ${openDropdown === item.name ? 'rotate-180' : ''
@@ -184,7 +185,7 @@ const Header = () => {
 
                       {openDropdown === item.name && (
                         <div
-                          className="absolute top-full left-0 mt-2 w-56 bg-stockstrail-bg/95 backdrop-blur-lg border border-white/10 rounded-lg py-2 shadow-lg"
+                          className="absolute top-full left-0 mt-2 w-56 bg-AssetArc-bg/95 backdrop-blur-lg border border-white/10 rounded-lg py-2 shadow-lg"
                           onMouseEnter={() => openMenu(item.name)}
                           onMouseLeave={() => closeMenuWithDelay(250)}
                         >
@@ -192,7 +193,7 @@ const Header = () => {
                             <Link
                               key={dropdownItem.name}
                               href={dropdownItem.href}
-                              className="block px-4 py-2 text-white hover:text-stockstrail-green-light hover:bg-white/5 transition-all duration-300"
+                              className="block px-4 py-2 text-white hover:text-AssetArc-green-light hover:bg-white/5 transition-all duration-300"
                             >
                               {dropdownItem.name}
                             </Link>
@@ -203,7 +204,7 @@ const Header = () => {
                   ) : (
                     <Link
                       href={item.href}
-                      className="font-work-sans font-medium transition-all duration-300 text-white hover:text-stockstrail-green-light"
+                      className="font-work-sans font-medium transition-all duration-300 text-white hover:text-AssetArc-green-light"
                     >
                       {item.name}
                     </Link>
@@ -217,16 +218,16 @@ const Header = () => {
           <div className="hidden lg:flex">
             <Link
               href="/lets-talk"
-              className="inline-flex items-center gap-4 px-6 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light transition-all duration-300 font-medium group"
+              className="inline-flex items-center gap-4 px-6 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light transition-all duration-300 font-medium group"
             >
-              <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full group-hover:animate-pulse"></div>
+              <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full group-hover:animate-pulse"></div>
               Let&apos;s Talk
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 text-white hover:text-stockstrail-green-light hover:bg-white/10 rounded-lg transition-all duration-300"
+            className="lg:hidden p-2 text-white hover:text-AssetArc-green-light hover:bg-white/10 rounded-lg transition-all duration-300"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -263,7 +264,7 @@ const Header = () => {
                             <Link
                               key={dropdownItem.name}
                               href={dropdownItem.href}
-                              className="block py-2 text-white/70 hover:text-stockstrail-green-light"
+                              className="block py-2 text-white/70 hover:text-AssetArc-green-light"
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
                               {dropdownItem.name}
@@ -275,7 +276,7 @@ const Header = () => {
                   ) : (
                     <Link
                       href={item.href}
-                      className="block py-2 font-medium text-white hover:text-stockstrail-green-light"
+                      className="block py-2 font-medium text-white hover:text-AssetArc-green-light"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.name}
@@ -286,10 +287,10 @@ const Header = () => {
 
               <Link
                 href="/lets-talk"
-                className="inline-flex items-center gap-4 px-6 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-stockstrail-green-light hover:text-stockstrail-green-light transition-all duration-300 font-medium group w-fit"
+                className="inline-flex items-center gap-4 px-6 py-4 bg-transparent border-2 border-white/20 rounded-full text-white hover:border-AssetArc-green-light hover:text-AssetArc-green-light transition-all duration-300 font-medium group w-fit"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <div className="w-3 h-3 bg-stockstrail-green-accent rounded-full group-hover:animate-pulse"></div>
+                <div className="w-3 h-3 bg-AssetArc-green-accent rounded-full group-hover:animate-pulse"></div>
                 Let&apos;s Talk
               </Link>
             </div>
