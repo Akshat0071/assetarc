@@ -88,31 +88,6 @@ const HeroSection = () => {
             <div className="w-2 h-2 sm:w-3 sm:h-3 bg-AssetArc-green-accent rounded-full" />
             Learn More About Our Services
           </a>
-          <a
-            href="/check-risk-profile"
-            aria-label="Check your risk profile"
-            className="
-              inline-flex
-              items-center
-              gap-3 sm:gap-4
-              px-4 sm:px-6
-              py-3 sm:py-4
-              bg-transparent
-              border-2
-              border-white/20
-              rounded-full
-              text-white
-              hover:border-AssetArc-green-light
-              hover:text-AssetArc-green-light
-              transition-all
-              duration-300
-              font-medium
-              text-sm sm:text-base
-            "
-          >
-            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-AssetArc-green-accent rounded-full" />
-            Check Your Risk Profile
-          </a>
         </div>
       </div>
 

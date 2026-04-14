@@ -148,7 +148,6 @@ export default function RootLayout({
             } catch (_) {}
           })();`}
         </Script>
-        <link rel="preconnect" href="https://luwzjngwignnmpdakxkw.supabase.co" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>

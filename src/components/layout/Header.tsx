@@ -126,7 +126,6 @@ const Header = () => {
       hasDropdown: true,
       dropdownItems: [
         { name: 'Mutual Funds', href: '/services#mutual-funds' },
-        { name: 'Risk Profile', href: '/check-risk-profile' },
         { name: 'Fixed Deposit', href: '/services#fd' },
         { name: 'Insurance', href: '/services#insurance' },
         { name: 'Loan', href: '/services#loan' },

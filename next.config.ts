@@ -40,7 +40,6 @@ const nextConfig: NextConfig = {
       "embla-carousel-react",
       "react-day-picker",
       "cmdk",
-      "@supabase/supabase-js",
       "clsx",
       "tailwind-merge",
     ],

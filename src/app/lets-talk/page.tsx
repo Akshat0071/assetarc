@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Layout from '@/components/layout/Layout';
-import { addQuery } from '@/lib/database/queries';
 import { Facebook, Linkedin, Instagram, Send } from 'lucide-react';
 
 /* ---------------- ICON COMPONENTS ---------------- */
@@ -122,16 +121,6 @@ export default function LetsTalk() {
 
     setSubmitting(true);
     try {
-      const { error } = await addQuery({
-        name: form.name,
-        phone: phoneDigits,
-        email: form.email,
-        service: form.service,
-        message: form.message,
-      });
-      if (error) throw error;
-
-      // 2. Open WhatsApp with pre-filled message
       const whatsappNumber = '918219890171';
       const whatsappMessage = `*New Query from AssetArc Website*
       
@@ -144,12 +133,12 @@ export default function LetsTalk() {
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
       window.open(whatsappUrl, '_blank');
 
-      setSuccess('Thank you! We received your query. Opening WhatsApp...');
+      setSuccess('Thank you! Opening WhatsApp with your message...');
       setForm({ name: '', phone: '', email: '', service: '', message: '' });
-    } catch (err) {
+    } catch (err: unknown) {
       console.error(err);
       const message =
-        (err as any)?.message ||
+        (err instanceof Error ? err.message : null) ||
         (typeof err === 'string' ? err : null) ||
         'Failed to submit. Please try again.';
       setError(message);

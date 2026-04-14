@@ -1,24 +1,11 @@
 import Link from 'next/link';
 import { format } from 'date-fns';
 import type { Metadata } from 'next';
-import { Skeleton } from '@/components/ui/skeleton';
 import { ChevronLeft, Send, Facebook, Linkedin, Instagram } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import ShareButtons from '@/components/blog/ShareButtons';
 import MobileShareButton from '@/components/blog/MobileShareButton';
-
-export const dynamic = 'force-dynamic';
-
-interface Post {
-  id: string;
-  slug?: string;
-  title: string;
-  content: string;
-  published: string;
-  author: {
-    displayName: string;
-  };
-}
+import { staticBlogPosts } from '@/lib/static/blog-posts';
 
 const ContactCard = () => {
   return (
@@ -59,39 +46,10 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const resolvedParams = await params;
   const slugOrId = resolvedParams?.slug;
-  const BLOG_ID = process.env.BLOG_ID || process.env.NEXT_PUBLIC_BLOG_ID || process.env.NEXT_PUBLIC_BLOGGER_ID;
-  const API_KEY = process.env.BLOGGER_API_KEY || process.env.NEXT_PUBLIC_BLOGGER_API_KEY || process.env.BLOGGER_KEY;
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://assetarc.in";
   const baseUrl = siteUrl.replace(/\/$/, '');
   const postUrl = `${baseUrl}/blog/${slugOrId}`;
-
-  if (!BLOG_ID || !API_KEY) {
-    return {
-      title: "Blog Post",
-      description: "Read our latest financial insights",
-    };
-  }
-
-  let post: Post | null = null;
-  const idMatch = String(slugOrId || '').match(/-(\d+)$/);
-
-  try {
-    if (idMatch) {
-      const id = idMatch[1];
-      const url = `https://www.googleapis.com/blogger/v3/blogs/${BLOG_ID}/posts/${id}?key=${API_KEY}`;
-      const res = await fetch(url, { cache: 'no-store' });
-      if (res.ok) post = await res.json();
-    } else {
-      const url = `https://www.googleapis.com/blogger/v3/blogs/${BLOG_ID}/posts/search?q=${encodeURIComponent(slugOrId || '')}&key=${API_KEY}`;
-      const res = await fetch(url, { cache: 'no-store' });
-      if (res.ok) {
-        const data = await res.json();
-        if (data.items?.length) post = data.items[0];
-      }
-    }
-  } catch (err) {
-    console.error('Error fetching post metadata:', err);
-  }
+  const post = staticBlogPosts.find((item) => item.slug === slugOrId);
 
   return {
     title: post?.title || "AssetArc Blog",
@@ -103,7 +61,7 @@ export async function generateMetadata(
       url: postUrl,
       siteName: "AssetArc",
       publishedTime: post?.published,
-      authors: [post?.author?.displayName || "AssetArc"],
+      authors: [post?.author || "AssetArc"],
     },
     twitter: {
       card: "summary_large_image",
@@ -115,59 +73,7 @@ export async function generateMetadata(
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const slugOrId = resolvedParams?.slug;
-  const BLOG_ID = process.env.BLOG_ID || process.env.NEXT_PUBLIC_BLOG_ID || process.env.NEXT_PUBLIC_BLOGGER_ID;
-  const API_KEY = process.env.BLOGGER_API_KEY || process.env.NEXT_PUBLIC_BLOGGER_API_KEY || process.env.BLOGGER_KEY;
-
-  if (!BLOG_ID || !API_KEY) {
-    return (
-      <Layout>
-        <div className="pt-20 pb-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center text-red-400">Missing BLOG_ID or BLOGGER_API_KEY environment variables.</div>
-        </div>
-      </Layout>
-    );
-  }
-
-  let post: Post | null = null;
-
-  const idMatch = String(slugOrId || '').match(/-(\d+)$/);
-  if (idMatch) {
-    // fetch by numeric id
-    try {
-      const id = idMatch[1];
-      const url = `https://www.googleapis.com/blogger/v3/blogs/${BLOG_ID}/posts/${id}?key=${API_KEY}`;
-      const res = await fetch(url, { cache: 'no-store' });
-      if (res.ok) post = await res.json();
-    } catch (err) {
-      // fallback to search
-    }
-  }
-
-  if (!post) {
-    // search recent posts for slug match
-    try {
-      const listUrl = `https://www.googleapis.com/blogger/v3/blogs/${BLOG_ID}/posts?maxResults=200&key=${API_KEY}`;
-      const res = await fetch(listUrl, { cache: 'no-store' });
-      const data = res.ok ? await res.json() : { items: [] };
-      const items = data.items || [];
-      const normalizedInput = String(slugOrId || '').replace(/-(\d+)$/, '');
-      const found = items.find((p: any) => {
-        if (p.slug && p.slug === normalizedInput) return true;
-        if (typeof p.url === 'string' && p.url.endsWith(`/${normalizedInput}`)) return true;
-        const titleSlug = (p.title || '')
-          .toLowerCase()
-          .normalize('NFKD')
-          .replace(/[^a-z0-9]+/g, '-')
-          .replace(/^-+|-+$/g, '')
-          .replace(/-{2,}/g, '-');
-        return titleSlug === normalizedInput;
-      });
-      if (found) post = found;
-    } catch (err) {
-      // leave post null
-    }
-  }
+  const post = staticBlogPosts.find((item) => item.slug === resolvedParams.slug);
 
   if (!post) {
     return (
@@ -213,7 +119,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                       </h1>
                       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm sm:text-base pb-8 border-b border-white/10 max-w-3xl mx-auto">
                         <p className="text-AssetArc-green-light font-work-sans uppercase tracking-wider font-medium">
-                          {post.author?.displayName || 'Building Vendor'}
+                          {post.author}
                         </p>
                         <span className="hidden sm:block text-white/30">•</span>
                         <p className="text-white/50 font-work-sans">
