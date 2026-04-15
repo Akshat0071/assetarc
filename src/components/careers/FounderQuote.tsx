@@ -25,7 +25,7 @@ export default function FounderQuote() {
               <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-full border-2 border-AssetArc-green-light/60 p-1 relative">
                 <Image
                   src="/careers/founder.png"
-                  alt="Akshat Bansal — Founder, AssetArc"
+                  alt="John Doe — Founder, AssetArc"
                   fill
                   className="rounded-full object-cover"
                   sizes="176px"
@@ -46,7 +46,7 @@ export default function FounderQuote() {
               </p>
               <div>
                 <p className="gradient-text font-product-sans text-xl font-semibold">
-                  Akshat Bansal
+                  John Doe
                 </p>
                 <p className="text-white/50 font-work-sans text-sm mt-1">
                   Founder &amp; CEO, AssetArc

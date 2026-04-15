@@ -137,64 +137,13 @@ export default function About() {
 
           <div className="bg-white/5 border border-white/10 rounded-2xl p-8 sm:p-10 hover:border-AssetArc-green-light/50 transition-colors duration-300">
             <div className="mb-6">
-              <h3 className="text-3xl font-product-sans text-AssetArc-green-light mb-2">Akshat Bansal</h3>
+              <h3 className="text-3xl font-product-sans text-AssetArc-green-light mb-2">John Doe</h3>
               <p className="text-white/70 text-lg">AMFI-Registered Mutual Fund Distributor</p>
             </div>
 
             <p className="text-white/80 text-lg leading-relaxed mb-6">
-              Akshat founded AssetArc with a clear intention: To make financial planning feel simple, honest, and approachable for everyday individuals. He observed how families struggled with decisions, how young earners felt lost, and how first-time investors carried more fear than guidance—and decided to provide a solution rooted in clarity and trust.
+              John founded AssetArc with a clear intention: To make financial planning feel simple, honest, and approachable for everyday individuals. He observed how families struggled with decisions, how young earners felt lost, and how first-time investors carried more fear than guidance—and decided to provide a solution rooted in clarity and trust.
             </p>
-
-            <div className="mb-6">
-              <h4 className="text-xl font-product-sans text-AssetArc-green-light mb-4">
-                Professional Certifications
-              </h4>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Certification 1 */}
-                <div className="bg-white/5 border border-white/10 rounded-xl p-4 hover:border-AssetArc-green-light/50 transition-colors duration-300">
-                  <div className="mb-3">
-                    <p className="text-white font-semibold mb-3">
-                      AMFI-Registered Mutual Fund Distributor
-                    </p>
-
-                    <div className="w-full bg-white/10 p-2 rounded-lg">
-                      <Image
-                        src="/about_us/fund_distributor.jpg"
-                        alt="NISM-Series V-A Mutual Fund Distributors Certification"
-                        width={600}
-                        height={400}
-                        className="w-full h-auto rounded-lg object-contain"
-                      />
-                    </div>
-                  </div>
-
-                  <p className="text-white/70 text-sm">
-                    NISM-Series V-A: Mutual Fund Distributors Certification
-                  </p>
-                </div>
-
-                {/* Certification 2 */}
-                <div className="bg-white/5 border border-white/10 rounded-xl p-4 hover:border-AssetArc-green-light/50 transition-colors duration-300">
-                  <div className="mb-3">
-                    <p className="text-white font-semibold mb-3">SEBI Registered</p>
-
-                    <div className="w-full bg-white/10 p-2 rounded-lg">
-                      <Image
-                        src="/about_us/sebi.jpg"
-                        alt="SEBI Investor Certification Examination"
-                        width={600}
-                        height={400}
-                        className="w-full h-auto rounded-lg object-contain"
-                      />
-                    </div>
-                  </div>
-
-                  <p className="text-white/70 text-sm">SEBI – Investor Certification Examination</p>
-                </div>
-              </div>
-            </div>
-
 
             <div className="bg-white/5 border border-white/10 rounded-xl p-6">
               <h4 className="text-lg font-product-sans text-AssetArc-green-light mb-3">Founder&apos;s Philosophy</h4>

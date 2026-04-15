@@ -129,19 +129,17 @@ export default function ApplicationForm() {
           {[1, 2, 3].map((s) => (
             <div key={s} className="flex items-center gap-2">
               <div
-                className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-product-sans font-bold transition-all duration-300 ${
-                  s <= step
+                className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-product-sans font-bold transition-all duration-300 ${s <= step
                     ? 'bg-AssetArc-green-light text-AssetArc-bg shadow-[0_0_12px_rgba(0,255,151,0.3)]'
                     : 'bg-white/10 text-white/40'
-                }`}
+                  }`}
               >
                 {s < step ? '✓' : s}
               </div>
               {s < 3 && (
                 <div
-                  className={`w-16 sm:w-24 h-0.5 transition-colors duration-300 ${
-                    s < step ? 'bg-AssetArc-green-light/60' : 'bg-white/10'
-                  }`}
+                  className={`w-16 sm:w-24 h-0.5 transition-colors duration-300 ${s < step ? 'bg-AssetArc-green-light/60' : 'bg-white/10'
+                    }`}
                 />
               )}
             </div>
@@ -164,7 +162,7 @@ export default function ApplicationForm() {
                   <input
                     type="text"
                     className={inputCls}
-                    placeholder="Akshat"
+                    placeholder="John"
                     value={form.firstName}
                     onChange={(e) => update('firstName', e.target.value)}
                   />
@@ -175,7 +173,7 @@ export default function ApplicationForm() {
                   <input
                     type="text"
                     className={inputCls}
-                    placeholder="Bansal"
+                    placeholder="Doe"
                     value={form.lastName}
                     onChange={(e) => update('lastName', e.target.value)}
                   />

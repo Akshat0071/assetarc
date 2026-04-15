@@ -58,11 +58,11 @@ const Footer = () => {
                 Financial advice Monday to Friday, 8 a.m. to 6 p.m.
               </p>
               <div className="flex flex-col gap-2">
-                <a href="tel:+918219890171" className="text-white font-montserrat text-base hover:text-AssetArc-green-light transition-colors duration-300 underline">
-                  +91 8219890171
+                <a href="tel:+919876543210" className="text-white font-montserrat text-base hover:text-AssetArc-green-light transition-colors duration-300 underline">
+                  +91 9876543210
                 </a>
-                <a href="mailto:akshatbansa04@gmail.com" className="text-white font-montserrat text-base hover:text-AssetArc-green-light transition-colors duration-300 underline">
-                  akshatbansa04@gmail.com
+                <a href="mailto:johndoe@gmail.com" className="text-white font-montserrat text-base hover:text-AssetArc-green-light transition-colors duration-300 underline">
+                  johndoe@gmail.com
                 </a>
               </div>
               <Link href="/contact" className="flex items-center gap-4 cursor-pointer group hover:text-AssetArc-green-light transition-colors duration-300">
@@ -149,7 +149,7 @@ const Footer = () => {
 
         {/* Social Media Links */}
         <div className="flex justify-center gap-8 mb-12 mt-20">
-          <a href="https://www.facebook.com/people/AssetArc/100089234534696/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-white hover:text-AssetArc-green-light hover:scale-125 hover:rotate-12 transition-all duration-300">
+          <a href="https://www.facebook.com/assetarc" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-white hover:text-AssetArc-green-light hover:scale-125 hover:rotate-12 transition-all duration-300">
             <Facebook className="w-6 h-6" />
           </a>
           <a href="https://www.linkedin.com/company/assetarc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white hover:text-AssetArc-green-light hover:scale-125 hover:rotate-12 transition-all duration-300">

@@ -24,13 +24,11 @@ function SelectDropdown({
   value,
   options,
   onChange,
-  icon,
 }: {
   label: string;
   value: string;
   options: { label: string; value: string }[];
   onChange: (value: string) => void;
-  icon: React.ReactNode;
 }) {
   return (
     <div className="relative">
@@ -38,13 +36,10 @@ function SelectDropdown({
         {label}
       </label>
       <div className="relative">
-        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none">
-          {icon}
-        </span>
         <select
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="w-full bg-white/10 border border-white/20 rounded-lg pl-10 pr-4 py-3 text-white font-work-sans text-sm appearance-none cursor-pointer hover:border-AssetArc-green-light/40 focus:border-AssetArc-green-light focus:ring-1 focus:ring-AssetArc-green-light/30 focus:outline-none transition-colors duration-200 [&>option]:bg-[#012928] [&>option]:text-white"
+          className="w-full bg-white/10 border border-white/20 rounded-lg pl-4 pr-4 py-3 text-white font-work-sans text-sm appearance-none cursor-pointer hover:border-AssetArc-green-light/40 focus:border-AssetArc-green-light focus:ring-1 focus:ring-AssetArc-green-light/30 focus:outline-none transition-colors duration-200 [&>option]:bg-[#012928] [&>option]:text-white"
         >
           <option value="">All</option>
           {options.map((opt) => (
@@ -89,28 +84,24 @@ export default function JobFilters({ filters, onChange, resultCount, totalCount 
         value={filters.city}
         options={cityOptions}
         onChange={(v) => onChange({ ...filters, city: v })}
-        icon={<span className="text-base">📍</span>}
       />
       <SelectDropdown
         label="Salary Range"
         value={filters.salaryRange}
         options={salaryOptions}
         onChange={(v) => onChange({ ...filters, salaryRange: v })}
-        icon={<span className="text-base">💰</span>}
       />
       <SelectDropdown
         label="Job Type"
         value={filters.jobType}
         options={typeOptions}
         onChange={(v) => onChange({ ...filters, jobType: v })}
-        icon={<span className="text-base">📋</span>}
       />
       <SelectDropdown
         label="Experience"
         value={filters.experienceLevel}
         options={expOptions}
         onChange={(v) => onChange({ ...filters, experienceLevel: v })}
-        icon={<span className="text-base">⭐</span>}
       />
     </div>
   );

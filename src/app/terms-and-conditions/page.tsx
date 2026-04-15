@@ -204,14 +204,14 @@ const TermsAndConditions = () => {
               <div className="space-y-2 text-white/80">
                 <p>
                   <strong className="text-white">Email:</strong>{" "}
-                  <Link href="mailto:akshatbansa04@gmail.com" className="text-AssetArc-green-light hover:underline">
-                    akshatbansa04@gmail.com
+                  <Link href="mailto:johndoe@gmail.com" className="text-AssetArc-green-light hover:underline">
+                    johndoe@gmail.com
                   </Link>
                 </p>
                 <p>
                   <strong className="text-white">Phone:</strong>{" "}
-                  <Link href="tel:+918219890171" className="text-AssetArc-green-light hover:underline">
-                    +91 8219890171
+                  <Link href="tel:+919876543210" className="text-AssetArc-green-light hover:underline">
+                    +91 9876543210
                   </Link>
                 </p>
               </div>
