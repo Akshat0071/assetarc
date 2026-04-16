@@ -55,7 +55,7 @@ const AssetArcLogoBW = () => (
   <div className="flex items-center gap-4 sm:gap-8 group">
     {/* Mobile optimized logo for Android & iPhone */}
     <Image
-      src="/assetarclogo.png"
+      src="/assetarclogo.png?v=2"
       alt="AssetArc Logo"
       width={96}
       height={96}
@@ -63,11 +63,12 @@ const AssetArcLogoBW = () => (
       sizes="(max-width: 390px) 80px, (max-width: 640px) 96px, 0px"
       quality={90}
       priority
+      unoptimized
     />
 
     {/* Desktop logo */}
     <Image
-      src="/assetarclogo.png"
+      src="/assetarclogo.png?v=2"
       alt="AssetArc Logo"
       width={300}
       height={300}
@@ -75,6 +76,7 @@ const AssetArcLogoBW = () => (
       sizes="(max-width: 768px) 144px, (max-width: 1024px) 192px, 300px"
       quality={90}
       priority
+      unoptimized
     />
 
     <div className="flex items-baseline">

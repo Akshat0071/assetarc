@@ -62,7 +62,7 @@ const AssetArcLogo = () => (
   <div className="flex items-center gap-2.5">
     {/* eslint-disable-next-line @next/next/no-img-element */}
     <img
-      src="/assetarclogo.png"
+      src="/assetarclogo.png?v=2"
       alt="AssetArc Logo"
       width="32"
       height="35"

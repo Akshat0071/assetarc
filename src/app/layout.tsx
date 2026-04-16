@@ -104,9 +104,9 @@ export default function RootLayout({
         }} />
 
         {/* Favicon - explicit link for Google and all browsers */}
-        <link rel="icon" href="/assetarclogo.png" sizes="any" />
-        <link rel="icon" href="/assetarclogo.png" type="image/x-icon" />
-        <link rel="shortcut icon" href="/assetarclogo.png" />
+        <link rel="icon" href="/assetarclogo.png?v=2" sizes="any" />
+        <link rel="icon" href="/assetarclogo.png?v=2" type="image/x-icon" />
+        <link rel="shortcut icon" href="/assetarclogo.png?v=2" />
 
         {/* Microsoft Clarity - load only after first user interaction to avoid long tasks during initial render */}
         <Script id="clarity-bootstrap" strategy="afterInteractive">

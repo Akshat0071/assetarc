@@ -46,7 +46,7 @@ const AssetArcLogoBW = () => (
   <div className="flex items-center group">
     {/* Mobile logo */}
     <Image
-      src="/assetarclogo.png"
+      src="/assetarclogo.png?v=2"
       alt="AssetArc Logo"
       width={96}
       height={96}
@@ -54,10 +54,11 @@ const AssetArcLogoBW = () => (
       sizes="(max-width: 390px) 80px, (max-width: 640px) 96px, 0px"
       quality={90}
       priority
+      unoptimized
     />
     {/* Desktop logo */}
     <Image
-      src="/assetarclogo.png"
+      src="/assetarclogo.png?v=2"
       alt="AssetArc Logo"
       width={200}
       height={200}
@@ -65,6 +66,7 @@ const AssetArcLogoBW = () => (
       sizes="(max-width: 768px) 144px, (max-width: 1024px) 192px, 300px"
       quality={90}
       priority
+      unoptimized
     />
     <div className="flex items-baseline">
       <span className="text-white font-product-sans text-4xl sm:text-5xl font-bold group-hover:text-AssetArc-green-light transition-colors duration-500">
